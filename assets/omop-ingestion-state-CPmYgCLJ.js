@@ -1,0 +1,1 @@
+import{ft as e}from"./modules/shiki-DItJl1Vm.js";var t=e(null),n={count:5,every:.66,flight:1.1},r=[[100001,`F`,70,1,0,`current`],[100002,`M`,59,0,0,`former`],[100003,`M`,82,1,0,`current`],[100004,`F`,53,0,0,`never`],[100005,`F`,42,0,0,`never`]];export{n,t as r,r as t};

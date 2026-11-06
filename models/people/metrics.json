@@ -1,0 +1,584 @@
+{
+  "version": 2,
+  "license": "CC0-1.0",
+  "budgetPolicy": "Size limits suspended by speaker; measure all LODs.",
+  "glbBytes": 7090964,
+  "files": [
+    {
+      "id": "analyst-hero",
+      "file": "analyst-hero.glb",
+      "lod": "hero",
+      "bytes": 907604,
+      "triangles": 35024,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short02_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_male_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        }
+      ],
+      "sha256": "f7a127d9ef392c1a59751e443769cd1dbdac4e2ecab224c0f0be578bd62ea021"
+    },
+    {
+      "id": "crowd-01-crowd",
+      "file": "crowd-01-crowd.glb",
+      "lod": "crowd",
+      "bytes": 56328,
+      "triangles": 8972,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "125fdea4ce5d8399dad6842cafc4e6ccb12d4829d0f195d247466d9debe7a245"
+    },
+    {
+      "id": "crowd-01-far",
+      "file": "crowd-01-far.glb",
+      "lod": "far",
+      "bytes": 37048,
+      "triangles": 5074,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "ac3e08101b8d97e1509992b0df3b8727063202a9075cda0e1b8c208bc0423bed"
+    },
+    {
+      "id": "crowd-01-middle",
+      "file": "crowd-01-middle.glb",
+      "lod": "middle",
+      "bytes": 104980,
+      "triangles": 19471,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "edaa6263026ed66ef44e8c08dda3a4e65936edf2e8a4c28703d285a2a96a6265"
+    },
+    {
+      "id": "crowd-02-crowd",
+      "file": "crowd-02-crowd.glb",
+      "lod": "crowd",
+      "bytes": 58940,
+      "triangles": 8974,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "e378e8d5acb42ceacaa46e4578359389d4a2014069407b664dd193b310ce0570"
+    },
+    {
+      "id": "crowd-02-far",
+      "file": "crowd-02-far.glb",
+      "lod": "far",
+      "bytes": 37828,
+      "triangles": 5072,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "5111e0663a5094b196e1c37fc69c8b18743dbb52439bbac558221521290ee3ee"
+    },
+    {
+      "id": "crowd-03-crowd",
+      "file": "crowd-03-crowd.glb",
+      "lod": "crowd",
+      "bytes": 59912,
+      "triangles": 8972,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "1395d3fc4acf3ef40ea813654b6536df8e8c4687f410352930ab7578a304c132"
+    },
+    {
+      "id": "crowd-03-far",
+      "file": "crowd-03-far.glb",
+      "lod": "far",
+      "bytes": 39364,
+      "triangles": 5073,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "bcb173457fdb3ab198e9473cd9cd1705827a8c08b15a7ae42a13d4dcafe6eefd"
+    },
+    {
+      "id": "crowd-04-crowd",
+      "file": "crowd-04-crowd.glb",
+      "lod": "crowd",
+      "bytes": 59796,
+      "triangles": 8974,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "67c9165cc47647281d0fa52a903a1fb96e18486ebc634956acd0f876d98379cf"
+    },
+    {
+      "id": "crowd-04-far",
+      "file": "crowd-04-far.glb",
+      "lod": "far",
+      "bytes": 39184,
+      "triangles": 5073,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "c10c4defdf21b3f10d0c52a503e376ea064b6aa57484ab71dd33bcb8f6b754c0"
+    },
+    {
+      "id": "crowd-05-crowd",
+      "file": "crowd-05-crowd.glb",
+      "lod": "crowd",
+      "bytes": 57044,
+      "triangles": 8975,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "5279fb075367ed09e088bbbb2e4732c2242701a6150ce35f6664d55651bb7499"
+    },
+    {
+      "id": "crowd-05-far",
+      "file": "crowd-05-far.glb",
+      "lod": "far",
+      "bytes": 37568,
+      "triangles": 5074,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "9c9bdd8b26027a23379681a87eb5180c786ad061c8481ca98047f8fb27c32f0e"
+    },
+    {
+      "id": "crowd-06-crowd",
+      "file": "crowd-06-crowd.glb",
+      "lod": "crowd",
+      "bytes": 58128,
+      "triangles": 8973,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "89b854d142a4fd0def4a34022ef574967bc0e87a952f5430f503db60c18fc19c"
+    },
+    {
+      "id": "crowd-06-far",
+      "file": "crowd-06-far.glb",
+      "lod": "far",
+      "bytes": 38100,
+      "triangles": 5071,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "ca5eafbdf921ed4e5f07e88008d81296a655edf079f94b653e0deecb3c85cb0d"
+    },
+    {
+      "id": "crowd-07-crowd",
+      "file": "crowd-07-crowd.glb",
+      "lod": "crowd",
+      "bytes": 57504,
+      "triangles": 8972,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "50fcc7a4c34c0cce7c8ee3aa322c66c003504083129be7dd418846daac97dcc7"
+    },
+    {
+      "id": "crowd-07-far",
+      "file": "crowd-07-far.glb",
+      "lod": "far",
+      "bytes": 37864,
+      "triangles": 5073,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "cec07f3f1baf78f86cc6e05b7efe90e7626a626e00fcee0ca4e03759b2400fed"
+    },
+    {
+      "id": "crowd-08-crowd",
+      "file": "crowd-08-crowd.glb",
+      "lod": "crowd",
+      "bytes": 58824,
+      "triangles": 8975,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "90a8f8600326b5e69688cd49e1b353ab9f87ef173ba82a676823688c1e615053"
+    },
+    {
+      "id": "crowd-08-far",
+      "file": "crowd-08-far.glb",
+      "lod": "far",
+      "bytes": 38264,
+      "triangles": 5074,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "7e628c1870e2094f9028cefdd3c89787fbe1594db121af24248a43c5f2ddbf35"
+    },
+    {
+      "id": "crowd-09-crowd",
+      "file": "crowd-09-crowd.glb",
+      "lod": "crowd",
+      "bytes": 58296,
+      "triangles": 8973,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "24b3ae6c8afb9527a1e22b5555d2bbc685231bd73337198084450f8c20e67625"
+    },
+    {
+      "id": "crowd-09-far",
+      "file": "crowd-09-far.glb",
+      "lod": "far",
+      "bytes": 37756,
+      "triangles": 5074,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "79f6bef6aef7574b6fcf898f447d9e39089549b471a0173a9a1ab3838925f9b4"
+    },
+    {
+      "id": "crowd-10-crowd",
+      "file": "crowd-10-crowd.glb",
+      "lod": "crowd",
+      "bytes": 57796,
+      "triangles": 8971,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "5e5ae3922aa3e7ed6e0f75092d318078a6e86463ad374eae4155af56109cb978"
+    },
+    {
+      "id": "crowd-10-far",
+      "file": "crowd-10-far.glb",
+      "lod": "far",
+      "bytes": 37376,
+      "triangles": 5074,
+      "primitives": 3,
+      "textures": [],
+      "clips": [],
+      "sha256": "3f8d1aee670a9be98e8ea93eab376dc95a9304aeb3a4ebede12c5dd1f10235ec"
+    },
+    {
+      "id": "malicious-hero",
+      "file": "malicious-hero.glb",
+      "lod": "hero",
+      "bytes": 1049020,
+      "triangles": 43841,
+      "primitives": 29,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short02_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_male_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "turning",
+          "channels": 489,
+          "duration": 1
+        }
+      ],
+      "sha256": "f83248b9dbadf4384b0c39b9ae5a374b7955fbc5aeb6c1cdcf25880b6c26fe38"
+    },
+    {
+      "id": "manager-01-middle",
+      "file": "manager-01-middle.glb",
+      "lod": "middle",
+      "bytes": 807288,
+      "triangles": 21538,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short01_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_darkskinned_female_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "approving",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "holding",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "working",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        }
+      ],
+      "sha256": "6accb4f8152afbc1a8eac22903631b496827047b9e52adba1464d37dd742f500"
+    },
+    {
+      "id": "manager-02-middle",
+      "file": "manager-02-middle.glb",
+      "lod": "middle",
+      "bytes": 782120,
+      "triangles": 21313,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short04_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_male_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "approving",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "holding",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "working",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        }
+      ],
+      "sha256": "31fece67fc2f1520f0339edccd87668bc1a93c93d4ff9d6bc41f94a27b231565"
+    },
+    {
+      "id": "manager-03-middle",
+      "file": "manager-03-middle.glb",
+      "lod": "middle",
+      "bytes": 763840,
+      "triangles": 21637,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "bob01_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "young_lightskinned_female_diffuse3",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "approving",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "holding",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        },
+        {
+          "name": "working",
+          "channels": 489,
+          "duration": 0.0833333358168602
+        }
+      ],
+      "sha256": "4a3b2c40f363aec2dd89148a532e85d73d9ae5c636d8910cdf4703c79a51265b"
+    },
+    {
+      "id": "runner-01-hero",
+      "file": "runner-01-hero.glb",
+      "lod": "hero",
+      "bytes": 584416,
+      "triangles": 25986,
+      "primitives": 8,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "ponytail01_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "young_lightskinned_female_diffuse3",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "running",
+          "channels": 489,
+          "duration": 0.800000011920929
+        }
+      ],
+      "sha256": "d2ae70b61597b9ae42848ab2af08305d17c0de5a1260e139330218cd9bd4534d"
+    },
+    {
+      "id": "runner-02-hero",
+      "file": "runner-02-hero.glb",
+      "lod": "hero",
+      "bytes": 588900,
+      "triangles": 26097,
+      "primitives": 8,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short01_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_darkskinned_male_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "running",
+          "channels": 489,
+          "duration": 0.800000011920929
+        }
+      ],
+      "sha256": "d4bd340d20f2814b15471228d280efd20cf94449c019af8d8f2c88686c12ac67"
+    },
+    {
+      "id": "runner-03-hero",
+      "file": "runner-03-hero.glb",
+      "lod": "hero",
+      "bytes": 539876,
+      "triangles": 26194,
+      "primitives": 8,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "short02_diffuse",
+          "width": 512,
+          "height": 512,
+          "format": "webp"
+        },
+        {
+          "name": "old_lightskinned_female_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "running",
+          "channels": 489,
+          "duration": 0.800000011920929
+        }
+      ],
+      "sha256": "3c5fe95bfaa8bbad3b96c664e725f2be57e83e90cbf04a3fa830a30b8419c7b1"
+    }
+  ],
+  "errors": [],
+  "sourceCommit": "84cff3d"
+}

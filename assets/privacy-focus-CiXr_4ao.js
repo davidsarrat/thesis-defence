@@ -1,0 +1,1 @@
+var e={active:!1},t;function n(n){t=n,e.active=!0}function r(n){n===t&&(t=void 0,e.active=!1)}export{n,r,e as t};

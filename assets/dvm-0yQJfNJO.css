@@ -1,0 +1,17 @@
+.dvm-board { width:100%; max-width:none; margin:auto; overflow:visible; }
+.dvm-slide .dvs-stage { padding-bottom:10px; }
+.dvm-bg { fill:#0a162b; stroke:var(--border); rx:var(--card-radius); stroke-width:1.5; }
+.dvm-rule { fill:none; stroke:#b8cade3b; stroke-width:1; }
+.dvm-heading { font:600 23px var(--font-sans); fill:#edf5ff; }
+.dvm-label { font:500 18px var(--font-sans); fill:#b8cade; }
+.dvm-small { font:500 16px var(--font-sans); fill:#b8cade; }
+.dvm-number { font:600 37px var(--font-mono); fill:#edf5ff; font-variant-numeric:tabular-nums; }
+.dvm-math { font:500 24px var(--font-mono); fill:#edf5ff; font-variant-numeric:tabular-nums; }
+.dvm-formula { font:500 25px var(--font-mono); fill:#edf5ff; }
+.dvm-a { fill:#7EFAFF; color:#7EFAFF; }
+.dvm-b { fill:#FF8AF0; color:#FF8AF0; }
+.dvm-sum { fill:#38C6AD; color:#38C6AD; }
+.dvm-prod { fill:#F5BE72; color:#F5BE72; }
+.dvm-chip { rx:var(--chip-radius); fill:#0a162b; stroke:currentColor; stroke-width:1.7; }
+.dvm-glow { filter:drop-shadow(0 0 4px currentColor); }
+.dvm-line { fill:none; stroke:currentColor; stroke-width:1.6; }

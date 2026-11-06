@@ -1,0 +1,67 @@
+{
+  "texture": "corridor.webp",
+  "meshes": [
+    "regional"
+  ],
+  "boundsEastNorthMetres": [
+    -30000,
+    0,
+    30000,
+    36000
+  ],
+  "textureSize": [
+    4096,
+    2048
+  ],
+  "postingMetres": [
+    14.6484375,
+    17.578125
+  ],
+  "edgeBlendMetres": 800,
+  "bake": {
+    "samples": 32,
+    "seconds": 272.0818507671356,
+    "type": "Cycles diffuse direct+indirect+colour, geographic UV, no camera projection",
+    "bakerSha256": "69762eb1bcda2a246b371567c049ba735403610a5c03c4df765c294c78ead3e7",
+    "sourceLightingModuleSha256": "eb07db0a627e75418080ad58ace58ed9c9f205e6e0c1a8df24193aa9bc5fb2cf",
+    "textureSize": [
+      4096,
+      2048
+    ],
+    "encoding": "WebP quality 97; AgX from linear Rec.709; +/-0.65 code-value dither",
+    "rgbCodeValuePercentiles1_50_99": [
+      0.0,
+      38.51361846923828,
+      198.5758819580078
+    ],
+    "exporterSha256": "69762eb1bcda2a246b371567c049ba735403610a5c03c4df765c294c78ead3e7",
+    "linearExrSha256": "8bc65c0c86562b97debcfa866c284a24a1bf24098621c51469b41137c7e93bc8",
+    "agxPngSha256": "de7f26d55e4f92d31723f07bddb881d83267ed2484a27e5da3b8465c2388c4b4"
+  },
+  "sourceConfidence": {
+    "encoding": "WebP alpha is source confidence, not surface transparency; shader multiplies the geographic detail blend by alpha",
+    "method": "SCL vegetation/bare-ground/water classes 4/5/6; invalid classes dilated 24 source pixels; mosaic RGB differs by at most 3 code values; smoothstep over 8 source pixels inside supported region",
+    "unsupportedTreatment": "Keep the existing regional baked map; no invented detail or new colour fill",
+    "sources": [
+      {
+        "acquisition": "S2B_37MCS_20240914_0_L2A",
+        "warpedSourceSha256": "aa34dfb51fb9738575b7372e6a4e1a23bbea47229cf891d8244f7264d695439f"
+      },
+      {
+        "acquisition": "S2B_37MBS_20240914_0_L2A",
+        "warpedSourceSha256": "70715f9f88f849f20bd65e6481e9dcd1b197b481d3cacc0e12a4a12a68adcc86"
+      }
+    ],
+    "processorSha256": "69762eb1bcda2a246b371567c049ba735403610a5c03c4df765c294c78ead3e7",
+    "rawRgbWebpSha256": "d48bb289fa206f54fa3522c60771a32caa646d03de8dfa840e2542f4ee6d4af0",
+    "confidencePngSha256": "fe16f662935ca3805c561fd89818f59156c516bfd5916ad87f7d295b2881156c",
+    "fullySupportedFraction": 0.6473076343536377,
+    "partiallySupportedFraction": 0.07549583911895752,
+    "unsupportedFraction": 0.2771965265274048
+  },
+  "sourceImageSha256": "c0f97b9ad44c8878a7a8e68776f984c686ed346c156c0710e79a8860e55e8679",
+  "geometryPolicy": "Measured northern arc refined at 167 m, 83 m near entry; retained mountain/far geometry",
+  "estimatedTextureRgbaMipmappedBytes": 44739243,
+  "bytes": 2210722,
+  "sha256": "2f554478e67a30731f9ef38323dc073f69c70204db7f6fbd6515fce268552a5a"
+}

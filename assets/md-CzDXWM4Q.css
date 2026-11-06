@@ -1,0 +1,21 @@
+
+/* The thesis title is long: modest type in balanced lines, so the globe keeps the right half. The whole column is
+   centred vertically (David, 5 Nov 2026); the institute is in the accent colour and the director in bold too. */
+.cover-copy[data-v-4a3269a7]:has(.cover-thesis) { top: 50%; transform: translateY(-50%);
+}
+.cover-thesis[data-v-4a3269a7] { font-size: 23px !important; line-height: 1.26 !important; letter-spacing: -.02em !important; max-width: 450px; text-wrap: balance;
+}
+.cover-copy:has(.cover-thesis) .cover-subtitle[data-v-4a3269a7] { font-size: 15px; max-width: 450px; margin-top: 12px; color: var(--accent);
+}
+.cover-people[data-v-4a3269a7] { display: flex; flex-direction: column; gap: 5px; margin-top: 22px; color: var(--fg); white-space: nowrap;
+}
+.cover-author[data-v-4a3269a7] { font-size: 16px; font-weight: 600; letter-spacing: -.01em;
+}
+.cover-director[data-v-4a3269a7] { font-size: 14px; font-weight: 600;
+}
+.cover-copy:has(.cover-thesis) .cover-logos[data-v-4a3269a7] { position: static; margin-top: 26px; gap: 7px !important;
+}
+.cover-copy:has(.cover-thesis) .cover-logos .logo-badge[data-v-4a3269a7] { height: 42px; padding: 0 8px;
+}
+.cover-copy:has(.cover-thesis) .cover-logos .logo-badge img[data-v-4a3269a7] { max-height: 25px;
+}

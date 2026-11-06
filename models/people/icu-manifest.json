@@ -1,0 +1,111 @@
+{
+  "license": "CC0-1.0",
+  "identity": {
+    "id": "icu-patient-01",
+    "label": "Adult ICU patient · short greying hair",
+    "gender": 0.91,
+    "age": 0.68,
+    "weight": 0.58,
+    "muscle": 0.38,
+    "height": 0.56,
+    "stature": 1.76,
+    "ancestry": [
+      0.18,
+      0.6,
+      0.22
+    ],
+    "clothes": "female_casualsuit01",
+    "shoes": "shoes05",
+    "hairStyle": "receding",
+    "skin": "#b58b6c",
+    "upper": "#b8ced4",
+    "lower": "#b8ced4",
+    "hair": "#756e66",
+    "shoe": "#d0d5cf",
+    "backrestDegrees": 38,
+    "pose": "Awake, neutral face, elbows close to torso, hands supported by blanket",
+    "oxygen": "Nasal cannula"
+  },
+  "authoring": "tools/model-lab/people/production/icu_patient_build.py",
+  "authoringSha256": "0caf77cce3c163b8e763b169e2f5bcd8c897a833a1a6020eaa34e453265a68ea",
+  "anchors": {
+    "patient": [
+      -2.3175233954120245e-10,
+      1.3038398027420044,
+      -0.297294020652771
+    ],
+    "head": [
+      -2.3175233954120245e-10,
+      1.3038398027420044,
+      -0.297294020652771
+    ],
+    "nose": [
+      9.799737910043405e-9,
+      1.4032998085021973,
+      -0.21777258813381195
+    ],
+    "pillow": [
+      -4.1010998024514393e-16,
+      1.2813299894332886,
+      -0.4193621575832367
+    ],
+    "handLeft": [
+      0.23000004887580872,
+      1.1025594472885132,
+      0.13000014424324036
+    ],
+    "handRight": [
+      -0.23000004887580872,
+      1.1026113033294678,
+      0.18000003695487976
+    ],
+    "iv": [
+      0.2353554219007492,
+      1.1117573976516724,
+      0.09414004534482956
+    ],
+    "oximeter": [
+      -0.21588580310344696,
+      1.0607304573059082,
+      0.35853058099746704
+    ],
+    "fingerTop": [
+      -0.21588580310344696,
+      1.0826497077941895,
+      0.35853058099746704
+    ],
+    "fingerBottom": [
+      -0.21588580310344696,
+      1.0583560466766357,
+      0.35853058099746704
+    ],
+    "label": [
+      0,
+      2.35,
+      0
+    ]
+  },
+  "assets": [
+    {
+      "id": "icu-patient-01-hero",
+      "file": "icu-patient-01-hero.glb",
+      "lod": "hero",
+      "bytes": 72144,
+      "sha256": "e608a91866e6dd3e088a46dbb8964a377cccd86983c5d2dd3dc28ba8aafbf148",
+      "triangles": 11919,
+      "draws": 2,
+      "textures": 1
+    },
+    {
+      "id": "icu-patient-01-middle",
+      "file": "icu-patient-01-middle.glb",
+      "lod": "middle",
+      "bytes": 51948,
+      "sha256": "1f6ddc3e172987e209ad58b7e8a89bd9398447dbd4a686d4d399f8332202c639",
+      "triangles": 7697,
+      "draws": 2,
+      "textures": 1
+    }
+  ],
+  "totalBytes": 124092
+}

@@ -1,0 +1,46 @@
+
+.rt-logos[data-v-ffedfe20] { display: flex; align-items: center; gap: 18px;
+}
+.rt-label[data-v-ffedfe20] { font: 500 16px var(--font-mono, 'Roboto Mono', monospace); color: var(--muted, #B8CADE);
+}
+.rt-logo[data-v-ffedfe20] { display: inline-flex; align-items: center; gap: 9px;
+}
+.rt-logo i[data-v-ffedfe20] { display: inline-block; width: var(--size); height: var(--size); padding: 4px; border-radius: 8px; background: #f4f8fc;
+}
+.rt-logo i[data-v-ffedfe20] svg { width: 100%; height: 100%; display: block;
+}
+.rt-logo b[data-v-ffedfe20] { font: 700 18px var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+
+/* Cards start below the title band (150 px), as on every slide; labels at 16 px. */
+.eo-pieces[data-v-7e866c5a] { left: var(--frame-x); top: 150px; width: 340px; transition: opacity .5s ease;
+}
+.eo-pieces ul[data-v-7e866c5a] { margin: 6px 0 0; padding: 0; list-style: none;
+}
+.eo-pieces li[data-v-7e866c5a] { position: relative; padding-left: 18px; font: 500 16px/1.5 var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+.eo-pieces li[data-v-7e866c5a]::before { content: ''; position: absolute; left: 0; top: .68em; width: 8px; height: 8px; border-radius: 2px; background: var(--accent, #7EFAFF);
+}
+.eo-sub[data-v-7e866c5a] { margin-top: 10px; color: #ff8a98 !important; font-size: 16px !important;
+}
+.eo-trouble li[data-v-7e866c5a]::before { background: #ff6b7d;
+}
+.eo-dim[data-v-7e866c5a] { opacity: .35;
+}
+/* 450 px: the operator at the rack stays clear of the tool's card. */
+.eo-tool[data-v-7e866c5a] { right: var(--frame-x); top: 150px; width: 450px; border-color: var(--accent, #7EFAFF);
+}
+.eo-name[data-v-7e866c5a] { font: 700 28px var(--font-mono, 'Roboto Mono', monospace) !important; color: var(--accent, #7EFAFF) !important;
+}
+.eo-claim[data-v-7e866c5a] { margin-top: 4px; font: 600 20px/1.3 var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+.eo-flavours[data-v-7e866c5a] { display: flex; gap: 12px; margin: 12px 0;
+}
+.eo-flavour[data-v-7e866c5a] { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; border-radius: 9px; border: 1px solid #4d6a86; background: #0d2036;
+}
+.eo-flavour b[data-v-7e866c5a] { font: 700 19px var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+.eo-flavour span[data-v-7e866c5a] { font: 500 16px var(--font-mono, 'Roboto Mono', monospace); color: var(--muted, #B8CADE);
+}
+.eo-runtimes[data-v-7e866c5a] { margin-top: 2px;
+}

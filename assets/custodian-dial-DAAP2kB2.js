@@ -1,0 +1,1 @@
+var e=Object.freeze({presets:Object.freeze([1,.1,8]),sweepAt:3,glide:.9,period:6}),t=e=>e<.5?2*e*e:1-(-2*e+2)**2/2,n=(e,t,n)=>Math.min(n,Math.max(t,e)),r=t=>Math.log10(e.presets[t]??1);function i(i,a,o,s=!1){if(i>=e.sweepAt)return s?r(i):Math.sin(Math.asin(n(o,-1,1))+2*Math.PI*Math.max(0,a)/e.period);let c=r(i);return s?c:o+(c-o)*t(n(a/e.glide,0,1))}export{i as n,r,e as t};

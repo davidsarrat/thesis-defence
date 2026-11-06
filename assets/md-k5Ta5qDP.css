@@ -1,0 +1,38 @@
+
+.st-layer[data-v-0b657677] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.st-wrap[data-v-0b657677] { position: absolute; inset: 0; transition: opacity .25s ease;
+}
+.st-leaders[data-v-0b657677] { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible;
+}
+.st-leaders path[data-v-0b657677] { fill: none; stroke: var(--privacy, #38C6AD); stroke-width: 2; stroke-opacity: .6;
+}
+.st-card[data-v-0b657677] { position: absolute; box-sizing: border-box; display: flex; flex-direction: column; padding: 10px 14px 10px; border: 1px solid var(--privacy, #38C6AD);
+  border-radius: var(--card-radius, 12px); background: rgba(7, 19, 35, .95); color: var(--fg, #EDF5FF);
+}
+.st-card header[data-v-0b657677] { display: flex; justify-content: space-between; align-items: baseline;
+}
+.st-card header b[data-v-0b657677] { font: 600 22px var(--font-mono); color: var(--privacy, #38C6AD);
+}
+.st-card header span[data-v-0b657677] { font: 500 16px var(--font-mono); color: var(--muted, #B8CADE);
+}
+.st-card table[data-v-0b657677] { width: 100%; margin: 6px 0 0; border-collapse: collapse; font: 17px var(--font-mono);
+}
+.st-card th[data-v-0b657677] { font-size: 16px; color: var(--muted, #B8CADE) !important; text-align: right; padding: 2px 4px 4px; border-bottom: 1px solid var(--border, #405873) !important; text-transform: none; letter-spacing: 0;
+}
+.st-card td[data-v-0b657677] { text-align: right; padding: 2px 4px; height: 24px; border: 0 !important; color: var(--fg, #EDF5FF);
+}
+.st-card .st-na[data-v-0b657677] { color: #8998af;
+}
+.st-card footer[data-v-0b657677] { margin-top: auto; display: flex; align-items: center; gap: 9px; font: 600 16px var(--font-sans); color: var(--privacy, #38C6AD);
+}
+.st-card footer svg[data-v-0b657677] { flex: none; width: 20px; height: 23px; fill: #214D4930; stroke: var(--privacy, #38C6AD); stroke-width: 1.8; stroke-linejoin: round;
+}
+.st-fade-enter-active[data-v-0b657677] { transition: opacity .4s ease, transform .4s ease;
+}
+.st-fade-leave-active[data-v-0b657677] { transition: opacity .2s ease;
+}
+.st-fade-enter-from[data-v-0b657677] { opacity: 0; transform: translateY(8px);
+}
+.st-fade-leave-to[data-v-0b657677] { opacity: 0;
+}

@@ -1,0 +1,29 @@
+
+.dvr-plot[data-v-847f889b] { display: block; width: 100%; height: auto; overflow: visible;
+}
+.dvr-grid[data-v-847f889b] { fill: none; stroke: #b8cade; stroke-opacity: .075; stroke-width: 1;
+}
+.dvr-axis[data-v-847f889b] { fill: none; stroke: #b8cade; stroke-opacity: .3; stroke-width: 1;
+}
+.dvr-curve[data-v-847f889b] { fill: none; stroke: #b9a6ff; stroke-width: 2.7; stroke-linecap: round; stroke-linejoin: round;
+}
+.dvr-axis-label[data-v-847f889b] { fill: #b8cade; font: italic 500 18px var(--font-sans);
+}
+.dvr-line[data-v-847f889b] { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round;
+}
+.dvr-mirror[data-v-847f889b] { fill: none; stroke: currentColor; stroke-width: 2; stroke-dasharray: 3 5;
+}
+.dvr-run[data-v-847f889b] { fill: none; stroke: #F5BE72; stroke-width: 3.4; stroke-linecap: round;
+}
+.dvr-meet[data-v-847f889b] { fill: #0a162b; stroke: currentColor; stroke-width: 2.5;
+}
+.dvr-reflect[data-v-847f889b], .dvr-dot[data-v-847f889b] { fill: currentColor; stroke: #0a162b; stroke-width: 1.5;
+}
+.dvr-mark[data-v-847f889b] { transition: color .4s ease, opacity .3s ease;
+}
+.dvr-label[data-v-847f889b] { fill: currentColor; stroke: #0a162b; stroke-width: 5; stroke-linejoin: round; paint-order: stroke; font: 500 19px var(--font-sans);
+}
+.dvr-ring[data-v-847f889b] { fill: none; stroke: currentColor; stroke-width: 2; filter: drop-shadow(0 0 5px currentColor);
+}
+.dvr-cross[data-v-847f889b] { fill: none; stroke: #0a162b; stroke-width: 2.2;
+}

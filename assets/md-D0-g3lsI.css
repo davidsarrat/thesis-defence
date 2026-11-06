@@ -1,0 +1,158 @@
+
+.dpr-board[data-v-bb4d3734] { width: 100%; height: auto; display: block; overflow: visible;
+}
+.dpr-surface[data-v-bb4d3734] { rx:var(--card-radius); fill: rgba(10,22,43,.94); stroke: var(--border); stroke-width: 1.5;
+}
+.dpr-party[data-v-bb4d3734] { --party: #7efaff;
+}
+.dpr-b[data-v-bb4d3734] { --party: #ff8af0; transform: translateX(600px);
+}
+.dpr-half[data-v-bb4d3734] { transition: transform 1s cubic-bezier(.4,0,.2,1);
+}
+.dpr-hospital[data-v-bb4d3734] { fill: var(--party); font: 600 27px var(--font-sans); text-anchor: middle; transition: transform .6s ease;
+}
+.dpr-reference[data-v-bb4d3734] { fill: var(--privacy); font: 500 17px var(--font-sans); text-anchor: middle; opacity: 0; transition: opacity .4s ease;
+}
+.dpr-reference.dpr-visible[data-v-bb4d3734] { opacity: 1;
+}
+.dpr-column[data-v-bb4d3734] { fill: var(--muted); font: 500 16px var(--font-sans);
+}
+.dpr-data-head[data-v-bb4d3734] { text-anchor: middle;
+}
+.dpr-row[data-v-bb4d3734] { transition: opacity .45s ease;
+}
+.dpr-row-fill[data-v-bb4d3734] { fill: #0e2134; stroke: rgba(56,198,173,.5); stroke-width: 1; transition: x .65s ease, width .65s ease, opacity .45s ease;
+}
+.dpr-tick[data-v-bb4d3734] { fill: none; stroke: var(--privacy); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.dpr-cross[data-v-bb4d3734] { fill: none; stroke: #ff7e8b; stroke-width: 2.5; stroke-linecap: round;
+}
+.dpr-unmatched .dpr-row-fill[data-v-bb4d3734] { fill: rgba(255,126,139,.04); stroke: rgba(255,126,139,.45);
+}
+.dpr-name[data-v-bb4d3734] { fill: var(--fg); font: 500 20px var(--font-sans);
+}
+.dpr-dni[data-v-bb4d3734] { fill: var(--muted); font: 400 18px var(--font-mono);
+}
+.dpr-number[data-v-bb4d3734] { fill: var(--party); font: 500 28px var(--font-mono); text-anchor: middle;
+}
+.dpr-identifiers[data-v-bb4d3734] { transition: opacity .65s ease;
+}
+.dpr-aligned .dpr-unmatched[data-v-bb4d3734] { opacity: 0; pointer-events: none;
+}
+.dpr-no-ids .dpr-identifiers[data-v-bb4d3734] { opacity: 0;
+}
+.dpr-no-ids .dpr-row-fill[data-v-bb4d3734] { x: 211px; width: 88px;
+}
+.dpr-joined .dpr-row-fill[data-v-bb4d3734] { x: 180px; width: 150px;
+}
+.dpr-no-ids .dpr-hospital[data-v-bb4d3734] { transform: translateX(105px);
+}
+.dpr-joined .dpr-a .dpr-half[data-v-bb4d3734] { transform: translateX(120px);
+}
+.dpr-joined .dpr-b .dpr-half[data-v-bb4d3734] { transform: translateX(-330px);
+}
+.dpr-seam[data-v-bb4d3734] { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 4 5; opacity: 0; transition: opacity .35s ease;
+}
+.dpr-joined .dpr-seam[data-v-bb4d3734] { opacity: .75; transition-delay: .85s;
+}
+.dpr-result-note[data-v-bb4d3734] { opacity: 0; transition: opacity .35s ease;
+}
+.dpr-joined .dpr-result-note[data-v-bb4d3734] { opacity: 1; transition-delay: 1s;
+}
+.dpr-note[data-v-bb4d3734] { fill: var(--fg); font: 400 21px var(--font-sans); text-anchor: middle;
+}
+.dpr-row-link[data-v-bb4d3734] { fill: none; stroke: var(--privacy); stroke-width: 2;
+}
+/* Entire rows use the empty middle lane; the data stay attached to their patient. */
+.dpr-forward .dpr-b .dpr-row[data-v-bb4d3734], .dpr-backward .dpr-b .dpr-row[data-v-bb4d3734] { animation-duration: 3.6s; animation-timing-function: cubic-bezier(.4,0,.2,1); animation-fill-mode: both;
+}
+.dpr-backward .dpr-b .dpr-row[data-v-bb4d3734] { animation-direction: reverse;
+}
+.dpr-backward .dpr-unmatched[data-v-bb4d3734] { transition-delay: 3.2s;
+}
+.dpr-forward .dpr-b .dpr-marta[data-v-bb4d3734] { animation-name: dpr-marta-out-bb4d3734;
+}
+.dpr-backward .dpr-b .dpr-marta[data-v-bb4d3734] { animation-name: dpr-marta-back-bb4d3734;
+}
+@keyframes dpr-marta-out-bb4d3734 {
+0% { transform: translate(0,0);
+}
+15%,72% { transform: translate(-300px,0);
+}
+86% { transform: translate(-300px,96px);
+}
+100% { transform: translate(0,96px);
+}
+}
+@keyframes dpr-marta-back-bb4d3734 {
+0% { transform: translate(0,0);
+}
+15%,72% { transform: translate(-300px,0);
+}
+86% { transform: translate(-300px,96px);
+}
+100% { transform: translate(0,96px);
+}
+}
+.dpr-forward .dpr-b .dpr-ana[data-v-bb4d3734] { animation-name: dpr-ana-out-bb4d3734;
+}
+.dpr-backward .dpr-b .dpr-ana[data-v-bb4d3734] { animation-name: dpr-ana-back-bb4d3734;
+}
+@keyframes dpr-ana-out-bb4d3734 {
+0%,15% { transform: translate(0,48px);
+}
+30%,100% { transform: translate(0,0);
+}
+}
+@keyframes dpr-ana-back-bb4d3734 {
+0%,15% { transform: translate(0,48px);
+}
+30%,100% { transform: translate(0,0);
+}
+}
+.dpr-forward .dpr-b .dpr-luis[data-v-bb4d3734] { animation-name: dpr-luis-out-bb4d3734;
+}
+.dpr-backward .dpr-b .dpr-luis[data-v-bb4d3734] { animation-name: dpr-luis-back-bb4d3734;
+}
+@keyframes dpr-luis-out-bb4d3734 {
+0%,30% { transform: translate(0,144px);
+}
+44% { transform: translate(-300px,144px);
+}
+58% { transform: translate(-300px,48px);
+}
+72%,100% { transform: translate(0,48px);
+}
+}
+@keyframes dpr-luis-back-bb4d3734 {
+0%,30% { transform: translate(0,144px);
+}
+44% { transform: translate(-300px,144px);
+}
+58% { transform: translate(-300px,48px);
+}
+72%,100% { transform: translate(0,48px);
+}
+}
+.dpr-forward .dpr-b .dpr-pere[data-v-bb4d3734] { animation-name: dpr-pere-out-bb4d3734;
+}
+.dpr-backward .dpr-b .dpr-pere[data-v-bb4d3734] { animation-name: dpr-pere-back-bb4d3734;
+}
+@keyframes dpr-pere-out-bb4d3734 {
+0%,72% { transform: translate(0,96px);
+}
+86%,100% { transform: translate(0,144px);
+}
+}
+@keyframes dpr-pere-back-bb4d3734 {
+0%,72% { transform: translate(0,96px);
+}
+86%,100% { transform: translate(0,144px);
+}
+}
+.dvs-static .dpr-board[data-v-bb4d3734] * { animation: none !important; transition: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+.dpr-board[data-v-bb4d3734] * { animation: none !important; transition: none !important;
+}
+}

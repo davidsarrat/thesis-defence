@@ -1,0 +1,1 @@
+var e=`/thesis-defence/assets/isglobal-BbF-Efte.png`;export{e as t};

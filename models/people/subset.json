@@ -1,0 +1,43 @@
+{
+  "sourceCommit": "84cff3d",
+  "defaultDownloadTargetBytes": 3000000,
+  "startup": [
+    "analyst-hero"
+  ],
+  "deferred": [
+    "malicious-hero",
+    "manager-01-middle",
+    "manager-02-middle",
+    "manager-03-middle",
+    "runner-01-hero",
+    "runner-02-hero",
+    "runner-03-hero",
+    "crowd-01-middle",
+    "crowd-01-crowd",
+    "crowd-02-crowd",
+    "crowd-03-crowd",
+    "crowd-04-crowd",
+    "crowd-05-crowd",
+    "crowd-06-crowd",
+    "crowd-07-crowd",
+    "crowd-08-crowd",
+    "crowd-09-crowd",
+    "crowd-10-crowd",
+    "crowd-01-far",
+    "crowd-02-far",
+    "crowd-03-far",
+    "crowd-04-far",
+    "crowd-05-far",
+    "crowd-06-far",
+    "crowd-07-far",
+    "crowd-08-far",
+    "crowd-09-far",
+    "crowd-10-far",
+    "judge-hero",
+    "judge-middle"
+  ],
+  "startupBytes": 907604,
+  "deferredBytes": 7386928,
+  "totalGlbBytes": 8294532,
+  "note": "Only analyst-hero is requested by the current scenes. Optional assets load when an explicitly prepared scene uses them. The judge (template 39420fb, full-bottomed wig) serves the dsFlower app-policy tableau (F06). No unused LODs."
+}

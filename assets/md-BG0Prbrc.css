@@ -1,0 +1,41 @@
+
+.lim-layer[data-v-5af31ece] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.lim-column[data-v-5af31ece] { position: absolute; top: 116px; width: 444px; --lim-ink: #9cdce2;
+}
+.lim-then[data-v-5af31ece] { left: 72px;
+}
+/* The deck's pink, clear of the Earth behind (David, 27 Oct 2026; it was amber). */
+.lim-now[data-v-5af31ece] { right: 72px; --lim-ink: var(--global, #FF8AF0);
+}
+.lim-heading[data-v-5af31ece] { margin: 0 0 12px 2px; color: var(--lim-ink); font: 600 22px/1.25 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-stack[data-v-5af31ece] { display: grid; gap: 8px;
+}
+.lim-card[data-v-5af31ece] { display: flex; align-items: center; gap: 13px; height: 88px; box-sizing: border-box; padding: 10px 14px; border: 1px solid #385267; border-radius: var(--card-radius); background: rgba(7, 19, 35, .95); box-shadow: 0 5px 18px #02071124; opacity: 0; animation: lim-arrive-5af31ece .46s cubic-bezier(.16, 1, .3, 1) var(--lim-delay) both;
+}
+.lim-now .lim-card[data-v-5af31ece] { border-color: #7a4f74;
+}
+.lim-copy[data-v-5af31ece] { min-width: 0;
+}
+.lim-title[data-v-5af31ece] { display: block; margin: 0 0 5px; color: #edf5ff; font: 650 19px/1.15 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-copy p[data-v-5af31ece] { margin: 0; color: #d0dce8; font: 450 16px/1.3 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-card[data-v-5af31ece] svg { width: 34px; height: 38px; flex: 0 0 34px; color: var(--lim-ink);
+}
+.lim-static .lim-card[data-v-5af31ece] { animation: none; opacity: 1;
+}
+@keyframes lim-arrive-5af31ece {
+from { opacity: 0; transform: translateY(12px);
+}
+to { opacity: 1; transform: translateY(0);
+}
+}
+
+/* Start the stagger only once the spatial arrival has cleared the reading area. */
+html.world-gliding .lim-layer:not(.lim-static) .lim-card { animation: none; opacity: 0;
+}
+/* «What science needs now» waits too, so it comes in its turn after the left column (David, 27 Oct 2026). */
+html.world-gliding .lim-layer:not(.lim-static) .lim-now .lim-heading { animation: none !important; opacity: 0;
+}

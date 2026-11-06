@@ -1,0 +1,136 @@
+
+.tb text[data-v-548f9c49] { font-variant-numeric: tabular-nums;
+}
+.tb-chip[data-v-548f9c49] { fill: #0a162b; stroke-width: 1.6;
+}
+.tb-letter[data-v-548f9c49] { fill: #b8cade; font: 500 17px var(--font-mono);
+}
+.tb-chip-value[data-v-548f9c49] { font: 600 22px var(--font-mono);
+}
+.tb-sub[data-v-548f9c49] { font-size: 70%; baseline-shift: sub;
+}
+.tb-sup[data-v-548f9c49] { font-size: 70%; baseline-shift: super;
+}
+.tb-note[data-v-548f9c49] { fill: #b8cade; font: 500 16px var(--font-sans);
+}
+.tb-tiny[data-v-548f9c49] { font-size: 14px;
+}
+.tb-formula[data-v-548f9c49] { fill: #edf5ff; font: 500 21px var(--font-mono);
+}
+.tb-flying[data-v-548f9c49] { font: 600 21px var(--font-mono);
+}
+.tb-big[data-v-548f9c49] { font-size: 28px; font-weight: 600;
+}
+.tb-num[data-v-548f9c49] { font-weight: 600;
+}
+.tb-expanded[data-v-548f9c49] { font-size: 19px;
+}
+.tb-link[data-v-548f9c49] { fill: none; stroke-width: 1.4; stroke-dasharray: 1; opacity: .7;
+}
+.tb-arrow[data-v-548f9c49] { fill: none; stroke-width: 1.4; stroke-dasharray: 1;
+}
+.tb-head[data-v-548f9c49] { font: 600 17px var(--font-mono);
+}
+.tb-cell[data-v-548f9c49] { fill: #0a162b;
+}
+.tb-cell-text[data-v-548f9c49] { font: 600 19px var(--font-mono);
+}
+.tb-cell-tag[data-v-548f9c49] { font: 500 13px var(--font-sans);
+}
+.tb-cell-value[data-v-548f9c49] { font: 600 20px var(--font-mono);
+}
+.tb-callout[data-v-548f9c49] { fill: #f5be72; font: 600 17px var(--font-sans);
+}
+.tb-scene[data-v-548f9c49] { fill: #edf5ff; font: 600 19px var(--font-sans);
+}
+.tb-weight[data-v-548f9c49] { fill: #b8cade; font: 500 14px var(--font-mono);
+}
+.tb-bit[data-v-548f9c49] { fill: #0a162b; stroke: #b8cade80;
+}
+.tb-bit-on[data-v-548f9c49] { stroke: #ff8af0;
+}
+.tb-bit-text[data-v-548f9c49] { font: 600 20px var(--font-mono);
+}
+.tb-math[data-v-548f9c49] { font: 500 17px var(--font-mono);
+}
+.tb-strong-b[data-v-548f9c49] { font-weight: 700; font-size: 20px;
+}
+.tb-row[data-v-548f9c49] { font: 600 16px var(--font-mono);
+}
+.tb-small[data-v-548f9c49] { font: 500 14px var(--font-mono);
+}
+.tb-env[data-v-548f9c49] { fill: #0a162b; stroke-width: 1.4;
+}
+.tb-env-tag[data-v-548f9c49] { fill: #b8cade; font: 500 10px var(--font-mono);
+}
+.tb-env-value[data-v-548f9c49] { font: 600 16px var(--font-mono);
+}
+.tb-lock[data-v-548f9c49] { fill: #0a162b; stroke: #b8cade; stroke-width: 1.2;
+}
+.tb-choose[data-v-548f9c49] { fill: none; stroke: #38c6ad; stroke-width: 1.4; stroke-dasharray: 1;
+}
+.tb-sum[data-v-548f9c49] { fill: #b8cade; font: 500 12px var(--font-mono);
+}
+.tb-colhead[data-v-548f9c49] { font: 600 14px var(--font-sans);
+}
+.tb-check[data-v-548f9c49] { fill: #b8cade; font: 500 18px var(--font-mono);
+}
+.tb-strong[data-v-548f9c49] { fill: #38c6ad; font-weight: 600;
+}
+.tb-tick[data-v-548f9c49] { fill: none; stroke: #38c6ad; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+.tb-rule[data-v-548f9c49] { fill: none; stroke: #b8cade40;
+}
+.tb-total[data-v-548f9c49] { font: 600 18px var(--font-mono);
+}
+.tb-done[data-v-548f9c49] { fill: #38c6ad; font: 600 20px var(--font-sans);
+}
+.tb-ff path[data-v-548f9c49] { fill: #f5be72;
+}
+/* Each reduction written out, «18 mod 13 = 5», the operator muted. */
+.tb-modop[data-v-548f9c49] { fill: #b8cade; font-weight: 500; font-size: 80%;
+}
+
+.dvo-product[data-v-3dfafe0c] { font-variant-numeric:tabular-nums;
+}
+.dvo-mod[data-v-3dfafe0c], .dvo-small[data-v-3dfafe0c] { fill:#b8cade; font:500 16px var(--font-sans);
+}
+.dvo-input[data-v-3dfafe0c] { font:600 28px var(--font-mono);
+}
+.dvo-math[data-v-3dfafe0c] { font:500 23px var(--font-mono);
+}
+.dvo-sub[data-v-3dfafe0c] { font-size:70%; baseline-shift:sub;
+}
+.dvo-route[data-v-3dfafe0c] { fill:none; stroke:#b8cade; stroke-width:1.3; stroke-dasharray:3 6;
+}
+.dvo-envelope[data-v-3dfafe0c] { fill:#0a162b; stroke:#7efaff; stroke-width:1.6;
+}
+.dvo-flap[data-v-3dfafe0c] { fill:none; stroke:#7efaff; stroke-width:1.6; stroke-linejoin:round;
+}
+.dvo-lock[data-v-3dfafe0c] { fill:#0a162b; stroke:#b8cade; stroke-width:1.6; stroke-linejoin:round;
+}
+.dvo-lock-label[data-v-3dfafe0c] { fill:#edf5ff; font:500 18px var(--font-mono);
+}
+.dvo-open .dvo-envelope[data-v-3dfafe0c], .dvo-open .dvo-flap[data-v-3dfafe0c] { stroke:#38c6ad;
+}
+.dvo-open-value[data-v-3dfafe0c] { fill:#ff8af0; font:600 28px var(--font-mono);
+}
+.dvo-share[data-v-3dfafe0c] { font:600 27px var(--font-mono);
+}
+.dvo-result[data-v-3dfafe0c] { fill:#38c6ad; font:600 28px var(--font-mono);
+}
+.dvo-pick[data-v-3dfafe0c] { font:600 19px var(--font-mono);
+}
+.dvo-expansion[data-v-3dfafe0c] { fill:#edf5ff; font:500 24px var(--font-mono);
+}
+.dvo-piece[data-v-3dfafe0c] { font:600 23px var(--font-mono);
+}
+.dvo-cross[data-v-3dfafe0c] { fill:#edf5ff; font:500 19px var(--font-mono);
+}
+.dvo-total[data-v-3dfafe0c] { font:600 22px var(--font-mono);
+}
+/* Each reduction written out, «18 mod 13 = 5» (David, 26 Oct 2026): the operator muted, in the line's own font. */
+.dvo-modop[data-v-3dfafe0c] { fill:#b8cade; font-weight:500; font-size:80%;
+}
+.dvo-triple-result[data-v-3dfafe0c] { font-size:25px;
+}

@@ -1,0 +1,408 @@
+{
+  "generator": "render-cloud-cumulus.py",
+  "scriptSha256": "67e2be0772f8e89eab41951becb8f3deaa3eb2df515f3d6fde511aa9e76ef3c6",
+  "algorithm": "Six broken wind-aligned shallow stratocumulus tuft volumes and two separated curly cirrus volumes, wind-stretched multiscale erosion; four oblique low-sun optical-depth solves, skylight occlusion, front-to-back volume integration",
+  "variantKinds": [
+    "stratocumulus",
+    "stratocumulus",
+    "stratocumulus",
+    "stratocumulus",
+    "stratocumulus",
+    "stratocumulus",
+    "cirrus",
+    "cirrus"
+  ],
+  "lowCloudVariants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "highCloudVariants": [
+    6,
+    7
+  ],
+  "volumeGrid": [
+    384,
+    384,
+    160
+  ],
+  "viewInclinationDegrees": 28,
+  "variants": 8,
+  "seeds": [
+    841307,
+    841786,
+    842265,
+    842744,
+    843223,
+    843702,
+    844181,
+    844660
+  ],
+  "lightingViews": [
+    "front",
+    "left",
+    "back",
+    "right"
+  ],
+  "viewAtlasBlocks": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "atlasGrid": [
+    8,
+    4
+  ],
+  "variantGrid": [
+    4,
+    2
+  ],
+  "atlasPixels": [
+    3072,
+    1536
+  ],
+  "alphaMode": "straight, lossless; premultiplied resampling",
+  "tileBoundaryAlphaMaximum": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "atlasMiBWithMipmaps": 24.0,
+  "checkpointPolicy": "Reuse is validated against script SHA256 and render arguments in checkpoint.json",
+  "lightingLinear": {
+    "sun": [
+      1.0,
+      0.5799999833106995,
+      0.27000001072883606
+    ],
+    "sky": [
+      0.7699999809265137,
+      0.4000000059604645,
+      0.36000001430511475
+    ]
+  },
+  "tonemapping": "Integrated irradiance exposed through rose-to-peach display colour curve",
+  "displayColourEndpoints": {
+    "shadow": [
+      0.8100000023841858,
+      0.41999998688697815,
+      0.38999998569488525
+    ],
+    "sunlit": [
+      1.0,
+      0.8199999928474426,
+      0.6800000071525574
+    ]
+  },
+  "cirrusDisplayColourEndpoints": {
+    "shadow": [
+      0.8299999833106995,
+      0.4699999988079071,
+      0.47999998927116394
+    ],
+    "sunlit": [
+      1.0,
+      0.8100000023841858,
+      0.6800000071525574
+    ]
+  },
+  "sourceInputs": "Original seeded procedural three-dimensional volumes; no external image inputs",
+  "bytes": 471438,
+  "sha256": "baa4e49882ea7e57be366e27e824a6c7f32afca9446ad2e7e9a182da115a4127",
+  "elapsedSeconds": 140.35,
+  "directionalAlphaIdenticalPerVariant": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "particleAlphaMaximum": [
+    246,
+    253,
+    252,
+    251,
+    244,
+    249,
+    159,
+    212
+  ],
+  "particleNonzeroAlphaAspect": [
+    3.8735632183908044,
+    4.367088607594937,
+    4.023529411764706,
+    4.3625,
+    3.797752808988764,
+    3.922222222222222,
+    4.492307692307692,
+    3.7058823529411766
+  ],
+  "particleOccupiedTileFraction": [
+    0.1271294487847222,
+    0.14042833116319445,
+    0.14361572265625,
+    0.1412014431423611,
+    0.14640977647569445,
+    0.1616143120659722,
+    0.06199815538194445,
+    0.07880995008680555
+  ],
+  "frontLightDisplayColourSummary": [
+    {
+      "variant": 0,
+      "opaqueSamples": 1881,
+      "brightFraction": 0.7671451355661882,
+      "brightMedianHsl": [
+        20.689655172413794,
+        0.813084112149533,
+        0.7921568627450981
+      ],
+      "shadeMedianHsl": [
+        9.045454545454547,
+        0.5882352941176473,
+        0.6666666666666667
+      ]
+    },
+    {
+      "variant": 1,
+      "opaqueSamples": 7689,
+      "brightFraction": 0.5637924307452205,
+      "brightMedianHsl": [
+        16.48351648351648,
+        0.7165354330708663,
+        0.7509803921568627
+      ],
+      "shadeMedianHsl": [
+        9.696969696969687,
+        0.5952380952380955,
+        0.6725490196078432
+      ]
+    },
+    {
+      "variant": 2,
+      "opaqueSamples": 8798,
+      "brightFraction": 0.6652648329165719,
+      "brightMedianHsl": [
+        17.142857142857153,
+        0.7258064516129031,
+        0.7549019607843137
+      ],
+      "shadeMedianHsl": [
+        9.000000000000002,
+        0.583815028901734,
+        0.6627450980392157
+      ]
+    },
+    {
+      "variant": 3,
+      "opaqueSamples": 10657,
+      "brightFraction": 0.4678614994839073,
+      "brightMedianHsl": [
+        16.48351648351648,
+        0.7076923076923078,
+        0.7470588235294118
+      ],
+      "shadeMedianHsl": [
+        9.696969696969687,
+        0.5952380952380955,
+        0.6725490196078432
+      ]
+    },
+    {
+      "variant": 4,
+      "opaqueSamples": 6832,
+      "brightFraction": 0.6823770491803278,
+      "brightMedianHsl": [
+        17.999999999999996,
+        0.7478991596638653,
+        0.7647058823529411
+      ],
+      "shadeMedianHsl": [
+        9.000000000000002,
+        0.5882352941176473,
+        0.665686274509804
+      ]
+    },
+    {
+      "variant": 5,
+      "opaqueSamples": 10983,
+      "brightFraction": 0.49895292725120644,
+      "brightMedianHsl": [
+        16.666666666666682,
+        0.7165354330708663,
+        0.7509803921568627
+      ],
+      "shadeMedianHsl": [
+        10.408163265306127,
+        0.6073619631901841,
+        0.6823529411764706
+      ]
+    },
+    {
+      "variant": 6,
+      "opaqueSamples": 1570,
+      "brightFraction": 1.0,
+      "brightMedianHsl": [
+        24.878048780487802,
+        1.0,
+        0.8392156862745098
+      ],
+      "shadeMedianHsl": null
+    },
+    {
+      "variant": 7,
+      "opaqueSamples": 3426,
+      "brightFraction": 1.0,
+      "brightMedianHsl": [
+        24.878048780487802,
+        1.0,
+        0.8392156862745098
+      ],
+      "shadeMedianHsl": null
+    }
+  ],
+  "particleUvBounds": [
+    [
+      0.028192476383265858,
+      0.3550312078272605,
+      1.0,
+      0.6686909581646424
+    ],
+    [
+      0.012377699055330635,
+      0.34975961538461536,
+      1.0,
+      0.642332995951417
+    ],
+    [
+      0.020285087719298246,
+      0.34185222672064774,
+      1.0,
+      0.6502403846153846
+    ],
+    [
+      0.00710610661268556,
+      0.34975961538461536,
+      1.0,
+      0.6449687921727396
+    ],
+    [
+      0.0018345141700404858,
+      0.34185222672064774,
+      0.9770791160593791,
+      0.6607835695006748
+    ],
+    [
+      0.0,
+      0.3444880229419703,
+      1.0,
+      0.6660551619433198
+    ],
+    [
+      0.05718623481781377,
+      0.3682101889338731,
+      0.9111842105263158,
+      0.6238824224021592
+    ],
+    [
+      0.02555668016194332,
+      0.32603744939271256,
+      0.9401779689608637,
+      0.6344256072874493
+    ]
+  ],
+  "particleUvBoundsMarginPixels": 16,
+  "particleUvBoundsSpace": "Original puff UV, after vertical ImageBitmap flip and inverse .006\u2013.994 atlas inset",
+  "meanParticleQuadAreaFraction": 0.29025224002261496,
+  "cropAuditScriptSha256": "2aaffc9145277daee913f5dabc6cc02649314d60c3d8c10fa451d03b482bcafc",
+  "runtime": {
+    "shaderSha256": "a7ac497370bf278aabffe98c7589491bb3a8e5b04fa965c9c73716e161a313c3",
+    "layoutSha256": "ddd08d02331e6057e810b2cf8b76406e3c731827efc03f724388d40af3d9531b",
+    "particles": 2245,
+    "nearBanks": 1664,
+    "slopeBanks": 13,
+    "farBanks": 543,
+    "highStreaks": 25,
+    "radiusMetres": 185000,
+    "worldWindEastSouthMetresPerSecond": [
+      -5,
+      -3
+    ],
+    "departureWindGain": 30,
+    "windRampSeconds": 1.8,
+    "highCloudWindFactor": 0.45,
+    "lowCloudCeilingMetres": 2960,
+    "highCloudOpticalDepthGain": 1.75,
+    "projection": "World-aligned ellipsoidal footprint with continuous positive-definite square-root shear; curved depth capped by layer thickness",
+    "singleDraw": true,
+    "triangles": 4490,
+    "highDepartureWindGain": 4.5,
+    "renewalGuardMetres": 24000,
+    "renewalFadeMetres": 18000,
+    "maximumRenewalRadiusMetres": 209000,
+    "renewal": "Departure-only excess advection renews banks beyond the coverage disk in wind-aligned tubes; zero-alpha crossing, new seeded tile and dimensions each generation",
+    "nearFarBankScale": "Far banks smoothly reduce to35% of their authored footprint below5km range, reaching authored size by25km",
+    "highDisplayLightEndpoints": [
+      [
+        0.99,
+        0.82,
+        0.74
+      ],
+      [
+        1,
+        0.92,
+        0.83
+      ]
+    ],
+    "highDisplayLightMix": 0.8,
+    "protectedOuterSkyBanks": 9
+  }
+}

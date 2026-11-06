@@ -1,0 +1,56 @@
+
+.ess[data-v-17257af4] { width: 867px; max-width: 100%; margin: 0 auto; height: auto; display: block; overflow: visible;
+}
+.ess-clock[data-v-17257af4] { fill: none;
+}
+.ess-panel[data-v-17257af4] { fill: #071323; fill-opacity: .94; stroke: #36546A; stroke-width: 1.2;
+}
+.ess-policy[data-v-17257af4] { stroke: #61BCAE; stroke-opacity: .8;
+}
+.ess-head[data-v-17257af4] { fill: var(--fg); font-family: var(--font-sans); font-size: 23px; font-weight: 600;
+}
+.ess-big-n[data-v-17257af4] { fill: var(--accent); font-family: var(--font-sans); font-size: 30px; font-weight: 700;
+}
+.ess-person[data-v-17257af4] { fill: #8FA3BD; fill-opacity: .8;
+}
+.ess-marta[data-v-17257af4] { fill: var(--data); stroke: #FFE2B0; stroke-width: 2;
+}
+.ess-marta-name[data-v-17257af4] { fill: var(--data); font-family: var(--font-sans); font-size: 15px; font-weight: 700;
+}
+.ess-label[data-v-17257af4] { fill: #C8D8E4; font-family: var(--font-sans); font-size: 18px;
+}
+.ess-eps[data-v-17257af4] { fill: var(--accent); font-family: var(--font-sans); font-size: 30px; font-weight: 600;
+}
+.ess-track[data-v-17257af4] { stroke: #4C697B; stroke-width: 5; stroke-linecap: round;
+}
+.ess-track-on[data-v-17257af4] { stroke: var(--privacy); stroke-width: 5; stroke-linecap: round;
+}
+.ess-tick[data-v-17257af4] { stroke: #95AAB9; stroke-width: 1.5;
+}
+.ess-tick-label[data-v-17257af4] { fill: #D4E0E9; font-family: var(--font-mono); font-size: 15px;
+}
+.ess-tick-label.ess-ours[data-v-17257af4] { fill: var(--data);
+}
+.ess-knob-glow[data-v-17257af4] { fill: var(--accent); fill-opacity: .14;
+}
+.ess-knob[data-v-17257af4] { fill: var(--accent); stroke: #D9FFFB; stroke-width: 2;
+}
+.ess-points[data-v-17257af4] { fill: var(--privacy); font-family: var(--font-sans); font-size: 46px; font-weight: 600;
+}
+.ess-points-unit[data-v-17257af4] { font-size: 26px; font-weight: 500;
+}
+.ess-noise[data-v-17257af4] { fill: var(--privacy); fill-opacity: .55;
+}
+.ess-result[data-v-17257af4] { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+}
+.ess-note[data-v-17257af4] { fill: #C8D8E4; font-family: var(--font-sans); font-size: 17px;
+}
+.ess-use-track[data-v-17257af4] { stroke: #304B60; stroke-width: 17; stroke-linecap: round;
+}
+.ess-use-on[data-v-17257af4] { stroke: var(--accent); stroke-width: 17; stroke-linecap: round;
+}
+.ess-use-dot[data-v-17257af4] { fill: var(--fg);
+}
+
+.pv-size[data-v-18e7998a] { height: 100%; display: flex; align-items: center; justify-content: center; padding-top: 6px;
+}

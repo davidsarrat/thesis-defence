@@ -1,0 +1,55 @@
+
+.dpf-head[data-v-ed1bb1a7] { font: 600 20px var(--font-sans); fill: var(--fg); text-anchor: middle;
+}
+.dpf-sub[data-v-ed1bb1a7] { font: 500 16px var(--font-sans); fill: var(--muted); text-anchor: middle;
+}
+.dpf-patient[data-v-ed1bb1a7] { fill: #7d93aa;
+}
+.dpf-pau[data-v-ed1bb1a7] { fill: var(--data);
+}
+.dpf-name[data-v-ed1bb1a7] { font: 600 16px var(--font-sans); fill: var(--data);
+}
+.dpf-cap[data-v-ed1bb1a7] { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-dasharray: 4 4;
+}
+.dpf-cap-label[data-v-ed1bb1a7] { font: 600 18px var(--font-sans); fill: var(--accent); text-anchor: end;
+}
+.dpf-half[data-v-ed1bb1a7] { font: 600 18px var(--font-mono); fill: var(--data);
+}
+.dpf-arrow[data-v-ed1bb1a7] { fill: none; stroke: #b8cade; stroke-width: 2.6; stroke-linecap: round;
+}
+.dpf-arrow-pau[data-v-ed1bb1a7] { fill: none; stroke: var(--data); stroke-width: 3; stroke-linecap: round;
+}
+.dpf-noise[data-v-ed1bb1a7] { fill: var(--privacy);
+}
+.dpf-reach[data-v-ed1bb1a7] { fill: none; stroke: var(--privacy); stroke-width: 1.8; stroke-dasharray: 5 4;
+}
+.dpf-halo[data-v-ed1bb1a7] { paint-order: stroke; stroke: #0a162b; stroke-width: 6px; stroke-linejoin: round;
+}
+.dpf-reach-ref[data-v-ed1bb1a7] { fill: none; stroke: #b8cade; stroke-width: 1.2; stroke-dasharray: 2 4; opacity: .55;
+}
+.dpf-update[data-v-ed1bb1a7] { fill: none; stroke: var(--privacy); stroke-width: 4; stroke-linecap: round;
+}
+.dpf-update-label[data-v-ed1bb1a7] { font: 600 22px var(--font-sans); fill: var(--privacy); text-anchor: end;
+}
+.dpf-formula[data-v-ed1bb1a7] { font: 500 20px var(--font-mono); fill: var(--fg); text-anchor: middle;
+}
+.dpf-rounds[data-v-ed1bb1a7] { font: 500 19px var(--font-sans); fill: var(--fg); text-anchor: middle;
+}
+.dpf-formula-grow[data-v-ed1bb1a7] { text-anchor: start;
+}
+.dpf-noise-term[data-v-ed1bb1a7] { fill: var(--privacy);
+}
+.dpf-sum[data-v-ed1bb1a7] { fill: none; stroke: #b8cade; stroke-width: 2; stroke-dasharray: 6 5;
+}
+.dpf-sum-label[data-v-ed1bb1a7] { font: 500 16px var(--font-sans); fill: var(--muted); text-anchor: middle;
+}
+.dpf-trying[data-v-ed1bb1a7] { stroke-width: 3; opacity: .75;
+}
+.dpf-dial-label[data-v-ed1bb1a7] { font: 600 20px var(--font-sans); fill: var(--fg);
+}
+.dpf-dial-track[data-v-ed1bb1a7] { fill: none; stroke: #4a6378; stroke-width: 4; stroke-linecap: round;
+}
+.dpf-dial-thumb[data-v-ed1bb1a7] { fill: var(--privacy); stroke: #071323; stroke-width: 2;
+}
+.dpf-dial-value[data-v-ed1bb1a7] { font: 600 20px var(--font-mono); fill: var(--privacy);
+}

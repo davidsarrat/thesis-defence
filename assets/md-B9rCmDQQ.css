@@ -1,0 +1,39 @@
+
+.ht-edge[data-v-523b4a12] { fill:none; stroke:#8cb4df; stroke-width:2;
+}
+.ht-card[data-v-523b4a12] { fill:#13243b; stroke:#8aa1b9; stroke-width:1.6;
+}
+.ht-id[data-v-523b4a12] { fill:#c8d6e5; font:17px var(--font-mono);
+}
+.ht-name[data-v-523b4a12] { fill:var(--fg); font:600 24px var(--font-sans); text-anchor:middle;
+}
+.ht-state[data-v-523b4a12] { fill:#c8d6e5; font:17px var(--font-sans); text-anchor:middle;
+}
+.ht-running .ht-card[data-v-523b4a12] { fill:#2a281c; stroke:#ffd54a;
+}
+.ht-running .ht-state[data-v-523b4a12] { fill:#ffd54a;
+}
+.ht-completed .ht-card[data-v-523b4a12] { fill:#102b26; stroke:#3cff7a;
+}
+.ht-completed .ht-state[data-v-523b4a12] { fill:#3cff7a;
+}
+.ht-loaded .ht-card[data-v-523b4a12] { fill:#123139; stroke:var(--accent);
+}
+.ht-loaded .ht-state[data-v-523b4a12] { fill:var(--accent);
+}
+/* A solid bar on a dark track (David, 27 Oct 2026: «las barras de carga más visibles»). */
+.ht-track[data-v-523b4a12] { fill:#0b1a2c; stroke:#5a5232; stroke-width:1;
+}
+.ht-bar[data-v-523b4a12] { fill:#ffd54a;
+}
+
+.hdr-layer[data-v-da5bf0b7] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.hdr-surface[data-v-da5bf0b7] { position:absolute; left:73px; top:155px; width:1134px; height:460px; box-sizing:border-box; border:1px solid var(--border); border-radius:12px; background:rgba(10,22,43,.98);
+}
+.hdr-diagram[data-v-da5bf0b7] { position:absolute; inset:0; width:1280px; height:720px;
+}
+.hdr-packet[data-v-da5bf0b7] { fill:#3cff7a; stroke:#d6ffe3; stroke-width:1.5;
+}
+.hdr-copy[data-v-da5bf0b7] { fill:var(--accent); stroke:#d6fcff;
+}

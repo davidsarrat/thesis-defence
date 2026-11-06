@@ -1,0 +1,28 @@
+
+.digit-cell[data-v-8053f6ac] { fill:#15263b; stroke:#405873; stroke-width:1.3; rx:7px;
+}
+.digit-cell.fractional[data-v-8053f6ac] { fill:#4d8ddf18; stroke:#4d8ddf;
+}
+.digit-cell.excess[data-v-8053f6ac] { fill:#f5be7224; stroke:#f5be72;
+}
+.digit-ink[data-v-8053f6ac] { fill:currentColor; font:600 33px var(--font-mono);
+}
+
+.dec-scale[data-v-3c5c7a79] { fill:#4d8ddf12; stroke:#405873; rx:7px;
+}
+.dec-encode[data-v-3c5c7a79] { fill:currentColor; font:500 18px var(--font-mono);
+}
+.dec-op[data-v-3c5c7a79], .dec-equals[data-v-3c5c7a79] { fill:currentColor; font:500 34px var(--font-mono);
+}
+.dec-equals[data-v-3c5c7a79] { fill:#b8cade;
+}
+.dec-result[data-v-3c5c7a79] { color:#edf5ff;
+}
+.dec-bracket[data-v-3c5c7a79] { fill:none; stroke:#F5BE72; stroke-width:1.6;
+}
+.dec-extra[data-v-3c5c7a79] { fill:#F5BE72;
+}
+.dec-reading[data-v-3c5c7a79] { fill:#b8cade; font:500 23px var(--font-mono);
+}
+.dec-blue[data-v-3c5c7a79] { fill:#4D8DDF;
+}

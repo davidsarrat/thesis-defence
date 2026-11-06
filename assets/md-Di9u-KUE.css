@@ -1,0 +1,56 @@
+
+.hr-layer[data-v-6fce3cbc] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.hr-layer svg[data-v-6fce3cbc] { display:block; width:1280px; height:720px;
+}
+.hr-surface[data-v-6fce3cbc] { fill:rgba(10,22,43,.98); stroke:var(--border);
+}
+.hr-same[data-v-6fce3cbc] { fill:var(--fg); font:24px var(--font-sans); text-anchor:middle;
+}
+.hr-call[data-v-6fce3cbc] { fill:var(--fg); font:600 25px var(--font-sans); text-anchor:middle;
+}
+.hr-route[data-v-6fce3cbc] { fill:none; stroke:#6f92b7; stroke-width:2;
+}
+.hr-task rect[data-v-6fce3cbc] { fill:#13243b; stroke:#8aa1b9; stroke-width:2;
+}
+.hr-task-name[data-v-6fce3cbc] { fill:var(--fg); font:600 32px var(--font-sans); text-anchor:middle;
+}
+.hr-state[data-v-6fce3cbc] { fill:#c8d6e5; font:24px var(--font-sans); text-anchor:middle;
+}
+.hr-running rect[data-v-6fce3cbc] { fill:#2a281c; stroke:#ffd54a;
+}
+.hr-running .hr-state[data-v-6fce3cbc] { fill:#ffd54a;
+}
+.hr-completed rect[data-v-6fce3cbc] { fill:#102b26; stroke:#3cff7a;
+}
+.hr-completed .hr-state[data-v-6fce3cbc] { fill:#3cff7a;
+}
+.hr-checking rect[data-v-6fce3cbc],.hr-loaded rect[data-v-6fce3cbc] { fill:#123139; stroke:var(--accent);
+}
+.hr-checking .hr-state[data-v-6fce3cbc],.hr-loaded .hr-state[data-v-6fce3cbc] { fill:var(--accent);
+}
+.hr-progress[data-v-6fce3cbc] { fill:none; stroke:#ffd54a; stroke-width:3;
+}
+.hr-completed .hr-progress[data-v-6fce3cbc] { stroke:#3cff7a;
+}
+.hr-track[data-v-6fce3cbc] { fill:#0b1a2c; stroke:#2f4a66; stroke-width:1;
+}
+.hr-bar[data-v-6fce3cbc] { fill:#ffd54a;
+}
+.hr-completed .hr-bar[data-v-6fce3cbc], .hr-loaded .hr-bar[data-v-6fce3cbc] { fill:#3cff7a;
+}
+/* Override the task's rectangle rules so progress stays solid in every state. */
+.hr-task .hr-track[data-v-6fce3cbc] { fill:#0b1a2c; stroke:#2f4a66; stroke-width:1;
+}
+.hr-task .hr-bar[data-v-6fce3cbc] { fill:#ffd54a; stroke:none;
+}
+.hr-task.hr-completed .hr-bar[data-v-6fce3cbc], .hr-task.hr-checking .hr-bar[data-v-6fce3cbc], .hr-task.hr-loaded .hr-bar[data-v-6fce3cbc] { fill:#3cff7a;
+}
+.hr-time[data-v-6fce3cbc] { fill:var(--fg); font:600 38px var(--font-sans); text-anchor:middle;
+}
+.hr-packet[data-v-6fce3cbc] { stroke:#3cff7a; stroke-width:1.5;
+}
+.hr-result-name[data-v-6fce3cbc] { fill:var(--fg); font:20px var(--font-sans); text-anchor:middle;
+}
+.hr-store-action[data-v-6fce3cbc] { fill:var(--fg); font:23px var(--font-sans); text-anchor:middle;
+}

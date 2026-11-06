@@ -1,0 +1,37 @@
+
+.vct-stage[data-v-155c12d2] { gap: 9px;
+}
+.vct-legend[data-v-155c12d2] { display: flex; justify-content: center; align-items: center; gap: 30px; height: 30px; margin-bottom: 2px;
+}
+.vct-grid[data-v-155c12d2] { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 62px; gap: 8px;
+}
+.vct-tile[data-v-155c12d2] { display: flex; flex-direction: column; justify-content: center; gap: 5px; min-width: 0; padding: 6px 10px 7px;
+  border: 1px solid var(--border); border-radius: var(--card-radius); background: rgba(10, 22, 43, .92);
+}
+.vct-name[data-v-155c12d2] { color: var(--muted); font: 500 13px/1.2 var(--font-sans); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.vct-formula[data-v-155c12d2] { color: var(--fg); font: 500 13.5px/1.35 var(--font-mono); white-space: nowrap; letter-spacing: -.02em;
+}
+.vct-foot[data-v-155c12d2] { text-align: center; color: var(--muted); font: 400 13px/1.3 var(--font-sans);
+}
+/* Sub- and superscripts stay at the 16 px label floor (12.25 px in the 980 px slide). */
+.vct-formula[data-v-155c12d2] sub, .vct-formula[data-v-155c12d2] sup { font-size: 12.25px; line-height: 0; position: relative; letter-spacing: 0;
+}
+.vct-formula[data-v-155c12d2] sup { vertical-align: super; top: 0;
+}
+.vct-formula[data-v-155c12d2] sub { vertical-align: sub; top: 0;
+}
+/* In Roboto Mono, χ reads as an x and the slashed 0 as a θ: the formulas borrow the text face for them and for their
+   sub- and superscripts. */
+.vct-formula[data-v-155c12d2] .vct-sans, .vct-formula[data-v-155c12d2] sub, .vct-formula[data-v-155c12d2] sup { font-family: var(--font-sans);
+}
+.vct-formula[data-v-155c12d2] .vct-add { color: var(--op-sum); font-weight: 700;
+}
+.vct-formula[data-v-155c12d2] .vct-mul { color: var(--op-prod); font-weight: 700;
+}
+.vct-formula[data-v-155c12d2] .vct-div { color: var(--op-div); font-weight: 700;
+}
+.vct-formula[data-v-155c12d2] .vct-exp { color: var(--op-exp); font-weight: 700;
+}
+.vct-formula[data-v-155c12d2] .vct-log { color: var(--op-log); font-weight: 700;
+}

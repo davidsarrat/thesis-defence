@@ -1,0 +1,25 @@
+
+.pm-layer[data-v-157d0573] { position: absolute; inset: 0; pointer-events: none;
+}
+.pm-scrim[data-v-157d0573] { position: absolute; inset: 0; background: rgba(5, 9, 22, .62);
+}
+/* Centred over the map's two left thirds, clear of the right-hand card. */
+.pm-sheet[data-v-157d0573] { position: absolute; left: 66px; top: 180px; margin: 0; padding: 22px 26px 18px; box-sizing: border-box; background: #fff;
+  border-radius: 10px; box-shadow: 0 22px 60px rgba(0, 0, 0, .55);
+}
+.pm-sheet img[data-v-157d0573] { display: block; width: 100%; height: auto;
+}
+.pm-sheet figcaption[data-v-157d0573] { margin-top: 14px; padding-top: 12px; border-top: 1px solid #d9dde3; display: flex; flex-direction: column; gap: 4px;
+}
+.pm-authors[data-v-157d0573] { font: 500 17px/1.35 var(--font-sans); color: #26303d;
+}
+.pm-reference[data-v-157d0573] { font: 400 16px/1.35 var(--font-sans); color: #5b6676;
+}
+.pm-enter-active[data-v-157d0573], .pm-leave-active[data-v-157d0573] { transition: opacity .35s ease;
+}
+.pm-enter-active .pm-sheet[data-v-157d0573], .pm-leave-active .pm-sheet[data-v-157d0573] { transition: transform .35s ease;
+}
+.pm-enter-from[data-v-157d0573], .pm-leave-to[data-v-157d0573] { opacity: 0;
+}
+.pm-enter-from .pm-sheet[data-v-157d0573], .pm-leave-to .pm-sheet[data-v-157d0573] { transform: translateY(14px) scale(.97);
+}

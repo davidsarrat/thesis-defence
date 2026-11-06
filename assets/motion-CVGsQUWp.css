@@ -1,0 +1,27 @@
+/* Keep the shared board frame, with the persistent world visible around the reading surface. */
+.dp-story.dvs-slide::before { background: none; }
+.dp-story .dvs-stage { padding-top: 28px; padding-bottom: 8px; }
+.dps-board { display: block; width: 100%; height: auto; max-height: 352px; overflow: visible; }
+.dps-surface { fill: rgba(10,22,43,.86); stroke: var(--border); stroke-width: 1.2; }
+.dps-panel { fill: #0d2036; stroke: var(--border); stroke-width: 1.2; }
+.dps-line { fill: none; stroke: var(--muted); stroke-opacity: .4; stroke-width: 1.4; }
+.dps-title { font: 600 22px var(--font-sans); fill: var(--fg); }
+.dps-text { font: 500 18px var(--font-sans); fill: var(--fg); }
+.dps-label { font: 500 16px var(--font-sans); fill: var(--muted); }
+.dps-small { font: 500 14px var(--font-sans); fill: var(--muted); }
+.dps-value { font: 600 38px var(--font-mono); fill: var(--fg); }
+.dps-math { font: 500 23px var(--font-mono); fill: var(--fg); }
+.dps-a { fill: var(--accent); color: var(--accent); }
+.dps-b { fill: var(--global); color: var(--global); }
+.dps-safe { fill: var(--privacy); color: var(--privacy); }
+.dps-data { fill: var(--data); color: var(--data); }
+.dps-danger { fill: var(--refused); color: var(--refused); }
+.dps-center { text-anchor: middle; }
+/* A dark halo instead of a plate, for labels over the 3D worlds (David, 27 Oct 2026). */
+.dps-halo { paint-order: stroke; stroke: #0a162b; stroke-width: 6px; stroke-linejoin: round; stroke-opacity: .85; }
+.dps-end { text-anchor: end; }
+.dps-lock { fill: none; stroke: var(--privacy); stroke-width: 1.7; stroke-linejoin: round; }
+.dps-curve { fill: none; stroke-width: 2.6; stroke-linecap: round; }
+.dps-curve-a { stroke: var(--accent); }
+.dps-curve-b { stroke: var(--global); stroke-dasharray: 6 4; }
+.dps-formula { font: 500 23px var(--font-sans); fill: var(--fg); }

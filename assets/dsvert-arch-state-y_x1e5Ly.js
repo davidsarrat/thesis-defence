@@ -1,0 +1,1 @@
+import{st as e}from"./modules/shiki-DItJl1Vm.js";var t={active:!1,mode:1,step:0,page:0,reverse:!1,revision:0},n=e({mode:1,step:0,time:0}),r;function i(e,n,i,a,o){r=e,!(t.active&&t.mode===n&&t.step===i&&t.page===a)&&Object.assign(t,{active:!0,mode:n,step:i,page:a,reverse:o,revision:t.revision+1})}function a(e){r===e&&(r=null,t.active=!1)}export{a as i,n,i as r,t};

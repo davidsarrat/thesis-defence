@@ -1,0 +1,52 @@
+
+.dvr-lock[data-v-96b5ea30] { width: 860px; max-width: 100%; margin: 0 auto; border: 1.5px solid var(--border); border-radius: var(--card-radius); background: #0a162b; overflow: hidden;
+}
+.dvr-lock-heads[data-v-96b5ea30] { display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+}
+.dvr-lock-heads header[data-v-96b5ea30] { height: 38px; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf5ff2e;
+}
+.dvr-lock-heads b[data-v-96b5ea30] { font: 600 23px var(--font-sans);
+}
+.dvr-lock-key[data-v-96b5ea30] { display: flex; align-items: center; gap: 9px; border-radius: var(--chip-radius); padding: 2px 8px; font: 500 20px var(--font-mono);
+}
+.dvr-lock-key svg[data-v-96b5ea30] { width: 28px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2;
+}
+.dvr-lock-stage[data-v-96b5ea30] { position: relative; height: 248px;
+}
+.dvr-lock-barrier[data-v-96b5ea30] { position: absolute; z-index: 1; pointer-events: none; left: 423px; top: 4px; bottom: 28px; width: 14px; border-left: 1px solid #b8cade66; border-right: 1px solid #b8cade66; background: repeating-linear-gradient(135deg, #b8cade12, #b8cade12 3px, transparent 3px, transparent 8px);
+}
+.dvr-lock-panel[data-v-96b5ea30] { position: absolute; z-index: 2; width: 420px; top: 0;
+}
+.dvr-lock-panel[data-v-96b5ea30] .dvr-plot { height: 224px;
+}
+/* Point opacity is already eased by the world clock, including during fast-forward. */
+.dvr-lock[data-v-96b5ea30] .dvr-mark { transition: none;
+}
+.dvr-lock-panel[data-v-96b5ea30] .dvr-label, .dvr-lock-saved[data-v-96b5ea30] .dvr-label, .dvr-lock-fused[data-v-96b5ea30] .dvr-label { font-size: 21px;
+}
+.dvr-lock-result[data-v-96b5ea30] { height: 24px; text-align: center; font: 500 16px/24px var(--font-sans); white-space: nowrap;
+}
+.dvr-lock-saved[data-v-96b5ea30] { position: absolute; top: 0; width: 420px; text-align: center;
+}
+.dvr-lock-saved[data-v-96b5ea30] .dvr-plot, .dvr-lock-fused[data-v-96b5ea30] .dvr-plot { height: 224px;
+}
+.dvr-lock-tag-caption[data-v-96b5ea30] { height: 24px; font: 600 21px/24px var(--font-mono); white-space: nowrap;
+}
+.dvr-lock-fused[data-v-96b5ea30] { position: absolute; z-index: 3; left: 220px; top: 0; width: 420px; text-align: center; color: #38c6ad;
+}
+.dvr-lock-formula[data-v-96b5ea30] { position: relative; height: 74px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; border-top: 1px solid #edf5ff2e; padding: 4px 14px;
+}
+.dvr-lock-fast-forward[data-v-96b5ea30] { position: absolute; right: 14px; bottom: 7px; color: var(--muted);
+}
+.dvr-lock-slope[data-v-96b5ea30] { font: 500 23px/1.2 var(--font-mono);
+}
+.dvr-lock-xy[data-v-96b5ea30] { display: flex; justify-content: center; gap: 30px; font: 500 19px/1.2 var(--font-mono);
+}
+.dvr-lock-operation[data-v-96b5ea30] { font: 400 18px/1.2 var(--font-mono); color: #b8cade;
+}
+.dvr-lock-current[data-v-96b5ea30] { font: 500 25px/1.2 var(--font-mono);
+}
+.dvr-lock-message[data-v-96b5ea30] { font: 400 22px/1.4 var(--font-sans);
+}
+.dvr-lock-equation[data-v-96b5ea30] { font: 500 27px var(--font-mono); color: #b9a6ff;
+}

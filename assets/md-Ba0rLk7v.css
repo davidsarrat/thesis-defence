@@ -1,0 +1,63 @@
+
+.dcf-board[data-v-db399eb1] { width:100%; height:360px; display:flex; flex-direction:column; padding:12px 15px 10px; gap:10px; border:1.5px solid var(--border); border-radius:var(--card-radius); background:rgba(10,22,43,.94);
+}
+.dcf-tabs[data-v-db399eb1] { display:flex; justify-content:space-between; gap:8px; border-bottom:1px solid var(--border); padding-bottom:6px;
+}
+.dcf-tabs span[data-v-db399eb1] { color:var(--muted); font:500 16px/1.2 var(--font-sans); padding:0 5px; border-bottom:2px solid transparent; transition:color .3s ease,border-color .3s ease;
+}
+.dcf-tabs .dcf-active[data-v-db399eb1] { color:var(--fg); border-bottom-color:var(--accent);
+}
+.dcf-legend[data-v-db399eb1] { display:flex; align-items:center; justify-content:space-between; gap:9px; font:400 16px/1.2 var(--font-sans); color:var(--muted);
+}
+.dcf-legend span[data-v-db399eb1] { white-space:nowrap;
+}
+.dcf-legend b[data-v-db399eb1] { margin-right:3px; font-weight:600;
+}
+.dcf-pages[data-v-db399eb1] { flex:1; min-height:0; position:relative;
+}
+.dcf-grid[data-v-db399eb1] { position:absolute; inset:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-auto-flow:row; grid-template-rows:repeat(3,minmax(0,1fr)); column-gap:26px; row-gap:12px; opacity:0; pointer-events:none; transition:opacity .18s ease;
+}
+.dcf-grid.dcf-visible[data-v-db399eb1] { opacity:1; transition-duration:.25s; transition-delay:.20s;
+}
+.dcf-grid.dcf-roomy[data-v-db399eb1] { grid-template-rows:repeat(2,minmax(0,1fr)); row-gap:16px;
+}
+.dcf-row[data-v-db399eb1] { display:flex; flex-direction:column; justify-content:center; min-width:0; padding:1px 0 8px; border-bottom:1px solid rgba(184,202,222,.13);
+}
+/* Names and row gaps separate the dense groups without a rule pressed against their second line. */
+.dcf-grid:not(.dcf-roomy) .dcf-row[data-v-db399eb1] { border-bottom-color:transparent;
+}
+.dcf-name[data-v-db399eb1] { color:var(--muted); font:500 16px/1.25 var(--font-sans); margin-bottom:3px;
+}
+.dcf-formula[data-v-db399eb1] { color:var(--fg); font:500 17px/1.45 var(--font-mono); white-space:nowrap; letter-spacing:-.035em;
+}
+.dcf-roomy .dcf-formula[data-v-db399eb1] { font-size:19px; line-height:1.45;
+}
+.dcf-explanation[data-v-db399eb1] { color:var(--muted); font:400 16px/1.2 var(--font-sans); margin-top:3px;
+}
+.dcf-footnote[data-v-db399eb1] { display:flex; justify-content:space-between; gap:18px; color:var(--muted); font:400 15px/1.3 var(--font-sans); border-top:1px solid var(--border); padding-top:7px; white-space:nowrap;
+}
+.dcf-footnote b[data-v-db399eb1] { margin-right:4px;
+}
+.dcf-board[data-v-db399eb1] sub, .dcf-board[data-v-db399eb1] sup { font-size:16px; line-height:0; position:relative;
+}
+.dcf-board[data-v-db399eb1] sup { vertical-align:super; top:0;
+}
+.dcf-board[data-v-db399eb1] sub { vertical-align:sub; top:0;
+}
+.dcf-board[data-v-db399eb1] .dcf-sum, .dcf-legend .dcf-sum[data-v-db399eb1] { color:var(--op-sum); font-weight:650;
+}
+.dcf-board[data-v-db399eb1] .dcf-product, .dcf-legend .dcf-product[data-v-db399eb1] { color:var(--op-prod); font-weight:650;
+}
+.dcf-board[data-v-db399eb1] .dcf-divide, .dcf-legend .dcf-divide[data-v-db399eb1] { color:var(--op-div); font-weight:650;
+}
+.dcf-board[data-v-db399eb1] .dcf-curve, .dcf-legend .dcf-curve[data-v-db399eb1] { color:var(--op-curve); font-weight:650;
+}
+/* Afterwards in its own colour, not plain white: it read like the formulas' text. */
+.dcf-board[data-v-db399eb1] .dcf-after, .dcf-legend .dcf-after[data-v-db399eb1] { color:var(--global); font-weight:650;
+}
+.dcf-board[data-v-db399eb1] .dcf-after > sup { margin-left:1px;
+}
+.dvs-static { transition:none;
+}
+.motion-reduced { transition:none;
+}

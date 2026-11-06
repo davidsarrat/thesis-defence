@@ -1,0 +1,849 @@
+{
+  "renderer": "Blender 4.2.0 Cycles CPU",
+  "layerRenderSettings": {
+    "sky": {
+      "samples": 64,
+      "adaptiveThreshold": 0.014999999664723873,
+      "volumeBounces": 2,
+      "volumeStepRate": 2.0,
+      "resolution": [
+        3072,
+        1728
+      ],
+      "geometryStride": 3,
+      "encoding": "lossless WebP",
+      "sourcePngBitDepth": 16,
+      "renderCrop": null,
+      "areaFillEnergy": 5000.0,
+      "cameraProjection": "PERSP",
+      "cameraLocalENU": [
+        0.0,
+        28.0,
+        2.5
+      ],
+      "cameraEulerXYZ": [
+        1.570796251296997,
+        -6.260920315526164e-08,
+        -2.863292932510376
+      ],
+      "orthoWidthKilometres": null
+    },
+    "environment": {
+      "samples": 64,
+      "adaptiveThreshold": 0.014999999664723873,
+      "volumeBounces": 2,
+      "volumeStepRate": 2.0,
+      "resolution": [
+        1024,
+        512
+      ],
+      "geometryStride": 3,
+      "encoding": "lossless WebP",
+      "sourcePngBitDepth": 16,
+      "renderCrop": null,
+      "areaFillEnergy": 5000.0,
+      "cameraProjection": "PANO",
+      "cameraLocalENU": [
+        0.0,
+        28.0,
+        2.5
+      ],
+      "cameraEulerXYZ": [
+        1.5707963705062866,
+        0.0,
+        0.0
+      ],
+      "orthoWidthKilometres": null
+    },
+    "land": {
+      "samples": 128,
+      "adaptiveThreshold": 0.014999999664723873,
+      "volumeBounces": 2,
+      "volumeStepRate": 2.0,
+      "resolution": [
+        3072,
+        1728
+      ],
+      "geometryStride": 1,
+      "encoding": "WebP quality 99, lossless alpha",
+      "sourcePngBitDepth": 8,
+      "renderCrop": null,
+      "areaFillEnergy": 5000.0,
+      "cameraProjection": "PERSP",
+      "cameraLocalENU": [
+        0.0,
+        28.0,
+        2.5
+      ],
+      "cameraEulerXYZ": [
+        1.570796251296997,
+        -6.260920315526164e-08,
+        -2.863292932510376
+      ],
+      "orthoWidthKilometres": null
+    },
+    "cloud-far": {
+      "samples": 48,
+      "adaptiveThreshold": 0.014999999664723873,
+      "volumeBounces": 2,
+      "volumeStepRate": 2.0,
+      "resolution": [
+        4096,
+        512
+      ],
+      "geometryStride": 3,
+      "encoding": "WebP quality 99, lossless alpha",
+      "sourcePngBitDepth": 8,
+      "areaFillEnergy": 0.0,
+      "cameraProjection": "ORTHO",
+      "cameraLocalENU": [
+        -9.615239143371582,
+        33.65333557128906,
+        6.699999809265137
+      ],
+      "cameraEulerXYZ": [
+        1.4056477546691895,
+        -9.79972369918869e-08,
+        -2.863292932510376
+      ],
+      "orthoWidthKilometres": 90.0
+    },
+    "cloud-near": {
+      "samples": 32,
+      "adaptiveThreshold": 0.014999999664723873,
+      "volumeBounces": 2,
+      "volumeStepRate": 2.0,
+      "resolution": [
+        8192,
+        768
+      ],
+      "geometryStride": 3,
+      "encoding": "WebP quality 99, lossless alpha",
+      "sourcePngBitDepth": 8,
+      "areaFillEnergy": 0.0,
+      "cameraProjection": "ORTHO",
+      "cameraLocalENU": [
+        -6.593306541442871,
+        23.07657241821289,
+        13.300000190734863
+      ],
+      "cameraEulerXYZ": [
+        1.1902899742126465,
+        -5.8060614094301854e-08,
+        -2.863292932510376
+      ],
+      "orthoWidthKilometres": 72.0
+    }
+  },
+  "denoising": "OpenImageDenoise",
+  "colourTransform": "AgX Medium High Contrast, exposure +0.35; warm print RGB multipliers 1.015/0.995/0.975; +/-0.65 code-value dither",
+  "resolution": [
+    3072,
+    1728
+  ],
+  "cameraMetres": [
+    0.0,
+    28000.0,
+    2500.0
+  ],
+  "targetMetres": [
+    8000.0,
+    0.0,
+    2500.0
+  ],
+  "verticalFovDegrees": 38,
+  "overscan": 1.1363636363636365,
+  "visibleUv": [
+    0.06000000000000005,
+    0.94
+  ],
+  "sunDirectionLocalENU": [
+    0.6973116397857666,
+    -0.7142014503479004,
+    0.06060187518596649
+  ],
+  "sunCameraDirection": [
+    -0.54,
+    0.069,
+    1.0
+  ],
+  "sunLinearColour": [
+    1.0,
+    0.68,
+    0.4
+  ],
+  "sunEnergy": 3.799999952316284,
+  "sunElevationDegrees": 3.4743605445621872,
+  "terrainMaterial": {
+    "aerialPerspective": "1-exp(-0.0028*max(0,distanceKm-15)); warm peach scattering",
+    "ice": "Unclipped Sentinel-2 B04/B03/B02 linear reflectance times 0.8 inside the original TCI/altitude footprint; 15m colour prefilter within a 20m boundary band, original mask/50% contour unchanged; restrained 16m surface normals and terrain-following edge relief",
+    "key": "Low golden directional light; warm neutral area fill preserves forest colour"
+  },
+  "sunScreen": [
+    0.059,
+    0.4
+  ],
+  "cloudLayers": [
+    "cloud-far.webp",
+    "cloud-near.webp"
+  ],
+  "cloudStripProjection": {
+    "cloud-near.webp": {
+      "projection": "orthographic",
+      "periodKilometres": 72,
+      "size": [
+        8192,
+        768
+      ],
+      "window": 0.22,
+      "frameBandTopDown": [
+        0.55,
+        1.12
+      ],
+      "crossingSeconds": 60
+    },
+    "cloud-far.webp": {
+      "projection": "orthographic",
+      "periodKilometres": 90,
+      "size": [
+        4096,
+        512
+      ],
+      "window": 0.44,
+      "frameBandTopDown": [
+        0.4,
+        0.72
+      ],
+      "crossingSeconds": 240
+    },
+    "horizontalRepeat": "Periodic volume fields with duplicated edge shadow casters",
+    "startUv": 0.04,
+    "terrainOcclusion": "Independent photographic depth layers; no measured terrain occluder"
+  },
+  "geographyOrigin": [
+    37.355,
+    -3.067
+  ],
+  "terrainGrids": {
+    "mountain": {
+      "shape": [
+        1061,
+        1501
+      ],
+      "bounds": [
+        37.18,
+        -3.24,
+        37.59,
+        -2.95
+      ],
+      "heightRangeMetres": [
+        1209.7720947265625,
+        5885.1767578125
+      ],
+      "sourcePostingArcseconds": 1,
+      "verticalExaggeration": 1
+    },
+    "fine": {
+      "shape": [
+        1067,
+        1201
+      ],
+      "bounds": [
+        36.9,
+        -3.5,
+        37.8,
+        -2.7
+      ],
+      "heightRangeMetres": [
+        698.50244140625,
+        5882.3076171875
+      ],
+      "sourcePostingArcseconds": 1,
+      "verticalExaggeration": 1
+    },
+    "far": {
+      "shape": [
+        501,
+        501
+      ],
+      "bounds": [
+        36,
+        -5,
+        39,
+        -2
+      ],
+      "heightRangeMetres": [
+        64.68000030517578,
+        5838.39990234375
+      ],
+      "sourcePostingArcseconds": 1,
+      "verticalExaggeration": 1
+    }
+  },
+  "environmentHorizontalRollPixels": 315,
+  "alpha": "straight / unassociated",
+  "data": {
+    "bounds": [
+      36.9,
+      -3.5,
+      37.8,
+      -2.7
+    ],
+    "sources": [
+      {
+        "id": "S05E036",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S05/S05E036.hgt.gz",
+        "sha256": "ba30769516e3f926baf1848afb79098a499c30b0df6916ac90b06106ea429227",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S05E037",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S05/S05E037.hgt.gz",
+        "sha256": "4177a05e8947df7707368c048ff506f358a1d1abb27dbdd69d19ae9877f35d96",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S05E038",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S05/S05E038.hgt.gz",
+        "sha256": "0ad9768a52263746a1d41a3e25627ac6d8241dc604858de383bd7a7882b97134",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S04E036",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S04/S04E036.hgt.gz",
+        "sha256": "20bd2792fc2425e97de9844c3d89075da5d05ed99bdef817b24ff100d660bb16",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S04E037",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S04/S04E037.hgt.gz",
+        "sha256": "37c55b464389712aca02bf8eba2e39072b273cc16efb9867eb403daa3581f96c",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S04E038",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S04/S04E038.hgt.gz",
+        "sha256": "7b35af53888dc9d42e4a8e8b3fca5a36529bc8dd3aa0eece10c3bcdfc4273b60",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S03E036",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S03/S03E036.hgt.gz",
+        "sha256": "2d5c8cf28fa9771aaf9af5ae78b9bc7559b7958b1570d164b70656b6cda92bf4",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S03E037",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S03/S03E037.hgt.gz",
+        "sha256": "c7d02b515cd0530624327a5da9c734587a2681e2ba70d4a14a207a00dfb4e0fa",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S03E038",
+        "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S03/S03E038.hgt.gz",
+        "sha256": "5c35495099ea0dbb81d8014b4a995bc8b5a84cac4e36a82edb2bd5dd1f61a9ab",
+        "licence": "Public-domain NASA/NGA/USGS SRTM, distributed by Mapzen/Tilezen"
+      },
+      {
+        "id": "S2B_37MCS_20250830_1_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/8/S2B_37MCS_20250830_1_L2A/TCI.tif",
+        "date": "2025-08-30T08:00:49.620000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MBS_20250830_1_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/BS/2025/8/S2B_37MBS_20250830_1_L2A/TCI.tif",
+        "date": "2025-08-30T08:00:58.178000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2A_37MCS_20250916_1_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2A_37MCS_20250916_1_L2A/TCI.tif",
+        "date": "2025-09-16T08:01:04.413000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2A_37MBS_20250906_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/BS/2025/9/S2A_37MBS_20250906_0_L2A/TCI.tif",
+        "date": "2025-09-06T08:01:07.499000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MCS_20250221_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/2/S2B_37MCS_20250221_0_L2A/TCI.tif",
+        "date": "2025-02-21T08:00:55.269000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MCS_20240914_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2024/9/S2B_37MCS_20240914_0_L2A/TCI.tif",
+        "date": "2024-09-14T08:00:50.415000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MBS_20250929_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/BS/2025/9/S2B_37MBS_20250929_0_L2A/TCI.tif",
+        "date": "2025-09-29T08:00:54.692000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MCS_20250929_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2B_37MCS_20250929_0_L2A/TCI.tif",
+        "date": "2025-09-29T08:00:51.087000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2025"
+      },
+      {
+        "id": "S2B_37MBS_20240914_0_L2A",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/BS/2024/9/S2B_37MBS_20240914_0_L2A/TCI.tif",
+        "date": "2024-09-14T08:00:54.018000Z",
+        "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+        "attribution": "Contains modified Copernicus Sentinel data 2024"
+      }
+    ],
+    "imageryOperations": "Bilinear EPSG:4326 mosaic, RGB true-colour products; Sentinel SCL cloud, cirrus and shadow classes excluded; closest valid temporal sample selected. Residual off-swath gaps and bright SCL cloud-edge fringes below 4700 m filled from nearest valid measured RGB; summit ice is unchanged. No painted glacier or synthetic snow cap.",
+    "lowAltitudeCloudFringeCorrectionFraction": 0.049847014819289,
+    "lowerSlopeColour": "Prefer clear Sentinel-2 2024-09-14 below 4350 m, taper to unchanged 2025 summit at 4700 m; SCL invalid classes dilated 24 pixels (~300 m) before sampling. Residual neutral cloud fringes below 4000 m nearest-filled from neighbouring measured RGB.",
+    "lowerSlopeFringeCorrectionFraction": 0.11049172040755459
+  },
+  "iceReflectance": {
+    "sourceItemsInMosaicOrder": [
+      "S2B_37MCS_20250830_1_L2A",
+      "S2A_37MCS_20250916_1_L2A",
+      "S2B_37MCS_20250221_0_L2A",
+      "S2B_37MCS_20240914_0_L2A",
+      "S2B_37MCS_20250929_0_L2A"
+    ],
+    "originalInputs": {
+      "terrain-colour.png": "c0f97b9ad44c8878a7a8e68776f984c686ed346c156c0710e79a8860e55e8679",
+      "terrain-dem.npz": "5aefe2da3a624e1af7c4c7a82c7f6c05ebc2d9bfe54a3b8710e39df179042e09"
+    },
+    "sourceBoundsWsen": [
+      37.28,
+      -3.14,
+      37.43,
+      -2.99
+    ],
+    "sourcePixelMetres": 10,
+    "sources": [
+      {
+        "item": "S2B_37MCS_20250830_1_L2A",
+        "band": "red",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/8/S2B_37MCS_20250830_1_L2A/B04.tif",
+        "sourceDate": "2025-08-30T08:00:49.620000Z",
+        "windowFile": "kibo-red-raw.tif",
+        "windowSha256": "eadc3de843d669efab557cd9e1b9182f8f35e6138c3db063120dd697744e1c93"
+      },
+      {
+        "item": "S2B_37MCS_20250830_1_L2A",
+        "band": "green",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/8/S2B_37MCS_20250830_1_L2A/B03.tif",
+        "sourceDate": "2025-08-30T08:00:49.620000Z",
+        "windowFile": "kibo-green-raw.tif",
+        "windowSha256": "0b794a2e8fda0283877f5c31053654f2df730c3417ed67591830be9c99944f3c"
+      },
+      {
+        "item": "S2B_37MCS_20250830_1_L2A",
+        "band": "blue",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/8/S2B_37MCS_20250830_1_L2A/B02.tif",
+        "sourceDate": "2025-08-30T08:00:49.620000Z",
+        "windowFile": "kibo-blue-raw.tif",
+        "windowSha256": "391dbdc30df83ce0af0bff1cd6d8d00ec6107277cb902a7c0fb01a78e1eb7a39"
+      },
+      {
+        "item": "S2B_37MCS_20250830_1_L2A",
+        "band": "scl",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/8/S2B_37MCS_20250830_1_L2A/SCL.tif",
+        "sourceDate": "2025-08-30T08:00:49.620000Z",
+        "windowFile": "kibo-scl-raw.tif",
+        "windowSha256": "c97865ae64506ae6d97aa9e387548fee2fb75c3220cf0e71a4f6c81c2d525fc7"
+      },
+      {
+        "item": "S2A_37MCS_20250916_1_L2A",
+        "band": "red",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2A_37MCS_20250916_1_L2A/B04.tif",
+        "sourceDate": "2025-09-16T08:01:04.413000Z",
+        "windowFile": "kibo-S2A_37MCS_20250916_1_L2A-red-raw.tif",
+        "windowSha256": "02888029edab6852274f05aef3555df30e8575c8ae883da050de012120f041a2"
+      },
+      {
+        "item": "S2A_37MCS_20250916_1_L2A",
+        "band": "green",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2A_37MCS_20250916_1_L2A/B03.tif",
+        "sourceDate": "2025-09-16T08:01:04.413000Z",
+        "windowFile": "kibo-S2A_37MCS_20250916_1_L2A-green-raw.tif",
+        "windowSha256": "497ea9e36b7c13e176510731432a72653710526fbfbec0132720665f12574091"
+      },
+      {
+        "item": "S2A_37MCS_20250916_1_L2A",
+        "band": "blue",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2A_37MCS_20250916_1_L2A/B02.tif",
+        "sourceDate": "2025-09-16T08:01:04.413000Z",
+        "windowFile": "kibo-S2A_37MCS_20250916_1_L2A-blue-raw.tif",
+        "windowSha256": "1d123928c989a8f1e6868fdd7357ce64889ea066f76be9d4c924adff28c74b7d"
+      },
+      {
+        "item": "S2A_37MCS_20250916_1_L2A",
+        "band": "scl",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2A_37MCS_20250916_1_L2A/SCL.tif",
+        "sourceDate": "2025-09-16T08:01:04.413000Z",
+        "windowFile": "kibo-S2A_37MCS_20250916_1_L2A-scl-raw.tif",
+        "windowSha256": "c74aeb9db50a9e326e12d49931564cc02d60ce8c032a1c54d1ad275b59252a3c"
+      },
+      {
+        "item": "S2B_37MCS_20250221_0_L2A",
+        "band": "red",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/2/S2B_37MCS_20250221_0_L2A/B04.tif",
+        "sourceDate": "2025-02-21T08:00:55.269000Z",
+        "windowFile": "kibo-S2B_37MCS_20250221_0_L2A-red-raw.tif",
+        "windowSha256": "95a0da618dca95d48b4828e7c1a571a0533c55d6478632443b89964eddcc923a"
+      },
+      {
+        "item": "S2B_37MCS_20250221_0_L2A",
+        "band": "green",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/2/S2B_37MCS_20250221_0_L2A/B03.tif",
+        "sourceDate": "2025-02-21T08:00:55.269000Z",
+        "windowFile": "kibo-S2B_37MCS_20250221_0_L2A-green-raw.tif",
+        "windowSha256": "055a3cbecc4e018af65af926442039242ac6398ae2bac40b81576052772fb66d"
+      },
+      {
+        "item": "S2B_37MCS_20250221_0_L2A",
+        "band": "blue",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/2/S2B_37MCS_20250221_0_L2A/B02.tif",
+        "sourceDate": "2025-02-21T08:00:55.269000Z",
+        "windowFile": "kibo-S2B_37MCS_20250221_0_L2A-blue-raw.tif",
+        "windowSha256": "38d3c0f11af31a6970690190de8c12d0249b7d27e97885298c23dc5a62d8f3da"
+      },
+      {
+        "item": "S2B_37MCS_20250221_0_L2A",
+        "band": "scl",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/2/S2B_37MCS_20250221_0_L2A/SCL.tif",
+        "sourceDate": "2025-02-21T08:00:55.269000Z",
+        "windowFile": "kibo-S2B_37MCS_20250221_0_L2A-scl-raw.tif",
+        "windowSha256": "b1b4f3035fa44e11968667a8992b7996f1725da5e4c1a544e8800628dc5ea9a8"
+      },
+      {
+        "item": "S2B_37MCS_20240914_0_L2A",
+        "band": "red",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2024/9/S2B_37MCS_20240914_0_L2A/B04.tif",
+        "sourceDate": "2024-09-14T08:00:50.415000Z",
+        "windowFile": "kibo-S2B_37MCS_20240914_0_L2A-red-raw.tif",
+        "windowSha256": "7234ba176d6ed35e56bc264f0addfd1c3a4e58834aa33c8092a755994aae6b1f"
+      },
+      {
+        "item": "S2B_37MCS_20240914_0_L2A",
+        "band": "green",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2024/9/S2B_37MCS_20240914_0_L2A/B03.tif",
+        "sourceDate": "2024-09-14T08:00:50.415000Z",
+        "windowFile": "kibo-S2B_37MCS_20240914_0_L2A-green-raw.tif",
+        "windowSha256": "c715e9d3d78d8e35d2fac5442d6bb2c39facd54462976ac0869ed76160d72c12"
+      },
+      {
+        "item": "S2B_37MCS_20240914_0_L2A",
+        "band": "blue",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2024/9/S2B_37MCS_20240914_0_L2A/B02.tif",
+        "sourceDate": "2024-09-14T08:00:50.415000Z",
+        "windowFile": "kibo-S2B_37MCS_20240914_0_L2A-blue-raw.tif",
+        "windowSha256": "2bec4ab8a3309eca3dea3554425659675eb74b2cf3f6d87ff5afcae6c7d135b2"
+      },
+      {
+        "item": "S2B_37MCS_20240914_0_L2A",
+        "band": "scl",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2024/9/S2B_37MCS_20240914_0_L2A/SCL.tif",
+        "sourceDate": "2024-09-14T08:00:50.415000Z",
+        "windowFile": "kibo-S2B_37MCS_20240914_0_L2A-scl-raw.tif",
+        "windowSha256": "1d61e4e136944d307945738fb61d0455048355042fd269369e2ad53277f32e63"
+      },
+      {
+        "item": "S2B_37MCS_20250929_0_L2A",
+        "band": "red",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2B_37MCS_20250929_0_L2A/B04.tif",
+        "sourceDate": "2025-09-29T08:00:51.087000Z",
+        "windowFile": "kibo-S2B_37MCS_20250929_0_L2A-red-raw.tif",
+        "windowSha256": "0b73548dcc44b8cdd160df38d647527e3708abef59fd4e7f60c6d408b7874504"
+      },
+      {
+        "item": "S2B_37MCS_20250929_0_L2A",
+        "band": "green",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2B_37MCS_20250929_0_L2A/B03.tif",
+        "sourceDate": "2025-09-29T08:00:51.087000Z",
+        "windowFile": "kibo-S2B_37MCS_20250929_0_L2A-green-raw.tif",
+        "windowSha256": "dc0ef5fe5ea236bfd687255e393fa34ff1551ac778d97e59dd95ffa2dcb4728e"
+      },
+      {
+        "item": "S2B_37MCS_20250929_0_L2A",
+        "band": "blue",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2B_37MCS_20250929_0_L2A/B02.tif",
+        "sourceDate": "2025-09-29T08:00:51.087000Z",
+        "windowFile": "kibo-S2B_37MCS_20250929_0_L2A-blue-raw.tif",
+        "windowSha256": "4a8f92fa82a1ab4ebb21714c98103851f11f32a2211ee1cd25155b268db25dc8"
+      },
+      {
+        "item": "S2B_37MCS_20250929_0_L2A",
+        "band": "scl",
+        "url": "https://sentinel-cogs.s3.us-west-2.amazonaws.com/sentinel-s2-l2a-cogs/37/M/CS/2025/9/S2B_37MCS_20250929_0_L2A/SCL.tif",
+        "sourceDate": "2025-09-29T08:00:51.087000Z",
+        "windowFile": "kibo-S2B_37MCS_20250929_0_L2A-scl-raw.tif",
+        "windowSha256": "dc044130f2daba1c23bea8e11fc5c69788c399b92220d3b70453b9dd2d4746f7"
+      }
+    ],
+    "scale": 0.0001,
+    "offsetVerification": [
+      {
+        "item": "S2B_37MCS_20250830_1_L2A",
+        "reference": "https://github.com/Element84/earth-search/issues/9",
+        "comparisonItem": "S2B_T37MCS_20250830T074927_L2A",
+        "comparisonUrl": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/37/M/CS/2025/8/S2B_T37MCS_20250830T074927_L2A/B04.tif",
+        "comparisonSha256": "8702611fc5828a6829f4f09b7de0939a507c7446bb1f0fc421a5658840774383",
+        "comparedPixels": 2773870,
+        "medianDifferenceDn": 1000,
+        "exactDifferencePixels": 2773857,
+        "exactFraction": 0.9999953134069008,
+        "effectiveLegacyOffset": 0.0
+      },
+      {
+        "item": "S2A_37MCS_20250916_1_L2A",
+        "reference": "https://github.com/Element84/earth-search/issues/9",
+        "comparisonItem": "S2A_T37MCS_20250916T075445_L2A",
+        "comparisonUrl": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/37/M/CS/2025/9/S2A_T37MCS_20250916T075445_L2A/B04.tif",
+        "comparisonSha256": "aa2fff3d4968e3462784ff469e6682b032f9f64c2abe90db2136875e2cf7b4f9",
+        "comparedPixels": 2773868,
+        "medianDifferenceDn": 1000,
+        "exactDifferencePixels": 2773312,
+        "exactFraction": 0.9997995578736983,
+        "effectiveLegacyOffset": 0.0
+      },
+      {
+        "item": "S2B_37MCS_20250221_0_L2A",
+        "reference": "https://github.com/Element84/earth-search/issues/9",
+        "comparisonItem": "S2B_T37MCS_20250221T075339_L2A",
+        "comparisonUrl": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/37/M/CS/2025/2/S2B_T37MCS_20250221T075339_L2A/B04.tif",
+        "comparisonSha256": "9e01bfc91963f57c815fcacb41e76e17bc953b173ddd83471d574077b4f752e9",
+        "comparedPixels": 2773870,
+        "medianDifferenceDn": 1000,
+        "exactDifferencePixels": 2773870,
+        "exactFraction": 1.0,
+        "effectiveLegacyOffset": 0.0
+      },
+      {
+        "item": "S2B_37MCS_20240914_0_L2A",
+        "reference": "https://github.com/Element84/earth-search/issues/9",
+        "comparisonItem": "S2B_T37MCS_20240914T075345_L2A",
+        "comparisonUrl": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/37/M/CS/2024/9/S2B_T37MCS_20240914T075345_L2A/B04.tif",
+        "comparisonSha256": "096dde1f85e8e61a4486c15b5d2a28161c96aedb947bdf7a8e979993adba0336",
+        "comparedPixels": 2773870,
+        "medianDifferenceDn": 1000,
+        "exactDifferencePixels": 2773870,
+        "exactFraction": 1.0,
+        "effectiveLegacyOffset": 0.0
+      },
+      {
+        "item": "S2B_37MCS_20250929_0_L2A",
+        "reference": "https://github.com/Element84/earth-search/issues/9",
+        "comparisonItem": "S2B_T37MCS_20250929T075610_L2A",
+        "comparisonUrl": "https://e84-earth-search-sentinel-data.s3.us-west-2.amazonaws.com/sentinel-2-c1-l2a/37/M/CS/2025/9/S2B_T37MCS_20250929T075610_L2A/B04.tif",
+        "comparisonSha256": "79f3eeca1819870d3e7e016b509d8a8330dbe61f9df9a6711c7d81b9342d3569",
+        "comparedPixels": 2773870,
+        "medianDifferenceDn": 1000,
+        "exactDifferencePixels": 2773870,
+        "exactFraction": 1.0,
+        "effectiveLegacyOffset": 0.0
+      }
+    ],
+    "output": {
+      "file": "mountain-ice-reflectance.exr",
+      "sha256": "270526526387e437e1fdad77e6b0cfa6502e15e80042018a3a30622c460859d7",
+      "size": [
+        3732,
+        2639
+      ],
+      "boundsWsen": [
+        37.18,
+        -3.24,
+        37.59,
+        -2.95
+      ],
+      "encoding": "32-bit float RGBA, linear BOA reflectance; use Non-Color in Blender; alpha is original ice footprint multiplied by clear valid source classes",
+      "resampling": "Bilinear EPSG:32737 to EPSG:4326 for reflectance; nearest neighbour for scene classification; first valid acquisition in the original display mosaic order",
+      "footprint": "Existing TCI linear luminance 0.48\u20130.78 multiplied by measured terrain altitude 4.6\u20134.85 km; no dilation or new snow",
+      "mask": "mountain-ice-footprint.png",
+      "maskSha256": "927553149bc85927475bc8a57f045db3e4a2716d428607dad3ecd512d25cdd5d"
+    },
+    "statistics": {
+      "originalFootprintPixels": 60918,
+      "validFootprintPixels": 54715,
+      "clippedInteriorPixels": 35067,
+      "originalTCIStandardDeviationAtClippedPixels": 0,
+      "reflectanceAtClippedPixels": {
+        "red": {
+          "minimum": 0.0668749287724495,
+          "maximum": 1.5361605882644653,
+          "mean": 0.6761521697044373,
+          "standardDeviation": 0.15509067475795746,
+          "percentiles5_50_95": [
+            0.39417974948883056,
+            0.7206383347511292,
+            0.8489526391029357
+          ]
+        },
+        "green": {
+          "minimum": 0.053876474499702454,
+          "maximum": 1.5543999671936035,
+          "mean": 0.7146843671798706,
+          "standardDeviation": 0.17831102013587952,
+          "percentiles5_50_95": [
+            0.3903848946094513,
+            0.7602490186691284,
+            0.9205564141273498
+          ]
+        },
+        "blue": {
+          "minimum": 0.035605255514383316,
+          "maximum": 1.5749032497406006,
+          "mean": 0.7158993482589722,
+          "standardDeviation": 0.18654987215995789,
+          "percentiles5_50_95": [
+            0.3772910863161087,
+            0.7610949277877808,
+            0.9370131015777587
+          ]
+        }
+      },
+      "originalFootprintCoverage": 0.898174595357694,
+      "footprintPixelsOutsideKiboCrop": 1362,
+      "kiboFootprintCoverage": 0.9187151588420982
+    },
+    "licence": "Copernicus Sentinel Data Legal Notice; free, full and open",
+    "licenceUrl": "https://sentinels.copernicus.eu/documents/247904/690755/Sentinel_Data_Legal_Notice",
+    "attribution": "Contains modified Copernicus Sentinel data 2024\u20132025"
+  },
+  "intermediates": {
+    "terrain-colour.png": {
+      "sha256": "c0f97b9ad44c8878a7a8e68776f984c686ed346c156c0710e79a8860e55e8679",
+      "bytes": 87335575
+    },
+    "terrain-dem.npz": {
+      "sha256": "5aefe2da3a624e1af7c4c7a82c7f6c05ebc2d9bfe54a3b8710e39df179042e09",
+      "bytes": 10267803
+    },
+    "mountain-ice-reflectance.exr": {
+      "sha256": "270526526387e437e1fdad77e6b0cfa6502e15e80042018a3a30622c460859d7",
+      "bytes": 22196213
+    },
+    "mountain-material-ice-edge.exr": {
+      "sha256": "b17f224b82646167fd2558f8da2da36233d03408426c128f911b416f031004a0",
+      "bytes": 57318740
+    }
+  },
+  "scripts": {
+    "docs/world/plane-africa/render-ending-plate.py": {
+      "sha256": "0e8211d32e0ce77111fa4126319df7b5030d4b9c56d6d555cbbd3beb55e15c1d",
+      "bytes": 36786
+    },
+    "docs/world/plane-africa/prepare-ending-plate.py": {
+      "sha256": "b8c103a58dcdaec41054c75f9fbb5603c2b25088a0b30006c29ee092f98844b7",
+      "bytes": 7448
+    },
+    "docs/world/plane-africa/prepare-ending-forest.py": {
+      "sha256": "fb4e772b8116d7994e6d13d9de830678ed6dea728119984036befeef3646ecaf",
+      "bytes": 4893
+    },
+    "docs/world/plane-africa/prepare-ending-ice.py": {
+      "sha256": "b6c91b5712393721d1ab0f9dc938131a5d346d637a30e8a9e02fe9de5cf46be1",
+      "bytes": 12776
+    }
+  },
+  "files": {
+    "cloud-near.webp": {
+      "bytes": 1547718,
+      "sha256": "3c4c37dce7bd024e0bfdc58292ccdc9f0aab6f09e2788c70cf03d25d4097d1a4",
+      "resolution": [
+        8192,
+        768
+      ]
+    },
+    "cloud-far.webp": {
+      "bytes": 187566,
+      "sha256": "eb134a6bb07dd0b2436743df7a341003d5a9c0f57ab19bac4769f4fbfcd136b7",
+      "resolution": [
+        4096,
+        512
+      ]
+    },
+    "land.webp": {
+      "bytes": 641426,
+      "sha256": "39499918c346a52d2af79f3db4fa4e23011cc7016b33f25c7f5f84b9bf1a5bb3",
+      "resolution": [
+        3072,
+        1728
+      ]
+    },
+    "environment.webp": {
+      "bytes": 219234,
+      "sha256": "c98a0595fb82334f5fef458b13142be8f8201d253efa89d70bed9a25bde63d57",
+      "resolution": [
+        1024,
+        512
+      ]
+    },
+    "sky.webp": {
+      "bytes": 2135592,
+      "sha256": "18fa8c5e4acf213c207163f4ca5c37691c34fb45d5d2998d1e88967a58ba0192",
+      "resolution": [
+        3072,
+        1728
+      ]
+    }
+  },
+  "totalEncodedBytes": 4731536,
+  "approximateGpuRgbaMipmappedBytes": 104158549,
+  "skyCentreStripSrgb": [
+    {
+      "visibleY": 0,
+      "rgb": [
+        201,
+        166,
+        162
+      ]
+    },
+    {
+      "visibleY": 0.25,
+      "rgb": [
+        208,
+        175,
+        165
+      ]
+    },
+    {
+      "visibleY": 0.5,
+      "rgb": [
+        212,
+        177,
+        156
+      ]
+    },
+    {
+      "visibleY": 0.75,
+      "rgb": [
+        213,
+        178,
+        157
+      ]
+    },
+    {
+      "visibleY": 1,
+      "rgb": [
+        213,
+        177,
+        157
+      ]
+    }
+  ]
+}

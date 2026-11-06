@@ -1,0 +1,181 @@
+{
+  "license": "CC0-1.0",
+  "identity": "crowd-01",
+  "label": "Marta · hospital patient",
+  "authoring": "tools/model-lab/people/production/patient_build.py",
+  "scale": "metres; +Y up; +Z front; grip-sock soles on y=0",
+  "poses": [
+    "standing",
+    "seated"
+  ],
+  "pigments": {
+    "skin": "#bd8d6d",
+    "hair": "#27221e",
+    "gown": "#e4edf0",
+    "pattern": "#4f829a",
+    "socks": "#73939e",
+    "grips": "#eeeada",
+    "wristband": "#fff3bc",
+    "cuff": "#314e60"
+  },
+  "sourceRecipe": {
+    "file": "tools/model-lab/people/production/crowd-specs.json",
+    "sha256": "614f53f92b68d096f720ba8de4eb351f117eee01eee1d059a6efe09a5be10ec5"
+  },
+  "sourceLock": {
+    "file": "tools/model-lab/people/production/crowd-source-lock.json",
+    "sha256": "d155617a8e52de3bbf3d6d964ad60af0543badc3d9ceb5ff46631113b16f8f7c"
+  },
+  "anchors": {
+    "standing": {
+      "wristband": [
+        0.22447341680526733,
+        0.6819427302107215,
+        0.04633520916104317
+      ],
+      "head": [
+        0.04496655613183975,
+        1.3159733107313514,
+        0.027892615646123886
+      ],
+      "handLeft": [
+        0.22735464572906494,
+        0.6663809111341834,
+        0.04868628457188606
+      ],
+      "handRight": [
+        -0.1536686271429062,
+        0.6742158820852637,
+        0.053290169686079025
+      ],
+      "elbowLeft": [
+        0.19473618268966675,
+        0.8425568034872413,
+        0.022069720551371574
+      ],
+      "elbowRight": [
+        -0.12121181935071945,
+        0.8497947147116065,
+        0.022810013964772224
+      ],
+      "shoulderLeft": [
+        0.16423818469047546,
+        1.0292961886152625,
+        0.013598006218671799
+      ],
+      "shoulderRight": [
+        -0.09012164920568466,
+        1.0364011814817786,
+        0.01359805278480053
+      ]
+    },
+    "seated": {
+      "wristband": [
+        0.20065918564796448,
+        0.5827680081129074,
+        0.25903576612472534
+      ],
+      "head": [
+        -1.6427481597247606e-9,
+        1.0617393106222153,
+        0.027892641723155975
+      ],
+      "handLeft": [
+        0.20609092712402344,
+        0.5796779245138168,
+        0.2737649083137512
+      ],
+      "handRight": [
+        -0.11807354539632797,
+        0.5633880347013474,
+        0.24573147296905518
+      ],
+      "elbowLeft": [
+        0.1445981115102768,
+        0.6146606653928757,
+        0.1070161908864975
+      ],
+      "elbowRight": [
+        -0.10099174827337265,
+        0.5993003696203232,
+        0.06901431828737259
+      ],
+      "shoulderLeft": [
+        0.12722936272621155,
+        0.7785042375326157,
+        0.01359801460057497
+      ],
+      "shoulderRight": [
+        -0.12722936272621155,
+        0.7785042375326157,
+        0.013597999699413776
+      ],
+      "cuff": [
+        0.2183913290500641,
+        0.6722527593374252,
+        0.10214351862668991
+      ],
+      "armrest": [
+        0.20609092712402344,
+        0.5529067367315292,
+        0.2526873052120209
+      ],
+      "armrestRear": [
+        0.20609092712402344,
+        0.5993417352437973,
+        0.06768730282783508
+      ],
+      "armrestFront": [
+        0.20609092712402344,
+        0.5064717382192612,
+        0.43768730759620667
+      ],
+      "seat": [
+        0,
+        0.43838784301280975,
+        -0.047306139106777584
+      ]
+    }
+  },
+  "lods": {
+    "hero": {
+      "file": "patient-01-hero.glb",
+      "bytes": 256280,
+      "sha256": "64cbad62f82500700bf3535ea8062c9806fbb425068f7dd8bef229c32ce604fa",
+      "poses": {
+        "standing": {
+          "triangles": 18037,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 18158,
+          "draws": 9
+        }
+      },
+      "triangles": 36195,
+      "textures": 1
+    },
+    "middle": {
+      "file": "patient-01-middle.glb",
+      "bytes": 150012,
+      "sha256": "76a59bae07ada82b0a7f1ba33b62f3966a2d1bc5a9486ca922eaeac51b6018d8",
+      "poses": {
+        "standing": {
+          "triangles": 9378,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 9517,
+          "draws": 9
+        }
+      },
+      "triangles": 18895,
+      "textures": 1
+    }
+  },
+  "poseHelper": {
+    "file": "tools/model-lab/people/production/relaxed_pose.py",
+    "sha256": "12242ed8c69b41cbc3a615bcb0b285219ecfaf65c44537c679fc291637ec4047"
+  },
+  "totalBytes": 406292
+}

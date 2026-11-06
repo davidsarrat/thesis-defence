@@ -1,0 +1,41 @@
+
+.dch-slide[data-v-a73cb22b] .dvs-stage { justify-content:flex-start;
+}
+.dch-slide .dvm-board[data-v-a73cb22b] { flex:none; margin:0 auto;
+}
+.dch-formula[data-v-a73cb22b] { fill:#edf5ff; font:500 24px var(--font-mono);
+}
+.dch-divider[data-v-a73cb22b] { fill:none; stroke:#b8cade; stroke-opacity:.32; stroke-width:1; stroke-dasharray:6 6;
+}
+.dch-share[data-v-a73cb22b] { fill:currentColor; font:600 24px var(--font-mono);
+}
+.dch-sub[data-v-a73cb22b] { font-size:68%;
+}
+.dch-flow[data-v-a73cb22b] { fill:none; stroke:currentColor; stroke-opacity:.55; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round;
+}
+.dch-op-bg[data-v-a73cb22b] { fill:#0a162b;
+}
+.dch-op[data-v-a73cb22b] { font:600 22px var(--font-mono);
+}
+.dch-lock[data-v-a73cb22b] { fill:#0a162b; stroke:#38c6ad; stroke-width:1.6; stroke-linejoin:round;
+}
+.dch-next-label[data-v-a73cb22b] { fill:#b8cade; font:500 15px var(--font-sans);
+}
+.dch-beaver[data-v-a73cb22b] { fill:none; stroke:#f5be72; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round;
+}
+.dch-label-bg[data-v-a73cb22b] { fill:#0a162b;
+}
+.dch-beaver-label[data-v-a73cb22b] { fill:#f5be72; font:600 17px var(--font-sans);
+}
+.dch-small[data-v-a73cb22b] { fill:#b8cade; font:500 15px var(--font-sans);
+}
+.dch-gate[data-v-a73cb22b] { fill:#38c6ad14; stroke:#38c6ad; stroke-width:1.4; stroke-dasharray:5 4;
+}
+.dch-result[data-v-a73cb22b] { fill:#0d2a26; stroke:#38c6ad; stroke-width:2;
+}
+.dch-result-text[data-v-a73cb22b] { fill:#38c6ad;
+}
+.dch-strip[data-v-a73cb22b] { fill:#edf5ff; font:500 24px var(--font-sans);
+}
+.dch-final[data-v-a73cb22b] { fill:#38c6ad; font-weight:600;
+}

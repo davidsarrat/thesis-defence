@@ -1,0 +1,53 @@
+
+.division-panel[data-v-d0178565] { fill:#0b1729; stroke:#405873; stroke-width:1;
+}
+.division-heading[data-v-d0178565] { fill:#edf5ff; font:600 22px var(--font-sans);
+}
+.division-label[data-v-d0178565] { fill:#b8cade; font:500 16px var(--font-sans);
+}
+.division-number[data-v-d0178565] { fill:#edf5ff; font:600 35px var(--font-mono);
+}
+.division-math[data-v-d0178565] { fill:#edf5ff; font:500 30px var(--font-mono);
+}
+.division-operator[data-v-d0178565] { font:500 31px var(--font-mono); text-anchor:middle;
+}
+.division-secret[data-v-d0178565] { fill:#0b2230; stroke:#38c6ad; stroke-width:1.5;
+}
+.division-public[data-v-d0178565] { fill:#101e35; stroke:#405873; stroke-width:1.5;
+}
+.division-lock[data-v-d0178565] { fill:#0b1729; stroke:#38c6ad; stroke-width:1.5; stroke-linejoin:round;
+}
+.division-bar[data-v-d0178565] { fill:none; stroke:#edf5ff; stroke-width:2.5; stroke-linecap:round;
+}
+.division-result[data-v-d0178565] { fill:#38c6ad; font:600 31px var(--font-mono);
+}
+.division-strip[data-v-d0178565] { fill:#edf5ff; font:500 24px var(--font-mono); text-anchor:middle;
+}
+.division-rule-formula[data-v-d0178565] { fill:#edf5ff; font:500 22px var(--font-mono);
+}
+.division-step[data-v-d0178565] { fill:#edf5ff; font:500 20px var(--font-mono);
+}
+.division-tick[data-v-d0178565] { fill:#b8cade; font:500 15px var(--font-mono);
+}
+.division-axis[data-v-d0178565] { fill:none; stroke:#405873; stroke-width:1.5;
+}
+.division-hop[data-v-d0178565] { fill:none; stroke:#7efaff; stroke-width:1.8;
+}
+.division-visited[data-v-d0178565] { fill:#4d8ddf;
+}
+.division-product[data-v-d0178565] { fill:#f5be72;
+}
+.division-green[data-v-d0178565] { fill:#38c6ad;
+}
+.division-blue[data-v-d0178565] { fill:#4d8ddf;
+}
+.division-target[data-v-d0178565] { fill:none; stroke:#4d8ddf; stroke-width:1.3; stroke-dasharray:3 3;
+}
+.division-dot[data-v-d0178565] { fill:#7efaff;
+}
+.division-then[data-v-d0178565] { fill:#b8cade;
+}
+.division-slot[data-v-d0178565] { fill:#7efaff;
+}
+.division-footnote[data-v-d0178565] { fill:#b8cade; font:500 15px var(--font-sans);
+}

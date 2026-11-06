@@ -1,0 +1,9 @@
+
+.slide-refs[data-v-1a06fa90] { position: fixed; left: 5.7%; bottom: 1.2%; max-width: 80%; display: flex; flex-direction: column; gap: .05em;
+  padding: .22em .6em; border-radius: .3em; background: rgba(4, 12, 26, .78);
+  font: 500 .506rem/1.38 var(--font-sans, Inter, sans-serif); color: var(--muted, #B8CADE); z-index: 3; pointer-events: none;
+}
+.slide-refs b[data-v-1a06fa90] { font-weight: 600; margin-right: .4em; color: var(--accent, #7EFAFF);
+}
+.slide-refs em[data-v-1a06fa90] { font-style: normal; opacity: .85;
+}

@@ -1,0 +1,21 @@
+
+.cdm-fullscreen[data-v-f46272cb] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.cdm-fullscreen-veil[data-v-f46272cb] { position: absolute; inset: 0; background: rgba(5, 9, 22, .97);
+}
+.cdm-fullscreen-diagram[data-v-f46272cb] { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible;
+}
+.cdm-fullscreen-group[data-v-f46272cb] { stroke-width: 1.35;
+}
+.cdm-fullscreen-group-label[data-v-f46272cb] { fill: var(--fg); font: 600 16px var(--font-sans); text-anchor: middle; dominant-baseline: middle;
+}
+.cdm-fullscreen-link[data-v-f46272cb] { fill: none; stroke-width: 1.1; stroke-linecap: round; stroke-linejoin: round;
+}
+.cdm-fullscreen-table[data-v-f46272cb] { fill: #edf2f8; stroke: #040a12; stroke-width: 1;
+}
+.cdm-fullscreen-table-label[data-v-f46272cb] { fill: #07111e; font: 550 16px var(--font-sans); text-anchor: middle; dominant-baseline: central; letter-spacing: -.025em;
+}
+.cdm-fullscreen-table-mark[data-v-f46272cb], .cdm-fullscreen-table-glow[data-v-f46272cb] { fill: none; stroke: var(--accent);
+}
+.cdm-fullscreen-vocabulary-mark[data-v-f46272cb] { fill: none; stroke: var(--accent); stroke-width: 2.5;
+}

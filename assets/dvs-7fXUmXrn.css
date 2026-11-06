@@ -1,0 +1,129 @@
+/* The simple dsVert route (kb/dsvert-route/simple.md): one sentence, one picture, a caption. Party colours as in the
+   rest of the block: Clínic cyan (A), IGTP pink (B), ICO lavender, analyst amber, opened values white, protection teal. */
+.dvs-slide { height: 100%; display: flex; flex-direction: column; color: var(--fg); }
+.dvs-head { position: relative; }
+/* The stage starts below the title band (150 px at 1280: the title, its rule and the deck index), as every frame's boards. */
+.dvs-stage { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; position: relative; padding-top: 26px; }
+/* The caption is the deck's shared one (components.css); the slide keeps its band free. */
+.dvs-slide { padding-bottom: 30px; }
+.dvs-svg { width: 100%; height: auto; display: block; overflow: visible; }
+@keyframes dvs-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@keyframes dvs-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* SVG text: sizes in CSS with prefixed classes (UnoCSS reads short classes and font-size attributes). */
+.dvs-t { font-family: var(--font-sans); fill: var(--fg); }
+.dvs-m { font-family: var(--font-mono); fill: var(--fg); }
+.dvs-head-a { fill: var(--party-a); font: 600 22px var(--font-sans); }
+.dvs-head-b { fill: var(--party-b); font: 600 22px var(--font-sans); }
+.dvs-sub { fill: var(--muted); font: 400 15px var(--font-sans); }
+.dvs-why { fill: var(--muted); font: italic 400 15px var(--font-sans); }
+.dvs-panel { fill: rgba(10, 22, 43, .92); stroke-width: 1.4; }
+.dvs-panel-a { stroke: color-mix(in srgb, var(--party-a) 45%, transparent); }
+.dvs-panel-b { stroke: color-mix(in srgb, var(--party-b) 45%, transparent); }
+.dvs-panel-c { stroke: color-mix(in srgb, var(--party-c) 45%, transparent); }
+.dvs-a { --party: var(--party-a); }
+.dvs-b { --party: var(--party-b); }
+.dvs-c { --party: var(--party-c); }
+.dvs-open { --party: var(--opened-value); }
+.dvs-chip-box { fill: #0b1a31; stroke: var(--party); stroke-width: 1.6; }
+.dvs-chip-text { font: 500 24px var(--font-mono); fill: var(--party); }
+.dvs-token-box { fill: #08162b; stroke: var(--party); stroke-width: 1.6; }
+.dvs-token-text { font: 500 21px var(--font-mono); fill: var(--party); }
+.dvs-token-label { font: 600 15px var(--font-sans); fill: var(--fg); }
+.dvs-arrow { fill: none; stroke: rgba(var(--muted-rgb), .7); stroke-width: 2; }
+.dvs-check-box { fill: rgba(5, 9, 22, .6); stroke: rgba(var(--fg-rgb), .45); stroke-width: 1.2; stroke-dasharray: 5 5; }
+.dvs-check-label { font: 500 12.5px var(--font-mono); letter-spacing: .06em; fill: var(--muted); text-transform: uppercase; }
+.dvs-check-text { font: 500 21px var(--font-mono); fill: var(--fg); }
+.dvs-relay { font: 500 13.5px var(--font-sans); fill: var(--party-analyst); }
+.dvs-show { transition: opacity .45s ease; }
+.dvs-hide { opacity: 0; }
+.dvs-dim { opacity: .3; }
+.dvs-arrive { animation: dvs-fade .45s ease both; }
+.dvs-static .dvs-arrive { animation: none !important; }
+.dvs-static * { transition: none !important; }
+:root.motion-reduced .dvs-slide * { transition: none !important; }
+/* The analyst as relay: every centre-to-centre message crosses this band, sealed for its receiver. */
+.dvs-relay-band { fill: rgba(245, 190, 114, .05); stroke: var(--party-analyst); stroke-width: 1.4; stroke-dasharray: 5 4; }
+.dvs-relay-label { font: 600 14px var(--font-sans); fill: var(--party-analyst); }
+.dvs-relay-sub { font: 400 12px var(--font-sans); fill: var(--party-analyst); }
+/* Operation colours (David, 18 Oct): the same on every slide, in formulas and in the toolbox. Centres keep A cyan, B pink. */
+:root { --op-sum: #38C6AD; --op-prod: #F5BE72; --op-div: #4D8DDF; --op-curve: #B9A6FF; }
+/* The showcase's five operations (V07's lit symbols and V19's catalogue): exp keeps the curves' violet, log its own coral. */
+:root { --op-exp: #B9A6FF; --op-log: #FF9E85; }
+.op-sum { color: var(--op-sum); fill: var(--op-sum); font-weight: 700; }
+.op-prod { color: var(--op-prod); fill: var(--op-prod); font-weight: 700; }
+.op-div { color: var(--op-div); fill: var(--op-div); font-weight: 700; }
+.op-curve { color: var(--op-curve); fill: var(--op-curve); font-weight: 700; }
+/* One move per click: an element arrives from its source (--sx, --sy), optionally through the analyst (--mx, --my). */
+.dvs-fly { animation: dvs-fly .9s cubic-bezier(.4, 0, .2, 1) both; }
+.dvs-fly-relay { animation: dvs-fly-relay 1.6s cubic-bezier(.4, 0, .2, 1) both; }
+@keyframes dvs-fly { from { transform: translate(var(--sx, 0px), var(--sy, 0px)); opacity: .35; } to { transform: none; opacity: 1; } }
+@keyframes dvs-fly-relay { 0% { transform: translate(var(--sx, 0px), var(--sy, 0px)); opacity: .5; } 45%, 55% { transform: translate(var(--mx, 0px), var(--my, 0px)); opacity: 1; } 100% { transform: none; opacity: 1; } }
+.dvs-static .dvs-fly, .dvs-static .dvs-fly-relay { animation: none; }
+/* Round 2 (19 Oct): the whiteboard. A on the left and B on the right, both always visible; a middle lane for what
+   happens between them or on the analyst's laptop. One row per click: the current row is written and lit, earlier rows
+   stay but dim, later rows keep their space empty. Presenter, overview and print show every row at full strength. */
+.dvs-wb { display: grid; grid-template-columns: var(--wb-cols, 1fr 1.25fr 1fr); align-content: start; border-radius: var(--card-radius);
+  background: rgba(10, 22, 43, .94); border: 1.5px solid var(--border); padding: 4px 0 10px; }
+.dvs-wb-head { padding: 7px 20px 6px; font: 600 18px var(--font-sans); border-bottom: 1px solid rgba(var(--fg-rgb), .14); }
+.dvs-wb-head.is-a { color: var(--party-a); }
+.dvs-wb-head.is-mid { color: var(--party-analyst); text-align: center; }
+.dvs-wb-head.is-b { color: var(--party-b); text-align: right; }
+.dvs-wb-cell { min-width: 0; min-height: 46px; padding: 5px 20px; display: flex; flex-direction: column; justify-content: center; gap: 2px;
+  transition: opacity .45s ease, background-color .45s ease; }
+.dvs-wb-cell.is-a { align-items: flex-start; border-right: 1px dashed rgba(var(--fg-rgb), .16); }
+.dvs-wb-cell.is-mid { align-items: center; text-align: center; }
+.dvs-wb-cell.is-b { align-items: flex-end; text-align: right; border-left: 1px dashed rgba(var(--fg-rgb), .16); }
+.dvs-wb-cell.is-hidden { opacity: 0; }
+.dvs-wb-cell.is-past { opacity: .4; }
+.dvs-wb-cell.is-now { background: rgba(255, 255, 255, .05); }
+.dvs-wb-cell.is-now > * { animation: dvs-write .75s cubic-bezier(.4, 0, .2, 1) both; }
+.dvs-static .dvs-wb-cell > * { animation: none !important; }
+@keyframes dvs-write { from { clip-path: inset(-20% 100% -20% 0); } to { clip-path: inset(-20% -2% -20% 0); } }
+.dvs-wb-num { display: block; font: 500 26px/1.15 var(--font-mono); color: #fff; white-space: nowrap; }
+.dvs-wb-num.is-a { color: var(--party-a); }
+.dvs-wb-num.is-b { color: var(--party-b); }
+.dvs-wb-num.is-open { color: var(--party-analyst); }
+.dvs-wb-say { display: block; font: 400 16px/1.25 var(--font-sans); color: var(--muted); white-space: nowrap; }
+.dvs-wb-name { font: 400 16px var(--font-sans); color: var(--muted); margin-right: 5px; }
+.dvs-wb-gap { margin-right: 18px; }
+/* Formulas coloured one kind per click: written plain, then sums, products, divisions and curves light up everywhere. */
+.dvs-ops .ok-sum, .dvs-ops .ok-prod, .dvs-ops .ok-div, .dvs-ops .ok-curve { transition: color .5s ease; }
+.dvs-ops.lit-sum .ok-sum { color: var(--op-sum); font-weight: 700; }
+.dvs-ops.lit-prod .ok-prod { color: var(--op-prod); font-weight: 700; }
+.dvs-ops.lit-div .ok-div { color: var(--op-div); font-weight: 700; }
+.dvs-ops.lit-curve .ok-curve { color: var(--op-curve); font-weight: 700; }
+.dvs-ops.now-sum .ok-sum, .dvs-ops.now-prod .ok-prod, .dvs-ops.now-div .ok-div, .dvs-ops.now-curve .ok-curve { animation: dvs-glow 1.2s ease both; }
+.dvs-static .dvs-ops .ok-sum, .dvs-static .dvs-ops .ok-prod, .dvs-static .dvs-ops .ok-div, .dvs-static .dvs-ops .ok-curve { animation: none !important; }
+@keyframes dvs-glow { 0% { text-shadow: 0 0 0 transparent; } 35% { text-shadow: 0 0 14px currentColor; } 100% { text-shadow: 0 0 0 transparent; } }
+/* Round 3 (19 Oct): two mini-boards side by side, rows written one per click (rowState in board.js). */
+.dvs-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; align-items: stretch; }
+.dvs-mini { display: flex; flex-direction: column; border-radius: var(--card-radius); background: rgba(10, 22, 43, .94); border: 1.5px solid var(--border); padding: 0 0 10px; min-width: 0; }
+.dvs-mini-head { padding: 9px 20px 8px; border-bottom: 1px solid rgba(var(--fg-rgb), .14); display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.dvs-mini-head b { font: 700 20px var(--font-sans); color: #fff; }
+.dvs-mini-head span { font: 400 16px var(--font-sans); color: var(--muted); }
+.dvs-wb-cell.is-mini { align-items: flex-start; padding: 8px 20px; }
+.dvs-brick { display: inline-block; white-space: nowrap; padding: 1px 12px 3px; border: 2px solid rgba(255, 255, 255, .55); border-radius: var(--chip-radius); background: rgba(255, 255, 255, .06); }
+/* Round 3b: a version badge in the title (the v1 catalogue). */
+.dvs-badge { display: inline-block; margin-left: 14px; padding: 1px 10px 2px; border-radius: var(--chip-radius); border: 1.5px solid var(--accent);
+  color: var(--accent); font: 700 .7em var(--font-mono); vertical-align: .12em; letter-spacing: .02em; }
+
+/* David, 19 Oct 2026: all the mathematics in 2D, without the 3D world, then the 3D. The boards sit on the plain
+   background, as the core whiteboards do. */
+.dvs-slide { position: relative; }
+.dvs-slide::before { content: ''; position: absolute; inset: -28px -36px -24px; background: var(--bg); z-index: -1; pointer-events: none; }
+
+/* The narrative and its scale-up share one quiet board: the active row leads, but its inputs stay legible. */
+.dvs-refined .dvs-stage { padding-top: 36px; }
+.dvs-refined :is(.dvs-wb, .dvs-mini) { border-color: var(--border); box-shadow: 0 8px 28px rgba(0, 0, 0, .12); }
+.dvs-refined :is(.dvs-wb-head, .dvs-mini-head) { border-bottom-color: rgba(var(--fg-rgb), .18); }
+.dvs-refined .dvs-wb-cell.is-past,
+.dvs-refined .dvn-wb .dvs-wb-cell.is-past,
+.dvs-refined .dvn-wb .dvn-wide.is-past { opacity: .72; }
+.dvs-refined :is(.dvs-wb-cell, .dvn-wide).is-now { background: rgba(184, 202, 222, .055); }
+.dvs-refined :is(.dvs-wb-cell, .dvn-wide).is-now > :not(.dvn-arrive, .dvn-on, .dvn-off) { animation-name: dvs-board-write; animation-duration: .45s; }
+@keyframes dvs-board-write { from { opacity: 0; } to { opacity: 1; } }
+.dvs-refined .dvs-wb-num { font-variant-numeric: tabular-nums; }
+.dvs-refined .dvs-mini-head b { font-weight: 600; }
+:root.motion-reduced .dvs-refined * { animation-duration: .001ms !important; animation-delay: 0s !important; transition-duration: .001ms !important; }
+@media (prefers-reduced-motion: reduce) { .dvs-refined * { animation-duration: .001ms !important; animation-delay: 0s !important; transition-duration: .001ms !important; } }

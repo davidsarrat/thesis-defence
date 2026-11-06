@@ -1,0 +1,598 @@
+{
+  "version": 1,
+  "earthRadiusKm": 6371.0088,
+  "start": {
+    "latitude": -3.18,
+    "longitude": 37.6
+  },
+  "end": {
+    "latitude": 14.7167,
+    "longitude": -17.4677
+  },
+  "distanceKm": 6381.787682358345,
+  "ecefAxes": "x=cos(latitude)*cos(longitude), y=cos(latitude)*sin(longitude), z=sin(latitude)",
+  "basis": {
+    "A": [
+      0.7910696668365813,
+      0.6092056555041233,
+      -0.05547298002497891
+    ],
+    "T": [
+      0.5891648006618629,
+      -0.7343542112554706,
+      0.3370589415405305
+    ],
+    "N": [
+      0.16460139693249098,
+      -0.29931983180729443,
+      -0.939847869825072
+    ]
+  },
+  "projection": "p(s,c)=cos(c/R)*(cos(s/R)*A+sin(s/R)*T)+sin(c/R)*N; s and c in kilometres",
+  "ribbonRegistration": "Rows cMin (north) to cMax (south), columns sMin to sMax. Height grid includes bounds; colour and normal sample pixel centres. Positive c is the left/south side of westward travel.",
+  "patchRegistration": "EPSG:4326. Rows north to south, columns west to east. Height grid includes bounds; textures sample pixel centres.",
+  "heightEncoding": "Signed int16 little-endian metres relative to EGM2008; negative bathymetry retained; no elevation exaggeration",
+  "normalEncoding": "OpenGL tangent RGB, linear colour space, exaggeration1. Ribbon red=+s, green=-c; patch red=east, green=north; blue=outward.",
+  "colourEncoding": "sRGB; bilinear resampling of NASA July2004 500m monthly mosaic; no synthetic features or grading",
+  "tiles": [
+    {
+      "id": "route-00",
+      "height": "route-00-height.i16",
+      "normal": "route-00-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": -350.0,
+      "sMaxKm": 358.17876823583447,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -1599,
+      "heightMaximumMetres": 4570,
+      "cornerLongitude": [
+        [
+          41.77323521616765,
+          35.788288796165745
+        ],
+        [
+          39.357777814819336,
+          33.338594123256186
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          -0.8469851130208018,
+          1.2947089280468338
+        ],
+        [
+          -7.626810773444529,
+          -5.471064771802769
+        ]
+      ],
+      "map": "route-00-colour.webp"
+    },
+    {
+      "id": "route-01",
+      "height": "route-01-height.i16",
+      "normal": "route-01-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 358.17876823583447,
+      "sMaxKm": 1066.357536471669,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": 601,
+      "heightMaximumMetres": 4268,
+      "cornerLongitude": [
+        [
+          35.788288796165745,
+          29.80816021737087
+        ],
+        [
+          33.338594123256186,
+          27.34770670886982
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          1.2947089280468338,
+          3.463985469997741
+        ],
+        [
+          -5.471064771802769,
+          -3.2972972439034343
+        ]
+      ],
+      "map": "route-01-colour.webp"
+    },
+    {
+      "id": "route-02",
+      "height": "route-02-height.i16",
+      "normal": "route-02-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 1066.357536471669,
+      "sMaxKm": 1774.5363047075034,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": 329,
+      "heightMaximumMetres": 1271,
+      "cornerLongitude": [
+        [
+          29.80816021737087,
+          23.815715555391836
+        ],
+        [
+          27.34770670886982,
+          21.367809399287122
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          3.463985469997741,
+          5.6372160477385655
+        ],
+        [
+          -3.2972972439034343,
+          -1.129300695673801
+        ]
+      ],
+      "map": "route-02-colour.webp"
+    },
+    {
+      "id": "route-03",
+      "height": "route-03-height.i16",
+      "normal": "route-03-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 1774.5363047075034,
+      "sMaxKm": 2482.715072943338,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": 300,
+      "heightMaximumMetres": 800,
+      "cornerLongitude": [
+        [
+          23.815715555391836,
+          17.79365575258172
+        ],
+        [
+          21.367809399287122,
+          15.381803658751325
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          5.6372160477385655,
+          7.79059402080762
+        ],
+        [
+          -1.129300695673801,
+          1.0093095213294532
+        ]
+      ],
+      "map": "route-03-colour.webp"
+    },
+    {
+      "id": "route-04",
+      "height": "route-04-height.i16",
+      "normal": "route-04-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 2482.715072943338,
+      "sMaxKm": 3190.8938411791723,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -788,
+      "heightMaximumMetres": 2452,
+      "cornerLongitude": [
+        [
+          17.79365575258172,
+          11.725087174242633
+        ],
+        [
+          15.381803658751325,
+          9.373344095415451
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          7.79059402080762,
+          9.900124945838916
+        ],
+        [
+          1.0093095213294532,
+          3.0950868485316185
+        ]
+      ],
+      "map": "route-04-colour.webp"
+    },
+    {
+      "id": "route-05",
+      "height": "route-05-height.i16",
+      "normal": "route-05-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 3190.8938411791723,
+      "sMaxKm": 3899.072609415007,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -2859,
+      "heightMaximumMetres": 3454,
+      "cornerLongitude": [
+        [
+          11.725087174242633,
+          5.594133824056829
+        ],
+        [
+          9.373344095415451,
+          3.3273781705300354
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          9.900124945838916,
+          11.941640484731584
+        ],
+        [
+          3.0950868485316185,
+          5.104769738408405
+        ]
+      ],
+      "map": "route-05-colour.webp"
+    },
+    {
+      "id": "route-06",
+      "height": "route-06-height.i16",
+      "normal": "route-06-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 3899.072609415007,
+      "sMaxKm": 4607.251377650841,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -3362,
+      "heightMaximumMetres": 827,
+      "cornerLongitude": [
+        [
+          5.594133824056829,
+          -0.6133961751539856
+        ],
+        [
+          3.3273781705300354,
+          -2.7693092851721675
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          11.941640484731584,
+          13.890860487309915
+        ],
+        [
+          5.104769738408405,
+          7.0153433574580975
+        ]
+      ],
+      "map": "route-06-colour.webp"
+    },
+    {
+      "id": "route-07",
+      "height": "route-07-height.i16",
+      "normal": "route-07-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 4607.251377650841,
+      "sMaxKm": 5315.430145886676,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": 122,
+      "heightMaximumMetres": 1040,
+      "cornerLongitude": [
+        [
+          -0.6133961751539856,
+          -6.909288836897636
+        ],
+        [
+          -2.7693092851721675,
+          -8.927546872175768
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          13.890860487309915,
+          15.723527781023646
+        ],
+        [
+          7.0153433574580975,
+          8.804165358408408
+        ]
+      ],
+      "map": "route-07-colour.webp"
+    },
+    {
+      "id": "route-08",
+      "height": "route-08-height.i16",
+      "normal": "route-08-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 5315.430145886676,
+      "sMaxKm": 6023.60891412251,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -34,
+      "heightMaximumMetres": 1412,
+      "cornerLongitude": [
+        [
+          -6.909288836897636,
+          -13.302164895256483
+        ],
+        [
+          -8.927546872175768,
+          -15.15523748341106
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          15.723527781023646,
+          17.415638226468722
+        ],
+        [
+          8.804165358408408,
+          10.449170623070032
+        ]
+      ],
+      "map": "route-08-colour.webp"
+    },
+    {
+      "id": "route-09",
+      "height": "route-09-height.i16",
+      "normal": "route-09-normal.webp",
+      "textureSize": 1024,
+      "normalSize": 512,
+      "gridSize": 129,
+      "sMinKm": 6023.60891412251,
+      "sMaxKm": 6731.787682358345,
+      "cMinKm": -400.0,
+      "cMaxKm": 400.0,
+      "heightMinimumMetres": -4968,
+      "heightMaximumMetres": 106,
+      "cornerLongitude": [
+        [
+          -13.302164895256483,
+          -19.796725284138656
+        ],
+        [
+          -15.15523748341106,
+          -21.45686113733274
+        ]
+      ],
+      "cornerLatitude": [
+        [
+          17.415638226468722,
+          18.94378347826464
+        ],
+        [
+          10.449170623070032,
+          11.929164079757925
+        ]
+      ],
+      "map": "route-09-colour.webp"
+    }
+  ],
+  "patches": [
+    {
+      "id": "kibo",
+      "west": 36.7,
+      "east": 38.0,
+      "south": -3.7,
+      "north": -2.4,
+      "height": "kibo-height.i16",
+      "normal": "kibo-normal.webp",
+      "textureSize": 512,
+      "normalSize": 512,
+      "gridSize": 257,
+      "heightMinimumMetres": 684,
+      "heightMaximumMetres": 5780,
+      "nativeElevationArcseconds": 15,
+      "map": "kibo-colour.webp"
+    },
+    {
+      "id": "dakar",
+      "west": -18.3,
+      "east": -16.3,
+      "south": 13.8,
+      "north": 15.8,
+      "height": "dakar-height.i16",
+      "normal": "dakar-normal.webp",
+      "textureSize": 512,
+      "normalSize": 512,
+      "gridSize": 129,
+      "heightMinimumMetres": -3236,
+      "heightMaximumMetres": 117,
+      "nativeElevationArcseconds": 60,
+      "map": "dakar-colour.webp"
+    }
+  ],
+  "sources": {
+    "blue-marble-2004-07-B1.jpg": {
+      "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x21600.B1.jpg",
+      "bytes": 43375022,
+      "sha256": "4fe552a037a000ff778df08900f185e491534f2b2a8f1779a85512f3ac8fd625"
+    },
+    "blue-marble-2004-07-C1.jpg": {
+      "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x21600.C1.jpg",
+      "bytes": 77295488,
+      "sha256": "18c4b869510f63bb2261182e26e5c072faee7bc6553842bf9d52175da539e956"
+    },
+    "blue-marble-2004-07-C2.jpg": {
+      "url": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x21600.C2.jpg",
+      "bytes": 32194198,
+      "sha256": "15fe50659ddb7b3f6395a76d7d880bfa1c78c7c957b9ed3b57dda60cac0866a1"
+    },
+    "etopo-corridor-1min.dods": {
+      "url": "https://www.ngdc.noaa.gov/thredds/dodsC/global/ETOPO2022/60s/60s_surface_elev_netcdf/ETOPO_2022_v1_60s_N90W180_surface.nc.dods?z%5B4920:1:6719%5D%5B9300:1:13499%5D",
+      "bytes": 30288278,
+      "sha256": "22513ae24f5f0ef59ae8c850c2b308acc3320b029ea0d0b9e052076e6b31e442"
+    },
+    "etopo-kibo-15sec.dods": {
+      "url": "https://www.ngdc.noaa.gov/thredds/dodsC/global/ETOPO2022/15s/15s_surface_elev_netcdf/ETOPO_2022_v1_15s_N00E030_surface.nc.dods?z%5B2712:1:3023%5D%5B1608:1:1919%5D",
+      "bytes": 394642,
+      "sha256": "2cec688031dfb7c83fe58009f0c35832dfa8734da1ff8175a2b0cddef145e81e"
+    }
+  },
+  "files": {
+    "dakar-colour.webp": {
+      "bytes": 20570,
+      "sha256": "293830d40c9e03b7544a03b1913fb806b9e695d68b45c3f7ec992528dc645ed1"
+    },
+    "dakar-height.i16": {
+      "bytes": 33282,
+      "sha256": "1412de4d0452ed37e83c286fd81e6b54b929137adf8283bd65dd2b9bfb77487b"
+    },
+    "dakar-normal.webp": {
+      "bytes": 8334,
+      "sha256": "4f3bd021a39be9aa1eaff9322185f2a75a0c296df7b1e2d25b3defad066b71cc"
+    },
+    "kibo-colour.webp": {
+      "bytes": 38504,
+      "sha256": "cc06705498d8ba2767e62e91dac17bc2309e1442bb43f5737891d764190f3a44"
+    },
+    "kibo-height.i16": {
+      "bytes": 132098,
+      "sha256": "e95a715edd43accad90ffcbfba659571a66e34ebf9c78d9e9289d903f93b0dbe"
+    },
+    "kibo-normal.webp": {
+      "bytes": 128826,
+      "sha256": "e35683ad28fc9a892b04a3a11d3e2bb903c301d35eded9d4b0cdf2a2872b5a66"
+    },
+    "route-00-colour.webp": {
+      "bytes": 255328,
+      "sha256": "4acb21e3188af82ae2d4e1a9f5951c13bcee48a2e79ed49c23a2dc0ec1c54dc3"
+    },
+    "route-00-height.i16": {
+      "bytes": 33282,
+      "sha256": "0df06e6ae3100bab0bfd94ae0fc87e46813261ad757d64ad71ab455afd9576fb"
+    },
+    "route-00-normal.webp": {
+      "bytes": 108468,
+      "sha256": "68fccc7ed861be582eb938e9785ab0fc78d7f0bfd49d17a54fe02d8cbcf27f44"
+    },
+    "route-01-colour.webp": {
+      "bytes": 184378,
+      "sha256": "52eea2d14f9cc8e22e8e3cbf40506e255cc2583b1addbadb86b95fa6ad0a5b83"
+    },
+    "route-01-height.i16": {
+      "bytes": 33282,
+      "sha256": "2577124946cc2f744edb8ec2563289169b3df14462878533c61a4491908a3064"
+    },
+    "route-01-normal.webp": {
+      "bytes": 129908,
+      "sha256": "5d79a096d196798c1df0a44cebed2d41106fc67ec4aff1bd5795da6ac30cb9e1"
+    },
+    "route-02-colour.webp": {
+      "bytes": 139354,
+      "sha256": "dd10ade7050c3e239ad3f5181ac032b1b2c7a6d016c719af2d342853b7268105"
+    },
+    "route-02-height.i16": {
+      "bytes": 33282,
+      "sha256": "82c454a0d72b28424b17da501ba78c3c91a3f627ce251ff90eaee375150d0f04"
+    },
+    "route-02-normal.webp": {
+      "bytes": 87962,
+      "sha256": "f9fd180d8d3305d8a6781627a0cbf99414b03820079f6a59ac03d422a641550f"
+    },
+    "route-03-colour.webp": {
+      "bytes": 162760,
+      "sha256": "b1f8f1fa3abd2115846d16fc3073690a6bc3d33f63d36ec1ee5d490ad4f95f43"
+    },
+    "route-03-height.i16": {
+      "bytes": 33282,
+      "sha256": "b2a51b30995d1a015a602164f87f0c1129b6b9361194ac1a7a4f10c42eda9454"
+    },
+    "route-03-normal.webp": {
+      "bytes": 84568,
+      "sha256": "676975982f26e10de02326806a51823aed8a41d2538b29c3436e5f10eb7cb262"
+    },
+    "route-04-colour.webp": {
+      "bytes": 208180,
+      "sha256": "6f2df50b51784f9024911e4b87caa056498f3d64cef5ff9b725ffb46c4969d2e"
+    },
+    "route-04-height.i16": {
+      "bytes": 33282,
+      "sha256": "b0720da5b236498ec3a3775a537a5c7fd3be70aaf7ced4b9bb8fb189fd462917"
+    },
+    "route-04-normal.webp": {
+      "bytes": 120228,
+      "sha256": "87c2ea3fc7060bac668f994d2152dd34bc5afc92aeab94af59c2e1f80f902213"
+    },
+    "route-05-colour.webp": {
+      "bytes": 273476,
+      "sha256": "ecc8a7454429dffd8df0f2b7d5be95702eccc0616d3ec69ff15f37929b9a1a0a"
+    },
+    "route-05-height.i16": {
+      "bytes": 33282,
+      "sha256": "88a9fddcf5d1bd4515d1415dbea8a9a2048941418e6712c3a67016132603c7ce"
+    },
+    "route-05-normal.webp": {
+      "bytes": 98134,
+      "sha256": "dc3fbced11d4b835cfaa8736a530e90331ccea3fe1db7b805c215c7068df7dda"
+    },
+    "route-06-colour.webp": {
+      "bytes": 232466,
+      "sha256": "318285d87869a9453f413b2d533403e5161d0d89ee84afafd72303c5079a9810"
+    },
+    "route-06-height.i16": {
+      "bytes": 33282,
+      "sha256": "89f25b9935666aa2973ec307daec9420356132e3c52262bf71c46d1f7f353c8a"
+    },
+    "route-06-normal.webp": {
+      "bytes": 77452,
+      "sha256": "5e8ffd3e70fac4d42817338c4a5cad2a891202b653f6459e0952dc4c4a814c78"
+    },
+    "route-07-colour.webp": {
+      "bytes": 248898,
+      "sha256": "544d8cb8d90318b60602c61f6ec0dfb1513b5506b3cb5070cde6782d572f3308"
+    },
+    "route-07-height.i16": {
+      "bytes": 33282,
+      "sha256": "632805bebb19d73577afb3def24626ac93b8d0079025a045afcf8d355d054e66"
+    },
+    "route-07-normal.webp": {
+      "bytes": 76334,
+      "sha256": "4c1a4a9f415403d33a828a02c077b7bf173a5c6251aea1baa8190e4130b4f241"
+    },
+    "route-08-colour.webp": {
+      "bytes": 207284,
+      "sha256": "027dafe367016a4229f23c3f13960c19f405eca4c6290ee6055878a1bc092329"
+    },
+    "route-08-height.i16": {
+      "bytes": 33282,
+      "sha256": "071c415319082e9c89efe6495f1275da0dfc40f71ec68d800118c91e65982296"
+    },
+    "route-08-normal.webp": {
+      "bytes": 105298,
+      "sha256": "17349c64c440db8abedd6db71182df1fe389160dfb4934dd15a1697d6dde6a21"
+    },
+    "route-09-colour.webp": {
+      "bytes": 85160,
+      "sha256": "d8113bd569775d43648a68ac6b74200616df32e7df218fb81181fb27757e5efd"
+    },
+    "route-09-height.i16": {
+      "bytes": 33282,
+      "sha256": "75a9df9c6753a891507cfb6634c295482f9c7136b4a162da9886f4798a00563d"
+    },
+    "route-09-normal.webp": {
+      "bytes": 20238,
+      "sha256": "af039b9b5ef1a7d1e7e0485394abf3e9be7f31720c272d35255375fd4c74b468"
+    }
+  },
+  "payloadBytes": 3600308,
+  "mipmappedTextureMiB": 72.0
+}

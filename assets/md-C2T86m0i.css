@@ -1,0 +1,48 @@
+
+.dvh-simple[data-v-2c346772] .dvs-stage { padding-bottom:10px;
+}
+.dvh-board[data-v-2c346772] { width:860px; max-width:100%; margin:auto; overflow:visible;
+}
+.dvh-bg[data-v-2c346772] { rx:var(--card-radius); fill:#0a162b; stroke:var(--border); stroke-width:1.5;
+}
+.dvh-divider[data-v-2c346772] { stroke:#b8cade3b; stroke-width:1; fill:none;
+}
+.dvh-heading[data-v-2c346772] { fill:currentColor; font:600 23px var(--font-sans);
+}
+.dvh-curve[data-v-2c346772] { fill:none; stroke:#B9A6FF; stroke-width:2.3; stroke-linejoin:round;
+}
+.dvh-hex[data-v-2c346772] { fill:#edf5ff; font:600 17px var(--font-mono); letter-spacing:.02em;
+}
+.dvh-axis[data-v-2c346772] { fill:none; stroke:#b8cade; stroke-opacity:.3; stroke-width:1;
+}
+.dvh-name[data-v-2c346772] { fill:currentColor; font:500 19px var(--font-sans); stroke:#0a162b; stroke-width:3; paint-order:stroke;
+}
+.dvh-source[data-v-2c346772] { fill:#edf5ff;
+}
+.dvh-landed[data-v-2c346772] { font-size:17px;
+}
+.dvh-hash[data-v-2c346772] { fill:#171b38; stroke:#b9a6ff; stroke-width:1.5;
+}
+.dvh-hash-glow[data-v-2c346772] { fill:#b9a6ff30; stroke:#d5caff; stroke-width:2.2; filter:drop-shadow(0 0 6px #b9a6ff);
+}
+.dvh-hash-word[data-v-2c346772] { fill:#d5caff; font:500 20px var(--font-mono); text-anchor:middle;
+}
+.dvh-coordinate[data-v-2c346772] { rx:var(--chip-radius); fill:#0a162b;
+}
+/* A halo, as on the other curve labels: −2.05 sits where the curve's left lobe passes. */
+.dvh-x[data-v-2c346772],.dvh-axis-number[data-v-2c346772] { fill:currentColor; font:500 16px var(--font-mono); text-anchor:middle; stroke:#0a162b; stroke-width:5; stroke-linejoin:round; paint-order:stroke;
+}
+.dvh-ana-coordinate[data-v-2c346772] { fill:currentColor; font:500 17px var(--font-mono); stroke:#0a162b; stroke-width:3; paint-order:stroke;
+}
+.dvh-strip[data-v-2c346772] { fill:#edf5ff; font:500 25px var(--font-mono);
+}
+.dvh-guide[data-v-2c346772] { fill:none; stroke:currentColor; stroke-width:1.5; stroke-dasharray:4 4;
+}
+.dvh-tick[data-v-2c346772] { fill:none; stroke:currentColor; stroke-width:1.8;
+}
+.dvh-leader[data-v-2c346772] { fill:none; stroke:currentColor; stroke-width:1; stroke-opacity:.65;
+}
+.dvh-dot[data-v-2c346772] { fill:currentColor; stroke:#0a162b; stroke-width:1.5;
+}
+.dvh-ring[data-v-2c346772] { fill:none; stroke:currentColor; stroke-width:1.7; filter:drop-shadow(0 0 3px currentColor);
+}

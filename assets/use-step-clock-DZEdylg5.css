@@ -1,0 +1,21 @@
+
+.vg-glyph[data-v-865b3ccf] { display: block; flex: none; overflow: visible; fill: none; stroke-linecap: round; stroke-linejoin: round;
+}
+.vg-glyph circle[data-v-865b3ccf] { stroke: none; fill: var(--vg-ink);
+}
+.vg-glyph path[data-v-865b3ccf] { stroke: var(--vg-ink);
+}
+.vg-glyph[data-v-865b3ccf] { filter: drop-shadow(0 0 var(--vg-near) rgba(var(--vg-rgb), .8)) drop-shadow(0 0 var(--vg-far) rgba(var(--vg-rgb), .38));
+}
+.vg-add[data-v-865b3ccf] { --vg-ink: var(--op-sum); --vg-rgb: 56, 198, 173;
+}
+.vg-mul[data-v-865b3ccf] { --vg-ink: var(--op-prod); --vg-rgb: 245, 190, 114;
+}
+.vg-div[data-v-865b3ccf] { --vg-ink: var(--op-div); --vg-rgb: 77, 141, 223;
+}
+.vg-exp[data-v-865b3ccf] { --vg-ink: var(--op-exp); --vg-rgb: 185, 166, 255;
+}
+.vg-log[data-v-865b3ccf] { --vg-ink: var(--op-log); --vg-rgb: 255, 158, 133;
+}
+.vg-arrow[data-v-865b3ccf] { --vg-ink: rgba(184, 202, 222, .75); --vg-rgb: 184, 202, 222; filter: drop-shadow(0 0 var(--vg-near) rgba(184, 202, 222, .3));
+}

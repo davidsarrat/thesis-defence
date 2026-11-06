@@ -1,0 +1,36 @@
+
+/* Unscoped on purpose: the camera rule keys on html.world-gliding (docs/gotchas.md). Prefixed sx- class names. */
+.sx-section { position: absolute; inset: 0; pointer-events: none;
+}
+.sx-vignette { position: absolute; inset: 0;
+  background: radial-gradient(ellipse 52% 62% at 24% 50%, rgba(var(--bg-rgb), .8) 0%, rgba(var(--bg-rgb), .55) 45%, rgba(var(--bg-rgb), 0) 100%);
+}
+/* A fixed top, not centring: the name lands at the same height on every section slide, whatever its length. */
+.sx-copy { position: absolute; left: 5.7%; top: 31%; width: 500px;
+}
+.sx-kicker { font: 600 14px/1.4 var(--font-mono); letter-spacing: .24em; text-transform: uppercase; color: var(--accent);
+}
+.sx-copy .sx-name { position: relative; display: inline-block; margin: 14px 0 0 !important; padding: 0;
+  font: 650 80px/1.04 var(--font-sans) !important; letter-spacing: -.045em; color: var(--fg) !important; text-wrap: balance;
+}
+.sx-subtitle { margin-top: 20px; max-width: 470px; font-size: 23px; line-height: 1.38; font-weight: 400;
+  color: rgba(var(--fg-rgb), .86); text-wrap: balance;
+}
+
+/* The entrance: kicker, name and subtitle rise in. Transform and opacity only. */
+.sx-kicker { animation: sx-rise .6s ease both;
+}
+.sx-name { animation: sx-rise .7s .08s ease both;
+}
+.sx-subtitle { animation: sx-rise .7s .2s ease both;
+}
+@keyframes sx-rise {
+from { opacity: 0; transform: translateY(10px);
+}
+to { opacity: 1; transform: none;
+}
+}
+
+/* While the camera travels back to space the copy is hidden (motion.css); the entrance replays once it arrives. */
+html.world-gliding .sx-anim { animation-name: none !important;
+}

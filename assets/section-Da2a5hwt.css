@@ -1,0 +1,6 @@
+
+/* The world is the background, as on the cover: no reading tint, no padding. */
+.slidev-layout.section-layout { padding: 0 !important;
+}
+.slidev-layout.section-layout::after { opacity: 0 !important;
+}

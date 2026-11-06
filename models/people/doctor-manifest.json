@@ -1,0 +1,561 @@
+{
+  "license": "CC0-1.0",
+  "authoring": "tools/model-lab/people/production/doctor_build.py",
+  "scale": "metres; +Y up; +Z front; shoe soles y=0",
+  "poses": [
+    "standing",
+    "seated"
+  ],
+  "sourceLock": {
+    "file": "tools/model-lab/people/production/doctor-source-lock.json",
+    "sha256": "1ae12d770aa5a1d880c2b30921f31b4dc14836009dd83c07628e386df605f52c"
+  },
+  "authoringSha256": "39091ab2b200359d000c4eb2dacd1290a9f096a89daa97568e979e2692997676",
+  "recipeSha256": "8b6549cbf1fd0da09c8512b23f0153383e412a47d9586acc206e1c4c34f18ba6",
+  "identities": [
+    {
+      "id": "doctor-01",
+      "label": "Woman · dark swept bun · speaker",
+      "gender": 0.08,
+      "age": 0.6,
+      "weight": 0.52,
+      "muscle": 0.42,
+      "height": 0.55,
+      "stature": 1.7,
+      "ancestry": [
+        0.12,
+        0.15,
+        0.73
+      ],
+      "clothes": "female_casualsuit01",
+      "shoes": "shoes04",
+      "hairStyle": "bun",
+      "skin": "#81553d",
+      "upper": "#b1cfbd",
+      "lower": "#42494e",
+      "hair": "#201b18",
+      "shoe": "#34312e",
+      "centre": 0,
+      "gesture": "talking",
+      "glasses": false
+    },
+    {
+      "id": "doctor-02",
+      "label": "Man · silver side part · agreement",
+      "gender": 0.94,
+      "age": 0.77,
+      "weight": 0.6,
+      "muscle": 0.36,
+      "height": 0.58,
+      "stature": 1.79,
+      "ancestry": [
+        0.08,
+        0.84,
+        0.08
+      ],
+      "clothes": "male_casualsuit03",
+      "shoes": "shoes02",
+      "hairStyle": "sidepart",
+      "skin": "#d2aa91",
+      "upper": "#8ba6bf",
+      "lower": "#45474a",
+      "hair": "#b8b7b0",
+      "shoe": "#45372f",
+      "centre": 0,
+      "gesture": "writing",
+      "glasses": "metal"
+    },
+    {
+      "id": "doctor-03",
+      "label": "Woman · copper bob · tablet",
+      "gender": 0.05,
+      "age": 0.55,
+      "weight": 0.48,
+      "muscle": 0.49,
+      "height": 0.6,
+      "stature": 1.73,
+      "ancestry": [
+        0.18,
+        0.74,
+        0.08
+      ],
+      "clothes": "female_casualsuit01",
+      "shoes": "shoes04",
+      "hairStyle": "bob",
+      "skin": "#d3a88a",
+      "upper": "#e5e7e6",
+      "lower": "#515b66",
+      "hair": "#79452e",
+      "shoe": "#4e4039",
+      "centre": 1,
+      "gesture": "tablet",
+      "glasses": "dark"
+    },
+    {
+      "id": "doctor-04",
+      "label": "Man · bald · listener",
+      "gender": 0.89,
+      "age": 0.66,
+      "weight": 0.68,
+      "muscle": 0.51,
+      "height": 0.72,
+      "stature": 1.84,
+      "ancestry": [
+        0.14,
+        0.09,
+        0.77
+      ],
+      "clothes": "male_casualsuit03",
+      "shoes": "shoes02",
+      "hairStyle": "receding",
+      "skin": "#674332",
+      "upper": "#e0e1d9",
+      "lower": "#4b4844",
+      "hair": "#24211e",
+      "shoe": "#34302e",
+      "centre": 1,
+      "gesture": "listening",
+      "glasses": false
+    },
+    {
+      "id": "doctor-05",
+      "label": "Woman · silver crop · document",
+      "gender": 0.12,
+      "age": 0.75,
+      "weight": 0.57,
+      "muscle": 0.31,
+      "height": 0.39,
+      "stature": 1.64,
+      "ancestry": [
+        0.79,
+        0.14,
+        0.07
+      ],
+      "clothes": "female_casualsuit01",
+      "shoes": "shoes04",
+      "hairStyle": "crop",
+      "skin": "#b58f70",
+      "upper": "#8ca1ad",
+      "lower": "#4a5052",
+      "hair": "#a7aaa6",
+      "shoe": "#51463e",
+      "centre": 2,
+      "gesture": "pointing",
+      "glasses": "metal"
+    },
+    {
+      "id": "doctor-06",
+      "label": "Man · dark curls · clinician",
+      "gender": 0.88,
+      "age": 0.56,
+      "weight": 0.45,
+      "muscle": 0.56,
+      "height": 0.62,
+      "stature": 1.77,
+      "ancestry": [
+        0.33,
+        0.48,
+        0.19
+      ],
+      "clothes": "male_casualsuit03",
+      "shoes": "shoes02",
+      "hairStyle": "curly",
+      "skin": "#a67958",
+      "upper": "#789ab7",
+      "lower": "#414e5a",
+      "hair": "#3c2c22",
+      "shoe": "#403a35",
+      "centre": 2,
+      "gesture": "resting",
+      "glasses": false,
+      "stethoscope": true
+    },
+    {
+      "id": "doctor-07",
+      "label": "Woman · straight blond hair · end seat",
+      "gender": 0.1,
+      "age": 0.57,
+      "weight": 0.5,
+      "muscle": 0.36,
+      "height": 0.52,
+      "stature": 1.71,
+      "ancestry": [
+        0.1,
+        0.85,
+        0.05
+      ],
+      "clothes": "male_casualsuit03",
+      "shoes": "shoes02",
+      "hairStyle": "bob",
+      "skin": "#d9b49b",
+      "upper": "#b5c9d8",
+      "lower": "#45474a",
+      "hair": "#c9ad67",
+      "shoe": "#45372f",
+      "centre": 0,
+      "gesture": "listening",
+      "glasses": false
+    },
+    {
+      "id": "doctor-08",
+      "label": "Man · bald · olive skin · end seat",
+      "gender": 0.89,
+      "age": 0.79,
+      "weight": 0.55,
+      "muscle": 0.51,
+      "height": 0.55,
+      "stature": 1.75,
+      "ancestry": [
+        0.14,
+        0.74,
+        0.12
+      ],
+      "clothes": "male_casualsuit03",
+      "shoes": "shoes02",
+      "hairStyle": "receding",
+      "skin": "#bc9677",
+      "upper": "#c4d0bd",
+      "lower": "#4b4844",
+      "hair": "#24211e",
+      "shoe": "#34302e",
+      "centre": 2,
+      "gesture": "listening",
+      "glasses": "metal"
+    }
+  ],
+  "assets": [
+    {
+      "id": "doctor-01-hero",
+      "file": "doctor-01-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-01",
+      "bytes": 182916,
+      "sha256": "fb8bb2c5328ac9f313ca9b865f5dbb0efdd12c561117fab2e5dbcd398404184a",
+      "poses": {
+        "standing": {
+          "triangles": 17936,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 17937,
+          "draws": 5
+        }
+      },
+      "triangles": 35873,
+      "textures": 0
+    },
+    {
+      "id": "doctor-01-middle",
+      "file": "doctor-01-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-01",
+      "bytes": 119240,
+      "sha256": "0f636e3f641c3a8e727867c02d43ef6360e856c19f84e9e35b461d904f4fe8eb",
+      "poses": {
+        "standing": {
+          "triangles": 10713,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 10714,
+          "draws": 5
+        }
+      },
+      "triangles": 21427,
+      "textures": 0
+    },
+    {
+      "id": "doctor-02-hero",
+      "file": "doctor-02-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-02",
+      "bytes": 195996,
+      "sha256": "4cde57ed31060f743a832777e4290b8804c144e2b1737ee39b88a54b457b7f1a",
+      "poses": {
+        "standing": {
+          "triangles": 19226,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 19218,
+          "draws": 6
+        }
+      },
+      "triangles": 38444,
+      "textures": 0
+    },
+    {
+      "id": "doctor-02-middle",
+      "file": "doctor-02-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-02",
+      "bytes": 131968,
+      "sha256": "bf6133fde0f2fa593f9fcc625bff20722776d35fac3ad435f106d6b807648668",
+      "poses": {
+        "standing": {
+          "triangles": 12002,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 11996,
+          "draws": 6
+        }
+      },
+      "triangles": 23998,
+      "textures": 0
+    },
+    {
+      "id": "doctor-03-hero",
+      "file": "doctor-03-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-03",
+      "bytes": 196128,
+      "sha256": "bb8e064852cc0a1437a8f75b5ceacd3c4c628687cb64dac96c5fe9b15fcff0db",
+      "poses": {
+        "standing": {
+          "triangles": 19224,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 19222,
+          "draws": 6
+        }
+      },
+      "triangles": 38446,
+      "textures": 0
+    },
+    {
+      "id": "doctor-03-middle",
+      "file": "doctor-03-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-03",
+      "bytes": 132148,
+      "sha256": "b92e5f968f0aa0a9bb5480ce0ffb3055af5ce73d2be15218c0fb0c6445ad5388",
+      "poses": {
+        "standing": {
+          "triangles": 12001,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 12000,
+          "draws": 6
+        }
+      },
+      "triangles": 24001,
+      "textures": 0
+    },
+    {
+      "id": "doctor-04-hero",
+      "file": "doctor-04-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-04",
+      "bytes": 175312,
+      "sha256": "8200f53ef6c5465ffddf38d16e3343804bc0a05165f5f9aae3e77cb5fce40708",
+      "poses": {
+        "standing": {
+          "triangles": 17076,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 17072,
+          "draws": 5
+        }
+      },
+      "triangles": 34148,
+      "textures": 0
+    },
+    {
+      "id": "doctor-04-middle",
+      "file": "doctor-04-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-04",
+      "bytes": 111680,
+      "sha256": "e6adf2336b6aa53322c0d18eef595c991b479033ffdc3b48ee9b5b0e2042df85",
+      "poses": {
+        "standing": {
+          "triangles": 9851,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 9848,
+          "draws": 5
+        }
+      },
+      "triangles": 19699,
+      "textures": 0
+    },
+    {
+      "id": "doctor-05-hero",
+      "file": "doctor-05-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-05",
+      "bytes": 201448,
+      "sha256": "b64edbb7ea8211838b39d8b64d00226c27208c74fdd75c67d52bd17c4d0b3bbc",
+      "poses": {
+        "standing": {
+          "triangles": 19312,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 19309,
+          "draws": 7
+        }
+      },
+      "triangles": 38621,
+      "textures": 0
+    },
+    {
+      "id": "doctor-05-middle",
+      "file": "doctor-05-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-05",
+      "bytes": 136784,
+      "sha256": "67ec64885d2c8b266a7cbb760a05b7caba094bcc1c17307c7f96f75dfa11d7dd",
+      "poses": {
+        "standing": {
+          "triangles": 12089,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 12087,
+          "draws": 7
+        }
+      },
+      "triangles": 24176,
+      "textures": 0
+    },
+    {
+      "id": "doctor-06-hero",
+      "file": "doctor-06-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-06",
+      "bytes": 203304,
+      "sha256": "de7fbe0ebb52061296fafff372ac7e4148758fcc5edf45435d4c5aed46ba3d17",
+      "poses": {
+        "standing": {
+          "triangles": 19814,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 19818,
+          "draws": 7
+        }
+      },
+      "triangles": 39632,
+      "textures": 0
+    },
+    {
+      "id": "doctor-06-middle",
+      "file": "doctor-06-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-06",
+      "bytes": 139424,
+      "sha256": "4d752c1e40d12b345ccdf9999b808751548c1ba2a717bf3cae9b01789f07c86b",
+      "poses": {
+        "standing": {
+          "triangles": 12590,
+          "draws": 7
+        },
+        "seated": {
+          "triangles": 12590,
+          "draws": 7
+        }
+      },
+      "triangles": 25180,
+      "textures": 0
+    },
+    {
+      "id": "doctor-07-hero",
+      "file": "doctor-07-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-07",
+      "bytes": 181428,
+      "sha256": "f1bf6cc0cc028e2812f8f842d27112b3a10f5548eb9b19e90c8630bce6b110df",
+      "poses": {
+        "standing": {
+          "triangles": 17716,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 17706,
+          "draws": 5
+        }
+      },
+      "triangles": 35422,
+      "textures": 0
+    },
+    {
+      "id": "doctor-07-middle",
+      "file": "doctor-07-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-07",
+      "bytes": 118232,
+      "sha256": "2c7d3a9f18f1b7f361669ff9faf780011fbec7e415f1683419f36d62cbc5d51b",
+      "poses": {
+        "standing": {
+          "triangles": 10490,
+          "draws": 5
+        },
+        "seated": {
+          "triangles": 10482,
+          "draws": 5
+        }
+      },
+      "triangles": 20972,
+      "textures": 0
+    },
+    {
+      "id": "doctor-08-hero",
+      "file": "doctor-08-hero.glb",
+      "lod": "hero",
+      "identity": "doctor-08",
+      "bytes": 189940,
+      "sha256": "7cd6ac5fdef09e1dc2ef3f3d7cd44cb34304b67dcaa887dbc1e17c17ed5b91a9",
+      "poses": {
+        "standing": {
+          "triangles": 18583,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 18578,
+          "draws": 6
+        }
+      },
+      "triangles": 37161,
+      "textures": 0
+    },
+    {
+      "id": "doctor-08-middle",
+      "file": "doctor-08-middle.glb",
+      "lod": "middle",
+      "identity": "doctor-08",
+      "bytes": 126188,
+      "sha256": "3f1471b9ed14e79b6efd7b53f713b8b532b1a1b783bc1cc4e5a3fae608c3ec2f",
+      "poses": {
+        "standing": {
+          "triangles": 11362,
+          "draws": 6
+        },
+        "seated": {
+          "triangles": 11358,
+          "draws": 6
+        }
+      },
+      "triangles": 22720,
+      "textures": 0
+    }
+  ],
+  "coatHelper": {
+    "file": "tools/model-lab/people/production/coat_finish.py",
+    "sha256": "6ece64ead02816a71394a9ab033ca38c812549575e8223dd0d771c214ee41177"
+  },
+  "runtimeRig": {
+    "file": "lib/world/models/people-idle.js",
+    "sha256": "905e647b5920adff6a13579d14d0e20be4edf626be7cc004c46b9e3ad829179f"
+  },
+  "poseHelper": {
+    "file": "tools/model-lab/people/production/relaxed_pose.py",
+    "sha256": "12242ed8c69b41cbc3a615bcb0b285219ecfaf65c44537c679fc291637ec4047"
+  },
+  "totalBytes": 2542136
+}

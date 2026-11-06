@@ -1,0 +1,124 @@
+/* The modulo-13 whiteboards: secrets are filled boxes, shares are outlined chips in the colour of where they came from,
+   public values are dashed white, final results green. Big numbers, few words. */
+/* Taller ledgers start at the safe-area edge; centring would lift them into the title band. */
+.dvq-tall .dvs-stage { justify-content: flex-start; }
+.dvq-tall .dvm-board { flex: none; margin: 0 auto; }
+.dvq-subtitle { font: 500 15px var(--font-sans); fill: #b8cade; }
+.dvq-modbox rect { fill: #0d2036; stroke: #edf5ff66; stroke-width: 1.2; }
+.dvq-modbox text { font: 600 15px var(--font-sans); fill: #edf5ff; text-anchor: middle; }
+.dvq-modnum { font-weight: 800; fill: #38c6ad; }
+.dvq-heading { font: 600 21px var(--font-sans); }
+.dvq-row { font: 500 12.5px var(--font-sans); fill: #edf5ff; letter-spacing: .02em; transition: opacity .3s ease; }
+.dvq-gut { stroke: #b8cade26; stroke-width: 1; }
+.dvq-goal { font: 600 21px var(--font-mono); fill: #edf5ff; text-anchor: middle; }
+.dvq-orig rect { stroke-width: 2.2; }
+.dvq-orig text { font-family: var(--font-mono); font-weight: 700; }
+.dvq-chip rect { fill: #0a162b; stroke-width: 1.8; }
+.dvq-chip text { font-family: var(--font-mono); font-weight: 600; }
+.dvq-chip .dvq-letter, .dvq-orig .dvq-letter { font: 500 14px var(--font-mono); fill: #b8cade; }
+.dvq-chipsub { font-size: 12.3px !important; }
+.dvq-tag { font: 500 12.5px var(--font-sans); fill: #b8cade; text-anchor: middle; }
+.dvq-label { font: 500 14px var(--font-sans); fill: #b8cade; }
+.dvq-f { font-family: var(--font-mono); font-weight: 500; fill: #edf5ff; font-variant-numeric: tabular-nums; }
+.dvq-f-letter { fill: #b8cade; }
+.dvq-f-value { font-weight: 700; }
+.dvq-fsub { font-size: max(72%, 12.3px); }
+.dvq-strong { font-weight: 700; }
+.dvq-mod { fill: #b8cade; }
+.dvq-band { font: 500 15px var(--font-sans); fill: #b8cade; text-anchor: middle; }
+.dvq-band-strong { font: 600 16px var(--font-sans); fill: #edf5ff; text-anchor: middle; }
+.dvq-end { font: 600 15.5px var(--font-sans); fill: #edf5ff; }
+.dvq-arrow { fill: none; stroke-width: 2; }
+.dvq-link { fill: none; stroke-width: 1.4; stroke-dasharray: 3 3; }
+.dvq-final { font: 700 30px var(--font-mono); fill: #38c6ad; text-anchor: middle; }
+.dvq-final-box { fill: #0a162b; stroke: #38c6ad; stroke-width: 2; }
+.dvq-zone { fill: #b8cade0d; stroke: #b8cade55; stroke-width: 1; stroke-dasharray: 5 4; }
+.dvq-triple-zone { fill: #f5be7208; stroke: #f5be7280; stroke-width: 1.2; stroke-dasharray: 6 4; }
+.dvq-note rect { fill: #0d2036; stroke: #b8cade80; stroke-width: 1; }
+.dvq-note text { font: 500 12.3px var(--font-sans); fill: #d6e2ee; }
+.dvq-note .dvq-note-head { font-weight: 700; fill: #edf5ff; }
+.dvq-audience { fill: none; stroke: #b8cade88; stroke-width: 1.2; stroke-dasharray: 4 4; }
+
+/* The modulus cards share the board's surface and leave room below the last line. */
+.dvq-why-scrim { fill: #0a162b; }
+.dvq-why-card { fill: #0b1a30; stroke: #405873; stroke-width: 1.2; }
+.dvq-why-title { font: 700 21px var(--font-sans); fill: #edf5ff; text-anchor: start; }
+.dvq-why-small-title { font-size: 19px; }
+.dvq-why-text { font: 500 15.5px/1.48 var(--font-sans); color: #d6e2ee; text-align: left; hyphens: none; text-wrap: pretty; }
+.dvq-dist-rule { font: 500 16px var(--font-mono); fill: #edf5ff; }
+.dvq-dist-note { font: 500 13px var(--font-sans); fill: #b8cade; }
+.dvq-dist-secret { font: 650 16px var(--font-sans); fill: currentColor; }
+.dvq-dist-source-label { font: 500 13px var(--font-sans); fill: #b8cade; text-anchor: end; }
+.dvq-dist-source { fill: #10243b; stroke: #405873; }
+.dvq-dist-number { font: 600 15px var(--font-mono); fill: #edf5ff; text-anchor: middle; }
+.dvq-dist-axis { fill: none; stroke: #405873; stroke-width: 1; }
+.dvq-dist-bar, .dvq-dist-dot { fill: currentColor; }
+.dvq-dist-seen { fill: none; stroke: #edf5ff; stroke-width: 1.5; }
+.dvq-dist-edge { opacity: .12; rx: 4; }
+.dvq-dist-tick { font: 500 13px var(--font-mono); fill: #b8cade; text-anchor: middle; }
+.dvq-dist-bracket path { fill: none; stroke-width: 1.5; }
+.dvq-dist-bracket text { font: 600 13px var(--font-sans); text-anchor: middle; }
+.dvq-dist-wrap { fill: none; stroke: #38c6ad; stroke-width: 1.5; stroke-linecap: round; }
+.dvq-dist-equal { font: 600 14px var(--font-sans); fill: #38c6ad; text-anchor: middle; }
+.dvq-dist-wrap-label { font: 600 16px var(--font-mono); fill: #edf5ff; text-anchor: end; }
+.dvq-dist-chip { fill: #0d2036; stroke-width: 1.4; }
+.dvq-dist-chipnum { font: 700 14px var(--font-mono); fill: #edf5ff; text-anchor: middle; letter-spacing: -.02em; }
+.dvq-recall-chain { font: 600 26px var(--font-mono); fill: currentColor; }
+.dvq-dist-proof { font: 600 14px var(--font-mono); fill: currentColor; }
+.dvq-dist-received { font: 650 16px var(--font-sans); fill: #38c6ad; text-anchor: end; }
+.dvq-dist-support { fill: none; stroke: currentColor; stroke-width: 3; opacity: .6; stroke-linecap: round; }
+.dvq-mod-summary, .dvq-proof-card { fill: #10243b; stroke: #405873; stroke-width: 1; }
+.dvq-mod-summary-title { font: 700 18px var(--font-sans); fill: currentColor; }
+.dvq-mod-summary-note { font: 500 13px var(--font-sans); fill: #b8cade; }
+.dvq-mod-summary-range { font: 550 16px var(--font-sans); fill: #edf5ff; }
+.dvq-dist-interval { fill: currentColor; fill-opacity: .18; }
+.dvq-dist-mark { font: 700 17px var(--font-sans); fill: currentColor; text-anchor: middle; }
+.dvq-dist-highlight { fill: #203951; stroke-width: 2.5; }
+.dvq-dist-probability { font: 500 15px var(--font-sans); fill: #d6e2ee; text-anchor: middle; }
+.dvq-proof-title { font: 700 18px var(--font-sans); fill: currentColor; }
+.dvq-proof-equation { font: 600 24px var(--font-mono); fill: currentColor; }
+.dvq-proof-receipt { font: 650 22px var(--font-sans); fill: #edf5ff; text-anchor: middle; }
+.dvq-proof-conclusion { font: 500 16px var(--font-sans); fill: #d6e2ee; text-anchor: middle; }
+.dvq-why-side-text { font-size: 15px; line-height: 1.4; }
+.dvq-security-note div { font: 500 13px/1.3 var(--font-sans); color: #b8cade; text-align: center; text-wrap: pretty; }
+
+/* The same translucent window paths close into three fine turns around the clock. */
+.dvq-range-intro { font: 500 16px/1.4 var(--font-sans); color: #b8cade; }
+.dvq-range-mode rect { fill: #182a39; stroke: #38c6ad; stroke-width: 1; }
+.dvq-range-mode text { font: 650 14px var(--font-sans); fill: #38c6ad; }
+.dvq-range-mode.is-without rect { fill: #2b2232; stroke: #ff6b7d; }
+.dvq-range-mode.is-without text { fill: #ff8a98; }
+.dvq-range-axis { stroke: #b8cade; stroke-opacity: .4; stroke-width: 1; }
+.dvq-range-limit { stroke: #b8cade; stroke-width: 1.3; }
+.dvq-range-tick { font: 500 14px var(--font-mono); fill: #b8cade; text-anchor: middle; }
+.dvq-range-note { fill: #8c9eb5; }
+.dvq-range-chunk { fill: none; stroke: #b8cade; stroke-width: 1; stroke-opacity: .6; }
+.dvq-range-ring { fill: none; stroke: #b8cade; stroke-width: 1; stroke-opacity: .65; }
+.dvq-range-edge-dot { fill: #b8cade; }
+.dvq-range-joined { fill: #edf5ff; stroke: #0b1a30; stroke-width: 1; }
+.dvq-range-piece rect { fill: #10243b; stroke: #7efaff; stroke-width: 1.4; }
+.dvq-range-piece text { font: 600 18px var(--font-mono); fill: #7efaff; text-anchor: middle; }
+.dvq-range-equation { font: 600 24px var(--font-mono); fill: currentColor; }
+.dvq-range-sum { font: 500 16px var(--font-mono); fill: #d6e2ee; }
+.dvq-range-neighbours { font: 500 13px var(--font-sans); fill: #b8cade; }
+.dvq-range-limits { font: 500 13px var(--font-mono); fill: #d6e2ee; }
+.dvq-range-loop { font: 600 24px var(--font-mono); fill: #edf5ff; text-anchor: middle; }
+.dvq-range-every { font: 500 12.5px var(--font-sans); fill: #b8cade; text-anchor: middle; }
+.dvq-range-zero { font: 500 12.5px var(--font-mono); fill: #b8cade; text-anchor: middle; }
+.dvq-range-uniform { font: 500 12.5px/1.2 var(--font-sans); color: #b8cade; text-align: center; }
+.dvq-range-clock-tick { fill: none; stroke: #b8cade; stroke-width: .8; }
+.dvq-range-hand { fill: none; stroke: currentColor; stroke-width: 1.1; stroke-linecap: round; }
+.dvq-range-clock-dot { fill: currentColor; }
+.dvq-range-hub { fill: #0b1a30; stroke: currentColor; stroke-width: 1; }
+.dvq-range-counter-number { font: 500 29px var(--font-mono); fill: currentColor; text-anchor: middle; }
+.dvq-range-pair { font: 500 16px var(--font-mono); fill: #7efaff; text-anchor: middle; }
+.dvq-window-wash { fill: none; stroke: currentColor; stroke-opacity: .13; }
+.dvq-window-turn { fill: none; stroke: currentColor; stroke-width: 1; stroke-opacity: .7; }
+.dvq-window-bracket { fill: none; stroke: currentColor; stroke-width: 1; }
+.dvq-window-label { font: 500 16px var(--font-sans); fill: currentColor; text-anchor: middle; }
+.dvq-window-end { font: 500 14px var(--font-mono); fill: currentColor; text-anchor: middle; }
+.dvq-window-end-lo { text-anchor: end; }
+.dvq-window-end-hi { text-anchor: start; }
+.dvq-window-secret { fill: none; stroke: #edf5ff; stroke-width: 1; }
+.dvq-window-secret-dot { fill: #edf5ff; }
+.dvq-window-secret-label { font: 500 14px var(--font-sans); fill: #edf5ff; text-anchor: middle; }

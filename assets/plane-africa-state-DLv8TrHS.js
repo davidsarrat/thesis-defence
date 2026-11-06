@@ -1,0 +1,1 @@
+import{st as e}from"./modules/shiki-DItJl1Vm.js";var t=e({active:!1,step:0,departed:!1,written:0,writingStartedAt:null,writtenAt:null,sinceWritten:0,acknowledgementsReady:!1});export{t};

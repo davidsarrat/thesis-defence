@@ -1,0 +1,552 @@
+[
+  {
+    "id": "analyst-hero",
+    "file": "analyst-hero.glb",
+    "role": "analyst",
+    "archetype": "analyst",
+    "lod": "hero",
+    "triangles": 35024,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "browsing",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "selecting",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ],
+        "tap": 1.65
+      }
+    ],
+    "wardrobe": "Open white cotton lab coat with full-length sleeves and darker shirt cuffs, stone shirt, charcoal trousers, brown shoes; short dark hair",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_male",
+      "clothes": "male_casualsuit01",
+      "hair": "short02",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "open lab coat, curved inner shirt, collar, curved lapels, surface-fitted pockets/buttons, weighted shoulder seams and full-length sleeves/shirt cuffs"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ],
+      "fingertip": {
+        "node": "fingertip",
+        "parent": "finger2-3.R",
+        "local": [
+          0,
+          0.0205,
+          0
+        ]
+      },
+      "head": {
+        "node": "head"
+      }
+    },
+    "bytes": 1238672,
+    "draws": 25,
+    "textures": 3,
+    "sha256": "af059d5f1f90921c280c863423b01734d517c543b82b11bd390a0536053913f1",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "browsing",
+      "selecting"
+    ],
+    "catalogueRecipe": {
+      "file": "tools/model-lab/people/production/analyst_catalogue.mjs",
+      "basePayloadHash": "c3ec8b2c2b8708869d57c5d9befcb9f1839c6e13edec8195c636ad8ab2048f34",
+      "license": "own work",
+      "tapSeconds": 1.65,
+      "sleeveRepair": [
+        {
+          "name": "Original_continuous_sleeve_L001",
+          "vertices": 46,
+          "maxDisplacementMetres": 0.08228745817028013
+        },
+        {
+          "name": "Original_continuous_sleeve_R001",
+          "vertices": 46,
+          "maxDisplacementMetres": 0.08228107842910637
+        },
+        {
+          "name": "Original_open_lab_coat-lod",
+          "vertices": 231,
+          "maxDisplacementMetres": 0.03998481196572211
+        }
+      ]
+    }
+  },
+  {
+    "id": "malicious-hero",
+    "file": "malicious-hero.glb",
+    "role": "malicious",
+    "archetype": "malicious",
+    "lod": "hero",
+    "triangles": 43841,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "turning",
+        "duration": 1,
+        "samples": [
+          0,
+          0.25,
+          0.5,
+          0.625,
+          0.75,
+          0.8125,
+          0.875,
+          1
+        ]
+      }
+    ],
+    "wardrobe": "Charcoal pullover hoodie with hood up, shaped shoulders and torso, ribbed hem/wrist cuffs and plain drawcords, smoke trousers, dark shoes; same human face and hair as analyst",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_male",
+      "clothes": "male_casualsuit01",
+      "hair": "short02",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "shaped pullover hoodie with raglan shoulders, gathered torso folds, ribbed hem/wrist cuffs, kangaroo pocket, plain drawcords and fitted cloth-baked two-panel hood with bound face opening and centre seam"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ]
+    },
+    "bytes": 1049020,
+    "draws": 29,
+    "textures": 3,
+    "sha256": "f83248b9dbadf4384b0c39b9ae5a374b7955fbc5aeb6c1cdcf25880b6c26fe38",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "turning"
+    ]
+  },
+  {
+    "id": "manager-01-middle",
+    "file": "manager-01-middle.glb",
+    "role": "manager",
+    "archetype": "manager-01",
+    "lod": "middle",
+    "triangles": 21538,
+    "animation": [
+      {
+        "name": "approving",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "holding",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "working",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      }
+    ],
+    "wardrobe": "Classic workwear-blue coverall, yellow brimmed hard hat with crown ridge, blank badge, service tablet and wrench in hip loop; hatless optional",
+    "document": "tablet",
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_african_female",
+      "clothes": "male_casualsuit01",
+      "hair": "short01",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "blue workwear pigments, coverall seams and pockets, blank badge and tint accent, fitted yellow brimmed hardhat with ridge, hip-loop wrench, tablet, approving and rack-touch poses"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 807288,
+    "draws": 25,
+    "textures": 3,
+    "sha256": "6accb4f8152afbc1a8eac22903631b496827047b9e52adba1464d37dd742f500",
+    "clips": [
+      "approving",
+      "holding",
+      "working"
+    ]
+  },
+  {
+    "id": "manager-02-middle",
+    "file": "manager-02-middle.glb",
+    "role": "manager",
+    "archetype": "manager-02",
+    "lod": "middle",
+    "triangles": 21313,
+    "animation": [
+      {
+        "name": "approving",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "holding",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "working",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      }
+    ],
+    "wardrobe": "Classic workwear-blue coverall, yellow brimmed hard hat with crown ridge, blank badge, service tablet and wrench in hip loop; hatless optional",
+    "document": "tablet",
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_male",
+      "clothes": "male_casualsuit01",
+      "hair": "short04",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "blue workwear pigments, coverall seams and pockets, blank badge and tint accent, fitted yellow brimmed hardhat with ridge, hip-loop wrench, tablet, approving and rack-touch poses"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 782120,
+    "draws": 25,
+    "textures": 3,
+    "sha256": "31fece67fc2f1520f0339edccd87668bc1a93c93d4ff9d6bc41f94a27b231565",
+    "clips": [
+      "approving",
+      "holding",
+      "working"
+    ]
+  },
+  {
+    "id": "manager-03-middle",
+    "file": "manager-03-middle.glb",
+    "role": "manager",
+    "archetype": "manager-03",
+    "lod": "middle",
+    "triangles": 21637,
+    "animation": [
+      {
+        "name": "approving",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "holding",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "working",
+        "duration": 0.041666666666666664,
+        "samples": [
+          0
+        ]
+      }
+    ],
+    "wardrobe": "Classic workwear-blue coverall, yellow brimmed hard hat with crown ridge, blank badge, service tablet and wrench in hip loop; hatless optional",
+    "document": "tablet",
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "young_asian_female",
+      "clothes": "male_casualsuit01",
+      "hair": "bob01",
+      "shoes": "shoes05",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "blue workwear pigments, coverall seams and pockets, blank badge and tint accent, fitted yellow brimmed hardhat with ridge, hip-loop wrench, tablet, approving and rack-touch poses"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 763840,
+    "draws": 25,
+    "textures": 3,
+    "sha256": "4a3b2c40f363aec2dd89148a532e85d73d9ae5c636d8910cdf4703c79a51265b",
+    "clips": [
+      "approving",
+      "holding",
+      "working"
+    ]
+  },
+  {
+    "id": "runner-01-hero",
+    "file": "runner-01-hero.glb",
+    "role": "runner",
+    "archetype": "runner-01",
+    "lod": "hero",
+    "triangles": 25986,
+    "animation": [
+      {
+        "name": "running",
+        "duration": 0.8,
+        "samples": [
+          0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    ],
+    "wardrobe": "Plain olive short-sleeved running shirt and charcoal running tights, neutral trainers",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "young_asian_female",
+      "clothes": "female_sportsuit01",
+      "hair": "ponytail01",
+      "shoes": "shoes05",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "original closed full-length sports T-shirt and blended short sleeves, plain kit pigments"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 584416,
+    "draws": 8,
+    "textures": 3,
+    "sha256": "d2ae70b61597b9ae42848ab2af08305d17c0de5a1260e139330218cd9bd4534d",
+    "clips": [
+      "running"
+    ]
+  },
+  {
+    "id": "runner-02-hero",
+    "file": "runner-02-hero.glb",
+    "role": "runner",
+    "archetype": "runner-02",
+    "lod": "hero",
+    "triangles": 26097,
+    "animation": [
+      {
+        "name": "running",
+        "duration": 0.8,
+        "samples": [
+          0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    ],
+    "wardrobe": "Plain sand short-sleeved training shirt and umber training trousers, dark trainers",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_african_male",
+      "clothes": "female_sportsuit01",
+      "hair": "short01",
+      "shoes": "shoes05",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "original closed full-length sports T-shirt and blended short sleeves, plain kit pigments"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 588900,
+    "draws": 8,
+    "textures": 3,
+    "sha256": "d4bd340d20f2814b15471228d280efd20cf94449c019af8d8f2c88686c12ac67",
+    "clips": [
+      "running"
+    ]
+  },
+  {
+    "id": "runner-03-hero",
+    "file": "runner-03-hero.glb",
+    "role": "runner",
+    "archetype": "runner-03",
+    "lod": "hero",
+    "triangles": 26194,
+    "animation": [
+      {
+        "name": "running",
+        "duration": 0.8,
+        "samples": [
+          0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7
+        ]
+      }
+    ],
+    "wardrobe": "Plain muted plum running shirt and warm-grey running tights, stone trainers",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "old_caucasian_female",
+      "clothes": "female_sportsuit01",
+      "hair": "short02",
+      "shoes": "shoes05",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "original closed full-length sports T-shirt and blended short sleeves, plain kit pigments"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": null
+    },
+    "bytes": 539876,
+    "draws": 8,
+    "textures": 3,
+    "sha256": "3c5fe95bfaa8bbad3b96c664e725f2be57e83e90cbf04a3fa830a30b8419c7b1",
+    "clips": [
+      "running"
+    ]
+  }
+]

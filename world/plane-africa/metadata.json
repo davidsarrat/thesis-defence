@@ -1,0 +1,122 @@
+{
+  "bounds": {
+    "west": 20,
+    "east": 55,
+    "south": -15,
+    "north": 20
+  },
+  "crs": "EPSG:4326",
+  "colour": {
+    "dimensions": [
+      4096,
+      4096
+    ],
+    "rowOrder": "north to south",
+    "sourceMonth": "2004-07",
+    "resampling": "Lanczos from 0.5km NASA BMNG C1/C2; no recolouring"
+  },
+  "heightGrid": {
+    "file": "east-africa-height-385.i16",
+    "dimensions": [
+      385,
+      385
+    ],
+    "encoding": "signed int16 little-endian metres",
+    "rowOrder": "north to south",
+    "columnOrder": "west to east",
+    "registration": "vertices inclusive of geographic bounds",
+    "verticalDatum": "EGM2008 geoid",
+    "resampling": "bilinear from true ETOPO 2022 60 arcsecond grid; bathymetry retained"
+  },
+  "normalTexture": {
+    "file": "east-africa-normal.webp",
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "encoding": "OpenGL tangent-space RGB",
+    "x": "east",
+    "y": "north",
+    "z": "surface outward",
+    "normalExaggeration": 12,
+    "registration": "pixel centers"
+  },
+  "sourceElevationMinMetres": -5496.0,
+  "sourceElevationMaxMetres": 5726.6572265625,
+  "geometryElevationMinMetres": -5385,
+  "geometryElevationMaxMetres": 4538,
+  "sources": {
+    "blue-marble-2004-07-global.jpg": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x10800.jpg",
+    "blue-marble-2004-07-C1.jpg": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x21600.C1.jpg",
+    "blue-marble-2004-07-C2.jpg": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x21600x21600.C2.jpg",
+    "etopo-east-africa-1min.dods": "https://www.ngdc.noaa.gov/thredds/dodsC/global/ETOPO2022/60s/60s_surface_elev_netcdf/ETOPO_2022_v1_60s_N90W180_surface.nc.dods?z%5B4500:1:6599%5D%5B12000:1:14099%5D"
+  },
+  "files": {
+    "east-africa-blue-marble.webp": {
+      "bytes": 1833130,
+      "sha256": "cfab3e34d8f4c7ef8ac1fc376d89f9d8eeb37f7a7a00b6888508a59340af90e5"
+    },
+    "earth-blue-marble-4k.webp": {
+      "bytes": 656358,
+      "sha256": "15d86184010a3036d1dd1192446dfa3c455bfadd123581200a2445d23a6efb8d"
+    },
+    "east-africa-height-385.i16": {
+      "bytes": 296450,
+      "sha256": "c079d6e34dba423a5179e1e4af56f9158132abd1642f7706c4da9818ff22b714"
+    },
+    "east-africa-normal.webp": {
+      "bytes": 953568,
+      "sha256": "241824ef090e84f528f780257e2eeea05febae6009ffced17481a1db9fd76648"
+    },
+    "cloud-atlas.webp": {
+      "bytes": 180488,
+      "sha256": "bfc860c493925e297a4d619ab13e39e46ab4ebe57fbad2434073189638dc0da0"
+    },
+    "poster.webp": {
+      "bytes": 484080,
+      "sha256": "8da05a51a8993c223d02de8c007adda9b986f9cf0e21bd6adee7150179df52fc",
+      "dimensions": [
+        1278,
+        719
+      ],
+      "capture": "qa-out/plane-africa/r24/pilot-02/large/poster.png",
+      "encoding": "lossless WebP"
+    },
+    "poster-thank-you.webp": {
+      "bytes": 491268,
+      "sha256": "710b657fc314c7eede844208c542696437bd66b1a60316d2c15a007b1fefa5fc",
+      "dimensions": [
+        1278,
+        719
+      ],
+      "capture": "qa-out/plane-africa/r24/pilot-02/large/poster-thank-you.png",
+      "encoding": "lossless WebP"
+    }
+  },
+  "geometryVerticalExaggeration": 4,
+  "cloudAtlas": {
+    "dimensions": [
+      1024,
+      1024
+    ],
+    "tileDimensions": [
+      512,
+      512
+    ],
+    "variants": 4,
+    "encoding": "sRGB RGB, unassociated alpha",
+    "source": "Original procedural volume rendering; no external visual assets",
+    "licence": "Original commissioned project artwork; no third-party assets and no separate public licence granted",
+    "lighting": "Neutral daylight from upper-right behind the cloud; cooler occluded sky light",
+    "runtime": "Historical renderer: one atlas lookup per billboard fragment; all volume integration is offline. This older atlas is retained for provenance.",
+    "mipmappedRgbaMiB": 5.333333333333333
+  },
+  "activeRenderer": {
+    "terrain": "terrain/metadata.json",
+    "clouds": "clouds/SOURCE.md",
+    "sky": "Procedural directional sunset; aircraft PMREM generated locally from the same sky",
+    "aircraft": "../../models/plane-africa/SOURCE.md",
+    "historicalAssets": "Older regional grids, corridor and photographic plates are retained for provenance; none is loaded by the current live family.",
+    "cloudSampling": "Live procedural bounded fBm density volumes, using a locally generated 64-cubed R8 noise field and a 256-squared R16F DEM contact map. No cloud image or atlas is loaded. Technique and budget are in clouds/SOURCE.md."
+  }
+}

@@ -1,0 +1,89 @@
+
+.mstory-layer[data-v-857e1894] { position:absolute; left:0; top:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none; z-index:2; color:var(--fg);
+}
+.mstory-links[data-v-857e1894] { position:absolute; inset:0; width:1280px; height:720px; overflow:visible;
+}
+.mstory-person-link[data-v-857e1894] { fill:none; stroke:var(--data); stroke-width:1.2; opacity:.4;
+}
+.mstory-record-link[data-v-857e1894] { fill:none; stroke:var(--data); stroke-width:1.6;
+}
+.mstory-link-dot[data-v-857e1894] { fill:var(--data);
+}
+.mstory-patient[data-v-857e1894] { position:absolute; left:200px; top:550px; min-width:236px; padding:10px 16px; background:rgba(10,22,43,.94); border:1px solid var(--border); border-left:3px solid var(--data); border-radius:var(--card-radius, 12px);
+}
+.mstory-patient strong[data-v-857e1894] { display:block; font:600 29px/1.15 var(--font-sans); letter-spacing:-.025em;
+}
+.mstory-patient > span[data-v-857e1894] { display:block; margin-top:5px; color:var(--data); font:500 18px/1.2 var(--font-mono);
+}
+.mstory-patient-field[data-v-857e1894] { color:var(--muted); font-size:16px;
+}
+.mstory-patient b[data-v-857e1894] { font-weight:600;
+}
+.mstory-card[data-v-857e1894] { position:absolute; left:607px; width:600px; box-sizing:border-box; padding:7px 13px; background:rgba(10,22,43,.96); border:1px solid var(--border); border-radius:var(--card-radius, 12px);
+}
+.mstory-card h3[data-v-857e1894] { margin:0 0 4px; color:var(--fg) !important; font:600 18px/1.1 var(--font-mono) !important; letter-spacing:.035em;
+}
+.mstory-card table[data-v-857e1894] { width:100%; margin:0; table-layout:fixed; border-collapse:collapse; font:500 17px/1.2 var(--font-mono); color:var(--fg);
+}
+.mstory-card th[data-v-857e1894] { padding:0 6px 3px 0; text-align:left; color:var(--muted); font:400 16px/1.2 var(--font-mono); border-bottom:1px solid rgba(184,202,222,.24); text-transform:none; letter-spacing:0;
+}
+.mstory-card td[data-v-857e1894] { padding:3px 6px 3px 0; vertical-align:middle; border:none;
+}
+.mstory-card tbody tr + tr td[data-v-857e1894] { border-top:1px solid rgba(184,202,222,.12);
+}
+.mstory-card .mstory-key-label[data-v-857e1894] { color:var(--data)!important;
+}
+.mstory-card .mstory-key[data-v-857e1894] { color:var(--data); font-weight:600;
+}
+.mstory-concept[data-v-857e1894] { color:var(--accent);
+}
+.mstory-name[data-v-857e1894] { display:block; margin-top:2px; font:400 16px/1.16 var(--font-sans); color:var(--muted);
+}
+.mstory-gender[data-v-857e1894], .mstory-drug-name[data-v-857e1894] { margin-left:12px; color:var(--muted); font:400 16px var(--font-sans);
+}
+.mstory-person-key[data-v-857e1894] { width:144px;
+}
+.mstory-birth[data-v-857e1894] { width:160px;
+}
+.mstory-key-col[data-v-857e1894] { width:102px;
+}
+.mstory-concept-col[data-v-857e1894] { width:253px;
+}
+.mstory-person[data-v-857e1894] { height:90px; border-color:rgba(245,190,114,.5);
+}
+.mstory-person td[data-v-857e1894] { padding-top:4px;
+}
+.mstory-measurement[data-v-857e1894] { top:255px; height:130px;
+}
+.mstory-measurement .mstory-concept-col[data-v-857e1894] { width:320px;
+}
+.mstory-measurement .mstory-name[data-v-857e1894] { display:inline; margin-left:11px;
+}
+.mstory-measurement td[data-v-857e1894] { height:25px;
+}
+.mstory-observation[data-v-857e1894] { top:395px; height:110px;
+}
+.mstory-drug[data-v-857e1894] { top:515px; height:90px;
+}
+.mstory-card .mstory-reading[data-v-857e1894] { color:var(--fg); font-size:23px; font-weight:500;
+}
+.mstory-history[data-v-857e1894] { height:237px;
+}
+.mstory-heading[data-v-857e1894] { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:7px; gap:12px;
+}
+.mstory-heading h3[data-v-857e1894] { margin:0;
+}
+.mstory-heading > span[data-v-857e1894] { font:400 16px/1.2 var(--font-sans); color:var(--muted);
+}
+.mstory-history-key[data-v-857e1894] { width:102px;
+}
+.mstory-history-concept[data-v-857e1894] { width:192px;
+}
+.mstory-history-value[data-v-857e1894] { width:100px;
+}
+.mstory-history th[data-v-857e1894] { padding-bottom:6px;
+}
+.mstory-history td[data-v-857e1894] { height:29px;
+}
+.mstory-history .mstory-reading[data-v-857e1894] { font-size:22px;
+}

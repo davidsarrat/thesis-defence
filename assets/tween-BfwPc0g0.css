@@ -1,0 +1,25 @@
+.slidev-layout:has(.pv-slide){padding:24px var(--frame-x) 18px}
+.pv-slide{height:100%;display:flex;flex-direction:column;gap:12px;color:var(--fg)}
+/* The title sits where every slide's title sits (5.7% / 7.2% of the frame, under the deck index); the header keeps its
+   height, so the stage below is unchanged. */
+.pv-header{height:77px;flex:none;box-sizing:border-box;padding:16px 0 0}
+.pv-stage{flex:1;min-height:0;position:relative}
+/* The caption is the deck's shared one (components.css); the slide keeps its band free (it took 42 px + the gap). */
+.pv-slide{padding-bottom:54px}
+.pv-visibility{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;flex:none}
+.pv-visibility>div{background:#0a162bf0;border-top:2px solid var(--party);padding:7px 10px;font-size:13px;line-height:1.4;display:flex;flex-direction:column}
+.pv-visibility b{color:var(--party);font-weight:500}
+.pv-owner-0{--party:var(--party-a)}.pv-owner-1{--party:var(--party-b)}.pv-owner-2{--party:var(--party-analyst)}
+.pv-card{background:#0a162bf2;border:1px solid #43566e;border-radius:12px;padding:16px 20px;min-width:0}
+.pv-label{font-size:14px;color:var(--muted);line-height:1.4}
+.pv-value{font:48px/1.15 var(--font-mono);color:var(--opened-value)}
+.pv-formula{font:23px/1.5 var(--font-mono)}
+.pv-note{font-size:14px;line-height:1.45;color:var(--muted)}
+.pv-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid #566a85;border-radius:6px;padding:5px 10px;font-size:14px;line-height:1.3;background:#0a162b}
+.pv-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;height:100%;min-height:0}
+.pv-center{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;height:100%}
+.pv-reveal{animation:pv-reveal .45s ease both}@keyframes pv-reveal{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+.pv-off{visibility:hidden}.pv-muted{opacity:.3}
+.pv-slide .dv-inline-formula sub,.pv-slide .dv-inline-formula sup{font-size:max(.76em,12.5px);line-height:0;position:relative;vertical-align:baseline}
+.pv-slide .dv-inline-formula sub{bottom:-.25em}.pv-slide .dv-inline-formula sup{top:-.5em}
+:root.motion-reduced .pv-slide *{animation:none!important;transition:none!important}

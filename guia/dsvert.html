@@ -1,0 +1,1310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dsVert, paso a paso</title>
+<meta name="description" content="Guía ilustrada y sencilla de dsVert: cómo se encuentran las mismas personas (PSI) y cómo se calcula con trozos (MPC) sin juntar los datos.">
+<style>
+  :root {
+    --bg: #f6f8fb; --fg: #142033; --muted: #56677d; --card: #ffffff; --line: #d3dce8; --soft: #eef3f8;
+    --a: #0a8ca0; --b: #b9318f; --c: #6a4fd8; --accent: #0a8ca0; --data: #a8661a; --ok: #1c8a73; --bad: #c2362b;
+    --a-soft: #dff4f7; --b-soft: #f8e3f2; --c-soft: #ebe6fb; --data-soft: #f8ecd9; --ok-soft: #ddf3ee;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a1322; --fg: #e8f0fa; --muted: #a2b3c7; --card: #101c31; --line: #2a3c57; --soft: #13233b;
+      --a: #7efaff; --b: #ff8af0; --c: #b9a6ff; --accent: #7efaff; --data: #f5be72; --ok: #38c6ad; --bad: #ff6b7d;
+      --a-soft: #0f3340; --b-soft: #3a1838; --c-soft: #241e45; --data-soft: #3a2a12; --ok-soft: #0f3330;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.62 system-ui, -apple-system, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 18px 80px; }
+  header.top { padding: 28px 0 8px; }
+  .kicker { font: 600 13px/1 ui-monospace, "Roboto Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  h1 { font-size: 36px; line-height: 1.15; margin: 10px 0 8px; letter-spacing: -.01em; }
+  .lead { font-size: 19px; color: var(--fg); margin: 6px 0 18px; }
+  .meta { color: var(--muted); font-size: 14px; }
+  nav.toc { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin: 22px 0 8px; }
+  nav.toc b { display: block; margin-top: 2px; font-size: 14px; color: var(--muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
+  nav.toc ol { margin: 0; padding-left: 22px; columns: 2; column-gap: 28px; font-size: 15px; }
+  nav.toc a { color: var(--fg); text-decoration: none; border-bottom: 1px dotted var(--line); }
+  section { margin-top: 46px; scroll-margin-top: 16px; }
+  h2 { font-size: 26px; line-height: 1.25; margin: 0 0 6px; }
+  h2 .n { display: inline-block; min-width: 34px; margin-right: 8px; color: var(--accent); font: 700 20px ui-monospace, "Roboto Mono", monospace; }
+  .idea { font-size: 19px; font-weight: 600; margin: 4px 0 14px; }
+  p { margin: 10px 0; }
+  figure { margin: 18px 0; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+  figure svg { display: block; width: 100%; height: auto; }
+  figcaption { color: var(--muted); font-size: 14.5px; margin-top: 8px; }
+  .box { border-radius: 12px; padding: 12px 16px; margin: 14px 0; border: 1px solid var(--line); background: var(--card); }
+  .box b.lbl { display: block; font: 700 12px ui-monospace, "Roboto Mono", monospace; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+  .travels { border-left: 4px solid var(--b); }
+  .travels b.lbl { color: var(--b); }
+  .slide { border-left: 4px solid var(--accent); }
+  .slide b.lbl { color: var(--accent); }
+  .why { border-left: 4px solid var(--ok); }
+  .why b.lbl { color: var(--ok); }
+  .formula { font: 500 18px/1.5 "Cambria Math", "STIX Two Math", Georgia, serif; text-align: center; padding: 12px; background: var(--soft); border-radius: 10px; margin: 12px 0; overflow-x: auto; white-space: nowrap; }
+  .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 4px; }
+  .frac > span:first-child { border-bottom: 1.5px solid currentColor; padding: 0 4px 2px; }
+  .frac > span:last-child { padding: 2px 4px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15.5px; background: var(--card); border-radius: 10px; overflow: hidden; }
+  th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  th { background: var(--soft); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tbl-wrap { overflow-x: auto; }
+  .ca { color: var(--a); font-weight: 600; } .cb { color: var(--b); font-weight: 600; } .cc { color: var(--c); font-weight: 600; }
+  .cd { color: var(--data); font-weight: 600; } .ok { color: var(--ok); font-weight: 600; }
+  ol.steps { padding-left: 22px; } ol.steps li { margin: 6px 0; }
+  .part { margin: 56px 0 4px; padding: 14px 18px; border-radius: 12px; background: var(--soft); border: 1px solid var(--line); font-size: 22px; font-weight: 700; }
+  .part span { display: block; font: 700 12px ui-monospace, "Roboto Mono", monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .two .box { margin: 0; }
+  .two h3 { margin: 0 0 6px; font-size: 17px; }
+  .two ul { margin: 0; padding-left: 20px; }
+  dl.glossary dt { font-weight: 700; margin-top: 10px; } dl.glossary dd { margin: 2px 0 0 0; color: var(--fg); }
+  footer { margin-top: 56px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); padding-top: 16px; }
+  /* SVG classes (themed) */
+  .s-card { fill: var(--card); stroke: var(--line); stroke-width: 1.5; }
+  .s-soft { fill: var(--soft); stroke: none; }
+  .s-line { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+  .s-dash { stroke: var(--muted); stroke-width: 1.4; fill: none; stroke-dasharray: 5 5; }
+  .s-a { fill: var(--a-soft); stroke: var(--a); stroke-width: 1.8; } .s-b { fill: var(--b-soft); stroke: var(--b); stroke-width: 1.8; }
+  .s-c { fill: var(--c-soft); stroke: var(--c); stroke-width: 1.8; } .s-ok { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 1.8; }
+  .s-data { fill: var(--data-soft); stroke: var(--data); stroke-width: 1.8; }
+  .t { fill: var(--fg); font: 15px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .t-s { fill: var(--muted); font: 13px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .t-b { fill: var(--fg); font: 600 16px system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .t-m { fill: var(--fg); font: 600 15px ui-monospace, "Roboto Mono", monospace; }
+  .t-a { fill: var(--a); } .t-bb { fill: var(--b); } .t-c { fill: var(--c); } .t-d { fill: var(--data); } .t-ok { fill: var(--ok); } .t-bad { fill: var(--bad); }
+  .arrowhead { fill: var(--muted); }
+
+  /* Interactive steppers: press Siguiente and watch each number move. */
+  .stepper { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin: 18px 0; }
+  .stepper svg { display: block; width: 100%; height: auto; }
+  .stepper .ctrl { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+  .stepper button { font: 600 15px system-ui, -apple-system, sans-serif; padding: 8px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--soft); color: var(--fg); cursor: pointer; }
+  .stepper button.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .stepper button:disabled { opacity: .4; cursor: default; }
+  .stepper .count { margin-left: auto; color: var(--muted); font: 600 13px ui-monospace, "Roboto Mono", monospace; }
+  .stepper ol.captions { list-style: none; margin: 10px 0 0; padding: 0; min-height: 3.4em; font-size: 16.5px; }
+  .stepper [data-show] { opacity: 0; transition: opacity .5s ease; }
+  .stepper [data-show].on { opacity: 1; }
+  .stepper .late { transition-delay: 1s; }
+  .stepper .fly { transition: transform 1.1s cubic-bezier(.45,.05,.3,1), opacity .4s ease; }
+  .stepper .fly.go { transform: translate(var(--dx), var(--dy)); }
+  /* Two-hop flights: sender → postman (client) → receiver. */
+  .stepper .via { opacity: 0; }
+  .stepper .via.go.on { animation: via-hop 2.4s ease-in-out forwards; }
+  @keyframes via-hop { 0% { transform: translate(0, 0); opacity: 1; } 40%, 55% { transform: translate(var(--mx), var(--my)); opacity: 1; } 92% { transform: translate(var(--dx), var(--dy)); opacity: 1; } 100% { transform: translate(var(--dx), var(--dy)); opacity: 0; } }
+  /* The envelope fades once it has arrived, so it never covers what the receiver now holds. */
+  .stepper .fly.go.on { animation: env-land 2.2s forwards; }
+  @keyframes env-land { 0%, 62% { opacity: 1; } 100% { opacity: 0; } }
+  .stepper .hl { fill: var(--ok-soft); stroke: var(--ok); stroke-width: 2; }
+  /* Operation colours used in formulas */
+  .op-sum { color: var(--ok); font-weight: 700; } .op-mul { color: var(--data); font-weight: 700; }
+  .op-div { color: #2f6fd0; font-weight: 700; } .op-curve { color: var(--c); font-weight: 700; }
+  @media (prefers-color-scheme: dark) { .op-div { color: #6aa8ff; } }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px 18px; margin: 8px 0 4px; font-size: 15px; }
+  .legend span b { display: inline-block; min-width: 18px; text-align: center; }
+  td.f { font: 500 16px "Cambria Math", "STIX Two Math", Georgia, serif; white-space: nowrap; }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    h1 { font-size: 29px; }
+    h2 { font-size: 22px; }
+    nav.toc ol { columns: 1; }
+    .two { grid-template-columns: 1fr; }
+    /* On a phone the drawings keep a readable size and scroll sideways, like the tables. */
+    figure { padding: 8px; overflow-x: auto; }
+    figure svg { min-width: 600px; }
+    .tbl-wrap table { min-width: 640px; }
+  }
+</style>
+</head>
+<body>
+<main>
+<header class="top">
+  <div class="kicker">Guía para entenderlo · dsVert v1</div>
+  <h1>dsVert, paso a paso</h1>
+  <p class="lead">dsVert ajusta un modelo cuando las columnas de las mismas personas están en centros distintos, sin juntar nunca los datos. Primero encuentra a las personas comunes (PSI). Después calcula con trozos que parecen números al azar (MPC). Solo sale el resultado final.</p>
+  <p class="meta">Explicado sin matemáticas difíciles, con números pequeños. Basado en el capítulo 4 de la tesis y en el código de dsVert. Octubre de 2026.</p>
+</header>
+
+<nav class="toc"><b>Parte 1 · MPC desde cero, con números básicos</b>
+  <ol>
+    <li><a href="#mpc">¿Qué es MPC?</a></li>
+    <li><a href="#ss">Secret sharing: un secreto en dos trozos</a></li>
+    <li><a href="#ss-suma">Sumar con trozos</a></li>
+    <li><a href="#piezas">Las piezas de MPC</a></li>
+    <li><a href="#mult-problema">Multiplicar: el problema</a></li>
+    <li><a href="#beaver">El triplete de Beaver</a></li>
+    <li><a href="#fabricar">¿Quién fabrica los tripletes?</a></li>
+    <li><a href="#psi-cero">PSI: ¿qué pacientes tenemos en común?</a></li>
+    <li><a href="#mpc-fl">MPC y aprendizaje federado</a></li>
+    <li><a href="#matices">¿Es totalmente seguro?</a></li>
+  </ol>
+  <b style="margin-top:12px">Parte 2 · Lo mismo, en dsVert</b>
+  <ol start="11">
+    <li><a href="#problema">El problema</a></li>
+    <li><a href="#fases">Dos fases</a></li>
+    <li><a href="#cartero">El analista hace de cartero</a></li>
+    <li style="list-style:none"><a href="#cartero-llave">13a · ¿Qué impide que el cartero abra los sobres?</a></li>
+    <li style="list-style:none"><a href="#pinned">13b · Pinned peers</a></li>
+    <li><a href="#psi">Fase 1 · PSI en dsVert</a></li>
+    <li><a href="#trozos">Fase 2 · MPC: secret sharing</a></li>
+    <li><a href="#suma">¿Cómo se hace una suma?</a></li>
+    <li><a href="#triplete">¿Qué es un triplete?</a></li>
+    <li><a href="#producto">¿Cómo se hace una multiplicación?</a></li>
+    <li><a href="#iknp">¿De dónde salen los tripletes?</a></li>
+    <li style="list-style:none"><a href="#flujo">19b · Una multiplicación de principio a fin, por el cartero</a></li>
+    <li><a href="#autoridades">Con muchos centros: dos autoridades</a></li>
+    <li><a href="#seguro">¿Por qué es seguro?</a></li>
+    <li><a href="#quien">Quién hace qué</a></li>
+    <li><a href="#restas">Restas y divisiones</a></li>
+    <li><a href="#metodos">Primer análisis, sin trucos: contar</a></li>
+    <li style="list-style:none"><a href="#extras">24b · La caja de herramientas: los trucos</a></li>
+    <li style="list-style:none"><a href="#portar">24c · Portar los métodos: cor, PCA, GLM y el catálogo</a></li>
+    <li><a href="#v2">La v2: ruido en lo que sale</a></li>
+    <li style="list-style:none"><a href="#literatura">25b · ¿Está todo esto en la literatura?</a></li>
+    <li><a href="#tribunal">Preguntas del tribunal</a></li>
+    <li><a href="#glosario">Glosario</a></li>
+    <li style="list-style:none"><a href="#glm-rondas">Para ti · cómo va la comunicación en el GLM v1</a></li>
+  </ol>
+</nav>
+
+
+
+<div class="part"><span>Parte 1</span>MPC desde cero, con números básicos</div>
+
+<!-- P1 -->
+<section id="mpc">
+  <h2><span class="n">1</span>¿Qué es MPC?</h2>
+  <p class="idea">Varios participantes calculan algo juntos con sus datos privados, sin enseñar sus datos a los demás. Eso es MPC (<em>multi-party computation</em>, cálculo entre varias partes).</p>
+  <figure>
+    <svg viewBox="0 0 720 210" role="img" aria-label="Tres hospitales suman sus pacientes sin enseñar sus números">
+      <defs><marker id="p1a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-a" x="20" y="20" width="170" height="70" rx="12"/><text class="t-b" x="105" y="48" text-anchor="middle">Hospital A</text><text class="t-m t-a" x="105" y="74" text-anchor="middle">100 pacientes</text>
+      <rect class="s-b" x="275" y="20" width="170" height="70" rx="12"/><text class="t-b" x="360" y="48" text-anchor="middle">Hospital B</text><text class="t-m t-bb" x="360" y="74" text-anchor="middle">200 pacientes</text>
+      <rect class="s-c" x="530" y="20" width="170" height="70" rx="12"/><text class="t-b" x="615" y="48" text-anchor="middle">Hospital C</text><text class="t-m t-c" x="615" y="74" text-anchor="middle">300 pacientes</text>
+      <path class="s-line" d="M105 90L320 138" marker-end="url(#p1a)"/><path class="s-line" d="M360 90V136" marker-end="url(#p1a)"/><path class="s-line" d="M615 90L400 138" marker-end="url(#p1a)"/>
+      <rect class="s-ok" x="250" y="140" width="220" height="56" rx="12"/><text class="t-b" x="360" y="164" text-anchor="middle">Resultado: 600</text><text class="t-s" x="360" y="184" text-anchor="middle">sin enseñar 100, 200 ni 300</text>
+    </svg>
+  </figure>
+  <p><b>Lo normal</b> sería que un hospital recibiera los números de los otros, sumara y diera el total. Pero entonces ese hospital conocería los datos de los demás. <b>Con MPC</b>, los hospitales se intercambian información que les permite calcular el total sin enviar sus números: al final todos conocen 600, pero no los valores de cada uno.</p>
+</section>
+
+<section id="ss">
+  <h2><span class="n">2</span>Secret sharing: un secreto en dos trozos</h2>
+  <p class="idea">Un número secreto se parte en dos trozos que se reparten entre dos personas. Ninguna tiene el número completo.</p>
+  <figure>
+    <svg viewBox="0 0 720 170" role="img" aria-label="42 se parte en 17 y 25">
+      <defs><marker id="p2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-data" x="285" y="12" width="150" height="56" rx="12"/><text class="t-s" x="360" y="34" text-anchor="middle">el secreto</text><text class="t-m t-d" x="360" y="56" text-anchor="middle">42</text>
+      <path class="s-line" d="M330 68L190 104" marker-end="url(#p2a)"/><path class="s-line" d="M390 68L530 104" marker-end="url(#p2a)"/>
+      <rect class="s-a" x="80" y="106" width="190" height="54" rx="12"/><text class="t-s" x="175" y="127" text-anchor="middle">trozo de la persona A</text><text class="t-m t-a" x="175" y="149" text-anchor="middle">17</text>
+      <rect class="s-b" x="450" y="106" width="190" height="54" rx="12"/><text class="t-s" x="545" y="127" text-anchor="middle">trozo de la persona B</text><text class="t-m t-bb" x="545" y="149" text-anchor="middle">25</text>
+      <text class="t-m" x="360" y="140" text-anchor="middle">17 + 25 = 42</text>
+    </svg>
+  </figure>
+  <div class="box why"><b class="lbl">Un matiz importante</b>Esto es una ilustración. En los esquemas reales el primer trozo es un número al azar dentro de un rango enorme y se usa aritmética «de reloj» (modular), de modo que un trozo aislado no revela nada del secreto. Lo veremos en la parte 2.</div>
+</section>
+
+<section id="ss-suma">
+  <h2><span class="n">3</span>Sumar con trozos</h2>
+  <p class="idea">Con trozos se puede operar: cada persona suma sus trozos y luego se juntan los dos resultados.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th class="num">Persona <span class="ca">A</span></th><th class="num">Persona <span class="cb">B</span></th><th class="num">Juntos</th></tr>
+    <tr><td>X = 42</td><td class="num ca">17</td><td class="num cb">25</td><td class="num">42</td></tr>
+    <tr><td>Y = 30</td><td class="num ca">12</td><td class="num cb">18</td><td class="num">30</td></tr>
+    <tr><td><b>Suma local</b></td><td class="num ca">29</td><td class="num cb">43</td><td class="num"><b>29 + 43 = 72 = 42 + 30</b></td></tr>
+  </table></div>
+  <p>Hemos sumado dos números sin reunirlos en ningún sitio. Esa es la intuición de todo lo demás.</p>
+</section>
+
+<section id="piezas">
+  <h2><span class="n">4</span>Las piezas de MPC</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>Palabra</th><th>Qué significa</th></tr>
+    <tr><td>Party (participante)</td><td>Cada uno de los que calculan: un hospital, un servidor…</td></tr>
+    <tr><td>Input (entrada)</td><td>El dato privado que aporta cada participante.</td></tr>
+    <tr><td>Secret (secreto)</td><td>Lo que queremos mantener oculto.</td></tr>
+    <tr><td>Share (trozo)</td><td>Un trozo de un secreto; solo no dice nada.</td></tr>
+    <tr><td>Protocol (protocolo)</td><td>Las reglas que siguen todos para hacer el cálculo.</td></tr>
+    <tr><td>Communication</td><td>Los mensajes que se intercambian durante el protocolo.</td></tr>
+    <tr><td>Output (resultado)</td><td>Lo que se permite conocer al final.</td></tr>
+    <tr><td>Reconstruction</td><td>Juntar los trozos de un resultado para leerlo.</td></tr>
+  </table></div>
+  <p>Detalle importante: quien aporta los datos no tiene por qué ser quien calcula. Por ejemplo, cinco hospitales pueden repartir sus datos entre dos servidores que hacen las cuentas (en dsVert, las dos «autoridades»).</p>
+</section>
+
+<section id="mult-problema">
+  <h2><span class="n">5</span>Multiplicar: el problema</h2>
+  <p class="idea">Sumar trozos es fácil. Multiplicar no: no basta con multiplicar los trozos, porque faltan los términos cruzados.</p>
+  <p>Queremos 42 × 30 = 1.260. Con los trozos de antes:</p>
+  <div class="formula">(17 + 25) × (12 + 18) = 17·12 + <span class="cb">17·18</span> + <span class="cb">25·12</span> + 25·18</div>
+  <p>Los términos 17·12 y 25·18 los calcula cada persona con lo suyo. Pero <b>17·18</b> mezcla un trozo de A con uno de B, y <b>25·12</b> también: ninguno de los dos puede calcularlos solo. Para eso hacen falta trucos adicionales; el más usado es el triplete de Beaver.</p>
+</section>
+
+<section id="beaver">
+  <h2><span class="n">6</span>El triplete de Beaver</h2>
+  <p class="idea">Un triplete son tres números: a y b al azar, y c = a × b. Es una multiplicación hecha de antemano con números inventados, que permite multiplicar los de verdad revelando solo diferencias.</p>
+  <figure>
+    <svg viewBox="0 0 720 120" role="img" aria-label="Triplete a 2, b 3, c 6">
+      <rect class="s-soft" x="160" y="14" width="400" height="92" rx="12"/><rect class="s-dash" x="160" y="14" width="400" height="92" rx="12"/>
+      <text class="t-s" x="360" y="38" text-anchor="middle">triplete de Beaver (en trozos: nadie lo ve entero)</text>
+      <text class="t-m" x="250" y="80" text-anchor="middle">a = 2</text><text class="t-m" x="360" y="80" text-anchor="middle">b = 3</text><text class="t-m t-d" x="470" y="80" text-anchor="middle">c = 6</text>
+    </svg>
+  </figure>
+  <p><b>Multiplicar 7 × 5 sin revelar ni el 7 ni el 5</b>, con el triplete (2, 3, 6):</p>
+  <ol class="steps">
+    <li><b>Restar lo inventado:</b> d = x − a = 7 − 2 = <b>5</b> y e = y − b = 5 − 3 = <b>2</b>.</li>
+    <li><b>Revelar d y e.</b> Se pueden publicar: como a y b son al azar y nadie los conoce, estas diferencias no dicen nada de 7 ni de 5.</li>
+    <li><b>Aplicar la fórmula:</b> x·y = c + d·b + e·a + d·e = 6 + 5·3 + 2·2 + 5·2 = 6 + 15 + 4 + 10 = <b>35</b>.</li>
+  </ol>
+  <div class="box why"><b class="lbl">Por qué funciona</b>Como d = x − a, entonces x = a + d. Y como e = y − b, entonces y = b + e. Así:<div class="formula">x·y = (a + d)(b + e) = a·b + a·e + d·b + d·e = c + a·e + d·b + d·e</div>La multiplicación difícil (a·b) ya estaba hecha de antemano: c.</div>
+  <p><b>Pero si hemos usado el 3 y el 2…</b> Aquí los vemos porque miramos desde fuera. En MPC real nadie conoce a, b ni c enteros: cada persona tiene un trozo de cada uno, y como d y e son públicos, cada una multiplica <em>su trozo</em> de b por d y <em>su trozo</em> de a por e. Así cada una obtiene un trozo de 35:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th class="num">Persona <span class="ca">A</span></th><th class="num">Persona <span class="cb">B</span></th><th class="num">Juntos</th></tr>
+    <tr><td>x</td><td class="num ca">4</td><td class="num cb">3</td><td class="num">7</td></tr>
+    <tr><td>y</td><td class="num ca">1</td><td class="num cb">4</td><td class="num">5</td></tr>
+    <tr><td>a</td><td class="num ca">1</td><td class="num cb">1</td><td class="num">2</td></tr>
+    <tr><td>b</td><td class="num ca">2</td><td class="num cb">1</td><td class="num">3</td></tr>
+    <tr><td>c</td><td class="num ca">5</td><td class="num cb">1</td><td class="num">6</td></tr>
+    <tr><td>d = x − a</td><td class="num ca">3</td><td class="num cb">2</td><td class="num">se publica: 5</td></tr>
+    <tr><td>e = y − b</td><td class="num ca">−1</td><td class="num cb">3</td><td class="num">se publica: 2</td></tr>
+    <tr><td><b>trozo de x·y</b></td><td class="num ca">5 + 5·2 + 2·1 + 5·2 = 27</td><td class="num cb">1 + 5·1 + 2·1 = 8</td><td class="num"><b>27 + 8 = 35</b></td></tr>
+  </table></div>
+  <p>El término d·e (que es público) lo suma solo uno de los dos. Nadie ha visto el 7 ni el 5; el 35 solo se lee si se decide juntar los trozos.</p>
+</section>
+
+<section id="fabricar">
+  <h2><span class="n">7</span>¿Quién fabrica los tripletes?</h2>
+  <p class="idea">Hay que fabricarlos sin que nadie conozca a, b y c enteros. Se hace antes del cálculo (fase offline) y se gasta uno por multiplicación (fase online).</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Forma</th><th>Cómo funciona</th></tr>
+    <tr><td>Un tercero de confianza (<em>dealer</em>)</td><td>Fabrica los tripletes y reparte los trozos. Hay que fiarse de él: si mira, puede deshacer las máscaras.</td></tr>
+    <tr><td>Transferencia inconsciente (OT)</td><td>Los propios participantes fabrican los tripletes entre ellos, sin tercero. <b>Es lo que usa dsVert</b> (IKNP).</td></tr>
+    <tr><td>Cifrado homomórfico (HE)</td><td>Se usa criptografía homomórfica para fabricarlos.</td></tr>
+  </table></div>
+  <ul>
+    <li><b>Fase offline:</b> se fabrican tripletes; aún no hace falta ningún dato.</li>
+    <li><b>Fase online:</b> llegan los datos; cada multiplicación usa un triplete nuevo y revela solo d y e.</li>
+    <li>Un triplete no se reutiliza nunca: reutilizar los números al azar podría revelar información.</li>
+  </ul>
+  <div class="box why"><b class="lbl">La idea clave</b>Un triplete de Beaver es una multiplicación al azar preparada de antemano, que sirve para multiplicar otros dos números secretos sin revelarlos. La OT sirve para <em>fabricar</em> tripletes; Beaver, para <em>usarlos</em>.</div>
+</section>
+
+<section id="psi-cero">
+  <h2><span class="n">8</span>PSI: ¿qué pacientes tenemos en común?</h2>
+  <p class="idea">Antes de calcular, hay que saber qué pacientes están en los dos servidores y ponerlos en el mismo orden, sin enseñar las listas. Eso es PSI (<em>private set intersection</em>, intersección privada de conjuntos).</p>
+  <div class="box"><b class="lbl" style="color:var(--accent)">Las tres preguntas del PSI</b>
+    <ol class="steps" style="margin:4px 0 0">
+      <li><b>¿Tenemos los mismos pacientes?</b> Cuáles están en los dos servidores.</li>
+      <li><b>¿Dónde está cada uno?</b> En qué fila de cada servidor está cada paciente común.</li>
+      <li><b>¿Cómo los ponemos en el mismo orden?</b> Que la misma persona quede en la misma fila en los dos sitios.</li>
+    </ol>
+  </div>
+  <div class="two">
+    <div class="box"><h3>Servidor A</h3><div class="tbl-wrap"><table style="min-width:0"><tr><th>ID</th><th class="num">Edad</th></tr><tr><td>101</td><td class="num">35</td></tr><tr><td>102</td><td class="num">42</td></tr><tr><td>103</td><td class="num">58</td></tr></table></div></div>
+    <div class="box"><h3>Servidor B</h3><div class="tbl-wrap"><table style="min-width:0"><tr><th>ID</th><th class="num">Glucosa</th></tr><tr><td>103</td><td class="num">110</td></tr><tr><td>104</td><td class="num">90</td></tr><tr><td>102</td><td class="num">125</td></tr></table></div></div>
+  </div>
+  <p>Dos problemas: no todos los pacientes están en los dos sitios, y están en distinto orden. Si multiplicáramos la primera fila de A por la primera de B, mezclaríamos pacientes distintos. Después de PSI, cada servidor se queda con sus filas comunes, en el mismo orden:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Paciente</th><th class="num">Edad (en A)</th><th class="num">Glucosa (en B)</th></tr>
+    <tr><td>102</td><td class="num ca">42</td><td class="num cb">125</td></tr>
+    <tr><td>103</td><td class="num ca">58</td><td class="num cb">110</td></tr>
+  </table></div>
+  <p class="meta">Tabla conceptual: nadie construye esta tabla conjunta. A tiene su columna y B la suya, ya en el mismo orden.</p>
+
+  <h3 style="margin:18px 0 4px">El ingrediente: un «candado» que no se puede deshacer</h3>
+  <p>Una curva elíptica es un objeto matemático con puntos sobre los que se pueden hacer operaciones. Se puede coger un punto P y «multiplicarlo» por un número secreto: Q = 7P (que significa sumar el punto consigo mismo siete veces, con unas reglas especiales).</p>
+  <ul>
+    <li><b>Hacia delante es fácil:</b> con P y 7, se calcula Q.</li>
+    <li><b>Hacia atrás es imposible en la práctica:</b> con P y Q, nadie puede recuperar el 7.</li>
+  </ul>
+  <p>Así que multiplicar por tu número secreto es como poner un candado que nadie más puede abrir.</p>
+
+  <h3 style="margin:18px 0 4px">El truco: dos candados que se pueden poner en cualquier orden</h3>
+  <p>El paciente 102 se convierte en un punto P de la curva. El hospital A tiene la clave secreta 3 y el B, la 7 (en la realidad son números enormes).</p>
+  <div class="formula">7 · (3P) = 3 · (7P) = 21P</div>
+  <p>Da igual quién ponga primero su candado: si los dos procesan el mismo paciente, el resultado con los dos candados es idéntico. Si son pacientes distintos, salen puntos distintos. Y nadie ha enseñado ni el identificador ni su clave.</p>
+
+<div class="stepper">
+  <svg viewBox="0 0 720 330" role="img" aria-label="Paso a paso: PSI con dos candados">
+    <rect class="s-a" x="20" y="30" width="270" height="250" rx="12"/><text class="t-b t-a" x="155" y="58" text-anchor="middle">Servidor A · clave 3</text>
+    <rect class="s-b" x="430" y="30" width="270" height="250" rx="12"/><text class="t-b t-bb" x="565" y="58" text-anchor="middle">Servidor B · clave 7</text>
+    <rect class="s-card" x="306" y="130" width="108" height="56" rx="10"/><text class="t-b" x="360" y="156" text-anchor="middle">Analista</text><text class="t-s" x="360" y="174" text-anchor="middle">cartero</text>
+    <text class="t-m" x="36" y="96" data-show="0-0">101 · 102 · 103</text>
+    <text class="t-m t-a" x="36" y="96" data-show="1">3P₁₀₁ · 3P₁₀₂ · 3P₁₀₃</text>
+    <text class="t-m" x="446" y="96" data-show="0-0">103 · 104 · 102</text>
+    <text class="t-m t-bb" x="446" y="96" data-show="1">7P₁₀₃ · 7P₁₀₄ · 7P₁₀₂</text>
+      <g class="fly" data-at="2" data-show="2-2" style="--dx:220px;--dy:0px"><rect class="s-data" x="224" y="108" width="64" height="34" rx="5"/><path class="s-line" d="M224 108L256 126L288 108"/><text class="t-m" x="256" y="136" text-anchor="middle">3P…</text></g>
+      <g class="fly" data-at="2" data-show="2-2" style="--dx:-220px;--dy:0px"><rect class="s-data" x="432" y="144" width="64" height="34" rx="5"/><path class="s-line" d="M432 144L464 162L496 144"/><text class="t-m" x="464" y="172" text-anchor="middle">7P…</text></g>
+    <text class="t-s late" x="36" y="132" data-show="2">recibe la lista de B y pone su candado:</text>
+    <rect x="30" y="144" width="250" height="34" rx="8" class="hl" data-show="3"/>
+    <text class="t-m late" x="36" y="166" data-show="2">21P₁₀₃ · 21P₁₀₄ · 21P₁₀₂</text>
+    <text class="t-s late" x="446" y="132" data-show="2">recibe la lista de A y pone su candado:</text>
+    <rect x="440" y="144" width="250" height="34" rx="8" class="hl" data-show="3"/>
+    <text class="t-m late" x="446" y="166" data-show="2">21P₁₀₁ · 21P₁₀₂ · 21P₁₀₃</text>
+    <text class="t-b t-ok" x="155" y="214" text-anchor="middle" data-show="3">coinciden 102 y 103</text>
+    <text class="t-b t-ok" x="565" y="214" text-anchor="middle" data-show="3">coinciden 102 y 103</text>
+    <text class="t-m" x="36" y="256" data-show="4">102: 42 · 103: 58</text>
+    <text class="t-m" x="446" y="256" data-show="4">102: 125 · 103: 110</text>
+    <text class="t-b" x="360" y="312" text-anchor="middle" data-show="4">el analista solo recibe «alineación correcta»</text>
+  </svg>
+  <ol class="captions">
+    <li>A tiene a los pacientes 101, 102 y 103; B, a 103, 104 y 102. Ninguno quiere enseñar su lista.</li>
+    <li>Cada uno convierte sus identificadores en puntos de una curva y pone su candado: A multiplica por su clave secreta, 3; B, por la suya, 7. (Los subíndices son para que lo sigas: en la realidad son puntos que parecen ruido.)</li>
+    <li>Se cambian las listas cerradas a través del analista, y cada uno pone su candado encima: 7·(3P) = 3·(7P) = 21P. El mismo paciente da el mismo resultado, se cierre en el orden que se cierre.</li>
+    <li>Se comparan las listas con los dos candados: coinciden 21P₁₀₂ y 21P₁₀₃. Los comunes son 102 y 103; 101 y 104 no se revelan.</li>
+    <li>Cada servidor se queda con sus filas comunes y las ordena igual. A tiene 42 y 58; B, 125 y 110: ya se puede calcular persona a persona. El analista solo sabe que ha ido bien.</li>
+  </ol>
+  <div class="ctrl"><button class="prev">◀ Anterior</button><button class="next primary">Siguiente ▶</button><button class="reset">Volver a empezar</button><span class="count"></span></div>
+</div>
+  <h3 style="margin:18px 0 4px">De candados a PSI</h3>
+  <ol class="steps">
+    <li>Cada servidor convierte sus identificadores en puntos de la curva (en dsVert, antes los pasa a un seudónimo con una clave del estudio).</li>
+    <li>Cada uno pone su candado a sus puntos.</li>
+    <li>Se los intercambian (a través del analista, cifrados) y cada uno pone su candado encima del otro.</li>
+    <li>Comparan: los pacientes comunes dan el mismo punto con dos candados. Aquí, 102 y 103.</li>
+    <li>Cada servidor se queda con sus filas comunes y las ordena igual, en local.</li>
+  </ol>
+  <div class="box why"><b class="lbl">¿Por qué no comparar simplemente un hash (SHA-256) de cada ID?</b>Porque los identificadores son predecibles: alguien podría calcular el hash de miles de identificadores posibles y ver cuáles coinciden. Con los candados, cada servidor añade una clave secreta propia, y eso ya no se puede probar a ciegas.</div>
+  <div class="box travels"><b class="lbl">Qué se sabe al final</b>Cada servidor sabe cuáles de <em>sus</em> filas son comunes. El analista solo recibe «alineación correcta»: ni la lista ni cuántos coinciden. Saber que hay coincidencias ya es un poco de información; por eso dsVert no la da ni al analista.</div>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th>PSI</th><th>MPC</th></tr>
+    <tr><td>Pregunta</td><td>¿tenemos los mismos pacientes?</td><td>¿qué calculamos con sus datos?</td></tr>
+    <tr><td>Fundamento</td><td>curvas elípticas y doble candado</td><td>secret sharing y operaciones seguras</td></tr>
+    <tr><td>Resultado</td><td>filas comunes y alineadas</td><td>estadísticas y modelos</td></tr>
+  </table></div>
+  <div class="box slide"><b class="lbl">Para la slide (una sola)</b>«Cada hospital pone su candado; con los dos candados, el mismo paciente da el mismo resultado (7·3P = 3·7P = 21P). Así encontramos a los comunes sin enseñar los identificadores, y cada uno ordena sus filas.»</div>
+</section>
+
+<section id="mpc-fl">
+  <h2><span class="n">9</span>MPC y aprendizaje federado</h2>
+  <p class="idea">No son lo mismo: el aprendizaje federado entrena un modelo sin mover los datos; MPC calcula algo conjunto sin revelar las entradas.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th>Aprendizaje federado</th><th>MPC</th></tr>
+    <tr><td>Objetivo</td><td>entrenar modelos repartidos</td><td>calcular algo de forma privada</td></tr>
+    <tr><td>Datos originales</td><td>se quedan en cada sitio</td><td>se quedan privados según el protocolo</td></tr>
+    <tr><td>Qué se intercambia</td><td>actualizaciones del modelo, estadísticos…</td><td>trozos o mensajes criptográficos</td></tr>
+    <tr><td>Garantía criptográfica</td><td>no necesariamente</td><td>sí, bajo sus supuestos</td></tr>
+    <tr><td>En esta tesis</td><td>dsFlower</td><td>dsVert</td></tr>
+  </table></div>
+  <p>Se pueden combinar: por ejemplo, MPC sirve para sumar las actualizaciones de un modelo federado sin que nadie vea las de cada sitio.</p>
+</section>
+
+<section id="matices">
+  <h2><span class="n">10</span>¿Es totalmente seguro?</h2>
+  <p class="idea">MPC protege el cálculo, con tres matices. dsVert responde a cada uno.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Matiz</th><th>Qué significa</th><th>Cómo lo trata dsVert</th></tr>
+    <tr><td>El resultado puede revelar algo</td><td>Si dos suman sus números y uno conoce el suyo, deduce el del otro restando. MPC no evita lo que dice el propio resultado.</td><td>Solo se abren agregados; en la v2, además, con ruido (privacidad diferencial).</td></tr>
+    <tr><td>Confabulación</td><td>Si los que tienen los trozos se juntan, pueden reconstruir el secreto.</td><td>Basta con que una de las dos autoridades no se confabule con el analista.</td></tr>
+    <tr><td>Modelo de seguridad</td><td>Semi-honesto (siguen las reglas pero miran) o malicioso (hacen trampas), más caro.</td><td>dsVert asume semi-honesto (<em>honest-but-curious</em>); el malicioso queda fuera de la tesis.</td></tr>
+  </table></div>
+  <div class="box slide"><b class="lbl">La idea para recordar</b>MPC permite que varios calculen algo juntos sin confiar sus datos a ninguno de los demás; y no solo sumas: multiplicaciones, comparaciones, regresiones… con un coste mayor cuanto más complejo es el cálculo.</div>
+</section>
+
+<div class="part"><span>Parte 2</span>Lo mismo, en dsVert</div>
+<p>Ahora con nuestro caso: hospitales que tienen columnas distintas de las mismas personas. Cada concepto general tiene su versión en dsVert:</p>
+<div class="tbl-wrap"><table>
+  <tr><th>Concepto general</th><th>En dsVert</th></tr>
+  <tr><td>Participantes</td><td>los servidores DataSHIELD de cada centro; con muchos centros, dos «autoridades» hacen las cuentas</td></tr>
+  <tr><td>Entradas</td><td>las columnas de cada centro (edad en uno, glucosa en otro…)</td></tr>
+  <tr><td>Trozos</td><td>números en un «reloj» enorme (2⁶³ o 2¹²⁷ posiciones)</td></tr>
+  <tr><td>Comunicación</td><td>sobres cifrados que el analista lleva de un centro a otro sin poder abrirlos</td></tr>
+  <tr><td>Tripletes</td><td>fabricados entre los dos centros con OT (IKNP), sin tercero de confianza</td></tr>
+  <tr><td>Resultado</td><td>solo agregados del modelo (en la v2, con ruido)</td></tr>
+  <tr><td>Antes de calcular</td><td>PSI para alinear a las personas comunes</td></tr>
+</table></div>
+
+<!-- 1 -->
+<section id="problema">
+  <h2><span class="n">11</span>El problema</h2>
+  <p class="idea">Las mismas personas están en varios centros, pero cada centro tiene columnas distintas.</p>
+  <figure>
+    <svg viewBox="0 0 720 300" role="img" aria-label="Tres centros con columnas distintas de las mismas personas">
+      <rect class="s-a" x="16" y="14" width="210" height="190" rx="12"/>
+      <text class="t-b" x="121" y="42" text-anchor="middle">Centro A</text>
+      <text class="t-s" x="121" y="62" text-anchor="middle">columna: edad</text>
+      <text class="t" x="40" y="96">Ana</text><text class="t-m t-a" x="200" y="96" text-anchor="end">24</text>
+      <text class="t" x="40" y="122">Luis</text><text class="t-m t-a" x="200" y="122" text-anchor="end">51</text>
+      <text class="t" x="40" y="148">Marta</text><text class="t-m t-a" x="200" y="148" text-anchor="end">38</text>
+      <text class="t" x="40" y="174">Jordi</text><text class="t-m t-a" x="200" y="174" text-anchor="end">62</text>
+      <rect class="s-b" x="255" y="14" width="210" height="190" rx="12"/>
+      <text class="t-b" x="360" y="42" text-anchor="middle">Centro B</text>
+      <text class="t-s" x="360" y="62" text-anchor="middle">columna: glucosa</text>
+      <text class="t" x="279" y="96">Marta</text><text class="t-m t-bb" x="439" y="96" text-anchor="end">5</text>
+      <text class="t" x="279" y="122">Ana</text><text class="t-m t-bb" x="439" y="122" text-anchor="end">5</text>
+      <text class="t" x="279" y="148">Pere</text><text class="t-m t-bb" x="439" y="148" text-anchor="end">6</text>
+      <text class="t" x="279" y="174">Luis</text><text class="t-m t-bb" x="439" y="174" text-anchor="end">7</text>
+      <rect class="s-c" x="494" y="14" width="210" height="190" rx="12"/>
+      <text class="t-b" x="599" y="42" text-anchor="middle">Centro C</text>
+      <text class="t-s" x="599" y="62" text-anchor="middle">columna: diagnóstico</text>
+      <text class="t" x="518" y="96">Luis</text><text class="t-m t-c" x="678" y="96" text-anchor="end">sí</text>
+      <text class="t" x="518" y="122">Ana</text><text class="t-m t-c" x="678" y="122" text-anchor="end">no</text>
+      <text class="t" x="518" y="148">Marta</text><text class="t-m t-c" x="678" y="148" text-anchor="end">no</text>
+      <text class="t" x="518" y="174">Jordi</text><text class="t-m t-c" x="678" y="174" text-anchor="end">sí</text>
+      <rect class="s-card" x="180" y="226" width="360" height="56" rx="12"/>
+      <text class="t-b" x="360" y="250" text-anchor="middle">Analista</text>
+      <text class="t" x="360" y="271" text-anchor="middle">«¿La glucosa sube con la edad?»</text>
+    </svg>
+    <figcaption>Ninguno tiene la tabla entera. Además las filas están en otro orden y no todos tienen a las mismas personas (Jordi no está en B; Pere no está en A).</figcaption>
+  </figure>
+  <p>En el DataSHIELD de siempre, cada centro tiene <em>todas las columnas</em> de <em>sus</em> pacientes: cada uno calcula sus sumas y el analista las junta. Aquí no se puede: para relacionar edad con glucosa hay que combinar, persona a persona, datos que están en centros distintos. Para eso está dsVert.</p>
+</section>
+
+<!-- 2 -->
+<section id="fases">
+  <h2><span class="n">12</span>Dos fases</h2>
+  <p class="idea">Primero se alinea a las personas comunes; después se calcula con trozos. Solo sale el resultado.</p>
+  <figure>
+    <svg viewBox="0 0 720 170" role="img" aria-label="Fase 1 PSI, fase 2 MPC, resultado">
+      <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-card" x="10" y="30" width="150" height="100" rx="12"/>
+      <text class="t-b" x="85" y="62" text-anchor="middle">Centros</text>
+      <text class="t-s" x="85" y="84" text-anchor="middle">cada uno con</text>
+      <text class="t-s" x="85" y="102" text-anchor="middle">sus columnas</text>
+      <path class="s-line" d="M160 80H200" marker-end="url(#ah)"/>
+      <rect class="s-a" x="204" y="30" width="160" height="100" rx="12"/>
+      <text class="t-b" x="284" y="62" text-anchor="middle">Fase 1 · PSI</text>
+      <text class="t" x="284" y="86" text-anchor="middle">encontrar a las</text>
+      <text class="t" x="284" y="106" text-anchor="middle">mismas personas</text>
+      <path class="s-line" d="M364 80H404" marker-end="url(#ah)"/>
+      <rect class="s-b" x="408" y="30" width="160" height="100" rx="12"/>
+      <text class="t-b" x="488" y="62" text-anchor="middle">Fase 2 · MPC</text>
+      <text class="t" x="488" y="86" text-anchor="middle">calcular con</text>
+      <text class="t" x="488" y="106" text-anchor="middle">trozos</text>
+      <path class="s-line" d="M568 80H608" marker-end="url(#ah)"/>
+      <rect class="s-ok" x="612" y="30" width="100" height="100" rx="12"/>
+      <text class="t-b" x="662" y="62" text-anchor="middle">Resultado</text>
+      <text class="t-s" x="662" y="86" text-anchor="middle">lo único</text>
+      <text class="t-s" x="662" y="104" text-anchor="middle">que se abre</text>
+      <text class="t-s" x="284" y="156" text-anchor="middle">viajan códigos con candado</text>
+      <text class="t-s" x="488" y="156" text-anchor="middle">viajan trozos que parecen ruido</text>
+    </svg>
+  </figure>
+  <p><b>PSI</b> = <em>private set intersection</em>, «intersección privada»: averiguar quién está en los dos centros sin enseñar a nadie. <b>MPC</b> = <em>multi-party computation</em>, «cálculo entre varias partes»: calcular con trozos en vez de con los datos.</p>
+</section>
+
+<!-- 3 -->
+<section id="cartero">
+  <h2><span class="n">13</span>El analista hace de cartero</h2>
+  <p class="idea">Los servidores no se hablan entre ellos: cada mensaje de un centro a otro pasa por el analista, en un sobre que solo puede abrir el destinatario.</p>
+  <figure>
+    <svg viewBox="0 0 720 190" role="img" aria-label="Un mensaje cifrado de A a B pasa por el analista">
+      <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-a" x="20" y="50" width="150" height="80" rx="12"/>
+      <text class="t-b" x="95" y="84" text-anchor="middle">Centro A</text>
+      <text class="t-s" x="95" y="106" text-anchor="middle">servidor</text>
+      <rect class="s-card" x="285" y="50" width="150" height="80" rx="12"/>
+      <text class="t-b" x="360" y="84" text-anchor="middle">Analista</text>
+      <text class="t-s" x="360" y="106" text-anchor="middle">su ordenador</text>
+      <rect class="s-b" x="550" y="50" width="150" height="80" rx="12"/>
+      <text class="t-b" x="625" y="84" text-anchor="middle">Centro B</text>
+      <text class="t-s" x="625" y="106" text-anchor="middle">servidor</text>
+      <path class="s-line" d="M170 90H281" marker-end="url(#ah2)"/>
+      <path class="s-line" d="M435 90H546" marker-end="url(#ah2)"/>
+      <!-- sealed envelopes -->
+      <g transform="translate(203,58)"><rect class="s-data" width="46" height="30" rx="4"/><path class="s-line" d="M0 0L23 17L46 0"/><circle cx="38" cy="24" r="7" fill="var(--bad)"/></g>
+      <g transform="translate(468,58)"><rect class="s-data" width="46" height="30" rx="4"/><path class="s-line" d="M0 0L23 17L46 0"/><circle cx="38" cy="24" r="7" fill="var(--bad)"/></g>
+      <text class="t-s" x="226" y="122" text-anchor="middle">sobre cerrado</text>
+      <text class="t-s" x="491" y="122" text-anchor="middle">el mismo sobre</text>
+      <text class="t" x="360" y="166" text-anchor="middle">El analista reenvía el sobre, pero solo B tiene la llave para abrirlo.</text>
+    </svg>
+  </figure>
+  <div class="tbl-wrap"><table>
+    <tr><th>Rol</th><th>Quién</th><th>Qué hace</th></tr>
+    <tr><td>Parties (participantes del cálculo)</td><td>los servidores de los centros</td><td>guardan los trozos y hacen las operaciones criptográficas</td></tr>
+    <tr><td>Cartero (<em>relay</em>)</td><td>el cliente, en el ordenador del analista</td><td>coordina y lleva los mensajes; <b>no es una party</b>: no tiene trozos ni llaves</td></tr>
+    <tr><td>Herramienta para los tripletes</td><td>IKNP (transferencia inconsciente)</td><td>fabrica los tripletes sin tercero de confianza</td></tr>
+  </table></div>
+  <p>DataSHIELD funciona así: el analista habla con cada servidor, y los servidores no se conectan entre sí. dsVert aprovecha esa vía: cuando el centro A tiene que mandar algo al centro B, lo cifra para B y se lo da al analista, que lo lleva. Así el analista sirve de cartero (en inglés, <em>relay</em>) sin poder leer nada. Además, las llaves de cada servidor están fijadas de antemano (identidades verificadas): el cartero no puede hacerse pasar por un servidor ni cambiar las llaves.</p>
+</section>
+
+<section id="cartero-llave">
+  <h2><span class="n">13a</span>¿Y qué impide que el cartero abra los sobres?</h2>
+  <p class="idea">El cartero lleva todos los sobres, pero cada uno va cerrado con el candado de su destinatario, y el registro de centros impide que el cartero cuele su propio candado.</p>
+  <ol class="steps">
+    <li><b>Cada servidor tiene dos claves:</b> una pública (un candado que reparte) y una privada (la llave, que nunca sale del servidor).</li>
+    <li><b>Cada sobre se cierra con el candado del destinatario.</b> El trozo para la autoridad 1 se cierra con el candado de la autoridad 1; el de la autoridad 2, con el de la autoridad 2. Solo cada destinatario tiene la llave. Por dentro: con la clave pública del destinatario (X25519) se acuerda una clave de sesión y se cifra con AES-GCM.</li>
+    <li><b>El cliente no tiene ninguna llave.</b> Lleva los sobres, pero para él son ruido cifrado; abrirlos sin la llave es imposible en la práctica.</li>
+    <li><b>Sin cambiazos (pinned peers).</b> El peligro sería que el cliente dijera «este es el candado de la autoridad 2» y diera el suyo. No puede: cada candado de sesión va firmado por la identidad registrada de su dueño (Ed25519), y los servidores solo cierran sobres con candados firmados por centros registrados.</li>
+    <li><b>Y aunque abriera uno, no le serviría:</b> un trozo solo parece un número cualquiera; necesitaría los dos, que van cerrados para dos servidores distintos.</li>
+  </ol>
+  <h3 style="margin:18px 0 4px">Cifrado y pinned peers no son lo mismo: trabajan juntos</h3>
+  <p><b>El cifrado</b> cierra el sobre: solo el destinatario puede leerlo (confidencialidad). <b>Los pinned peers</b> no cifran nada: garantizan que cierras el sobre para quien debes y que lo que recibes viene de un centro registrado (autenticación). Sin el registro, el cartero podría darte su propio candado haciéndolo pasar por el de la autoridad 2.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Capa</th><th>Qué hace</th><th>Contra qué protege</th></tr>
+    <tr><td>1 · HTTPS / TLS</td><td>cifra la conexión cliente ↔ cada servidor (lo normal de DataSHIELD)</td><td>alguien escuchando la red</td></tr>
+    <tr><td>2 · Sobres cifrados (X25519 + AES-GCM)</td><td>cada mensaje de servidor a servidor va cerrado para su destinatario</td><td>el cartero (el cliente) leyendo lo que lleva</td></tr>
+    <tr><td>3 · Pinned peers (Ed25519)</td><td>solo se habla con centros registrados; los candados van firmados</td><td>cambiazos de candado y servidores falsos</td></tr>
+    <tr><td>4 · Secret sharing</td><td>cada dato viaja partido; un trozo solo parece un número al azar</td><td>que alguien vea un trozo suelto</td></tr>
+    <tr><td>5 · Ruido en el resultado (solo v2)</td><td>lo que se abre lleva ruido calibrado</td><td>que el propio resultado delate a alguien</td></tr>
+  </table></div>
+  <div class="box why"><b class="lbl">¿No sobra el sobre cifrado si ya hay TLS? No</b>El TLS cifra cada tramo por separado (cliente ↔ A, cliente ↔ B) y <b>termina en el cliente</b>: con solo TLS, el cartero lo vería todo en claro. El sobre cifrado va <b>de extremo a extremo</b>, de A a B, y el cliente no puede abrirlo. Analogía: el TLS es la furgoneta blindada (protege del ladrón de la calle, pero el cartero la abre en su oficina); el sobre es la carta con su propio candado (el cartero la lleva en la mano y no puede leerla); los pinned peers son la agenda notarial de candados (nadie puede colar uno falso).</div>
+  <div class="box why"><b class="lbl">La confianza que sí hacemos</b>Que las dos autoridades no se junten entre ellas (ni con el analista) para sumar sus trozos, el supuesto de siempre al partir un dato en dos; y que los centros sigan el protocolo.</div>
+</section>
+
+<section id="pinned">
+  <h2><span class="n">13b</span>Pinned peers: solo hablamos con los centros registrados</h2>
+  <p class="idea">Los centros saben que otros centros tienen datos de los mismos pacientes y aceptan colaborar. Por eso se registran entre ellos, y a partir de ahí solo se hablan con los registrados.</p>
+  <div class="box travels"><b class="lbl">El peligro que evita</b>Imagina un analista malicioso que conecta dos servidores suyos y consigue que hagan de «autoridades». Los centros honrados les mandarían sus trozos… y el atacante tendría los dos trozos de cada número: 61 + 63 = 124 → 24, la edad de Ana. Los trozos solo protegen si quienes los guardan no se juntan, y aquí los dos serían suyos.</div>
+  <p><b>Cómo lo evita dsVert:</b> con el registro de centros (<em>pinned peers</em>):</p>
+  <ol class="steps">
+    <li>Cada centro tiene <b>dos claves</b>: una <b>privada</b>, que nunca sale de su servidor, y una <b>pública</b>, que comparte.</li>
+    <li>Al montar el estudio, los custodios <b>registran</b> («fijan», en inglés <em>pin</em>) la clave pública de cada centro participante.</li>
+    <li>Cada mensaje va <b>firmado</b> con la clave privada de quien lo manda (así se sabe que es de verdad de ese centro) y <b>cerrado</b> para quien lo recibe (solo él puede abrirlo).</li>
+    <li>Los servidores del atacante no están en la lista: nadie les manda nada. Tampoco puede el cartero cambiar una clave ni hacerse pasar por un centro.</li>
+  </ol>
+  <h3 style="margin:18px 0 4px">Cómo se relacionan los sobres cifrados y los pinned peers</h3>
+  <p>Están unidos: los sobres se cierran con claves que avala el registro. Cada centro tiene una <b>identidad registrada</b> (su par de claves: la privada nunca sale; la pública la registran todos los demás). Para cada conversación crea un candado nuevo de un solo uso y lo <b>firma con su identidad</b>. Quien manda un sobre comprueba la firma contra su registro («¿este candado es de verdad de B?») y solo entonces cierra el sobre con él. Por dentro: identidad Ed25519, candado de sesión X25519, contenido cifrado con AES-GCM. En una slide basta con un par de claves por centro.</p>
+  <figure>
+    <svg viewBox="0 0 720 200" role="img" aria-label="Cada centro, su llave privada y su candado público registrado por los demás">
+      <defs><marker id="pk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-a" x="20" y="20" width="200" height="110" rx="12"/><text class="t-b t-a" x="120" y="46" text-anchor="middle">Centro A</text><text class="t" x="120" y="74" text-anchor="middle">🔑 privada: se queda</text><text class="t" x="120" y="98" text-anchor="middle">🔒 pública: la reparte</text>
+      <rect class="s-b" x="260" y="20" width="200" height="110" rx="12"/><text class="t-b t-bb" x="360" y="46" text-anchor="middle">Centro B</text><text class="t" x="360" y="74" text-anchor="middle">🔑 privada: se queda</text><text class="t" x="360" y="98" text-anchor="middle">🔒 pública: la reparte</text>
+      <rect class="s-c" x="500" y="20" width="200" height="110" rx="12"/><text class="t-b t-c" x="600" y="46" text-anchor="middle">Centro C</text><text class="t" x="600" y="74" text-anchor="middle">🔑 privada: se queda</text><text class="t" x="600" y="98" text-anchor="middle">🔒 pública: la reparte</text>
+      <rect class="s-ok" x="160" y="150" width="400" height="40" rx="10"/><text class="t-b t-ok" x="360" y="176" text-anchor="middle">registro: todos guardan los candados de todos</text>
+      <path class="s-line" d="M120 130L250 148" marker-end="url(#pk)"/><path class="s-line" d="M360 130V146" marker-end="url(#pk)"/><path class="s-line" d="M600 130L470 148" marker-end="url(#pk)"/>
+    </svg>
+  </figure>
+  <div class="box why"><b class="lbl">En una frase</b>Es una capa añadida de seguridad: además de que los mensajes parecen ruido, solo circulan entre centros que se han reconocido mutuamente. (Por dentro: claves Ed25519 para firmar y X25519 + AES-GCM para cerrar los sobres.)</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Los centros se registran entre ellos con su clave pública; cada mensaje va firmado y cerrado, así que solo hablamos con centros reconocidos.»</div>
+</section>
+
+<!-- 4 -->
+<section id="psi">
+  <h2><span class="n">14</span>Fase 1 · PSI en dsVert: encontrar a las mismas personas</h2>
+  <p class="idea">Cada centro cierra sus códigos con su propio candado. Con los dos candados puestos, el código de una persona sale igual en los dos lados: solo coinciden las personas comunes.</p>
+  <p>Antes de calcular nada, las filas tienen que estar en el mismo orden en todos los centros: la fila de Ana en A tiene que corresponder a la fila de Ana en B. Eso es la <b>alineación</b>.</p>
+  <figure>
+    <svg viewBox="0 0 720 430" role="img" aria-label="Candados alfa y beta: solo coinciden los comunes">
+      <defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <text class="t-b t-a" x="180" y="24" text-anchor="middle">Centro A · candado α</text>
+      <text class="t-b t-bb" x="540" y="24" text-anchor="middle">Centro B · candado β</text>
+      <text class="t-s" x="360" y="50" text-anchor="middle">1 · cada uno cierra sus códigos con su candado</text>
+      <rect class="s-a" x="40" y="62" width="280" height="112" rx="10"/>
+      <text class="t-m" x="180" y="88" text-anchor="middle">α(Ana)</text><text class="t-m" x="180" y="112" text-anchor="middle">α(Luis)</text>
+      <text class="t-m" x="180" y="136" text-anchor="middle">α(Marta)</text><text class="t-m" x="180" y="160" text-anchor="middle">α(Jordi)</text>
+      <rect class="s-b" x="400" y="62" width="280" height="112" rx="10"/>
+      <text class="t-m" x="540" y="88" text-anchor="middle">β(Marta)</text><text class="t-m" x="540" y="112" text-anchor="middle">β(Ana)</text>
+      <text class="t-m" x="540" y="136" text-anchor="middle">β(Pere)</text><text class="t-m" x="540" y="160" text-anchor="middle">β(Luis)</text>
+      <path class="s-line" d="M322 100H396" marker-end="url(#ah3)"/>
+      <path class="s-line" d="M398 136H324" marker-end="url(#ah3)"/>
+      <text class="t-s" x="360" y="202" text-anchor="middle">2 · se los cambian, cifrados, a través del analista</text>
+      <text class="t-s" x="360" y="222" text-anchor="middle">3 · cada uno pone su candado encima del otro</text>
+      <rect class="s-card" x="40" y="234" width="280" height="112" rx="10"/>
+      <text class="t-s" x="180" y="252" text-anchor="middle">con α y β</text>
+      <text class="t-m t-ok" x="180" y="276" text-anchor="middle">5e21  (Ana)</text><text class="t-m t-ok" x="180" y="298" text-anchor="middle">c044  (Luis)</text>
+      <text class="t-m t-ok" x="180" y="320" text-anchor="middle">08dd  (Marta)</text><text class="t-m" x="180" y="342" text-anchor="middle" fill="var(--muted)">91a7  (Jordi)</text>
+      <rect class="s-card" x="400" y="234" width="280" height="112" rx="10"/>
+      <text class="t-s" x="540" y="252" text-anchor="middle">con β y α</text>
+      <text class="t-m t-ok" x="540" y="276" text-anchor="middle">08dd  (Marta)</text><text class="t-m t-ok" x="540" y="298" text-anchor="middle">5e21  (Ana)</text>
+      <text class="t-m" x="540" y="320" text-anchor="middle" fill="var(--muted)">3f10  (Pere)</text><text class="t-m t-ok" x="540" y="342" text-anchor="middle">c044  (Luis)</text>
+      <text class="t-b t-ok" x="360" y="380" text-anchor="middle">4 · coinciden 5e21, c044 y 08dd: Ana, Luis y Marta</text>
+      <text class="t" x="360" y="404" text-anchor="middle">Jordi y Pere no coinciden con nada: no se revelan.</text>
+      <text class="t-s" x="360" y="424" text-anchor="middle">Cada centro solo sabe cuáles de SUS filas coinciden; el analista solo ve «alineación correcta».</text>
+    </svg>
+    <figcaption>Los códigos de verdad parecen ruido (los de la figura están abreviados). El candado de cada centro es su clave secreta.</figcaption>
+  </figure>
+  <ol class="steps">
+    <li>Cada centro convierte cada identificador en un código con una clave del estudio (un seudónimo; nunca el identificador tal cual).</li>
+    <li>Cada centro cierra sus códigos con su candado: A con α, B con β.</li>
+    <li>Se los cambian a través del analista, cifrados. Cada uno pone su candado encima del del otro.</li>
+    <li>Con los dos candados, el código de una persona queda igual en los dos lados, se haya puesto antes α o β. Los que coinciden son las personas comunes.</li>
+  </ol>
+  <div class="box travels"><b class="lbl">Qué viaja</b>Códigos con candado, que parecen ruido. Nadie puede quitar un candado ajeno.</div>
+  <div class="box why"><b class="lbl">La matemática (por si preguntan)</b>Curvas elípticas (ECDH). El orden de los candados no importa: <span class="formula" style="display:block">α · (β · P) = β · (α · P)</span></div>
+  <h3 style="margin:18px 0 4px">¿Y con tres o más centros? ¿Usa IKNP?</h3>
+  <p><b>No, el PSI no usa IKNP.</b> El PSI usa solo el candado de curva elíptica. IKNP es de la fase 2 y solo sirve para fabricar los tripletes de las multiplicaciones.</p>
+  <ol class="steps">
+    <li>Uno de los centros hace de <b>referencia</b> (en v1, por defecto el primero de la conexión).</li>
+    <li>La referencia hace el doble candado <b>con cada uno de los demás, de dos en dos</b>: A con B, A con C…</li>
+    <li>Solo se quedan los pacientes que están <b>en todos</b> los centros.</li>
+    <li>Todos ponen sus filas <b>en el orden de la referencia</b>. Desde ahí, la fila 1 es la misma persona en todas partes.</li>
+  </ol>
+  <div class="box why"><b class="lbl">Qué vio el analista</b>En la primera v1, cuántos había en común. En la versión final, con listas rellenadas con entradas falsas hasta un tamaño fijo, solo «alineación correcta».</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Cada centro cierra sus códigos con su candado; con los dos candados, solo coinciden las personas comunes.»</div>
+</section>
+
+<!-- 5 -->
+<section id="trozos">
+  <h2><span class="n">15</span>Fase 2 · MPC: secret sharing, repartir un secreto en trozos</h2>
+  <p class="idea">Un número más otro número elegido al azar parece al azar. Así que cada dato se parte en dos trozos: cada trozo, solo, no dice nada; juntos, dan el dato.</p>
+  <p>Esto se llama <b>secret sharing</b> («reparto de secretos»). El de dsVert es <b>aditivo</b>: los trozos se suman para recuperar el dato. Toda la fase 2 (MPC) son cuentas con estos trozos.</p>
+  <p>Para que se vea, usamos un reloj de 100 posiciones: al pasar de 99 se vuelve a 0, como las horas después de las 12.</p>
+  <figure>
+    <svg viewBox="0 0 720 330" role="img" aria-label="Reloj de 100: 24 se parte en 61 y 63">
+      <circle cx="190" cy="165" r="130" fill="none" stroke="var(--line)" stroke-width="10"/>
+      <text class="t-s" x="190" y="26" text-anchor="middle">0 = 100</text>
+      <text class="t-s" x="330" y="170" text-anchor="start">25</text>
+      <text class="t-s" x="190" y="316" text-anchor="middle">50</text>
+      <text class="t-s" x="50" y="170" text-anchor="end">75</text>
+      <!-- positions on the dial: angle = value/100 × 360°, clockwise from the top (R 130, centre 190,165) -->
+      <circle cx="319.7" cy="156.8" r="9" fill="var(--data)"/>
+      <text class="t-m t-d" x="296" y="140" text-anchor="end">24</text>
+      <circle cx="107.1" cy="265.2" r="8" fill="var(--a)"/>
+      <text class="t-m t-a" x="130" y="246" text-anchor="start">61</text>
+      <circle cx="95.2" cy="254.0" r="8" fill="var(--b)"/>
+      <text class="t-m t-bb" x="62" y="282" text-anchor="end">63</text>
+      <text class="t-s" x="190" y="160" text-anchor="middle">trozos de 24:</text>
+      <text class="t-m" x="190" y="184" text-anchor="middle"><tspan class="t-a">61</tspan> + <tspan class="t-bb">63</tspan> = 124 → 24</text>
+      <rect class="s-card" x="372" y="40" width="330" height="250" rx="12"/>
+      <text class="t-b" x="392" y="72">Partir la edad 24 en dos trozos</text>
+      <text class="t" x="392" y="104">1. A elige un número al azar: <tspan class="t-bb">63</tspan></text>
+      <text class="t" x="392" y="128">    y se lo da a B como su trozo.</text>
+      <text class="t" x="392" y="160">2. A se queda con 24 − 63 = −39,</text>
+      <text class="t" x="392" y="184">    que en el reloj es <tspan class="t-a">61</tspan>.</text>
+      <text class="t" x="392" y="216">3. Juntos: <tspan class="t-a">61</tspan> + <tspan class="t-bb">63</tspan> = 124 → <tspan class="t-d">24</tspan>.</text>
+      <text class="t" x="392" y="256">Solo, un trozo puede ser cualquier</text>
+      <text class="t" x="392" y="278">número del 0 al 99. No dice nada.</text>
+    </svg>
+    <figcaption>En dsVert el reloj es enorme (2⁶³ o 2¹²⁷ posiciones) y los decimales se pasan a enteros, así que el redondeo es despreciable.</figcaption>
+  </figure>
+  <div class="box why"><b class="lbl">Por qué un trozo no dice nada</b>Porque el número al azar puede ser cualquiera con la misma probabilidad. Si la edad fuera 25 en vez de 24, los trozos serían otros, pero igual de aleatorios: mirando un trozo no se puede distinguir una edad de otra.</div>
+</section>
+
+<!-- 6 -->
+<section id="suma">
+  <h2><span class="n">16</span>¿Cómo se hace una suma?</h2>
+  <p class="idea">Cada centro suma sus propios trozos. No hace falta ningún mensaje.</p>
+<div class="stepper">
+  <svg viewBox="0 0 720 300" role="img" aria-label="Paso a paso: partir dos edades en trozos y sumarlas">
+    <rect class="s-a" x="20" y="40" width="250" height="190" rx="12"/><text class="t-b t-a" x="145" y="68" text-anchor="middle">Servidor A</text>
+    <rect class="s-b" x="450" y="40" width="250" height="190" rx="12"/><text class="t-b t-bb" x="575" y="68" text-anchor="middle">Servidor B</text>
+    <rect class="s-card" x="300" y="98" width="120" height="70" rx="10"/><text class="t-b" x="360" y="126" text-anchor="middle">Analista</text><text class="t-s" x="360" y="146" text-anchor="middle">cartero: no</text><text class="t-s" x="360" y="161" text-anchor="middle">puede abrir</text>
+    <text class="t" x="40" y="110" data-show="0-0">Ana · edad <tspan class="t-m t-d">24</tspan></text>
+    <text class="t" x="40" y="110" data-show="1">Ana · trozo <tspan class="t-m t-a">61</tspan></text>
+    <text class="t" x="40" y="146" data-show="0-1">Luis · edad <tspan class="t-m t-d">26</tspan></text>
+    <text class="t" x="40" y="146" data-show="2">Luis · trozo <tspan class="t-m t-a">52</tspan></text>
+    <text class="t-b" x="40" y="200" data-show="3">suma: 61 + 52 → <tspan class="t-a">13</tspan></text>
+    <text class="t-s" x="470" y="110" data-show="0-0">(nada de A todavía)</text>
+    <text class="t late" x="470" y="110" data-show="1">Ana · trozo <tspan class="t-m t-bb">63</tspan></text>
+    <text class="t late" x="470" y="146" data-show="2">Luis · trozo <tspan class="t-m t-bb">74</tspan></text>
+    <text class="t-b" x="470" y="200" data-show="3">suma: 63 + 74 → <tspan class="t-bb">37</tspan></text>
+      <g class="fly" data-at="1" data-show="1-1" style="--dx:290px;--dy:0px"><rect class="s-data" x="196" y="92" width="64" height="34" rx="5"/><path class="s-line" d="M196 92L228 110L260 92"/><text class="t-m" x="228" y="120" text-anchor="middle">63</text></g>
+      <g class="fly" data-at="2" data-show="2-2" style="--dx:290px;--dy:0px"><rect class="s-data" x="196" y="128" width="64" height="34" rx="5"/><path class="s-line" d="M196 128L228 146L260 128"/><text class="t-m" x="228" y="156" text-anchor="middle">74</text></g>
+    <rect class="s-ok" x="200" y="246" width="320" height="44" rx="10" data-show="4"/><text class="t-b t-ok" x="360" y="274" text-anchor="middle" data-show="4">se abre: 13 + 37 = 50 = 24 + 26</text>
+  </svg>
+  <ol class="captions">
+    <li>A tiene dos edades: 24 (Ana) y 26 (Luis). B no tiene nada de A.</li>
+    <li>A tira un dado: sale 63. Mete el 63 en un sobre cerrado para B; el analista lo lleva sin poder abrirlo. A se queda 24 − 63, que en el reloj de 100 es 61.</li>
+    <li>Igual con la edad de Luis: el 74 viaja a B y A se queda 52. Cada trozo, solo, parece un número cualquiera.</li>
+    <li>Cada uno suma sus trozos, sin mandar nada: A, 61 + 52 = 113 → 13; B, 63 + 74 = 137 → 37 (en el reloj de 100).</li>
+    <li>Si está permitido, se abre el total: 13 + 37 = 50, que es 24 + 26. Nadie ha visto ninguna edad.</li>
+  </ol>
+  <div class="ctrl"><button class="prev">◀ Anterior</button><button class="next primary">Siguiente ▶</button><button class="reset">Volver a empezar</button><span class="count"></span></div>
+</div>
+
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th class="num">Trozo de <span class="ca">A</span></th><th class="num">Trozo de <span class="cb">B</span></th><th class="num">Juntos</th></tr>
+    <tr><td>Edad de Ana</td><td class="num ca">61</td><td class="num cb">63</td><td class="num">24</td></tr>
+    <tr><td>Edad de Luis</td><td class="num ca">52</td><td class="num cb">74</td><td class="num">26</td></tr>
+    <tr><td><b>Suma</b> (cada uno la suya)</td><td class="num ca">61 + 52 = 113 → 13</td><td class="num cb">63 + 74 = 137 → 37</td><td class="num"><b>13 + 37 = 50 = 24 + 26</b></td></tr>
+  </table></div>
+  <p>Restar funciona igual: cada uno resta sus trozos. Y multiplicar por un número que todos conocen también: si hay que hacer 3 × edad, cada centro multiplica su trozo por 3.</p>
+  <div class="box travels"><b class="lbl">Qué viaja</b>Nada. Sumar es gratis.</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Cada trozo, solo, es un número cualquiera; juntos, dan el dato. Y sumar trozos no necesita ningún mensaje.»</div>
+</section>
+
+<!-- 7 -->
+<section id="triplete">
+  <h2><span class="n">17</span>¿Qué es un triplete?</h2>
+  <p class="idea">Tres números que no significan nada: dos elegidos al azar, a y b, y su producto, c = a × b. Nadie los tiene enteros: cada centro tiene un trozo de cada uno.</p>
+  <figure>
+    <svg viewBox="0 0 720 260" role="img" aria-label="Triplete a, b, c repartido en trozos">
+      <rect class="s-soft" x="150" y="12" width="420" height="70" rx="12"/>
+      <rect x="150" y="12" width="420" height="70" rx="12" class="s-dash"/>
+      <text class="t-s" x="360" y="34" text-anchor="middle">el triplete entero (nadie lo ve)</text>
+      <text class="t-m" x="360" y="64" text-anchor="middle">a = 10 · b = 2 · c = a × b = 20</text>
+      <rect class="s-a" x="60" y="118" width="260" height="120" rx="12"/>
+      <text class="t-b t-a" x="190" y="146" text-anchor="middle">Centro A guarda</text>
+      <text class="t-m" x="190" y="182" text-anchor="middle">a = 6 · b = 1 · c = 15</text>
+      <text class="t-s" x="190" y="214" text-anchor="middle">tres números sin sentido</text>
+      <rect class="s-b" x="400" y="118" width="260" height="120" rx="12"/>
+      <text class="t-b t-bb" x="530" y="146" text-anchor="middle">Centro B guarda</text>
+      <text class="t-m" x="530" y="182" text-anchor="middle">a = 4 · b = 1 · c = 5</text>
+      <text class="t-s" x="530" y="214" text-anchor="middle">tres números sin sentido</text>
+      <text class="t-s" x="360" y="106" text-anchor="middle">6 + 4 = 10 · 1 + 1 = 2 · 15 + 5 = 20</text>
+    </svg>
+    <figcaption>Es una «multiplicación de práctica»: 10 × 2 = 20, ya hecha y repartida en trozos, con números inventados.</figcaption>
+  </figure>
+  <p><b>¿Para qué sirve?</b> Para multiplicar los números de verdad (edad 24 × glucosa 5) usando la práctica: solo se publica cuánto se separan los de verdad de los inventados (24 − 10 = 14 y 5 − 2 = 3). Como nadie conoce el 10 ni el 2, esas diferencias no dicen nada. Con ellas, cada centro corrige su trozo de la práctica y obtiene su trozo del producto de verdad. El paso a paso, en la sección siguiente.</p>
+  <div class="box why"><b class="lbl">Por qué nadie puede tenerlo entero</b>Quien supiera que a = 10, al ver la diferencia 14 sacaría la edad: 14 + 10 = 24. Por eso el triplete se fabrica entre los dos centros, sin que ninguno lo vea entero (sección 19).</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Un triplete: tres números que no significan nada, una multiplicación de práctica hecha a medias.»</div>
+</section>
+
+<!-- 8 -->
+<section id="producto">
+  <h2><span class="n">18</span>¿Cómo se hace una multiplicación?</h2>
+  <p class="idea">Se tapa cada número con el número al azar del triplete, se abre solo lo tapado, y cada centro corrige su trozo de la práctica.</p>
+<div class="stepper">
+  <svg viewBox="0 0 720 330" role="img" aria-label="Paso a paso: una multiplicación con triplete">
+    <rect class="s-a" x="20" y="30" width="260" height="250" rx="12"/><text class="t-b t-a" x="150" y="58" text-anchor="middle">Servidor A</text>
+    <rect class="s-b" x="440" y="30" width="260" height="250" rx="12"/><text class="t-b t-bb" x="570" y="58" text-anchor="middle">Servidor B</text>
+    <rect class="s-card" x="300" y="120" width="120" height="60" rx="10"/><text class="t-b" x="360" y="146" text-anchor="middle">Analista</text><text class="t-s" x="360" y="166" text-anchor="middle">cartero</text>
+    <text class="t-m" x="36" y="92">x 20 · y 2</text><text class="t-s" x="36" y="112">(trozos de 24 y de 5)</text>
+    <text class="t-m" x="36" y="140">a 6 · b 1 · c 15</text><text class="t-s" x="36" y="158">(trozos del triplete)</text>
+    <text class="t-m t-a" x="36" y="190" data-show="1">d: 20 − 6 = 14 · e: 2 − 1 = 1</text>
+    <text class="t-m" x="36" y="230" data-show="3">15 + 14·1 + 3·6 + 14·3</text><text class="t-b t-a" x="36" y="256" data-show="3">= 89 (su trozo)</text>
+    <text class="t-m" x="456" y="92">x 4 · y 3</text><text class="t-s" x="456" y="112">(trozos de 24 y de 5)</text>
+    <text class="t-m" x="456" y="140">a 4 · b 1 · c 5</text><text class="t-s" x="456" y="158">(trozos del triplete)</text>
+    <text class="t-m t-bb" x="456" y="190" data-show="1">d: 4 − 4 = 0 · e: 3 − 1 = 2</text>
+    <text class="t-m" x="456" y="230" data-show="3">5 + 14·1 + 3·4</text><text class="t-b t-bb" x="456" y="256" data-show="3">= 31 (su trozo)</text>
+      <g class="fly" data-at="2" data-show="2-2" style="--dx:230px;--dy:0px"><rect class="s-data" x="214" y="170" width="64" height="34" rx="5"/><path class="s-line" d="M214 170L246 188L278 170"/><text class="t-m" x="246" y="198" text-anchor="middle">14 · 1</text></g>
+      <g class="fly" data-at="2" data-show="2-2" style="--dx:-230px;--dy:0px"><rect class="s-data" x="442" y="206" width="64" height="34" rx="5"/><path class="s-line" d="M442 206L474 224L506 206"/><text class="t-m" x="474" y="234" text-anchor="middle">0 · 2</text></g>
+    <text class="t-b late" x="360" y="214" text-anchor="middle" data-show="2-3">d = 14 · e = 3</text><text class="t-s late" x="360" y="232" text-anchor="middle" data-show="2-3">los dos lo saben</text>
+    <rect class="s-ok" x="190" y="290" width="340" height="34" rx="10" data-show="4"/><text class="t-b t-ok" x="360" y="312" text-anchor="middle" data-show="4">si se abre: 89 + 31 = 120 = 24 × 5</text>
+  </svg>
+  <ol class="captions">
+    <li>Queremos 24 × 5 (edad × glucosa). Cada servidor tiene trozos de los dos números y trozos del triplete (a = 10, b = 2, c = 20, que nadie ve entero).</li>
+    <li>Cada uno tapa en local: d = x − a y e = y − b, con sus trozos. A: 14 y 1. B: 0 y 2.</li>
+    <li>Se mandan sus trozos de d y e en sobres, a través del analista. Ahora los dos saben d = 14 y e = 3: números que parecen al azar, porque nadie conoce a = 10 ni b = 2.</li>
+    <li>Cada uno corrige su trozo de la práctica con la receta c + d·b + e·a (+ d·e, solo uno): A obtiene 89; B obtiene 31.</li>
+    <li>Juntos dan 120 = 24 × 5. Pero ninguno lo sabe: el 120 solo se ve si se decide abrir. Ni la edad ni la glucosa han viajado nunca.</li>
+  </ol>
+  <div class="ctrl"><button class="prev">◀ Anterior</button><button class="next primary">Siguiente ▶</button><button class="reset">Volver a empezar</button><span class="count"></span></div>
+</div>
+
+  <p><b>El problema.</b> Si x = x₁ + x₂ e y = y₁ + y₂, multiplicar da x₁·y₁ + x₁·y₂ + x₂·y₁ + x₂·y₂. Los términos cruzados (x₁·y₂, x₂·y₁) mezclan trozos de dos centros: ninguno puede calcularlos solo. Por eso se usa un triplete (Beaver, 1991).</p>
+  <figure>
+    <svg viewBox="0 0 720 300" role="img" aria-label="Tres pasos: tapar, abrir lo tapado, corregir">
+      <defs><marker id="ah4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-card" x="10" y="14" width="220" height="270" rx="12"/>
+      <text class="t-b" x="120" y="44" text-anchor="middle">1 · Tapar</text>
+      <text class="t" x="120" y="80" text-anchor="middle">d = x − a</text>
+      <text class="t-m t-d" x="120" y="106" text-anchor="middle">24 − 10 = 14</text>
+      <text class="t" x="120" y="146" text-anchor="middle">e = y − b</text>
+      <text class="t-m t-d" x="120" y="172" text-anchor="middle">5 − 2 = 3</text>
+      <text class="t-s" x="120" y="214" text-anchor="middle">cada centro lo hace</text>
+      <text class="t-s" x="120" y="232" text-anchor="middle">con sus trozos</text>
+      <path class="s-line" d="M230 150H256" marker-end="url(#ah4)"/>
+      <rect class="s-card" x="260" y="14" width="200" height="270" rx="12"/>
+      <text class="t-b" x="360" y="44" text-anchor="middle">2 · Abrir lo tapado</text>
+      <g transform="translate(305,72)"><rect class="s-data" width="110" height="44" rx="6"/><text class="t-m" x="55" y="28" text-anchor="middle">d = 14</text></g>
+      <g transform="translate(305,130)"><rect class="s-data" width="110" height="44" rx="6"/><text class="t-m" x="55" y="28" text-anchor="middle">e = 3</text></g>
+      <text class="t-s" x="360" y="214" text-anchor="middle">parecen al azar: nadie</text>
+      <text class="t-s" x="360" y="232" text-anchor="middle">conoce el 10 ni el 2</text>
+      <path class="s-line" d="M460 150H486" marker-end="url(#ah4)"/>
+      <rect class="s-card" x="490" y="14" width="220" height="270" rx="12"/>
+      <text class="t-b" x="600" y="44" text-anchor="middle">3 · Corregir</text>
+      <text class="t" x="600" y="78" text-anchor="middle">cada centro, en local:</text>
+      <text class="t-m t-a" x="600" y="110" text-anchor="middle">A: 15 + 14·1 + 3·6 + 42</text>
+      <text class="t-m t-a" x="600" y="132" text-anchor="middle">= 89</text>
+      <text class="t-m t-bb" x="600" y="170" text-anchor="middle">B: 5 + 14·1 + 3·4 = 31</text>
+      <text class="t-b" x="600" y="216" text-anchor="middle">89 + 31 = 120</text>
+      <text class="t-s" x="600" y="238" text-anchor="middle">= 24 × 5</text>
+      <text class="t-s" x="600" y="262" text-anchor="middle">ninguno sabe que es 120</text>
+    </svg>
+  </figure>
+  <p><b>Por qué funciona.</b> Como d = x − a, entonces x = d + a. Y como e = y − b, entonces y = e + b. Multiplicando:</p>
+  <div class="formula">x · y = (d + a)(e + b) = d·e + d·b + e·a + <span class="cd">c</span></div>
+  <p>Cada término se puede hacer en local: d·e son dos números públicos; d·b y e·a son un número público por un trozo; y c ya está en trozos (es el resultado de la práctica). El término d·e lo añade solo uno de los dos centros.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th class="num">Centro <span class="ca">A</span></th><th class="num">Centro <span class="cb">B</span></th><th class="num">Juntos</th></tr>
+    <tr><td>x (edad)</td><td class="num ca">20</td><td class="num cb">4</td><td class="num">24</td></tr>
+    <tr><td>y (glucosa)</td><td class="num ca">2</td><td class="num cb">3</td><td class="num">5</td></tr>
+    <tr><td>a (al azar)</td><td class="num ca">6</td><td class="num cb">4</td><td class="num">10</td></tr>
+    <tr><td>b (al azar)</td><td class="num ca">1</td><td class="num cb">1</td><td class="num">2</td></tr>
+    <tr><td>c = a·b</td><td class="num ca">15</td><td class="num cb">5</td><td class="num">20</td></tr>
+    <tr><td>d = x − a</td><td class="num ca">14</td><td class="num cb">0</td><td class="num">se abre: 14</td></tr>
+    <tr><td>e = y − b</td><td class="num ca">1</td><td class="num cb">2</td><td class="num">se abre: 3</td></tr>
+    <tr><td><b>trozo de x·y</b></td><td class="num ca">15 + 14·1 + 3·6 + 14·3 = 89</td><td class="num cb">5 + 14·1 + 3·4 = 31</td><td class="num"><b>120 = 24 × 5</b></td></tr>
+  </table></div>
+  <div class="box travels"><b class="lbl">Qué viaja</b>Solo los trozos de d y e (a través del analista, cifrados). La edad y la glucosa nunca se abren. Cada triplete se usa una sola vez.</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Se tapa cada número con uno al azar, se abre solo lo tapado, y cada centro calcula su trozo del producto.»</div>
+</section>
+
+<!-- 9 -->
+<section id="iknp">
+  <h2><span class="n">19</span>¿De dónde salen los tripletes?</h2>
+  <p class="idea">Los fabrican los dos centros juntos, antes del análisis, con «transferencias inconscientes»: así nadie ve nunca el triplete entero.</p>
+  <ol class="steps">
+    <li>Cada centro elige al azar sus trozos de a y de b. Eso es fácil: cada uno tira sus dados.</li>
+    <li>Falta c = (a_A + a_B)(b_A + b_B) = a_A·b_A + a_A·b_B + a_B·b_A + a_B·b_B. Los términos a_A·b_A y a_B·b_B los hace cada uno solo.</li>
+    <li>Los cruzados (a_A·b_B y a_B·b_A) mezclan trozos de los dos: el mismo problema de antes, pero ahora con números inventados que no significan nada. Para ellos se usa la transferencia inconsciente.</li>
+  </ol>
+  <p><b>La transferencia inconsciente</b> (en inglés, <em>oblivious transfer</em>, OT): el que envía tiene dos mensajes; el que recibe se queda con uno. El que envía no sabe cuál se ha quedado; el que recibe no ve el otro.</p>
+  <figure>
+    <svg viewBox="0 0 720 210" role="img" aria-label="Transferencia inconsciente: dos mensajes, se recibe uno">
+      <defs><marker id="ah5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-a" x="20" y="30" width="200" height="150" rx="12"/>
+      <text class="t-b t-a" x="120" y="58" text-anchor="middle">A envía</text>
+      <g transform="translate(50,78)"><rect class="s-data" width="60" height="40" rx="6"/><text class="t-m" x="30" y="26" text-anchor="middle">4</text></g>
+      <g transform="translate(130,78)"><rect class="s-data" width="60" height="40" rx="6"/><text class="t-m" x="30" y="26" text-anchor="middle">6</text></g>
+      <text class="t-s" x="120" y="150" text-anchor="middle">no sabe cuál recibe B</text>
+      <path class="s-line" d="M220 105H496" marker-end="url(#ah5)"/>
+      <text class="t-s" x="358" y="94" text-anchor="middle">uno de los dos, según el bit de B</text>
+      <rect class="s-b" x="500" y="30" width="200" height="150" rx="12"/>
+      <text class="t-b t-bb" x="600" y="58" text-anchor="middle">B recibe</text>
+      <g transform="translate(570,78)"><rect class="s-data" width="60" height="40" rx="6"/><text class="t-m" x="30" y="26" text-anchor="middle">6</text></g>
+      <text class="t-s" x="600" y="150" text-anchor="middle">no ve el otro mensaje</text>
+    </svg>
+  </figure>
+  <h3 style="margin:22px 0 6px">Fabricar un triplete, paso a paso</h3>
+  <p>Los dos servidores (las <em>parties</em>) fabrican el triplete; el cliente del analista solo lleva los sobres. Con números de una cifra:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Paso</th><th class="num">Servidor <span class="ca">A</span></th><th class="num">Servidor <span class="cb">B</span></th></tr>
+    <tr><td>1 · Cada uno tira sus dados</td><td class="num ca">a_A = 2, b_A = 1</td><td class="num cb">a_B = 3, b_B = 1</td></tr>
+    <tr><td>2 · Lo que cada uno hace solo</td><td class="num ca">a_A·b_A = 2</td><td class="num cb">a_B·b_B = 3</td></tr>
+    <tr><td>3 · Transferencia n.º 1, para el cruce a_A·b_B: A mete dos sobres, «4» y «4 + 2 = 6»; B abre el de su bit (b_B = 1)</td><td class="num ca">se queda con −4</td><td class="num cb">recibe 6</td></tr>
+    <tr><td>4 · Transferencia n.º 2, para el cruce a_B·b_A: B mete «5» y «5 + 3 = 8»; A abre el de su bit (b_A = 1)</td><td class="num ca">recibe 8</td><td class="num cb">se queda con −5</td></tr>
+    <tr><td><b>5 · Cada uno suma lo suyo</b></td><td class="num ca"><b>c_A = 2 − 4 + 8 = 6</b></td><td class="num cb"><b>c_B = 3 + 6 − 5 = 4</b></td></tr>
+  </table></div>
+  <p>Comprobación desde fuera: a = 2 + 3 = 5, b = 1 + 1 = 2 y c = 6 + 4 = 10 = 5 × 2. El triplete es correcto, y nadie lo conoce entero.</p>
+  <div class="box why"><b class="lbl">Quién sabe qué</b>A ve 2, 1, 6 y el 8 que recibió; pero 8 = 5 + 3 y A no conoce el 5, así que no puede sacar el 3 de B. B ve 3, 1, 4 y el 6; pero 6 = 4 + 2 y B no conoce el 4. El cliente solo ha llevado sobres cerrados. Nadie conoce 5, 2 ni 10. Si el bit de B hubiera sido 0, habría recibido el «4»: lo que recibe depende de su bit, y A no sabe cuál abrió.</div>
+  <p>Con números de verdad (63 o 127 bits) se hace una transferencia por cada bit: millones de ellas.</p>
+  <p><b>IKNP</b> (Ishai, Kilian, Nissim y Petrank, 2003) es la forma rápida de hacer esos millones de transferencias: parte de unas pocas transferencias «caras» (con criptografía de clave pública) y las extiende con criptografía barata. Una comprobación obligatoria (KOS) detecta si alguien hace trampas. Ojo: <b>IKNP no es Beaver</b>. IKNP es la herramienta para <em>fabricar</em> tripletes; Beaver es el procedimiento que los <em>usa</em> para multiplicar.</p>
+  <div class="box why"><b class="lbl">No es circular</b>Para multiplicar hacen falta tripletes, y para fabricar tripletes hace falta multiplicar… pero son cosas distintas: los tripletes se fabrican <em>antes</em>, con una herramienta lenta que no toca ningún dato; durante el análisis, cada multiplicación real gasta un triplete y es rápida.</div>
+  <div class="box why"><b class="lbl">Por qué no hay «dealer»</b>Una versión antigua dejaba que un centro fabricara los tripletes y repartiera los trozos. Ese centro conocía a y b, y al ver d y e podía sacar los datos del otro. Se quitó del código: hoy una petición de dealer se rechaza.</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Los dos centros fabrican juntos cada triplete por transferencia inconsciente: cada uno se queda sus trozos y nadie lo ve entero.»</div>
+</section>
+
+<section id="flujo">
+  <h2><span class="n">19b</span>Una multiplicación de principio a fin, por el cartero</h2>
+  <p class="idea">Lógicamente, los servidores se hablan entre ellos; físicamente, cada sobre va del servidor al cliente y del cliente al otro servidor, cerrado. Así se ve una operación entera, paso a paso.</p>
+<div class="stepper">
+  <svg viewBox="0 0 720 400" role="img" aria-label="Una multiplicación de principio a fin, por el cartero">
+    <path d="M170 40 C300 0 420 0 550 40" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="6 5"/>
+    <text class="t-s" x="360" y="22" text-anchor="middle">lógicamente: de un servidor a otro</text>
+    <rect class="s-a" x="20" y="50" width="230" height="300" rx="12"/><text class="t-b t-a" x="135" y="78" text-anchor="middle">Servidor A</text>
+    <rect class="s-card" x="285" y="120" width="150" height="170" rx="12"/><text class="t-b" x="360" y="146" text-anchor="middle">Cliente</text><text class="t-s" x="360" y="166" text-anchor="middle">(cartero ciego)</text><text class="t-s" x="360" y="186" text-anchor="middle">por aquí pasa todo,</text><text class="t-s" x="360" y="202" text-anchor="middle">cerrado</text>
+    <rect class="s-b" x="470" y="50" width="230" height="300" rx="12"/><text class="t-b t-bb" x="585" y="78" text-anchor="middle">Servidor B</text>
+    <text class="t" x="36" y="108">edad = <tspan class="t-m t-d">24</tspan></text>
+    <text class="t" x="486" y="108">glucosa = <tspan class="t-m t-d">5</tspan></text>
+    <text class="t-s" x="36" y="128">triplete: a 6 · b 1 · c 15</text>
+    <text class="t-s" x="486" y="128">triplete: a 4 · b 1 · c 5</text>
+    <text class="t-m t-a" x="36" y="160" data-show="1">x: se queda 20</text>
+    <text class="t-m t-bb late" x="486" y="160" data-show="1">x: recibe 4</text>
+    <text class="t-m t-bb" x="486" y="186" data-show="2">y: se queda 3</text>
+    <text class="t-m t-a late" x="36" y="186" data-show="2">y: recibe 2</text>
+    <text class="t-m t-a" x="36" y="220" data-show="3">d 14 · e 1 (local)</text>
+    <text class="t-m t-bb" x="486" y="220" data-show="3">d 0 · e 2 (local)</text>
+    <text class="t-b late" x="36" y="250" data-show="4">sabe: d 14 · e 3</text>
+    <text class="t-b late" x="486" y="250" data-show="4">sabe: d 14 · e 3</text>
+    <text class="t-m t-a" x="36" y="290" data-show="5">su trozo: 89</text>
+    <text class="t-m t-bb" x="486" y="290" data-show="5">su trozo: 31</text>
+      <g class="via" data-at="1" data-show="1-1" style="--mx:150px;--my:20px;--dx:330px;--dy:0px"><rect class="s-data" x="170" y="140" width="70" height="34" rx="5"/><path class="s-line" d="M170 140L205 158L240 140"/><text class="t-m" x="205" y="168" text-anchor="middle">4</text></g>
+      <g class="via" data-at="2" data-show="2-2" style="--mx:-150px;--my:20px;--dx:-330px;--dy:0px"><rect class="s-data" x="480" y="166" width="70" height="34" rx="5"/><path class="s-line" d="M480 166L515 184L550 166"/><text class="t-m" x="515" y="194" text-anchor="middle">2</text></g>
+      <g class="via" data-at="4" data-show="4-4" style="--mx:150px;--my:0px;--dx:330px;--dy:0px"><rect class="s-data" x="170" y="204" width="70" height="34" rx="5"/><path class="s-line" d="M170 204L205 222L240 204"/><text class="t-m" x="205" y="232" text-anchor="middle">14·1</text></g>
+      <g class="via" data-at="4" data-show="4-4" style="--mx:-150px;--my:-20px;--dx:-330px;--dy:0px"><rect class="s-data" x="480" y="230" width="70" height="34" rx="5"/><path class="s-line" d="M480 230L515 248L550 230"/><text class="t-m" x="515" y="258" text-anchor="middle">0·2</text></g>
+      <g class="via" data-at="6" data-show="6-6" style="--mx:135px;--my:-70px;--dx:135px;--dy:-70px"><rect class="s-data" x="170" y="300" width="70" height="34" rx="5"/><path class="s-line" d="M170 300L205 318L240 300"/><text class="t-m" x="205" y="328" text-anchor="middle">89</text></g>
+      <g class="via" data-at="6" data-show="6-6" style="--mx:-125px;--my:-70px;--dx:-125px;--dy:-70px"><rect class="s-data" x="480" y="300" width="70" height="34" rx="5"/><path class="s-line" d="M480 300L515 318L550 300"/><text class="t-m" x="515" y="328" text-anchor="middle">31</text></g>
+    <rect class="s-ok" x="285" y="300" width="150" height="40" rx="10" data-show="6"/><text class="t-b t-ok late" x="360" y="326" text-anchor="middle" data-show="6">120 = 24 × 5</text>
+  </svg>
+  <ol class="captions">
+    <li>A tiene una edad (24) y B una glucosa (5). Antes de empezar ya tienen sus trozos del triplete (fabricado con IKNP, también por el cartero). Arriba, la línea discontinua es lo lógico: hablar de servidor a servidor. Abajo, el camino real: todo pasa por el cliente.</li>
+    <li>A parte su edad: se queda 20 y cierra un sobre con 4 para B. El sobre va de A al cliente y del cliente a B. El cliente no puede abrirlo.</li>
+    <li>B parte su glucosa: se queda 3 y manda 2 a A, también por el cartero. Ahora cada uno tiene un trozo de los dos números.</li>
+    <li>Cada uno tapa en local, los dos a la vez: A, d 14 y e 1; B, d 0 y e 2. Aquí no viaja nada.</li>
+    <li>Se cruzan los trozos de d y e: dos sobres a la vez, uno en cada sentido, por el cartero. Los dos saben ya d = 14 y e = 3, números que parecen al azar.</li>
+    <li>Cada uno calcula su trozo del producto, en local: A, 89; B, 31. Tampoco viaja nada.</li>
+    <li>Solo si está permitido abrirlo: cada uno manda su trozo al cliente y el cliente suma, 89 + 31 = 120. Es la única vez que el cliente ve un número, y es el resultado.</li>
+  </ol>
+  <div class="ctrl"><button class="prev">◀ Anterior</button><button class="next primary">Siguiente ▶</button><button class="reset">Volver a empezar</button><span class="count"></span></div>
+</div>
+  <div class="box why"><b class="lbl">Lo que hay que ver</b>Los dos servidores trabajan a la vez, cada uno con su mitad; solo se hablan en momentos concretos, y siempre por el cartero, con sobres que él no puede abrir. El cliente solo ve un número al final, y solo si está permitido abrirlo.</div>
+</section>
+
+<!-- 10 -->
+<section id="autoridades">
+  <h2><span class="n">20</span>Con muchos centros: dos autoridades</h2>
+  <p class="idea">Con 3, 4 o más centros, todos mandan sus trozos a dos centros de confianza, las autoridades, que hacen las cuentas. Basta con que una de las dos sea honesta.</p>
+  <figure>
+    <svg viewBox="0 0 720 300" role="img" aria-label="Cinco centros mandan trozos a dos autoridades">
+      <rect class="s-ok" x="200" y="120" width="130" height="64" rx="12"/><text class="t-b" x="265" y="148" text-anchor="middle">Autoridad 1</text><text class="t-s" x="265" y="168" text-anchor="middle">calcula</text>
+      <rect class="s-ok" x="390" y="120" width="130" height="64" rx="12"/><text class="t-b" x="455" y="148" text-anchor="middle">Autoridad 2</text><text class="t-s" x="455" y="168" text-anchor="middle">calcula</text>
+      <!-- centres -->
+      <rect class="s-card" x="30" y="20" width="120" height="44" rx="10"/><text class="t" x="90" y="47" text-anchor="middle">Centro 3</text>
+      <rect class="s-card" x="300" y="12" width="120" height="44" rx="10"/><text class="t" x="360" y="39" text-anchor="middle">Centro 4</text>
+      <rect class="s-card" x="570" y="20" width="120" height="44" rx="10"/><text class="t" x="630" y="47" text-anchor="middle">Centro 5</text>
+      <!-- lines from each centre to both authorities -->
+      <path class="s-dash" d="M90 64L250 120M90 64L440 120"/>
+      <path class="s-dash" d="M360 56L280 120M360 56L440 120"/>
+      <path class="s-dash" d="M630 64L300 120M630 64L470 120"/>
+      <text class="t-s" x="360" y="228" text-anchor="middle">cada centro parte su columna en dos trozos y manda uno a cada autoridad</text>
+      <text class="t-s" x="360" y="248" text-anchor="middle">(las autoridades también aportan sus propios datos)</text>
+      <text class="t-b" x="360" y="284" text-anchor="middle">Seguro mientras al menos una autoridad no se confabule con el analista</text>
+    </svg>
+  </figure>
+  <p>Las autoridades son los dos primeros centros de la lista de confianza que fijan los custodios. Los demás centros aportan datos y hacen de testigos, pero no calculan. Es la misma confianza que ya exige partir un dato en dos trozos: si las dos partes se juntaran con el analista, podrían recomponerlo. La versión actual se ha probado con 2, 3 y 5 centros.</p>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Todos los centros confían en dos autoridades; con que una sea honesta, nadie ve los datos de nadie.»</div>
+</section>
+
+<!-- 11 -->
+<section id="seguro">
+  <h2><span class="n">21</span>¿Por qué es seguro?</h2>
+  <p class="idea">Entre centros solo viajan cosas que, solas, parecen números al azar. Lo único que se abre es el resultado final.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Paso</th><th>Qué viaja</th><th>Por qué no revela nada</th></tr>
+    <tr><td>PSI</td><td>códigos con candado</td><td>sin las claves α y β no se pueden abrir; el analista solo ve «alineación correcta»</td></tr>
+    <tr><td>Partir en trozos</td><td>un trozo (el número al azar)</td><td>cualquier valor es igual de probable, sea cual sea el dato</td></tr>
+    <tr><td>Suma</td><td>nada</td><td>cada centro suma sus propios trozos</td></tr>
+    <tr><td>Multiplicación</td><td>d = x − a, e = y − b</td><td>a y b son al azar y se usan una vez: d y e son tan aleatorios como un trozo</td></tr>
+    <tr><td>Tripletes (IKNP)</td><td>mensajes de transferencia inconsciente</td><td>ningún centro ve nunca el triplete entero</td></tr>
+    <tr><td>Resultado</td><td>el total (en la v2, ya con ruido)</td><td>es lo único que se abre, y es un resultado del modelo, no una fila</td></tr>
+    <tr><td>Todo lo anterior</td><td>sobres cifrados (X25519 + AES-GCM)</td><td>el analista hace de cartero y solo ve texto cifrado</td></tr>
+  </table></div>
+  <p>La condición: los centros siguen el protocolo aunque miren todo lo que reciben (en inglés, <em>honest-but-curious</em>), y al menos una de las dos autoridades no se confabula con el analista.</p>
+</section>
+
+<!-- 12 -->
+<section id="quien">
+  <h2><span class="n">22</span>Quién hace qué</h2>
+  <p class="idea">Los servidores hacen todo lo que toca datos. El ordenador del analista hace de cartero y, al final, las cuentas con unos pocos números agregados.</p>
+  <div class="two">
+    <div class="box"><h3>En los servidores (los centros)</h3><ul>
+      <li>guardan los datos y nunca los sacan</li>
+      <li>calculan lo suyo: n, Σ edad, Σ edad²…</li>
+      <li>parten en trozos y hacen las sumas y productos entre centros</li>
+      <li>abren solo agregados (en la v2, con ruido)</li>
+    </ul></div>
+    <div class="box"><h3>En el ordenador del analista</h3><ul>
+      <li>lanza las llamadas de R (<code>ds.vert…</code>)</li>
+      <li>hace de cartero: lleva los sobres cifrados</li>
+      <li>recibe solo los agregados que se abren</li>
+      <li>hace las restas, divisiones y raíces finales</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- 13 -->
+<section id="restas">
+  <h2><span class="n">23</span>Restas y divisiones</h2>
+  <p class="idea">Restar es como sumar: local. Dividir se hace al final, en el ordenador del analista, sobre unos pocos números ya agregados.</p>
+  <p>La correlación, escrita con sumas:</p>
+  <div class="formula">r =
+    <span class="frac"><span>Σxy − <span class="frac"><span>Σx · Σy</span><span>n</span></span></span><span>√[ (Σx² − (Σx)²/n) · (Σy² − (Σy)²/n) ]</span></span>
+  </div>
+  <ol class="steps">
+    <li>Cada centro calcula lo suyo: el centro de la edad, n, Σx y Σx²; el de la glucosa, Σy y Σy².</li>
+    <li>Lo único entre centros es <b>Σxy</b> (Σ edad·glucosa): sumas y productos en trozos.</li>
+    <li>Se abren esos seis números y el ordenador del analista hace las restas, la división y la raíz.</li>
+  </ol>
+  <p>Así lo hace el código de dsVertClient (<code>ds.vertCor</code>). Cuando una división sí tiene que ocurrir en mitad del cálculo (por ejemplo, en Cox), 1/x se calcula con un polinomio (sección 24b).</p>
+</section>
+
+<!-- 14 -->
+<section id="metodos">
+  <h2><span class="n">24</span>Primer cálculo de verdad: Σ edad × glucosa</h2>
+  <p class="idea">Con lo que ya sabemos (sumar y multiplicar en trozos) ya se puede hacer el cálculo que dsVert repite en todas partes: una suma de productos.</p>
+  <figure>
+    <svg viewBox="0 0 720 120" role="img" aria-label="IKNP, tripletes, sumas y productos, análisis">
+      <defs><marker id="m24" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-card" x="10" y="30" width="140" height="60" rx="12"/><text class="t-b" x="80" y="56" text-anchor="middle">IKNP (OT)</text><text class="t-s" x="80" y="76" text-anchor="middle">fabrica tripletes</text>
+      <path class="s-line" d="M150 60H180" marker-end="url(#m24)"/>
+      <rect class="s-card" x="184" y="30" width="146" height="60" rx="12"/><text class="t-b" x="257" y="56" text-anchor="middle">Beaver</text><text class="t-s" x="257" y="76" text-anchor="middle">multiplica secretos</text>
+      <path class="s-line" d="M330 60H360" marker-end="url(#m24)"/>
+      <rect class="s-card" x="364" y="30" width="180" height="60" rx="12"/><text class="t-b" x="454" y="56" text-anchor="middle">Sumas y productos</text><text class="t-s" x="454" y="76" text-anchor="middle">en trozos</text>
+      <path class="s-line" d="M544 60H574" marker-end="url(#m24)"/>
+      <rect class="s-ok" x="578" y="30" width="132" height="60" rx="12"/><text class="t-b" x="644" y="56" text-anchor="middle">cor·PCA·GLM</text><text class="t-s" x="644" y="76" text-anchor="middle">el análisis</text>
+    </svg>
+  </figure>
+  
+  <p><b>Pregunta:</b> ¿cuánto vale Σ edad × glucosa? Es decir, multiplicar la edad (en A) por la glucosa (en B) de cada persona común y sumarlo todo. Es <b>el ladrillo</b> de casi todo: la correlación, la PCA y el GLM están hechos de sumas de productos así. Las personas comunes, ya alineadas con el PSI: Ana, Luis y Marta.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Persona</th><th class="num">Edad (en <span class="ca">A</span>)</th><th class="num">Glucosa (en <span class="cb">B</span>)</th><th class="num">Trozo de A</th><th class="num">Trozo de B</th><th class="num">Producto (nadie lo ve)</th></tr>
+    <tr><td>Ana</td><td class="num ca">24</td><td class="num cb">5</td><td class="num ca">89</td><td class="num cb">31</td><td class="num">120</td></tr>
+    <tr><td>Luis</td><td class="num ca">51</td><td class="num cb">7</td><td class="num ca">274</td><td class="num cb">83</td><td class="num">357</td></tr>
+    <tr><td>Marta</td><td class="num ca">38</td><td class="num cb">5</td><td class="num ca">86</td><td class="num cb">104</td><td class="num">190</td></tr>
+    <tr><td><b>Cada uno suma lo suyo, en casa</b></td><td></td><td></td><td class="num ca"><b>449</b></td><td class="num cb"><b>218</b></td><td></td></tr>
+  </table></div>
+  <ol class="steps">
+    <li>Cada producto es una multiplicación con su triplete, la de la sección 18 (24 × 5 → trozos 89 y 31). Nadie ve el 120: solo existen los trozos.</li>
+    <li>Sumar es gratis: A suma sus trozos (89 + 274 + 86 = 449) y B los suyos (31 + 83 + 104 = 218), cada uno en casa.</li>
+    <li>Solo se abre el total: 449 + 218 = <b>667</b> = 120 + 357 + 190. Nadie ha visto la columna del otro ni ningún producto suelto.</li>
+  </ol>
+  <p class="meta">Contar personas («¿cuántas tienen el diagnóstico y la glucosa alta?») es el mismo cálculo con columnas de 0 y 1.</p>
+  <p>Para el resto de análisis hacen falta unas pocas herramientas más: la caja de herramientas de la sección siguiente.</p>
+</section>
+
+<section id="extras">
+  <h2><span class="n">24b</span>La caja de herramientas: los trucos, uno a uno</h2>
+  <p class="idea">Con trozos solo sabemos sumar y multiplicar. Para lo demás hay unos pocos trucos, cada uno sencillo por separado.</p>
+  <p>No hacen falta todos los trucos del mundo MPC: estos son los que aparecen en dsVert v1.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Operación</th><th>El truco en dsVert v1</th><th>Ejemplo mínimo</th></tr>
+    <tr><td>Sumar</td><td>cada uno suma sus trozos (gratis)</td><td>13 + 37 = 50</td></tr>
+    <tr><td>Multiplicar entre servidores</td><td>un triplete de Beaver (fabricado con IKNP)</td><td>24 × 5 = 89 + 31 = 120</td></tr>
+    <tr><td>Lo que solo depende de una columna (media, desviación típica)</td><td><b>lo tuyo, en casa:</b> cada servidor lo calcula en local, con sus datos, antes de partir en trozos</td><td>edad tipificada = (edad − media) / desviación</td></tr>
+    <tr><td>Decimales</td><td>escalarlos a enteros (× 2²⁰) y recortar la escala tras cada producto</td><td>5,4 → 5.662.310</td></tr>
+    <tr><td>Dividir entre un número conocido</td><td>al final, sobre el agregado</td><td>Σ / (n − 1)</td></tr>
+    <tr><td>Curvas (sigmoide del GLM logístico)</td><td>un polinomio: solo sumas y productos</td><td>σ(1) ≈ 0,5 + 1/4 = 0,75</td></tr>
+  </table></div>
+  <h3 style="margin:18px 0 4px">Truco «lo tuyo, en casa» · Divisiones y raíces que no salen de un servidor</h3>
+  <p>Muchas divisiones y raíces de un análisis dependen de una sola columna: la media y la desviación típica de la edad solo necesitan las edades, que están enteras en el servidor A. Así que A las calcula en local, en claro, como siempre, y tipifica su columna: (edad − media) / desviación. Hace lo mismo B con la glucosa. Solo después se parten en trozos. Así, las divisiones y raíces de la correlación nunca tocan los trozos: es lo que hace dsVert v1.</p>
+  <h3 style="margin:18px 0 4px">Truco 0 · Los decimales: pasarlos a enteros</h3>
+  <p>El reloj solo tiene números enteros, pero la glucosa es 5,4. Solución: multiplicar todo por un número grande y trabajar con enteros. Con × 100, 5,4 se guardaría como 540. dsVert usa × 2²⁰ (1.048.576, un millón más o menos): 5,4 se guarda como 5.662.310, y el redondeo es de una millonésima. En la logística, donde los errores se acumulan más, usa × 2⁵⁰ en un reloj aún mayor (2¹²⁷). Al multiplicar dos números escalados la escala se duplica (2⁴⁰), así que hay que recortarla. Cada servidor recorta su trozo con una <b>regla especial</b>: uno divide su trozo y el otro divide el negativo del suyo (y le vuelve a cambiar el signo). Es el truncado local de SecureML (Mohassel y Zhang, 2017): sale exacto salvo una unidad, una millonésima, con una probabilidad abrumadora.</p>
+
+  <h3 style="margin:18px 0 4px">Truco 1 · Dividir entre un número que todos conocen</h3>
+  <p>Si el divisor es público (cuántas personas hay, n), lo normal es <b>dejar la división para el final</b> (truco 2). Dividir cada trozo por separado, sin más, <b>no funciona en el reloj</b>: 24 = 61 + 63 en el reloj de 100, pero 61 ÷ 2 + 63 ÷ 2 = 62, no 12. La única división de trozos por separado que hace la v1 es el recorte de la escala de los decimales (entre 2²⁰), con la regla especial de arriba. En la tabla, el caso sin vuelta del reloj, en el que sí cuadra:</p>
+  <div class="tbl-wrap"><table>
+    <tr><th></th><th class="num">Trozo de <span class="ca">A</span></th><th class="num">Trozo de <span class="cb">B</span></th><th class="num">Juntos</th></tr>
+    <tr><td>Suma de dos edades (24 + 26)</td><td class="num ca">13</td><td class="num cb">37</td><td class="num">50</td></tr>
+    <tr><td>Entre n = 2 (aquí cuadra porque 13 + 37 no da la vuelta al reloj)</td><td class="num ca">6,5</td><td class="num cb">18,5</td><td class="num">25 = la media</td></tr>
+  </table></div>
+
+  <h3 style="margin:18px 0 4px">Truco 2 · Dejar la división para el final</h3>
+  <p>Casi siempre, la división y la raíz se pueden dejar para cuando ya solo quedan unos pocos números agregados. Se abren esos números y el ordenador del analista divide, normal. Es lo que hace dsVert con la PCA (los ejes se calculan sobre la tabla de correlaciones ya abierta), con la regresión lineal (resolver los coeficientes a partir de X<sup>T</sup>X y X<sup>T</sup>y) y con la logística (ajustar β en cada ronda con el gradiente abierto). La correlación v1 solo necesita, al final, dividir entre n − 1. Dentro de los trozos no hay ninguna división.</p>
+
+  <h3 style="margin:18px 0 4px">Truco 3 · Curvas: un polinomio</h3>
+  <p>A veces hay que aplicar una curva a un número secreto, en mitad del cálculo. El caso típico es la regresión logística: cada predicción pasa por la curva logística, 1 / (1 + e<sup>−x</sup>), que tiene una división y una exponencial. La solución de la v1 es <b>aproximar la curva con un polinomio</b>: c₀ + c₁x + c₂x² + … son <b>solo sumas y productos</b>, que ya sabemos hacer con trozos y tripletes. Una versión anterior lo hacía con tramos de recta; se entiende muy bien, así que lo enseñamos primero, con tres tramos:</p>
+  <figure>
+    <svg viewBox="0 0 720 230" role="img" aria-label="La curva logística aproximada con tres tramos de recta">
+      <line x1="60" y1="190" x2="680" y2="190" stroke="var(--line)" stroke-width="1.5"/>
+      <line x1="370" y1="20" x2="370" y2="200" stroke="var(--line)" stroke-width="1"/>
+      <text class="t-s" x="60" y="212" text-anchor="middle">−6</text><text class="t-s" x="215" y="212" text-anchor="middle">−2</text><text class="t-s" x="370" y="212" text-anchor="middle">0</text><text class="t-s" x="525" y="212" text-anchor="middle">2</text><text class="t-s" x="680" y="212" text-anchor="middle">6</text>
+      <text class="t-s" x="52" y="194" text-anchor="end">0</text><text class="t-s" x="52" y="34" text-anchor="end">1</text>
+      <!-- logistic curve (sampled) -->
+      <path d="M60 189.6 L100 189.1 L140 188.0 L180 185.6 L215 181.2 L250 172.3 L290 152.4 L330 122.4 L370 110 L410 97.6 L450 67.6 L490 47.7 L525 38.8 L560 34.4 L600 32.0 L640 30.9 L680 30.4" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4"/>
+      <!-- three straight pieces: 0 for x<-2 ; 0.5 + x/4 for -2..2 ; 1 for x>2  (y = 190 - 160*value) -->
+      <path d="M60 190 L215 190" stroke="var(--a)" stroke-width="4" fill="none"/>
+      <path d="M215 190 L525 30" stroke="var(--b)" stroke-width="4" fill="none"/>
+      <path d="M525 30 L680 30" stroke="var(--c)" stroke-width="4" fill="none"/>
+      <text class="t-s" x="120" y="178" text-anchor="middle">tramo 1: 0</text>
+      <text class="t-s" x="300" y="88" text-anchor="middle">tramo 2: 0,5 + x/4</text>
+      <text class="t-s" x="610" y="22" text-anchor="middle">tramo 3: 1</text>
+      <circle cx="447.5" cy="70" r="6" fill="var(--data)"/><text class="t-m t-d" x="458" y="70">x = 1 → 0,75</text>
+    </svg>
+    <figcaption>Curva logística (discontinua) y tres tramos de recta. La versión anterior usaba muchos más tramos; la v1 final usa un polinomio de grado 29, con un error de millonésimas.</figcaption>
+  </figure>
+  <ol class="steps">
+    <li><b>Elegir el tramo</b> sin ver el número: hay que saber si x es menor que −2, o mayor que 2. Esa pregunta se hace con una <b>comparación privada</b> (abajo).</li>
+    <li><b>Aplicar la recta del tramo:</b> 0,5 + x/4 son una suma y una multiplicación por un número conocido: lo de siempre. Con x = 1 sale 0,75 (la curva real da 0,73; con más tramos, se acerca tanto como haga falta).</li>
+    <li>Para mezclar el tramo elegido con su recta se multiplica «sí/no del tramo» por «valor de la recta» y se suma: otra vez productos con triplete y sumas.</li>
+  </ol>
+  <p>En la v1 final, la exponencial, el logaritmo y 1/x también se hacen con polinomios cuando aparecen en mitad del cálculo (1/x, además, se afina con un par de pasos de Newton). Así se divide entre una suma secreta, por ejemplo en Cox.</p>
+  <div class="box why"><b class="lbl">Lo que usa la v1 final: polinomios</b>En el código final de la v1 (julio de 2026), todas las curvas (la logística, la exponencial, 1/x, el logaritmo) se calculan con polinomios de Chebyshev de coeficientes públicos: solo sumas y productos, sin revelar ningún valor intermedio. La logística, por ejemplo, es un polinomio de grado 29. La versión anterior usaba tramos de recta con comparación privada (DCF) y se cambió porque el cartero llegaba a ver un valor enmascarado. Ojo: la tesis describe sobre todo los tramos de recta. Si preguntan, las dos formas convierten una curva en sumas y productos.</div>
+
+  <h3 style="margin:18px 0 4px">La comparación privada: un sí o un no, también en trozos</h3>
+  <p>Para elegir el tramo hay que preguntar «¿x es menor que −2?» sin que nadie vea x. La respuesta sale <b>también en trozos</b>: A recibe un número, B recibe otro, y solo juntos dicen 1 (sí) o 0 (no). En el reloj de 100, por ejemplo, A recibe 58 y B recibe 43: 58 + 43 = 101, que en el reloj es 1, «sí». Cada trozo, solo, parece un número cualquiera.</p>
+  <p>Se hace con una técnica llamada <b>DCF</b> (<em>distributed comparison function</em>, comparación distribuida): una «llave» de la pregunta, partida en dos, que cada servidor evalúa con su trozo de x. En la v1 final se usa solo para preguntas de sí o no; por ejemplo, comprobar que ninguna celda de una tabla tenga demasiado pocas personas (χ²).</p>
+
+  <div class="box why"><b class="lbl">Otras técnicas que existen (y cuál usa dsVert)</b>En MPC hay más formas de hacer estas cosas: dividir con Newton-Raphson (adivinar 1/y y corregir con g·(2 − y·g)), aproximar curvas con polinomios, comparar con tramos y DCF, o usar «circuitos garbled». La v1 final usa polinomios para las curvas (y Newton para afinar 1/x), la comparación privada solo para sí/no, y deja las divisiones del resultado para el final.</div>
+  <div class="box why"><b class="lbl">Resumen</b>Decimales: se escalan a enteros, y la escala se recorta con una regla especial en cada trozo. Dividir entre un número conocido o hacer raíces sobre el resultado: al final, en el ordenador del analista. Curvas en mitad del cálculo: un polinomio, que son solo sumas y productos. Todo lo demás son sumas y productos.</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Lo tuyo, en casa. Dividir el resultado: al final, fuera. Curvas: un polinomio, solo sumas y productos.»</div>
+</section>
+
+<section id="portar">
+  <h2><span class="n">24c</span>Portar los métodos a trozos: correlación, PCA, GLM y el catálogo</h2>
+  <p class="idea">Con la caja de herramientas completa, cada método estadístico se reescribe como una receta de esas operaciones sobre secret shares. Eso es lo que hace dsVert.</p>
+  <div class="box"><b class="lbl" style="color:var(--accent)">Cómo contarlo en la defensa</b>
+    <ol class="steps" style="margin:4px 0 0">
+      <li><b>Las bases:</b> secret sharing (sumar es gratis) y Beaver con tripletes de IKNP (multiplicar).</li>
+      <li><b>La caja de herramientas:</b> decimales, dividir en casa, dejar divisiones y raíces para el final, y curvas con polinomios.</li>
+      <li><b>El primer cálculo de verdad:</b> Σ edad × glucosa, y después la correlación.</li>
+      <li><b>Escalar:</b> la PCA, el GLM y el resto del catálogo son recetas con las mismas piezas.</li>
+    </ol>
+  </div>
+  <div class="box slide"><b class="lbl">La idea central</b>No inventamos un protocolo criptográfico para cada análisis: los construimos combinando unas pocas operaciones seguras reutilizables (sumar, multiplicar con tripletes, comparar en privado), y dejamos las divisiones para el final. La tesis lo dice así: lo que cambia de un método a otro no es la caja de herramientas criptográfica, sino cómo se combinan sus piezas.</div>
+  <h3 style="margin:18px 0 4px">1 · Correlación: tipificar en casa, multiplicar y sumar</h3>
+  <p>El servidor A tiene las edades; el B, la glucosa. En dsVert v1:</p>
+  <ol class="steps">
+    <li><b>En casa:</b> A tipifica sus edades (resta la media, divide entre la desviación típica); B, sus glucosas. Las restas, divisiones y raíces se quedan aquí, en local.</li>
+    <li><b>En trozos:</b> Σ edad tipificada × glucosa tipificada, una multiplicación con triplete por persona y una suma.</li>
+    <li><b>Al final:</b> se abre esa suma y se divide entre n − 1, un número conocido. Resultado: por ejemplo, r = 0,75, sin juntar las dos columnas.</li>
+  </ol>
+  <p class="meta">En la v2 se hace de otra forma equivalente: se abren, con ruido, seis sumas (n, Σx, Σx², Σy, Σy², Σxy) y el ordenador del analista hace las cuentas (sección 23).</p>
+  <h3 style="margin:18px 0 4px">2 · PCA: lo mismo para muchas columnas</h3>
+  <p>Con edad y peso en A, y glucosa y colesterol en B, la PCA necesita la correlación de cada par de variables: una tabla 4 × 4. Los pares del mismo servidor se calculan en local; los pares entre servidores, con tripletes. Se abre la tabla y el ordenador del analista calcula sus ejes principales (autovalores y autovectores). Nunca salen puntuaciones por persona.</p>
+  <h3 style="margin:18px 0 4px">3 · GLM: aprender los coeficientes</h3>
+  <p><b>Regresión lineal.</b> Basta con X<sup>T</sup>X y X<sup>T</sup>y: muchas sumas de productos entre columnas, las de servidores distintos con tripletes. Se abren esas tablas pequeñas y el ordenador del analista resuelve los coeficientes.</p>
+  <p><b>Regresión logística</b> (diabetes ~ edad + peso + glucosa). Se aprende por rondas:</p>
+  <ol class="steps">
+    <li>El analista propone unos coeficientes β (al principio, ceros).</li>
+    <li>Los servidores calculan, en trozos, la predicción de cada persona y cuánto se equivoca. La predicción pasa por la curva logística, que se hace con un polinomio (sección 24b).</li>
+    <li>Se abre solo el gradiente: un número por coeficiente, la dirección en que hay que corregir.</li>
+    <li>El ordenador del analista ajusta β y lanza la ronda siguiente, hasta que no cambia.</li>
+  </ol>
+  <div class="tbl-wrap"><table>
+    <tr><th>Análisis</th><th>Qué se hace en trozos</th><th>Qué se abre</th><th>Qué hace el analista</th></tr>
+    <tr><td><b>Correlación</b></td><td>Σ edad·glucosa (tipificadas en casa)</td><td>esa suma</td><td>dividir entre n − 1</td></tr>
+    <tr><td><b>PCA</b></td><td>las correlaciones entre servidores</td><td>la tabla de correlaciones</td><td>los ejes principales</td></tr>
+    <tr><td><b>Lineal</b></td><td>X<sup>T</sup>X y X<sup>T</sup>y</td><td>esas dos tablas</td><td>resolver los coeficientes</td></tr>
+    <tr><td><b>Logística</b></td><td>predicciones, curva y errores, ronda a ronda</td><td>el gradiente de cada ronda</td><td>ajustar β y repetir</td></tr>
+  </table></div>
+  <h3 style="margin:22px 0 4px">El catálogo: cada método son sumas, productos y curvas</h3>
+  <p>La tesis lo dice así: lo que cambia de un método a otro es la receta, no las herramientas. En cada fórmula, cada color es una herramienta:</p>
+  <div class="legend"><span><b class="op-sum">Σ +</b> sumas: gratis</span><span><b class="op-mul">×</b> productos: tripletes</span><span><b class="op-div">÷ √</b> divisiones y raíces: en casa o al final</span><span><b class="op-curve">σ exp</b> curvas: polinomios, solo + y ×</span></div>
+  <div class="tbl-wrap"><table>
+    <tr><th>Método</th><th>Fórmula</th><th>Al final, el analista</th></tr>
+    <tr><td>Σ edad × glucosa</td><td class="f"><span class="op-sum">Σ</span> x<sub>i</sub> <span class="op-mul">×</span> y<sub>i</sub></td><td>—</td></tr>
+    <tr><td>Correlación (v1)</td><td class="f">r = <span class="op-sum">Σ</span> z<sub>x</sub> <span class="op-mul">×</span> z<sub>y</sub> <span class="op-div">÷ (n − 1)</span>, &nbsp;z = <span class="op-div">(x − x̄) ÷ s</span> en casa</td><td>dividir entre n − 1</td></tr>
+    <tr><td>PCA</td><td class="f">R = tabla de correlaciones → <span class="op-div">ejes de R</span></td><td>los ejes principales</td></tr>
+    <tr><td>Regresión lineal</td><td class="f">β = <span class="op-div">(</span>X<sup>T</sup><span class="op-mul">×</span>X<span class="op-div">)<sup>−1</sup></span> X<sup>T</sup><span class="op-mul">×</span>y</td><td>resolver β</td></tr>
+    <tr><td>Regresión logística</td><td class="f">gradiente = <span class="op-sum">Σ</span> x<sub>i</sub> <span class="op-mul">×</span> (y<sub>i</sub> − <span class="op-curve">σ</span>(x<sub>i</sub> <span class="op-mul">×</span> β))</td><td>ajustar β, ronda a ronda</td></tr>
+    <tr><td>Poisson</td><td class="f">gradiente = <span class="op-sum">Σ</span> x<sub>i</sub> <span class="op-mul">×</span> (y<sub>i</sub> − <span class="op-curve">exp</span>(x<sub>i</sub> <span class="op-mul">×</span> β))</td><td>ajustar β</td></tr>
+  </table></div>
+  <p class="meta">X<sup>T</sup>X y X<sup>T</sup>y son tablas de sumas de productos (<span class="op-sum">Σ</span> <span class="op-mul">×</span>). Con las mismas piezas van también Cox, LASSO, multinomial, ordinal, binomial negativa, modelos mixtos, GEE, IPW e imputación múltiple: 16 métodos en la v1, validados contra R.</p>
+  <p><b>Puente a la v2.</b> En la v1 lo que se abre (las sumas, la tabla de correlaciones, el gradiente de cada ronda) es exacto, y lo protegen las reglas de DataSHIELD. Pero respuestas exactas, sobre todo muchas rondas de gradientes, pueden acabar revelando algo: por eso la v2 añade ruido antes de abrir (sección 25).</p>
+  <div class="box why"><b class="lbl">Para las preguntas, no para las slides</b>La comprobación KOS, los tamaños del reloj (2⁶³ y 2¹²⁷), el optimizador de la logística (L-BFGS) y los errores estándar, el grado del polinomio de cada curva, y los métodos con comparaciones o conjuntos de riesgo (Cox) o integrales (GLMM).</div>
+  <div class="box slide"><b class="lbl">Para la slide</b>«Con estas herramientas reescribimos cada método como una receta de sumas, productos y curvas sobre trozos: correlación, PCA, GLM… el mismo motor para todo el catálogo.»</div>
+</section>
+
+<!-- 15 -->
+<section id="v2">
+  <h2><span class="n">25</span>La v2 en una página: ruido en lo que sale</h2>
+  <p class="idea">La v2 añade privacidad diferencial a cada resultado que sale: se suma un ruido calibrado dentro de los trozos, antes de abrir.</p>
+  <figure>
+    <svg viewBox="0 0 720 150" role="img" aria-label="Dónde se aplica la privacidad diferencial en la v2">
+      <defs><marker id="v2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-a" x="8" y="40" width="96" height="56" rx="10"/><text class="t-b" x="56" y="73" text-anchor="middle">PSI</text>
+      <path class="s-line" d="M104 68H124" marker-end="url(#v2a)"/>
+      <rect class="s-b" x="128" y="40" width="120" height="56" rx="10"/><text class="t-b" x="188" y="66" text-anchor="middle">MPC</text><text class="t-s" x="188" y="85" text-anchor="middle">en trozos</text>
+      <path class="s-line" d="M248 68H268" marker-end="url(#v2a)"/>
+      <rect class="s-card" x="272" y="40" width="130" height="56" rx="10"/><text class="t-b" x="337" y="66" text-anchor="middle">resultado</text><text class="t-s" x="337" y="85" text-anchor="middle">aún en trozos</text>
+      <path class="s-line" d="M402 68H422" marker-end="url(#v2a)"/>
+      <rect class="s-data" x="426" y="30" width="134" height="76" rx="12"/><text class="t-b t-d" x="493" y="60" text-anchor="middle">+ ruido</text><text class="t-s" x="493" y="80" text-anchor="middle">AQUÍ (las dos</text><text class="t-s" x="493" y="96" text-anchor="middle">autoridades)</text>
+      <path class="s-line" d="M560 68H580" marker-end="url(#v2a)"/>
+      <rect class="s-ok" x="584" y="40" width="128" height="56" rx="10"/><text class="t-b" x="648" y="66" text-anchor="middle">se abre</text><text class="t-s" x="648" y="85" text-anchor="middle">una vez, con ruido</text>
+      <text class="t-s" x="360" y="134" text-anchor="middle">No se añade ruido a los datos de cada paciente ni a los mensajes: solo al resultado, justo antes de abrirlo.</text>
+    </svg>
+  </figure>
+  <div class="tbl-wrap"><table>
+    <tr><th>Pregunta</th><th>Respuesta</th></tr>
+    <tr><td>¿A qué se aplica?</td><td>A <b>los resultados que se abren</b> al analista: un conteo, una tabla de frecuencias, los estadísticos de un modelo, el modelo elegido.</td></tr>
+    <tr><td>¿A los datos de cada persona?</td><td>No. Dentro del cálculo siguen exactos; no se les añade ruido.</td></tr>
+    <tr><td>¿A lo que viaja entre servidores?</td><td>No: eso ya lo protegen los trozos y el cifrado.</td></tr>
+    <tr><td>¿Dónde se añade el ruido?</td><td>Cada una de las dos autoridades añade <b>su propio ruido completo</b> y se suman <b>dentro de los trozos</b> (así, aunque una se confabulara, el de la otra sigue protegiendo). El resultado se abre una sola vez, ya con ruido: nadie ve el valor exacto, ni los servidores.</td></tr>
+    <tr><td>¿Y si una persona tiene valores extremos?</td><td>Antes de sumar se limita lo que puede aportar cada persona (se recorta a unos límites), para que el ruido baste para tapar a cualquiera.</td></tr>
+    <tr><td>¿Y si se repite la pregunta?</td><td>Misma pregunta, misma respuesta (ruido «pegajoso»): repetir no sirve para promediar el ruido.</td></tr>
+    <tr><td>¿Quién decide cuánto ruido?</td><td>El custodio, con ε: 1 por defecto, 8 como máximo. El analista no puede cambiarlo.</td></tr>
+    <tr><td>¿Y los modelos?</td><td>Se elige, con ruido, el mejor candidato de una rejilla firmada por el custodio; ningún optimizador corre contra los datos.</td></tr>
+    <tr><td>¿Algo sale sin ruido?</td><td>La alineación, que solo dice «ok» (ni la lista ni cuántos coinciden).</td></tr>
+  </table></div>
+  <div class="box why"><b class="lbl">¿Es DP de verdad? ¿Cuántas veces se aplica?</b>Sí: privacidad diferencial en el sentido estándar, declarada por resultado (vecinos = añadir o quitar un paciente; ε = 1 por defecto, 8 como máximo; δ = 2⁻¹⁰⁰, prácticamente cero; ruido de Laplace discreto o gaussiano). Se aplica <b>una sola vez por resultado, al final</b>, justo antes de la única apertura: no en cada ronda (en la v2 nada intermedio se abre). No es DP «local» sobre cada paciente: a cada paciente solo se le acota cuánto puede aportar. Cada autoridad pone un ruido completo y se suman dentro de los trozos, así que con que una no se confabule el ruido sigue protegiendo. Matiz honesto (lo dice la tesis): la garantía es por resultado; no hay un presupuesto global que sume análisis distintos. Repetir la misma pregunta no gasta nada (ruido pegajoso), y qué análisis se pueden registrar lo decide el custodio.</div>
+  <div class="box slide"><b class="lbl">Para la slide (una sola)</b>«La v2 añade privacidad diferencial a cada resultado: un ruido calibrado se suma dentro de los trozos antes de abrir; la misma pregunta da la misma respuesta; ε lo fija el custodio.»</div>
+</section>
+
+<section id="literatura">
+  <h2><span class="n">25b</span>¿Está todo esto en la literatura?</h2>
+  <p class="idea">Sí. Cada pieza es una técnica clásica y publicada; lo propio de dsVert es cómo las combina dentro de DataSHIELD, con su frontera de divulgación y su catálogo validado.</p>
+  <div class="tbl-wrap"><table>
+    <tr><th>Pieza</th><th>Referencia clásica</th></tr>
+    <tr><td>Repartir un secreto en trozos (secret sharing)</td><td>Shamir, «How to share a secret», <em>Communications of the ACM</em>, 1979 *</td></tr>
+    <tr><td>Multiplicar con tripletes</td><td>Beaver, «Efficient multiparty protocols using circuit randomization», CRYPTO 1991 *</td></tr>
+    <tr><td>Fabricar tripletes con OT sin tercero</td><td>Ishai, Kilian, Nissim y Petrank, «Extending oblivious transfers efficiently» (IKNP), CRYPTO 2003 *; Demmler, Schneider y Zohner, «ABY», NDSS 2015 *; Keller, Orsini y Scholl (KOS), CRYPTO 2015</td></tr>
+    <tr><td>Decimales en punto fijo</td><td>Catrina y Saxena, «Secure computation with fixed-point numbers», Financial Cryptography 2010 *</td></tr>
+    <tr><td>Comparaciones y curvas por tramos (DCF)</td><td>Gilboa e Ishai, «Distributed point functions», EUROCRYPT 2014 *; Boyle, Gilboa e Ishai, «Function secret sharing», EUROCRYPT 2015 *</td></tr>
+    <tr><td>Encontrar a las personas comunes (PSI)</td><td>De Cristofaro y Tsudik, «Practical private set intersection protocols with linear complexity», Financial Cryptography 2010 *</td></tr>
+    <tr><td>MPC en general</td><td>Lindell, «Secure multiparty computation», <em>Communications of the ACM</em>, 2021 *</td></tr>
+    <tr><td>«Cualquier cálculo se puede hacer en privado»</td><td>Yao, FOCS 1986; Goldreich, Micali y Wigderson, «How to play any mental game», STOC 1987</td></tr>
+    <tr><td>Regresión logística con trozos y sigmoide por tramos</td><td>Mohassel y Zhang, «SecureML», IEEE S&amp;P 2017</td></tr>
+    <tr><td>Privacidad diferencial</td><td>Dwork, McSherry, Nissim y Smith, TCC 2006; Dwork y Roth, <em>The Algorithmic Foundations of Differential Privacy</em>, 2014 *</td></tr>
+    <tr><td>Generar el ruido entre varios, con MPC</td><td>Dwork, Kenthapadi, McSherry, Mironov y Naor, «Our Data, Ourselves: Privacy via Distributed Noise Generation», EUROCRYPT 2006; Kairouz, Liu y Steinke, «The Distributed Discrete Gaussian Mechanism…», ICML 2021</td></tr>
+    <tr><td>Elegir con ruido el mejor de una lista (la rejilla)</td><td>«Report Noisy Max», en Dwork y Roth 2014 *</td></tr>
+    <tr><td>Ruido pegajoso</td><td>Diffix (Aircloak, 2017), sin DP formal y atacado combinando preguntas distintas (Gadotti et al., USENIX Security 2019); dsVert añade la garantía DP formal por resultado</td></tr>
+  </table></div>
+  <p class="meta">* Citadas ya en la tesis (capítulo 4). Para estudiar, un libro gratuito y muy claro: Evans, Kolesnikov y Rosulek, <em>A Pragmatic Introduction to Secure Multi-Party Computation</em>, 2018.</p>
+</section>
+
+<!-- 16 -->
+<section id="tribunal">
+  <h2><span class="n">26</span>Preguntas probables del tribunal</h2>
+  <div class="tbl-wrap"><table>
+    <tr><th>Pregunta</th><th>Respuesta corta</th></tr>
+    <tr><td>¿Qué ve el analista?</td><td>El resultado final y un «alineación correcta». Los mensajes entre centros los lleva cifrados, sin poder leerlos.</td></tr>
+    <tr><td>¿Por qué no basta DataSHIELD normal?</td><td>En vertical ningún centro tiene la tabla entera: un producto entre columnas de dos centros no se puede calcular en local.</td></tr>
+    <tr><td>¿Qué es un triplete?</td><td>Tres números sin significado, a, b y c = a·b, repartidos en trozos: una multiplicación de práctica que permite hacer la de verdad tapando los datos.</td></tr>
+    <tr><td>¿Y si un centro hace trampas?</td><td>El modelo es <em>honest-but-curious</em>: siguen el protocolo pero miran lo que reciben. El caso malicioso queda fuera del alcance de la tesis.</td></tr>
+    <tr><td>¿Y si las dos autoridades se confabulan con el analista?</td><td>Se rompe la garantía; por eso basta con que una sea honesta, como en cualquier reparto en dos trozos.</td></tr>
+    <tr><td>¿El PSI revela cuántas personas hay en común?</td><td>No: el analista no recibe ni la lista ni el número.</td></tr>
+    <tr><td>¿Por qué no cifrado homomórfico?</td><td>Los trozos son simétricos (todos los centros pueden aportar datos) y baratos para muchas multiplicaciones; la comparación completa está en el capítulo 4.</td></tr>
+    <tr><td>¿Es exacto?</td><td>La v1 reproduce el resultado centralizado dentro de su tolerancia (34 comparaciones, todas superadas). La v2 añade ruido a propósito.</td></tr>
+    <tr><td>¿Quién decide ε?</td><td>El custodio: 1 por defecto, 8 como máximo.</td></tr>
+  </table></div>
+</section>
+
+<!-- 17 -->
+<section id="glosario">
+  <h2><span class="n">27</span>Glosario</h2>
+  <dl class="glossary">
+    <dt>Alineación</dt><dd>Poner las filas de todos los centros en el mismo orden: la misma persona en la misma fila.</dd>
+    <dt>PSI (intersección privada)</dt><dd>Encontrar a las personas comunes sin enseñar los identificadores.</dd>
+    <dt>MPC (cálculo entre varias partes)</dt><dd>Calcular con trozos en vez de con los datos.</dd>
+    <dt>Secret sharing (reparto de secretos)</dt><dd>Partir un dato en trozos que, solos, parecen al azar. En dsVert es aditivo: los trozos se suman para recuperar el dato.</dd>
+    <dt>Trozo (share)</dt><dd>Cada una de las partes de un dato repartido; sola, parece un número cualquiera.</dd>
+    <dt>Triplete de Beaver</dt><dd>Tres números sin significado, a, b y c = a·b, repartidos en trozos: la «multiplicación de práctica».</dd>
+    <dt>Transferencia inconsciente (OT)</dt><dd>Uno ofrece dos mensajes, el otro se queda con uno; el primero no sabe cuál, el segundo no ve el otro.</dd>
+    <dt>IKNP</dt><dd>La forma rápida de hacer millones de transferencias inconscientes; con ella se fabrican los tripletes.</dd>
+    <dt>Autoridades</dt><dd>Los dos centros que hacen las cuentas cuando hay muchos; basta con que uno sea honesto.</dd>
+    <dt>Cartero (relay)</dt><dd>El analista: lleva los mensajes cifrados entre centros sin poder leerlos.</dd>
+    <dt>ε (épsilon)</dt><dd>En la v2, cuánto puede revelar el resultado sobre una persona; lo fija el custodio.</dd>
+  </dl>
+</section>
+
+<section id="glm-rondas">
+  <div class="part"><span>Para ti (no para las slides)</span>Cómo va la comunicación en el GLM de la v1</div>
+  <p class="idea">El GLM de la v1 va por rondas, igual que el ds.glm de DataSHIELD: el cliente manda β, los servidores calculan (aquí, en trozos entre ellos) y devuelven el gradiente; el cliente ajusta β y repite.</p>
+  <figure>
+    <svg viewBox="0 0 720 470" role="img" aria-label="Una ronda del GLM v1: quién manda qué">
+      <defs><marker id="gl" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="arrowhead" d="M0 0L10 5L0 10z"/></marker></defs>
+      <rect class="s-card" x="30" y="10" width="180" height="40" rx="10"/><text class="t-b" x="120" y="36" text-anchor="middle">Cliente (analista)</text>
+      <rect class="s-a" x="300" y="10" width="160" height="40" rx="10"/><text class="t-b t-a" x="380" y="36" text-anchor="middle">Servidor A</text>
+      <rect class="s-b" x="540" y="10" width="160" height="40" rx="10"/><text class="t-b t-bb" x="620" y="36" text-anchor="middle">Servidor B</text>
+      <line x1="120" y1="50" x2="120" y2="460" class="s-dash"/><line x1="380" y1="50" x2="380" y2="460" class="s-dash"/><line x1="620" y1="50" x2="620" y2="460" class="s-dash"/>
+      <path class="s-line" d="M120 80H376" marker-end="url(#gl)"/><path class="s-line" d="M120 80C300 92 470 92 616 92" marker-end="url(#gl)"/>
+      <text class="t" x="128" y="72">1 · β (en claro: es el modelo, no datos)</text>
+      <rect class="s-soft" x="300" y="118" width="400" height="40" rx="8"/><text class="t" x="500" y="143" text-anchor="middle">2 · cada uno, su parte de η = x·β en local → trozos</text>
+      <rect class="s-soft" x="300" y="170" width="400" height="40" rx="8"/><text class="t" x="500" y="195" text-anchor="middle">3 · μ = σ(η) en trozos (un polinomio)</text>
+      <rect class="s-soft" x="300" y="222" width="400" height="40" rx="8"/><text class="t" x="500" y="247" text-anchor="middle">4 · r = y − μ (A tiene y: resta local)</text>
+      <rect class="s-soft" x="300" y="274" width="400" height="40" rx="8"/><text class="t" x="500" y="299" text-anchor="middle">5 · g = Σ x·r con tripletes → trozos de g</text>
+      <path class="s-dash" d="M380 330H124"/><path class="s-dash" d="M620 336C470 346 300 346 126 340"/>
+      <text class="t-s" x="250" y="328" text-anchor="middle">(durante 2–5: sobres cerrados entre A y B, por el cliente)</text>
+      <path class="s-line" d="M376 380H124" marker-end="url(#gl)"/><path class="s-line" d="M616 392C470 404 300 404 128 388" marker-end="url(#gl)"/>
+      <text class="t" x="128" y="372">6 · se abre solo el gradiente g</text>
+      <text class="t-b" x="128" y="436">7 · el cliente ajusta β (L-BFGS)</text>
+      <text class="t-s" x="128" y="456">¿convergió? si no, vuelve al paso 1 con la nueva β</text>
+    </svg>
+  </figure>
+  <ol class="steps">
+    <li><b>Cliente → servidores: β</b>, en claro. Son los coeficientes del modelo (al principio, ceros), no datos de nadie.</li>
+    <li><b>Predicción en trozos.</b> Cada servidor multiplica sus columnas por su parte de β, en local (A: edad × β<sub>edad</sub>; B: glucosa × β<sub>glucosa</sub>). Esas partes se reparten en trozos y se suman: la predicción de cada persona, η, queda en trozos.</li>
+    <li><b>La curva:</b> μ = σ(η), la probabilidad predicha, en trozos (tramos de recta y comparación privada).</li>
+    <li><b>El error:</b> r = y − μ. El servidor que tiene el resultado y (por ejemplo, la diabetes) resta en local sobre los trozos.</li>
+    <li><b>El gradiente:</b> g = Σ x·r, un número por coeficiente: productos con tripletes (cada columna la tiene un servidor; r está en trozos) y sumas locales.</li>
+    <li><b>Se abre solo g</b> y va al cliente. Es del tamaño del modelo: tantos números como coeficientes.</li>
+    <li><b>El cliente ajusta β</b> (L-BFGS), comprueba si ha convergido y, si no, manda la nueva β: otra ronda.</li>
+    <li><b>Al final:</b> errores estándar (con unas evaluaciones extra), p-valores y deviance (una pasada más en trozos). El cliente monta la tabla del modelo.</li>
+  </ol>
+  <div class="tbl-wrap"><table>
+    <tr><th>Quién</th><th>Qué ve</th><th>Qué no ve nunca</th></tr>
+    <tr><td>Cliente (analista)</td><td>las β que manda, los gradientes de cada ronda, la tabla final</td><td>ninguna fila: ni η, ni μ, ni r de nadie</td></tr>
+    <tr><td>Servidores</td><td>sus propios datos, β, sus trozos, d y e</td><td>los datos del otro; η, μ o r enteros</td></tr>
+  </table></div>
+  <div class="box why"><b class="lbl">¿Por rondas o en paralelo? Las dos cosas</b>No es una sola pelota que va de sitio en sitio: cada servidor tiene su mitad (sus trozos) y <b>los dos trabajan a la vez</b>, cada uno en local. Solo de vez en cuando tienen que hablar: eso es una <b>ronda</b> (por ejemplo, en cada multiplicación se mandan sus trozos de d y e, en sobres, por el cartero). Una suma no gasta ninguna ronda; una multiplicación, una; y las multiplicaciones de todos los pacientes van <b>juntas en la misma ronda</b> («edad × glucosa» de 10.000 personas es un solo intercambio). Así que el número de rondas depende de cuántos pasos seguidos tiene el cálculo, no de cuántos pacientes hay. Visto desde el cliente sí parece «de sitio en sitio» (llama a A, coge su sobre, se lo da a B…), porque el cartero pasa los sobres de uno en uno. En el GLM hay dos niveles: <b>fuera</b>, una ida y vuelta con el cliente por iteración (β → gradiente), unas cuantas hasta converger; <b>dentro</b> de cada una, unas pocas rondas entre servidores.</div>
+  <p class="meta">Fuente: capítulo 4 de la tesis, «Putting the pieces together: one protected GLM score step» (ruta iterativa de la primera generación). En la v2 este bucle se sustituye por la rejilla de candidatos firmada por el custodio, con ruido.</p>
+</section>
+
+<footer>Guía de estudio de la defensa de tesis de David Sarrat González (ISGlobal · UAB). Basada en el capítulo 4 de la tesis («dsVert») y en el código de dsVert / dsVertClient. Los números de los ejemplos son pequeños e inventados para que se vean las cuentas; en dsVert los trozos viven en anillos de 2⁶³ o 2¹²⁷ posiciones.</footer>
+</main>
+<script>
+// Steppers: each element with data-show="a" (from step a on) or "a-b" (steps a..b) fades in or out; each .fly with
+// data-at="k" travels by (--dx, --dy) from step k on; one caption per step.
+document.querySelectorAll('.stepper').forEach(w => {
+  const caps = [...w.querySelectorAll('ol.captions > li')], n = caps.length
+  const prev = w.querySelector('.prev'), next = w.querySelector('.next'), count = w.querySelector('.count')
+  let k = 0
+  const render = () => {
+    w.querySelectorAll('[data-show]').forEach(el => {
+      const [a, b] = el.dataset.show.split('-')
+      el.classList.toggle('on', k >= +a && (b === undefined || b === '' ? true : k <= +b))
+    })
+    w.querySelectorAll('.fly, .via').forEach(el => el.classList.toggle('go', k >= +el.dataset.at))
+    caps.forEach((c, i) => { c.hidden = i !== k })
+    count.textContent = `Paso ${k + 1} de ${n}`
+    prev.disabled = k === 0; next.disabled = k === n - 1
+  }
+  prev.addEventListener('click', () => { if (k > 0) { k--; render() } })
+  next.addEventListener('click', () => { if (k < n - 1) { k++; render() } })
+  w.querySelector('.reset').addEventListener('click', () => { k = 0; render() })
+  render()
+})
+</script>
+</body>
+</html>

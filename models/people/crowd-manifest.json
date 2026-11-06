@@ -1,0 +1,1182 @@
+{
+  "license": "CC0-1.0",
+  "source": "MakeHuman hm08 and system clothing/eyes/shoes; original poses, hair and pigments",
+  "authoring": "tools/model-lab/people/production/crowd_build.py",
+  "scale": "metres; +Y up; +Z front; sole on y=0",
+  "regions": {
+    "0": "skin",
+    "1": "upper garment",
+    "2": "lower garment",
+    "3": "hair",
+    "4": "shoes and eyes"
+  },
+  "poses": [
+    "standing",
+    "walking",
+    "seated"
+  ],
+  "figures": {
+    "crowd-01": {
+      "label": "Young adult · slate tee and sand jeans",
+      "recipe": {
+        "id": "crowd-01",
+        "label": "Young adult · slate tee and sand jeans",
+        "gender": 0.16,
+        "age": 0.27,
+        "weight": 0.38,
+        "muscle": 0.44,
+        "height": 0.43,
+        "ancestry": [
+          0.62,
+          0.2,
+          0.18
+        ],
+        "clothes": "female_casualsuit01",
+        "shoes": "shoes05",
+        "hairStyle": "bob",
+        "skin": "#bd8d6d",
+        "upper": "#626b73",
+        "lower": "#aaa18c",
+        "hair": "#27221e",
+        "shoe": "#625b53"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-01-hero.glb",
+          "bytes": 171940,
+          "triangles": 34486,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 11495,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 11497,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 11494,
+              "draws": 1
+            }
+          },
+          "sha256": "bb5b7866924252a442fe2fe7748d7abf1e30673509bf9a30d533f0245cb31e25"
+        },
+        "middle": {
+          "file": "crowd-01-middle.glb",
+          "bytes": 105548,
+          "triangles": 19472,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6490,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "f9d53f0dfa76b0319887e2babcc27122fb9e1c360c0283297c86244d7adeb4ae"
+        },
+        "crowd": {
+          "file": "crowd-01-crowd.glb",
+          "bytes": 56816,
+          "triangles": 8971,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2990,
+              "draws": 1
+            }
+          },
+          "sha256": "39ae1d834cbc4f8232ede3117908d04bd8eb525fd227b06c4a91a65b46637ef9"
+        },
+        "far": {
+          "file": "crowd-01-far.glb",
+          "bytes": 36996,
+          "triangles": 5072,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "9246ed298d89aba86faddf3bd2f63a57e2124daaeff1ac342c58f888364bdc2d"
+        }
+      }
+    },
+    "crowd-02": {
+      "label": "Broad adult · sand overshirt and charcoal trousers",
+      "recipe": {
+        "id": "crowd-02",
+        "label": "Broad adult · sand overshirt and charcoal trousers",
+        "gender": 0.85,
+        "age": 0.45,
+        "weight": 0.76,
+        "muscle": 0.5,
+        "height": 0.63,
+        "ancestry": [
+          0.1,
+          0.18,
+          0.72
+        ],
+        "clothes": "male_casualsuit03",
+        "shoes": "shoes04",
+        "hairStyle": "crop",
+        "skin": "#845941",
+        "upper": "#b3a28c",
+        "lower": "#4d4b49",
+        "hair": "#292522",
+        "shoe": "#3c3530"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-02-hero.glb",
+          "bytes": 167760,
+          "triangles": 32706,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10903,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10902,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10901,
+              "draws": 1
+            }
+          },
+          "sha256": "0b97573c681909c6b6a576dc137b182299f590935d42b09279258b11525b411b"
+        },
+        "middle": {
+          "file": "crowd-02-middle.glb",
+          "bytes": 107648,
+          "triangles": 19474,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "5fa5e334f797b007862cdae79013d9e3afedb0150bb8e6befe72fb6f904c0f29"
+        },
+        "crowd": {
+          "file": "crowd-02-crowd.glb",
+          "bytes": 58296,
+          "triangles": 8972,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2991,
+              "draws": 1
+            }
+          },
+          "sha256": "fae0bf81e180cd0bab5728cedb829c0763aac2a3f8e1baab45bc9eff09ca0615"
+        },
+        "far": {
+          "file": "crowd-02-far.glb",
+          "bytes": 38236,
+          "triangles": 5072,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1690,
+              "draws": 1
+            }
+          },
+          "sha256": "90ed741cecfc2918ad13330d00d98da88fc3f9ee5086b7e441f012d33dcd8fdf"
+        }
+      }
+    },
+    "crowd-03": {
+      "label": "Older adult · stone blouse and olive skirt",
+      "recipe": {
+        "id": "crowd-03",
+        "label": "Older adult · stone blouse and olive skirt",
+        "gender": 0.13,
+        "age": 0.91,
+        "weight": 0.65,
+        "muscle": 0.24,
+        "height": 0.32,
+        "ancestry": [
+          0.1,
+          0.8,
+          0.1
+        ],
+        "clothes": "female_elegantsuit01",
+        "shoes": "shoes03",
+        "hairStyle": "bob",
+        "skin": "#c59c86",
+        "upper": "#9b948d",
+        "lower": "#64675b",
+        "hair": "#d3cdc3",
+        "shoe": "#4b4541"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-03-hero.glb",
+          "bytes": 166068,
+          "triangles": 32050,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10718,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10718,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10614,
+              "draws": 1
+            }
+          },
+          "sha256": "66255e406ef2388a1d2bc61fe8c21e79719afb3fdfcb54a3c04ed9637acaeb41"
+        },
+        "middle": {
+          "file": "crowd-03-middle.glb",
+          "bytes": 109520,
+          "triangles": 19473,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "7c961c8fbd396fa612b4dda98b50848afc00803d0aa03a46aa7878f078d9c6c6"
+        },
+        "crowd": {
+          "file": "crowd-03-crowd.glb",
+          "bytes": 59460,
+          "triangles": 8974,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2992,
+              "draws": 1
+            }
+          },
+          "sha256": "5665e7f0b1da00a39fb28fe907505a91ee27654b39f41110b21765602b223a37"
+        },
+        "far": {
+          "file": "crowd-03-far.glb",
+          "bytes": 38192,
+          "triangles": 5074,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "d78132124444d42b87e88f37246d4e678de6ef29b73e0f81b2879d74539975f1"
+        }
+      }
+    },
+    "crowd-04": {
+      "label": "Older adult · olive field jacket and taupe trousers",
+      "recipe": {
+        "id": "crowd-04",
+        "label": "Older adult · olive field jacket and taupe trousers",
+        "gender": 0.82,
+        "age": 0.87,
+        "weight": 0.4,
+        "muscle": 0.31,
+        "height": 0.54,
+        "ancestry": [
+          0.72,
+          0.18,
+          0.1
+        ],
+        "clothes": "male_casualsuit05",
+        "shoes": "shoes01",
+        "hairStyle": "receding",
+        "skin": "#b48b6c",
+        "upper": "#707365",
+        "lower": "#9a8e80",
+        "hair": "#b7b3aa",
+        "shoe": "#655346"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-04-hero.glb",
+          "bytes": 190304,
+          "triangles": 37276,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 12426,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 12426,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 12424,
+              "draws": 1
+            }
+          },
+          "sha256": "1113c307654dd3455a6a162d621594dda00c7dd59e7a6ca8e189d5ecff823e60"
+        },
+        "middle": {
+          "file": "crowd-04-middle.glb",
+          "bytes": 110032,
+          "triangles": 19474,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6490,
+              "draws": 1
+            }
+          },
+          "sha256": "81a8b208a2fbaa676416b34df7ee0209e414688d11b02b32d8eb5c1182382228"
+        },
+        "crowd": {
+          "file": "crowd-04-crowd.glb",
+          "bytes": 59924,
+          "triangles": 8973,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2991,
+              "draws": 1
+            }
+          },
+          "sha256": "f57b0683d741938c6f54c4c9db009c7f4f5c4d45ad1ee0e8d3b6c3820212eea3"
+        },
+        "far": {
+          "file": "crowd-04-far.glb",
+          "bytes": 38268,
+          "triangles": 5073,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "bd74d936e20ce15d3fbe9506440e1fd896ac4a6be2b104f0661cffae986e525f"
+        }
+      }
+    },
+    "crowd-05": {
+      "label": "Tall adult · muted plum pullover and grey jeans",
+      "recipe": {
+        "id": "crowd-05",
+        "label": "Tall adult · muted plum pullover and grey jeans",
+        "gender": 0.22,
+        "age": 0.26,
+        "weight": 0.34,
+        "muscle": 0.58,
+        "height": 0.7,
+        "ancestry": [
+          0.13,
+          0.19,
+          0.68
+        ],
+        "clothes": "male_casualsuit02",
+        "shoes": "shoes06",
+        "hairStyle": "curly",
+        "skin": "#80573f",
+        "upper": "#776771",
+        "lower": "#767775",
+        "hair": "#302722",
+        "shoe": "#57524e"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-05-hero.glb",
+          "bytes": 158248,
+          "triangles": 31735,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10579,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10578,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10578,
+              "draws": 1
+            }
+          },
+          "sha256": "d4f2eb5072d2b90e1397f4eac16cd4d93d61f6b31fd604a753345b3c505da4fa"
+        },
+        "middle": {
+          "file": "crowd-05-middle.glb",
+          "bytes": 106600,
+          "triangles": 19471,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6489,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "d19b793640cbf135538f261facb185961b0d2499dba43862d521e49df29bedf9"
+        },
+        "crowd": {
+          "file": "crowd-05-crowd.glb",
+          "bytes": 57300,
+          "triangles": 8975,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2992,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2992,
+              "draws": 1
+            }
+          },
+          "sha256": "9b0e23f02504b4fb8a8fe1bfb570e6fb08ad3d5659d8476659c598dc95a9f9a0"
+        },
+        "far": {
+          "file": "crowd-05-far.glb",
+          "bytes": 37336,
+          "triangles": 5076,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1692,
+              "draws": 1
+            }
+          },
+          "sha256": "b66656130b69b7d51a0d4c7300dba8f0e43ccbd85a42fba84b4201f5add1d946"
+        }
+      }
+    },
+    "crowd-06": {
+      "label": "Adult · cocoa shirt and navy jeans",
+      "recipe": {
+        "id": "crowd-06",
+        "label": "Adult · cocoa shirt and navy jeans",
+        "gender": 0.74,
+        "age": 0.59,
+        "weight": 0.58,
+        "muscle": 0.38,
+        "height": 0.48,
+        "ancestry": [
+          0.35,
+          0.48,
+          0.17
+        ],
+        "clothes": "male_casualsuit03",
+        "shoes": "shoes02",
+        "hairStyle": "sidepart",
+        "skin": "#b08a6e",
+        "upper": "#8a7767",
+        "lower": "#515866",
+        "hair": "#64594e",
+        "shoe": "#665e53"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-06-hero.glb",
+          "bytes": 165400,
+          "triangles": 32705,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10901,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10903,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10901,
+              "draws": 1
+            }
+          },
+          "sha256": "253f715e4adf256e121c8610b3aac74e2c447d757b0b550cb349e4ee6a9fbbf0"
+        },
+        "middle": {
+          "file": "crowd-06-middle.glb",
+          "bytes": 106916,
+          "triangles": 19473,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6490,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "765fbd89211343eecfdfd872a15771bcd7f08f22653fb7a9e9cb654ac5508e69"
+        },
+        "crowd": {
+          "file": "crowd-06-crowd.glb",
+          "bytes": 57464,
+          "triangles": 8973,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2992,
+              "draws": 1
+            }
+          },
+          "sha256": "bae6ed10b205584c03af646c75f8f2c9e54c3d18538b4a5a068ca552d2bfa71f"
+        },
+        "far": {
+          "file": "crowd-06-far.glb",
+          "bytes": 37868,
+          "triangles": 5072,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "6e63bc64725aa653d01474544b5c9cef3405a97436b9cd30bc46e933dc38a7ad"
+        }
+      }
+    },
+    "crowd-07": {
+      "label": "Child · sage tee and stone shorts",
+      "recipe": {
+        "id": "crowd-07",
+        "label": "Child · sage tee and stone shorts",
+        "gender": 0.44,
+        "age": 0.12,
+        "weight": 0.44,
+        "muscle": 0.35,
+        "height": 0.32,
+        "ancestry": [
+          0.15,
+          0.6,
+          0.25
+        ],
+        "clothes": "female_casualsuit02",
+        "shoes": "shoes05",
+        "hairStyle": "crop",
+        "skin": "#c49a78",
+        "upper": "#83917d",
+        "lower": "#a9a29a",
+        "hair": "#665343",
+        "shoe": "#7c7469"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-07-hero.glb",
+          "bytes": 191248,
+          "triangles": 38245,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 12748,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 12749,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 12748,
+              "draws": 1
+            }
+          },
+          "sha256": "c1bd7a8f71dbd1d8f1cbf3d11b4c163934791c4fd5ad6a075528cacab0b47b4f"
+        },
+        "middle": {
+          "file": "crowd-07-middle.glb",
+          "bytes": 108388,
+          "triangles": 19474,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "df45510293bb88312de014fa8e1fcf5c0bdf392aa52ae986e062a78639301045"
+        },
+        "crowd": {
+          "file": "crowd-07-crowd.glb",
+          "bytes": 58460,
+          "triangles": 8973,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2992,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2991,
+              "draws": 1
+            }
+          },
+          "sha256": "e78dd739e62a0667d7bae5a7bc538575e5a778e4b1081ffd57d01821de8263c9"
+        },
+        "far": {
+          "file": "crowd-07-far.glb",
+          "bytes": 37772,
+          "triangles": 5073,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "57c2fac520fd825d38f078db2862cdb6c8047f35fe64cf9edb30b85df0bb4c6f"
+        }
+      }
+    },
+    "crowd-08": {
+      "label": "Adult · oatmeal blouse and espresso skirt",
+      "recipe": {
+        "id": "crowd-08",
+        "label": "Adult · oatmeal blouse and espresso skirt",
+        "gender": 0.12,
+        "age": 0.48,
+        "weight": 0.5,
+        "muscle": 0.37,
+        "height": 0.52,
+        "ancestry": [
+          0.25,
+          0.25,
+          0.5
+        ],
+        "clothes": "female_elegantsuit01",
+        "shoes": "shoes04",
+        "hairStyle": "bun",
+        "skin": "#a27557",
+        "upper": "#c0b6a6",
+        "lower": "#675a50",
+        "hair": "#3a2f28",
+        "shoe": "#514a43"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-08-hero.glb",
+          "bytes": 168176,
+          "triangles": 32723,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10942,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10942,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10839,
+              "draws": 1
+            }
+          },
+          "sha256": "9752f4e7357affc159ddc878131d562e29f71cd199c035ee09b7da46d6c8a5ec"
+        },
+        "middle": {
+          "file": "crowd-08-middle.glb",
+          "bytes": 109044,
+          "triangles": 19474,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6491,
+              "draws": 1
+            }
+          },
+          "sha256": "62c2f393ed59bfb67e4727953a4d7c8787715a7d4ea4fddbfa2de4a94f52ebad"
+        },
+        "crowd": {
+          "file": "crowd-08-crowd.glb",
+          "bytes": 58868,
+          "triangles": 8973,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2992,
+              "draws": 1
+            }
+          },
+          "sha256": "d628522d3782e21c19ac1a824c5e940c9cc10a45b24130dc847068adfc80716e"
+        },
+        "far": {
+          "file": "crowd-08-far.glb",
+          "bytes": 38200,
+          "triangles": 5072,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1690,
+              "draws": 1
+            }
+          },
+          "sha256": "d61aeaa9dca44c8e3d52e14c0b3c28410f1c32655fefb69eae30dc4e476c745c"
+        }
+      }
+    },
+    "crowd-09": {
+      "label": "Older adult · grey-blue tee and umber jeans",
+      "recipe": {
+        "id": "crowd-09",
+        "label": "Older adult · grey-blue tee and umber jeans",
+        "gender": 0.19,
+        "age": 0.81,
+        "weight": 0.44,
+        "muscle": 0.34,
+        "height": 0.44,
+        "ancestry": [
+          0.45,
+          0.35,
+          0.2
+        ],
+        "clothes": "male_casualsuit06",
+        "shoes": "shoes05",
+        "hairStyle": "sidepart",
+        "skin": "#b6947c",
+        "upper": "#78828b",
+        "lower": "#807262",
+        "hair": "#c4c0b8",
+        "shoe": "#817b72"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-09-hero.glb",
+          "bytes": 214612,
+          "triangles": 43281,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 14427,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 14427,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 14427,
+              "draws": 1
+            }
+          },
+          "sha256": "7dd2f3373cf7c466c748b68ed83fb5d0d59ac3d0918614ace470afc997fa8ffe"
+        },
+        "middle": {
+          "file": "crowd-09-middle.glb",
+          "bytes": 108516,
+          "triangles": 19472,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6492,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6490,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6490,
+              "draws": 1
+            }
+          },
+          "sha256": "56670a9c360d54a5ba43fa7db378bb717933b1c54db1e6ef6a1c4dc59bfdb226"
+        },
+        "crowd": {
+          "file": "crowd-09-crowd.glb",
+          "bytes": 57756,
+          "triangles": 8974,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2992,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2991,
+              "draws": 1
+            }
+          },
+          "sha256": "a87922ca0b4ad33d3bbcaf2881c120b1b0449ce683b8a7db3ecf727861ab2779"
+        },
+        "far": {
+          "file": "crowd-09-far.glb",
+          "bytes": 37696,
+          "triangles": 5073,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1692,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1691,
+              "draws": 1
+            }
+          },
+          "sha256": "e36ee3de7250cd7dc58d039fdd63de860ab3b3778e79a482dc6fb876c7c8c503"
+        }
+      }
+    },
+    "crowd-10": {
+      "label": "Adult · taupe tee and faded slate jeans",
+      "recipe": {
+        "id": "crowd-10",
+        "label": "Adult · taupe tee and faded slate jeans",
+        "gender": 0.86,
+        "age": 0.35,
+        "weight": 0.44,
+        "muscle": 0.66,
+        "height": 0.66,
+        "ancestry": [
+          0.22,
+          0.38,
+          0.4
+        ],
+        "clothes": "male_casualsuit04",
+        "shoes": "shoes06",
+        "hairStyle": "crop",
+        "skin": "#9d755c",
+        "upper": "#9a8f83",
+        "lower": "#636b74",
+        "hair": "#342c27",
+        "shoe": "#574f48"
+      },
+      "lods": {
+        "hero": {
+          "file": "crowd-10-hero.glb",
+          "bytes": 156848,
+          "triangles": 31495,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 10498,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 10499,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 10498,
+              "draws": 1
+            }
+          },
+          "sha256": "f97b035213bcc8ee841727bba4ffcb0f76319865b61faf667fec6eefae3c5457"
+        },
+        "middle": {
+          "file": "crowd-10-middle.glb",
+          "bytes": 105892,
+          "triangles": 19471,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 6491,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 6490,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 6490,
+              "draws": 1
+            }
+          },
+          "sha256": "1ace8e97a9abbcd149104f9c5e44ecded149570eb3881e725694969b8f99c257"
+        },
+        "crowd": {
+          "file": "crowd-10-crowd.glb",
+          "bytes": 57224,
+          "triangles": 8972,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 2990,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 2991,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 2991,
+              "draws": 1
+            }
+          },
+          "sha256": "98894658a2018ec2b894f737ecfeec7dcffb1812c37940ea13190ac36483543e"
+        },
+        "far": {
+          "file": "crowd-10-far.glb",
+          "bytes": 37692,
+          "triangles": 5073,
+          "draws": 3,
+          "textures": 0,
+          "poses": {
+            "standing": {
+              "triangles": 1690,
+              "draws": 1
+            },
+            "walking": {
+              "triangles": 1691,
+              "draws": 1
+            },
+            "seated": {
+              "triangles": 1692,
+              "draws": 1
+            }
+          },
+          "sha256": "d3258b18e36043f36ad9e1aa21e25eaab0ca5e17bf6c54bb70f68f7b76e3c82e"
+        }
+      }
+    }
+  },
+  "totalBytes": 3788532,
+  "poseHelpers": [
+    {
+      "file": "tools/model-lab/people/production/crowd_pose.py",
+      "sha256": "988ac3047c2d849f8c333a44e9986ccf7f7c351c64a869adc873f3a5ed60fd30"
+    },
+    {
+      "file": "tools/model-lab/people/production/relaxed_pose.py",
+      "sha256": "12242ed8c69b41cbc3a615bcb0b285219ecfaf65c44537c679fc291637ec4047"
+    }
+  ],
+  "authoringSha256": "19ff98a9aba3e8e0f2f7da41a6e201724285c7f06366b1606c92efcb66ea0dde"
+}

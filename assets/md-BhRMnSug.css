@@ -1,0 +1,91 @@
+
+.ff-link-base[data-v-ff4e4a74] { fill:none; stroke:#8E99A8; stroke-width:1.5; stroke-opacity:.32; transition:stroke .3s ease;
+}
+.sending .ff-link-base[data-v-ff4e4a74],.orchestrating .ff-link-base[data-v-ff4e4a74] { stroke:var(--global);
+}
+.returning .ff-link-base[data-v-ff4e4a74] { stroke:var(--updates);
+}
+.orchestrating .ff-link-base[data-v-ff4e4a74] { stroke-opacity:.85; stroke-width:3.8; animation:ff-orchestration-ff4e4a74 5s ease-in-out infinite alternate;
+}
+.ff-pulse[data-v-ff4e4a74] { fill:none; stroke:var(--global); stroke-width:3.8; stroke-linecap:round; stroke-dasharray:12 150; animation:ff-send-ff4e4a74 5.6s linear infinite;
+}
+.returning .ff-pulse[data-v-ff4e4a74] { stroke:var(--updates); animation-direction:reverse;
+}
+.ff-progress[data-v-ff4e4a74] { fill:none; stroke:var(--training); stroke-width:3; stroke-dasharray:11 5; animation:ff-progress-ff4e4a74 3s linear infinite;
+}
+.ff-round-progress[data-v-ff4e4a74] { fill:none; stroke:var(--global); stroke-width:3; stroke-dasharray:12 6; animation:ff-progress-ff4e4a74 5.6s linear infinite;
+}
+.ff-training-rack[data-v-ff4e4a74] { stroke:var(--accent); stroke-width:2;
+}
+.ff-led[data-v-ff4e4a74] { animation:ff-led-ff4e4a74 1.3s ease-in-out infinite alternate;
+}
+.ff-merge[data-v-ff4e4a74] { animation:ff-led-ff4e4a74 2.8s steps(6) infinite alternate;
+}
+.ff-model[data-v-ff4e4a74] { transform-box:fill-box; transform-origin:center; animation:ff-model-ff4e4a74 30s linear infinite;
+}
+@keyframes ff-orchestration-ff4e4a74 {
+from { stroke-opacity:.7;
+}
+to { stroke-opacity:.9;
+}
+}
+@keyframes ff-model-ff4e4a74 {
+to { transform:rotate(360deg);
+}
+}
+@keyframes ff-send-ff4e4a74 {
+to { stroke-dashoffset:-648;
+}
+}
+@keyframes ff-progress-ff4e4a74 {
+to { stroke-dashoffset:310;
+}
+}
+@keyframes ff-led-ff4e4a74 {
+from { opacity:.24;
+}
+to { opacity:1;
+}
+}
+:root.motion-reduced .ff-pulse[data-v-ff4e4a74], :root.motion-reduced .ff-progress[data-v-ff4e4a74], :root.motion-reduced .ff-round-progress[data-v-ff4e4a74], :root.motion-reduced .ff-led[data-v-ff4e4a74], :root.motion-reduced .ff-merge[data-v-ff4e4a74], :root.motion-reduced .ff-model[data-v-ff4e4a74], :root.motion-reduced .orchestrating .ff-link-base[data-v-ff4e4a74] { animation:none;
+}
+
+.flower-world-overlay[data-v-aef1a0ba] { position:absolute; inset:0; width:100%; height:100%; pointer-events:none;
+}
+.flower-world-overlay text[data-v-aef1a0ba] { paint-order:stroke; stroke:#050916; stroke-width:5px; stroke-linejoin:round;
+}
+.fw-leader[data-v-aef1a0ba] { fill:none; stroke:var(--global); stroke-width:2.4; stroke-opacity:.5;
+}
+.fw-node-leader[data-v-aef1a0ba] { stroke:var(--accent);
+}
+.fw-label[data-v-aef1a0ba] { font-family:var(--font-sans); font-size:22px; font-weight:600; fill:var(--fg);
+}
+.fw-center[data-v-aef1a0ba] { font-family:var(--font-sans); font-size:25px; font-weight:600; fill:var(--fg);
+}
+.fw-blue[data-v-aef1a0ba] { fill:var(--updates);
+}
+.fw-orchid[data-v-aef1a0ba] { fill:var(--global);
+}
+.fw-training[data-v-aef1a0ba] { font-family:var(--font-sans); font-size:22px; fill:var(--training);
+}
+.fw-data[data-v-aef1a0ba] { fill:var(--data); font-family:var(--font-mono); font-size:20px;
+}
+.fw-data-leader[data-v-aef1a0ba] { stroke:var(--data);
+}
+.fw-flow-label[data-v-aef1a0ba] { font-family:var(--font-mono); font-size:25px; font-weight:500;
+}
+.fw-round[data-v-aef1a0ba] { font-family:var(--font-mono); font-size:20px; fill:var(--global);
+}
+.fw-formula[data-v-aef1a0ba] { font-family:var(--font-mono); font-size:24px; fill:var(--accent);
+}
+.fw-sub[data-v-aef1a0ba] { font-family:var(--font-sans); font-size:21px; fill:var(--muted);
+}
+.fw-repeat[data-v-aef1a0ba] { font-family:var(--font-mono); font-size:23px; fill:var(--accent);
+}
+
+.slidev-layout[data-v-f1ff4d3f]:has(.flower-slide)::after { opacity:0;
+}
+.flower-slide[data-v-f1ff4d3f] { position:absolute !important; inset:0; width:100%; height:100%;
+}
+.flower-slide > .slide-title[data-v-f1ff4d3f] { position:absolute; left:5.7%; right:5.7%; top:7.2%; z-index:3;
+}

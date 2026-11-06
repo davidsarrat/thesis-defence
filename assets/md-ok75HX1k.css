@@ -1,0 +1,37 @@
+
+.ds-layer[data-v-c9fc3c82] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+/* Clear of the title's rule (David, 18 Oct 2026: "que baje un poco más"). */
+.c01-cards[data-v-c9fc3c82] { position: absolute; right: var(--frame-x); top: 150px; width: 410px; display: flex; flex-direction: column; gap: 10px;
+}
+.c01-card[data-v-c9fc3c82] { display: flex; gap: 14px; align-items: flex-start; padding: 11px 16px; border-radius: var(--card-radius); background: rgba(7, 19, 35, .95);
+  border: 1px solid var(--border); color: var(--fg, #EDF5FF); animation: c01-in-c9fc3c82 .35s ease;
+}
+.c01-card b[data-v-c9fc3c82] { display: block; font: 600 19px var(--font-sans, Inter, sans-serif); margin-bottom: 2px;
+}
+.c01-card span[data-v-c9fc3c82] { display: block; font: 500 16px/1.45 var(--font-mono, 'Roboto Mono', monospace); color: var(--muted, #B8CADE);
+}
+.c01-icon[data-v-c9fc3c82] { flex: 0 0 34px; width: 34px; height: 34px; margin-top: 3px; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+.c01-tone-privacy[data-v-c9fc3c82] { border-color: var(--privacy, #38C6AD);
+}
+.c01-tone-privacy .c01-icon[data-v-c9fc3c82] { stroke: var(--privacy, #38C6AD);
+}
+.c01-tone-privacy b[data-v-c9fc3c82] { color: var(--privacy, #38C6AD);
+}
+.c01-tone-refused[data-v-c9fc3c82] { border-color: var(--refused);
+}
+.c01-tone-refused .c01-icon[data-v-c9fc3c82] { stroke: var(--refused);
+}
+.c01-tone-refused b[data-v-c9fc3c82] { color: var(--refused);
+}
+.c01-tone-accent[data-v-c9fc3c82] { border-color: var(--accent, #7EFAFF);
+}
+.c01-tone-accent .c01-icon[data-v-c9fc3c82] { stroke: var(--accent, #7EFAFF);
+}
+.c01-tone-accent b[data-v-c9fc3c82] { color: var(--accent, #7EFAFF);
+}
+@keyframes c01-in-c9fc3c82 {
+from { opacity: 0; transform: translateX(10px);
+}
+}

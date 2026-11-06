@@ -1,0 +1,56 @@
+
+/* Reserving the final caption's second line keeps the coordinate planes still. */
+.dvrm-board[data-v-18e3132f] { border: 1.5px solid var(--border); border-radius: var(--card-radius); background: #0a162b; overflow: hidden;
+}
+.dvrm-board header[data-v-18e3132f] { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: baseline; padding: 9px 20px; border-bottom: 1px solid rgba(var(--fg-rgb), .18); font: 600 20px var(--font-sans);
+}
+.dvrm-title-a[data-v-18e3132f] { color: #7EFAFF;
+}
+.dvrm-title-b[data-v-18e3132f] { color: #FF8AF0; text-align: right;
+}
+.dvrm-board header span[data-v-18e3132f] { font: 500 16px/1.3 var(--font-sans); color: var(--muted); text-align: center;
+}
+.dvrm-scene[data-v-18e3132f] { position: relative; height: 280px;
+}
+.dvrm-plane[data-v-18e3132f] { position: absolute; width: 46%; top: 12px; transition: transform 1.8s cubic-bezier(.4, 0, .2, 1);
+}
+.dvrm-a[data-v-18e3132f] { left: 2%;
+}
+.dvrm-b[data-v-18e3132f] { right: 2%;
+}
+.is-overlaid .dvrm-a[data-v-18e3132f] { transform: translateX(54.347826%);
+}
+.is-overlaid .dvrm-b[data-v-18e3132f] { transform: translateX(-54.347826%);
+}
+.dvrm-b[data-v-18e3132f] .dvr-axis, .dvrm-b[data-v-18e3132f] .dvr-grid, .dvrm-b[data-v-18e3132f] .dvr-curve { transition: opacity .35s ease;
+}
+.is-overlaid .dvrm-b[data-v-18e3132f] .dvr-axis, .is-overlaid .dvrm-b[data-v-18e3132f] .dvr-grid, .is-overlaid .dvrm-b[data-v-18e3132f] .dvr-curve { opacity: 0; transition-delay: 1.8s;
+}
+.dvrm-b[data-v-18e3132f] .dvr-axis-label, .dvrm-b[data-v-18e3132f] .dvrm-shared .dvr-label { transition: opacity .3s ease .65s;
+}
+.is-overlaid .dvrm-b[data-v-18e3132f] .dvr-axis-label, .is-overlaid .dvrm-b[data-v-18e3132f] .dvrm-shared .dvr-label { opacity: 0; transition-delay: 0s;
+}
+.dvrm-plane[data-v-18e3132f] .dvr-mark { transition: color .45s ease;
+}
+.is-overlaid .dvrm-plane[data-v-18e3132f] .dvrm-shared { transition-delay: 1.9s;
+}
+.is-overlaid .dvrm-plane[data-v-18e3132f] .dvrm-unshared { transition-delay: 2.5s;
+}
+.dvrm-plane[data-v-18e3132f] .dvr-ring { animation: dvrm-glow-18e3132f .8s ease both;
+}
+.dvrm-plane[data-v-18e3132f] .dvrm-shared .dvr-ring { animation-delay: 1.9s;
+}
+.dvrm-plane[data-v-18e3132f] .dvrm-unshared .dvr-ring { animation-delay: 2.5s;
+}
+@keyframes dvrm-glow-18e3132f {
+0% { opacity: 0;
+}
+45% { opacity: 1; filter: brightness(1.4);
+}
+100% { opacity: 1; filter: brightness(1);
+}
+}
+.is-static .dvrm-plane[data-v-18e3132f] { transition: none;
+}
+.is-static[data-v-18e3132f] * { animation: none; transition: none;
+}

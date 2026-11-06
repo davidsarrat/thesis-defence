@@ -1,0 +1,33 @@
+
+/* Bigger and calmer (David, 24 Oct 2026): yellow column names like the deck's data tables, roomy rows, the dimension as
+   chips; a cyan rule separates the two routes without a model from the four trained ones. */
+.is-layer[data-v-e1d687ae] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none;
+}
+.is-card[data-v-e1d687ae] { position: absolute; left: 74px; top: 148px; width: 1132px; padding: 14px 34px 16px; box-sizing: border-box; border: 1px solid var(--border); border-radius: var(--card-radius); background: rgba(10,22,43,.96);
+}
+.is-table[data-v-e1d687ae] { width: 100%; table-layout: fixed; border-collapse: collapse; margin: 0; font: 21px/28px var(--font-sans); color: var(--fg);
+}
+.is-route[data-v-e1d687ae] { width: 290px;
+}.is-structure[data-v-e1d687ae] { width: auto;
+}.is-dimension[data-v-e1d687ae] { width: 190px;
+}
+.is-table th[data-v-e1d687ae], .is-table td[data-v-e1d687ae] { padding: 13px 0; margin: 0; border: 0; border-bottom: 0 !important; text-align: left; vertical-align: middle; text-transform: none; letter-spacing: normal; font-size: inherit; line-height: inherit; font-weight: 400; background: none;
+}
+.is-table thead th[data-v-e1d687ae] { padding: 6px 0 12px; font: 600 18px/24px var(--font-sans) !important; letter-spacing: .02em; color: var(--data) !important; border-bottom: 1px solid rgba(var(--data-rgb), .45) !important;
+}
+.is-table .is-data th[data-v-e1d687ae] { font: 600 22px/28px var(--font-sans) !important; color: var(--fg) !important; padding-right: 16px;
+}
+.is-table .is-data td[data-v-e1d687ae] { color: rgba(var(--fg-rgb), .86); padding-right: 16px;
+}
+.is-table .is-data td[data-v-e1d687ae]:last-child { padding-right: 0;
+}
+.is-table .is-data + .is-data[data-v-e1d687ae] { border-top: 1px solid #22384f;
+}
+.is-table .is-learned[data-v-e1d687ae] { border-top: 2px solid rgba(var(--accent-rgb), .7) !important;
+}
+.is-dim[data-v-e1d687ae] { display: inline-block; min-width: 46px; margin-right: 8px; padding: 2px 10px; box-sizing: border-box; border-radius: 999px; text-align: center; font: 600 17px/24px var(--font-mono);
+}
+.is-dim-3d[data-v-e1d687ae] { color: var(--accent); border: 1px solid rgba(var(--accent-rgb), .55); background: rgba(var(--accent-rgb), .08);
+}
+.is-dim-2d[data-v-e1d687ae] { color: var(--data); border: 1px solid rgba(var(--data-rgb), .55); background: rgba(var(--data-rgb), .08);
+}

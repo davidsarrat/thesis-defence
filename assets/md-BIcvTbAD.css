@@ -1,0 +1,54 @@
+
+.v6-board[data-v-5012f6e6] { width: 100%; height: auto; display: block; overflow: visible;
+}
+/* The curve and its points lit as on the PSI question slide. */
+.v6-curve[data-v-5012f6e6] { fill: none; stroke: #B9A6FF; stroke-width: 7.5; stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 9px rgba(185, 166, 255, .8)) drop-shadow(0 0 26px rgba(185, 166, 255, .38));
+}
+.v6-dot-a[data-v-5012f6e6] { fill: var(--party-a); filter: drop-shadow(0 0 8px rgba(126, 250, 255, .75));
+}
+.v6-dot-b[data-v-5012f6e6] { fill: var(--party-b); filter: drop-shadow(0 0 8px rgba(255, 138, 240, .75));
+}
+.v6-dot-green[data-v-5012f6e6] { fill: #38C6AD; filter: drop-shadow(0 0 9px rgba(56, 198, 173, .9)) drop-shadow(0 0 22px rgba(56, 198, 173, .45));
+}
+.v6-dot-red[data-v-5012f6e6] { fill: #FF4D4D; filter: drop-shadow(0 0 9px rgba(255, 77, 77, .9)) drop-shadow(0 0 22px rgba(255, 77, 77, .45));
+}
+/* The second lock: a ring in the colour of the hospital whose key added it. */
+.v6-lock[data-v-5012f6e6] { fill: none; stroke-width: 3;
+}
+.v6-lock-a[data-v-5012f6e6] { stroke: var(--party-a); filter: drop-shadow(0 0 6px rgba(126, 250, 255, .8));
+}
+.v6-lock-b[data-v-5012f6e6] { stroke: var(--party-b); filter: drop-shadow(0 0 6px rgba(255, 138, 240, .8));
+}
+/* Each hospital's key, lit in its colour. */
+.v6-key[data-v-5012f6e6] { fill: none; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round;
+}
+.v6-key-a[data-v-5012f6e6] { stroke: var(--party-a); filter: drop-shadow(0 0 6px rgba(126, 250, 255, .85));
+}
+.v6-key-b[data-v-5012f6e6] { stroke: var(--party-b); filter: drop-shadow(0 0 6px rgba(255, 138, 240, .85));
+}
+.v6-ring[data-v-5012f6e6] { fill: none; stroke-width: 2.5;
+}
+.v6-ring-a[data-v-5012f6e6] { stroke: var(--party-a);
+}
+.v6-ring-b[data-v-5012f6e6] { stroke: var(--party-b);
+}
+.v6-ring-green[data-v-5012f6e6] { stroke: #38C6AD;
+}
+.v6-ring-red[data-v-5012f6e6] { stroke: #FF4D4D;
+}
+/* A dark halo keeps the names readable over the glowing curve. */
+.v6-label[data-v-5012f6e6] { fill: var(--fg); font: 500 19px var(--font-sans); paint-order: stroke; stroke: rgba(5, 9, 22, .85); stroke-width: 4px;
+}
+.v6-column[data-v-5012f6e6] { fill: var(--muted); font: 500 16px var(--font-sans);
+}
+.v6-row[data-v-5012f6e6] { fill: #0e2134; stroke-width: 1.2;
+}
+.v6-name[data-v-5012f6e6] { fill: var(--fg); font: 500 21px var(--font-sans);
+}
+.v6-cell[data-v-5012f6e6] { font: 500 22px var(--font-mono);
+}
+.v6-cell-a[data-v-5012f6e6] { fill: var(--party-a);
+}
+.v6-cell-b[data-v-5012f6e6] { fill: var(--party-b);
+}

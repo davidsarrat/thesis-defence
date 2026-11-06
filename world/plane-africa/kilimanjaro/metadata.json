@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "bounds": {
+    "west": 37.2,
+    "east": 37.6,
+    "south": -3.23,
+    "north": -2.94
+  },
+  "gridSize": 385,
+  "normalSize": 1024,
+  "sourcePostingArcseconds": 1,
+  "sourceNominalResolutionMetres": 30,
+  "surfaceSampleSpacingMetres": {
+    "east": 115.66034963097087,
+    "north": 83.97545121803267
+  },
+  "widthMetres": 44413.574258292814,
+  "depthMetres": 32246.573267724547,
+  "horizontalDatum": "WGS84; EPSG:4326",
+  "verticalDatum": "EGM96",
+  "heightEncoding": "Signed int16 little-endian metres, rows north to south and columns west to east; bounds included; no vertical exaggeration",
+  "normalEncoding": "OpenGL tangent-space RGB in linear colour space; red=east, green=north, blue=up; pixel centres; no vertical exaggeration",
+  "heightMinimumMetres": 1253,
+  "heightMaximumMetres": 5882,
+  "highestSurfaceSample": {
+    "longitude": 37.35208333333333,
+    "latitude": -3.0759374999999998
+  },
+  "operations": [
+    "Bilinear geographic resampling of the two source grids",
+    "Round surface elevations to integral metres",
+    "Differentiate unexaggerated elevations at 1024 pixel centres for the normal map"
+  ],
+  "source": "NASA/NGA SRTM one-arcsecond elevation, distributed by USGS and the Mapzen/Tilezen Terrain Tiles AWS mirror; a distribution mosaic, not an original NASA download",
+  "licence": "Public-domain U.S. government terrain; source attribution retained",
+  "attribution": "SRTM terrain data courtesy of the U.S. Geological Survey; NASA/NGA. Distribution: Mapzen/Tilezen Terrain Tiles, AWS Open Data.",
+  "sources": {
+    "S03E037": {
+      "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S03/S03E037.hgt.gz",
+      "sha256": "c7d02b515cd0530624327a5da9c734587a2681e2ba70d4a14a207a00dfb4e0fa",
+      "north": -2,
+      "bytes": 10812302
+    },
+    "S04E037": {
+      "url": "https://elevation-tiles-prod.s3.amazonaws.com/skadi/S04/S04E037.hgt.gz",
+      "sha256": "37c55b464389712aca02bf8eba2e39072b273cc16efb9867eb403daa3581f96c",
+      "north": -3,
+      "bytes": 11538473
+    }
+  },
+  "files": {
+    "kilimanjaro-height-385.i16": {
+      "bytes": 296450,
+      "sha256": "dabfe549ade9f8a9feabf9e110ac27995c1945144b058d02d3cecc2106326efc"
+    },
+    "kilimanjaro-normal-1024.webp": {
+      "bytes": 1490538,
+      "sha256": "58729f695ef70a8eeff0e0923b48c5d5789721a1fabfbfb776f024b4e4424f45"
+    }
+  }
+}

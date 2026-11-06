@@ -1,0 +1,62 @@
+
+.wc-clock[data-v-1a2c5c29] { fill: none;
+}
+.wc-axis[data-v-1a2c5c29] { stroke: rgba(var(--fg-rgb), 0.45); stroke-width: 1.5;
+}
+.wc-shared[data-v-1a2c5c29] { fill: var(--accent); fill-opacity: .3; stroke: none; opacity: 0; transition: opacity .5s ease;
+}
+.wc-shared.wc-on[data-v-1a2c5c29] { opacity: 1;
+}
+.wc-curve[data-v-1a2c5c29] { stroke-width: 2.2; stroke-linejoin: round;
+}
+.wc-without[data-v-1a2c5c29] { fill: rgba(var(--global-rgb), 0.18); stroke: var(--global);
+}
+.wc-with[data-v-1a2c5c29] { fill: rgba(var(--updates-rgb), 0.18); stroke: var(--updates);
+}
+:root.motion-reduced .wc-shared[data-v-1a2c5c29] { transition: none;
+}
+
+.ed[data-v-eddaa0b2] { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;
+}
+.ed-clock[data-v-eddaa0b2] { fill: none;
+}
+.ed-panel[data-v-eddaa0b2] { fill: #071323; fill-opacity: .96; stroke: #36546A; stroke-width: 1.2;
+}
+.ed-policy[data-v-eddaa0b2] { stroke: #61BCAE; stroke-opacity: .8;
+}
+.ed-heading[data-v-eddaa0b2], .ed-title[data-v-eddaa0b2] { fill: var(--fg); font-family: var(--font-sans); font-size: 23px; font-weight: 600;
+}
+.ed-heading[data-v-eddaa0b2] { font-size: 21px;
+}
+.ed-option[data-v-eddaa0b2] { fill: #C8D8E4; font-family: var(--font-sans); font-size: 17px;
+}
+.ed-epsilon[data-v-eddaa0b2] { fill: var(--accent); font-family: var(--font-sans); font-size: 41px; font-weight: 600;
+}
+.ed-track[data-v-eddaa0b2] { stroke: #4C697B; stroke-width: 5; stroke-linecap: round;
+}
+.ed-track-on[data-v-eddaa0b2] { stroke: var(--privacy); stroke-width: 5; stroke-linecap: round;
+}
+.ed-tick[data-v-eddaa0b2] { stroke: #95AAB9; stroke-width: 1.5;
+}
+.ed-tick-label[data-v-eddaa0b2] { fill: #D4E0E9; font-family: var(--font-mono); font-size: 17px;
+}
+.ed-knob-glow[data-v-eddaa0b2] { fill: var(--accent); fill-opacity: .14;
+}
+.ed-knob[data-v-eddaa0b2] { fill: var(--accent); stroke: #D9FFFB; stroke-width: 2;
+}
+.ed-direction[data-v-eddaa0b2] { fill: #D4E0E9; font-family: var(--font-sans); font-size: 18px;
+}
+.ed-legend[data-v-eddaa0b2] { fill: var(--fg); font-family: var(--font-sans); font-size: 20px;
+}
+.ed-reading[data-v-eddaa0b2] { fill: #CFFFF4; font-family: var(--font-sans); font-size: 21px; font-weight: 500;
+}
+.ed-noise[data-v-eddaa0b2] { fill: var(--privacy); font-family: var(--font-sans); font-size: 44px; font-weight: 600;
+}
+.ed-noise-unit[data-v-eddaa0b2] { font-size: 26px; font-weight: 500;
+}
+.ed-sub[data-v-eddaa0b2] { fill: #C8D8E4; font-family: var(--font-sans); font-size: 17px;
+}
+.ed-accuracy-track[data-v-eddaa0b2] { stroke: #304B60; stroke-width: 17; stroke-linecap: round;
+}
+.ed-accuracy-on[data-v-eddaa0b2] { stroke: var(--accent); stroke-width: 17; stroke-linecap: round;
+}

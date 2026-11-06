@@ -1,0 +1,16 @@
+
+/* Below the title band (150 px), left of the operator and the rack; labels at 16 px. */
+.em-grid[data-v-3484cea7] { position: absolute; left: 70px; top: 150px; width: 640px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px;
+}
+.em-card[data-v-3484cea7] { position: relative; display: flex; flex-direction: column; gap: 8px; min-height: 196px; padding: 13px 16px 14px; box-sizing: border-box;
+}
+.em-card header[data-v-3484cea7] { display: flex; flex-direction: column; gap: 2px;
+}
+.em-card header b[data-v-3484cea7] { font: 700 20px var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+.em-card header span[data-v-3484cea7] { font: 500 16px var(--font-mono, 'Roboto Mono', monospace); color: var(--accent, #7EFAFF);
+}
+.em-card p[data-v-3484cea7] { flex: 1; margin: 0; font: 500 16px/1.4 var(--font-sans, Montserrat, sans-serif); color: var(--fg, #EDF5FF);
+}
+.em-card code[data-v-3484cea7] { align-self: flex-start; text-wrap: balance; padding: 4px 8px; border-radius: 7px; font-size: 16px; line-height: 1.35;
+}

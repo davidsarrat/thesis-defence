@@ -1,0 +1,26 @@
+
+.cue-page[data-v-67b1c5f0] { position: fixed; inset: 0; box-sizing: border-box; padding: 28px 40px; display: flex; flex-direction: column; gap: 22px;
+  background: #050b16; color: #edf5ff; font-family: Inter, Montserrat, system-ui, sans-serif; overflow: hidden;
+}
+header[data-v-67b1c5f0] { display: flex; align-items: baseline; gap: 28px; color: #9fb3c8; font: 600 26px/1.2 'Roboto Mono', monospace;
+}
+.cue-page-no[data-v-67b1c5f0] { color: #6f86a0;
+}
+.cue-time[data-v-67b1c5f0] { margin-left: auto; color: #7efaff;
+}
+section small[data-v-67b1c5f0] { display: block; margin-bottom: 6px; font: 700 18px/1 'Roboto Mono', monospace; letter-spacing: .12em; color: #6f86a0;
+}
+section p[data-v-67b1c5f0] { margin: 0; text-wrap: balance;
+}
+.cue-now p[data-v-67b1c5f0] { font: 600 34px/1.25 Inter, system-ui, sans-serif; color: #c9d7e6;
+}
+.cue-next[data-v-67b1c5f0] { padding: 22px 26px; border: 2px solid #38c6ad; border-radius: 16px; background: #0b1d26;
+}
+.cue-next small[data-v-67b1c5f0] { color: #38c6ad;
+}
+.cue-next p[data-v-67b1c5f0] { font: 700 64px/1.15 Inter, system-ui, sans-serif; color: #ffffff;
+}
+.cue-then p[data-v-67b1c5f0] { font: 600 36px/1.25 Inter, system-ui, sans-serif; color: #9fb3c8;
+}
+.cue-tag[data-v-67b1c5f0] { color: #f5be72;
+}

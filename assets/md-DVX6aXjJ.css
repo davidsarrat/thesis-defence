@@ -1,0 +1,143 @@
+/* The 2D narrative V01–V08 (kb/dsvert-route/narrative.md), on the same whiteboard as V09–V12 (dvs.css): A on the
+   left, the middle lane, B on the right. Rows are written per click; earlier rows stay readable. Anything sent between
+   A and B travels along its row as a small tag and lands in a slot (DvnLane). Sizes are canvas px (×1.31 on screen):
+   nothing below 14 px, so no text is under 18 px on the 1280 × 720 frame. */
+.dvn-wb { position: relative; }
+.dvn-wb .dvs-wb-cell.is-past, .dvn-wb .dvn-wide.is-past { opacity: .62; }
+.dvn-a { color: var(--party-a); }
+.dvn-b { color: var(--party-b); }
+.dvn-open { color: var(--party-analyst); }
+.dvn-muted { color: var(--muted); }
+.dvn-bad { color: var(--refused); }
+.dvn-good { color: var(--privacy); }
+
+/* A row that is also a lane: the same three columns as the board, a positioned box for tags and links. */
+.dvn-lane { grid-column: 1 / -1; display: grid; grid-template-columns: var(--wb-cols); position: relative; min-width: 0; }
+.dvn-lane > .dvs-wb-cell { position: relative; z-index: 1; }
+.dvn-links { position: absolute; left: 0; top: 0; z-index: 0; overflow: visible; pointer-events: none; }
+.dvn-link { fill: none; stroke: rgba(var(--fg-rgb), .55); stroke-width: 2; stroke-linecap: butt; }
+
+/* A row across the whole board: a formula or a sentence of the story. */
+.dvn-wide { grid-column: 1 / -1; min-width: 0; min-height: 46px; padding: 6px 20px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 3px; text-align: center; transition: opacity .45s ease, background-color .45s ease; }
+.dvn-wide.is-hidden { opacity: 0; }
+.dvn-wide.is-now { background: rgba(255, 255, 255, .05); }
+.dvn-wide.is-now > * { animation: dvs-write .75s cubic-bezier(.4, 0, .2, 1) both; }
+.dvn-big { display: block; font: 500 32px/1.2 var(--font-mono); color: #fff; white-space: nowrap; }
+.dvn-line { display: block; font: 500 20px/1.3 var(--font-sans); color: var(--fg); white-space: nowrap; }
+.dvn-say { display: block; font: 400 18px/1.3 var(--font-sans); color: var(--muted); white-space: nowrap; }
+.dvn-say.dvn-open { color: var(--party-analyst); }
+.dvn-n { font: 500 24px/1.2 var(--font-mono); white-space: nowrap; }
+
+/* Tags: what travels, with an envelope, in the sender's colour; it fades into its slot on landing. */
+.dvn-tag { position: absolute; left: var(--x0); top: var(--y); z-index: 5; transform: translate(-50%, -50%);
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 12px; border-radius: var(--chip-radius);
+  border: 1.6px solid var(--tc); background: #0b1a31; color: var(--tc); font: 600 18px/1.2 var(--font-mono); white-space: nowrap;
+  box-shadow: 0 0 0 3px rgba(10, 22, 43, .94), 0 0 16px color-mix(in srgb, var(--tc) 40%, transparent); pointer-events: none;
+  animation: dvn-move var(--dur) cubic-bezier(.45, 0, .25, 1) var(--delay) both, dvn-tagfade var(--dur) linear var(--delay) both; }
+.dvn-tag .dvn-icon { width: 19px; height: 19px; }
+.dvn-tag-mini { padding: 2px 6px; box-shadow: 0 0 10px color-mix(in srgb, var(--tc) 35%, transparent); }
+.dvn-tag-mini .dvn-icon { width: 16px; height: 16px; }
+.dvn-tag-a { --tc: var(--party-a); }
+.dvn-tag-b { --tc: var(--party-b); }
+@keyframes dvn-move {
+  0% { transform: translate(-50%, -50%); }
+  82%, 100% { transform: translate(calc(-50% + var(--dx)), -50%); }
+}
+@keyframes dvn-tagfade { 0% { opacity: 0; } 10%, 84% { opacity: 1; } 100% { opacity: 0; } }
+
+/* Arrivals (narrative.js arrive): a value that appears where something has just landed or been written. */
+.dvn-off { opacity: 0; }
+.dvn-wb .dvn-arrive, .dvn-wb .dvs-wb-cell > .dvn-arrive, .dvn-wb .dvn-wide > .dvn-arrive {
+  animation: dvn-pop .42s cubic-bezier(.3, .7, .4, 1) var(--at, 0s) both; }
+@keyframes dvn-pop { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+/* Once a value has arrived, a later click never writes it again. */
+.dvn-wb .dvs-wb-cell > .dvn-on, .dvn-wb .dvn-wide > .dvn-on { animation: none; }
+
+/* Slots: where a travelling value lands. */
+.dvn-slot { display: inline-flex; align-items: center; justify-content: center; min-width: 62px; height: 42px; padding: 0 10px;
+  border: 1.5px dashed rgba(var(--fg-rgb), .38); border-radius: var(--chip-radius); font: 500 26px/1 var(--font-mono); white-space: nowrap; }
+
+/* Icons (DvnIcon). */
+.dvn-icon { width: 1em; height: 1em; display: inline-block; vertical-align: -.14em; flex: none; overflow: visible; }
+.dvn-ic-line { fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.dvn-ic-thick { stroke-width: 3.4; }
+.dvn-ic-fill { fill: currentColor; }
+.dvn-ic-hole { fill: #0b1a31; }
+.dvn-ic-dot { fill: currentColor; }
+
+/* Dice (DvnDie): a random number drawn at the hospital that draws it. */
+.dvn-die { display: inline-flex; align-items: center; gap: 7px; font: 600 26px/1 var(--font-mono); white-space: nowrap; }
+.dvn-die .dvn-icon { width: 30px; height: 30px; }
+.dvn-die b { font-weight: 600; display: inline-block; }
+.dvn-die-a { color: var(--party-a); }
+.dvn-die-b { color: var(--party-b); }
+.dvn-wb .dvn-die-roll .dvn-icon { animation: dvn-roll .7s cubic-bezier(.3, .6, .4, 1) var(--at, 0s) both; }
+.dvn-wb .dvn-die-roll b { animation: dvn-pop .35s ease calc(var(--at, 0s) + .55s) both; }
+@keyframes dvn-roll { 0% { transform: rotate(-220deg) scale(.5); opacity: 0; } 60% { transform: rotate(16deg) scale(1.08); opacity: 1; } 100% { transform: none; opacity: 1; } }
+
+/* A triple in pieces (DvnCells): three labelled cells. */
+.dvn-cells { display: inline-flex; gap: 6px; }
+.dvn-cell { display: inline-flex; flex-direction: column; align-items: center; min-width: 46px; padding: 1px 8px 4px; border-radius: var(--chip-radius);
+  border: 1.5px solid color-mix(in srgb, var(--cc) 55%, transparent); background: rgba(255, 255, 255, .03); }
+.dvn-cell i { font: italic 500 17px/1.2 var(--font-sans); color: var(--muted); }
+.dvn-cell b { font: 500 24px/1.1 var(--font-mono); color: var(--cc); }
+.dvn-cells-inline .dvn-cell { flex-direction: row; align-items: baseline; gap: 6px; padding: 2px 9px 3px; }
+.dvn-cells-a { --cc: var(--party-a); }
+.dvn-cells-b { --cc: var(--party-b); }
+
+/* A check only the audience sees (the hospitals never do this sum). */
+.dvn-check { display: inline-flex; flex-direction: column; align-items: center; gap: 1px; padding: 4px 18px 6px; border-radius: var(--card-radius);
+  border: 1.4px dashed rgba(var(--fg-rgb), .5); background: rgba(5, 9, 22, .55); }
+.dvn-check-label { font: 600 16px/1.3 var(--font-mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+
+/* Static views (presenter, overview, print): the complete state, nothing moving. */
+.dvs-static .dvn-tag { display: none !important; }
+.dvs-static .dvn-wide > *, .dvs-static .dvn-arrive, .dvs-static .dvn-die-roll .dvn-icon, .dvs-static .dvn-die-roll b,
+.dvs-static .dvn-anim, .dvs-static .dvn-anim * { animation: none !important; }
+
+/* A caption that needs two lines on one click: the slide keeps a two-line band, so the board never moves. */
+.dvn-cap2.dvs-slide { padding-bottom: 56px; }
+/* A title longer than one line at the usual size keeps one line, a little smaller. */
+.dvn-long-title .slide-title h2 { font-size: 1.17em !important; }
+.dvn-link-label { position: absolute; z-index: 2; translate: -50% -50%; pointer-events: none; }
+
+.dvn-ex-list[data-v-db361c64] { display: grid; grid-template-columns: auto auto; column-gap: 18px; row-gap: 4px; font: 500 20px/1.35 var(--font-sans);
+}
+.dvn-ex-list > span[data-v-db361c64]::after { content: '';
+}
+.dvn-ex[data-v-db361c64] .dvn-ex-swap .dvs-wb-cell.is-a, .dvn-ex[data-v-db361c64] .dvn-ex-swap .dvs-wb-cell.is-b { flex-direction: row; align-items: center; justify-content: space-between;
+}
+.dvn-ex-dock[data-v-db361c64] { width: 30px; height: 30px; flex: none;
+}
+.dvn-ex-slot[data-v-db361c64] { min-width: 200px; height: 60px; padding: 4px 10px; justify-content: flex-start;
+}
+.dvn-ex-got[data-v-db361c64] { display: flex; flex-direction: column; gap: 5px; text-align: left;
+}
+.dvn-ex-names[data-v-db361c64] { display: flex; gap: 0 6px; font: 500 16px/1.3 var(--font-sans); white-space: nowrap;
+}
+.dvn-ex-names > span[data-v-db361c64]:not(:last-child)::after { content: ' ·'; color: var(--muted);
+}
+.dvn-ex-leak[data-v-db361c64] { color: #ff6b7d; font-weight: 700;
+}
+.dvn-ex-leak-line[data-v-db361c64] { font: 600 16px/1.3 var(--font-sans); color: #ff6b7d;
+}
+.dvn-ex-stamp[data-v-db361c64] { display: inline-flex; align-items: center; justify-content: center; padding: 8px 16px; border-radius: 7px; border: 1.8px solid currentColor;
+  font: 750 20px/1.15 var(--font-sans); letter-spacing: .075em; text-transform: uppercase; box-shadow: inset 3px 0 0 currentColor;
+}
+.dvn-ex-stamp-bad[data-v-db361c64] { color: #ff6b7d; background: rgba(44, 18, 24, .85);
+}
+.dvn-ex-stamp-good[data-v-db361c64] { color: var(--privacy); background: rgba(56, 198, 173, .06); font-size: 17px; letter-spacing: .055em; margin-top: 8px;
+}
+.dvn-ex-name[data-v-db361c64] { font: 600 17px/1.3 var(--font-sans); color: var(--fg); white-space: nowrap;
+}
+.dvn-ex-psi[data-v-db361c64] { font-size: 18px;
+}
+.dvn-ex-in[data-v-db361c64] { color: var(--privacy); font-weight: 600;
+}
+.dvn-ex-locked[data-v-db361c64] { color: rgba(var(--muted-rgb), .55); display: inline-flex; align-items: center; gap: 4px;
+}
+.dvn-ex-locked .dvn-icon[data-v-db361c64] { width: 17px; height: 17px; color: var(--muted);
+}
+.dvn-ex-ecdh[data-v-db361c64] { color: var(--op-curve, #B9A6FF); font-weight: 700;
+}

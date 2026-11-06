@@ -1,0 +1,1 @@
+var e={mode:`extensible`,step:0},t;function n(n,r,i){t=n,Object.assign(e,{mode:r,step:i})}function r(e){t===e&&(t=null)}export{n,r,e as t};
