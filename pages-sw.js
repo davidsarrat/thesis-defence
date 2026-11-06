@@ -102,6 +102,15 @@ async function unchanged(cache, file) {
   return !!hashes?.[file] && await storedHash(cache, file) === hashes[file]
 }
 
+// GitHub's servers answer an odd file with a 503 now and then (6 Nov 2026: one or two of the site's 800 files in a
+// first visit): such an answer is asked once more, a second later.
+async function fetchAgain(request, init) {
+  const response = await fetch(request, init)
+  if (response.status < 500) return response
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  return fetch(request, init)
+}
+
 // Hashed build files (assets/) never change. Any other file is checked with the server before it is stored, so a copy
 // an earlier build left in the browser's HTTP cache never ends up in this one.
 const checked = request => hashed(request.url) ? request : new Request(request, { cache: 'no-cache' })
@@ -113,7 +122,7 @@ async function cached(request) {
   const hit = usable && await cache.match(request, ANY)
   if (hit) return hit
   try {
-    const response = await fetch(checked(request))
+    const response = await fetchAgain(checked(request))
     if (!old && response.status === 200 && response.type === 'basic') store(cache, request, response.clone()).catch(() => {})
     return response
   } catch (error) {
@@ -180,7 +189,7 @@ async function precache() {
       const url = SCOPE + queue.shift()
       try {
         if (!(await cache.match(url, ANY))) {
-          const response = await fetch(url, { cache: 'no-cache' })
+          const response = await fetchAgain(url, { cache: 'no-cache' })
           if (response.status === 200) {
             // The page also answers for the site's root, the address the talk is opened at.
             if (url === `${SCOPE}index.html`) await cache.put(SCOPE, response.clone())
