@@ -86,9 +86,9 @@
         0.2737649083137512
       ],
       "handRight": [
-        -0.11807354539632797,
-        0.5633880347013474,
-        0.24573147296905518
+        -0.11197025328874588,
+        0.560756728053093,
+        0.25352200865745544
       ],
       "elbowLeft": [
         0.1445981115102768,
@@ -96,9 +96,9 @@
         0.1070161908864975
       ],
       "elbowRight": [
-        -0.10099174827337265,
-        0.5993003696203232,
-        0.06901431828737259
+        -0.1579030305147171,
+        0.6054048985242844,
+        0.08409033715724945
       ],
       "shoulderLeft": [
         0.12722936272621155,
@@ -140,36 +140,36 @@
   "lods": {
     "hero": {
       "file": "patient-01-hero.glb",
-      "bytes": 256280,
-      "sha256": "64cbad62f82500700bf3535ea8062c9806fbb425068f7dd8bef229c32ce604fa",
+      "bytes": 253904,
+      "sha256": "40f15760399e2b14efefa0d44d69edf7433d7815582c71650f7f65f8610e6b4d",
       "poses": {
         "standing": {
           "triangles": 18037,
           "draws": 7
         },
         "seated": {
-          "triangles": 18158,
+          "triangles": 18160,
           "draws": 9
         }
       },
-      "triangles": 36195,
+      "triangles": 36197,
       "textures": 1
     },
     "middle": {
       "file": "patient-01-middle.glb",
-      "bytes": 150012,
-      "sha256": "76a59bae07ada82b0a7f1ba33b62f3966a2d1bc5a9486ca922eaeac51b6018d8",
+      "bytes": 150008,
+      "sha256": "b1e34ddd328dc8586f378c8ea30eb0b4d6b2b01833f2e14d30b48f51ab3c38bb",
       "poses": {
         "standing": {
           "triangles": 9378,
           "draws": 7
         },
         "seated": {
-          "triangles": 9517,
+          "triangles": 9520,
           "draws": 9
         }
       },
-      "triangles": 18895,
+      "triangles": 18898,
       "textures": 1
     }
   },
@@ -177,5 +177,5 @@
     "file": "tools/model-lab/people/production/relaxed_pose.py",
     "sha256": "12242ed8c69b41cbc3a615bcb0b285219ecfaf65c44537c679fc291637ec4047"
   },
-  "totalBytes": 406292
+  "totalBytes": 403912
 }
