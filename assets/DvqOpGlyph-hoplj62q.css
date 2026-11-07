@@ -1,0 +1,25 @@
+
+.vg-glyph[data-v-290e57bb] { display: block; flex: none; overflow: visible; fill: none; stroke-linecap: round; stroke-linejoin: round;
+}
+.vg-glyph circle[data-v-290e57bb] { stroke: none; fill: var(--vg-ink);
+}
+.vg-glyph path[data-v-290e57bb] { stroke: var(--vg-ink);
+}
+.vg-glyph[data-v-290e57bb] { filter: drop-shadow(0 0 var(--vg-near) rgba(var(--vg-rgb), .8)) drop-shadow(0 0 var(--vg-far) rgba(var(--vg-rgb), .38));
+}
+.vg-add[data-v-290e57bb], .vg-sub[data-v-290e57bb] { --vg-ink: var(--op-sum); --vg-rgb: 56, 198, 173;
+}
+.vg-mul[data-v-290e57bb] { --vg-ink: var(--op-prod); --vg-rgb: 245, 190, 114;
+}
+.vg-div[data-v-290e57bb] { --vg-ink: var(--op-div); --vg-rgb: 77, 141, 223;
+}
+.vg-exp[data-v-290e57bb] { --vg-ink: var(--op-exp); --vg-rgb: 185, 166, 255;
+}
+.vg-log[data-v-290e57bb] { --vg-ink: var(--op-log); --vg-rgb: 255, 158, 133;
+}
+.vg-noise[data-v-290e57bb] { --vg-ink: var(--privacy); --vg-rgb: var(--privacy-rgb);
+}
+.vg-open[data-v-290e57bb] { --vg-ink: var(--opened-value); --vg-rgb: var(--fg-rgb);
+}
+.vg-arrow[data-v-290e57bb] { --vg-ink: rgba(184, 202, 222, .75); --vg-rgb: 184, 202, 222; filter: drop-shadow(0 0 var(--vg-near) rgba(184, 202, 222, .3));
+}

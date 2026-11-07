@@ -1,0 +1,37 @@
+
+.vd-board[data-v-93968003] { width: 100%; height: auto; display: block; overflow: visible;
+}
+.vd-label[data-v-93968003] { font: 500 20px var(--font-mono); fill: #b8cade; text-anchor: middle;
+}
+.vd-slot[data-v-93968003] { fill: #0a162b; stroke: #7efaff; stroke-width: 2; stroke-opacity: .75;
+  filter: drop-shadow(0 0 calc(12px * var(--vd-glow, 0)) rgba(126, 250, 255, .8));
+}
+.vd-slot-next[data-v-93968003] { stroke: #edf5ff; stroke-opacity: .6;
+}
+.vd-num[data-v-93968003] { font: 700 32px var(--font-mono); fill: #7efaff; text-anchor: middle;
+}
+.vd-num-next[data-v-93968003] { fill: #edf5ff;
+}
+.vd-text[data-v-93968003] { font: 500 32px var(--font-mono); text-anchor: middle;
+}
+.vd-op[data-v-93968003] { font-weight: 700; filter: drop-shadow(0 0 calc(5px * var(--vd-lit, 0)) rgba(var(--vd-rgb), calc(.95 * var(--vd-lit, 0))))
+  drop-shadow(0 0 calc(12px * var(--vd-lit, 0)) rgba(var(--vd-rgb), calc(.55 * var(--vd-lit, 0))));
+}
+.vd-trail[data-v-93968003] { font: 500 24px var(--font-mono); fill: #b8cade; white-space: pre;
+}
+.vd-trail-name[data-v-93968003] { fill: #7efaff;
+}
+.vd-trail-arrow[data-v-93968003] { fill: rgba(184, 202, 222, .6);
+}
+.vd-trail-target[data-v-93968003] { fill: #edf5ff; font-weight: 700;
+}
+.vd-meaning[data-v-93968003] { font: 500 25px var(--font-sans); fill: #edf5ff; text-anchor: middle;
+}
+.vd-conclusion[data-v-93968003] { font: 500 30px var(--font-mono); fill: #edf5ff; text-anchor: middle;
+}
+.vd-prod[data-v-93968003] { fill: #f5be72; font-weight: 700;
+}
+.vd-sum[data-v-93968003] { fill: #38c6ad; font-weight: 700;
+}
+.vd-div[data-v-93968003] { fill: #4d8ddf; font-weight: 700;
+}

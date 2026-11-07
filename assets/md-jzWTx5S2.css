@@ -1,0 +1,77 @@
+
+/* Slidev's transformed slide is the fixed containing block; the padded privacy frame is smaller. */
+.pv-seed[data-v-e3979544] { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; animation: pv-seed-in-e3979544 .45s ease both;
+}
+@keyframes pv-seed-in-e3979544 {
+from { opacity: 0;
+}
+to { opacity: 1;
+}
+}
+.pv-seed-complete[data-v-e3979544] { animation: none;
+}
+.pv-seed-dot[data-v-e3979544] { fill: var(--privacy);
+}
+.pv-seed-stem[data-v-e3979544] { fill: none; stroke: var(--privacy); stroke-width: 1.2;
+}
+.pv-seed-card[data-v-e3979544] { fill: #0a162bf2; stroke: var(--privacy); stroke-opacity: .65;
+}
+.pv-seed-label[data-v-e3979544] { font: 500 17px var(--font-sans); fill: var(--fg);
+}
+.pv-seed-value[data-v-e3979544] { font: 500 19px var(--font-mono); fill: var(--privacy);
+}
+
+.pv-sticky[data-v-a22d1219] { height: 100%; display: grid; grid-template-columns: 50% 1fr; gap: 16px;
+}
+.pv-attacker[data-v-a22d1219] { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 2px 0 34px;
+}
+.pv-ask[data-v-a22d1219] { position: relative; max-width: 280px; background: #0a162bed; border: 1px solid #43566e; border-radius: 9px; padding: 6px 12px; font: 500 15px var(--font-sans); color: var(--fg);
+}
+.pv-attacker img[data-v-a22d1219] { position: absolute; left: -34px; top: -115px; width: 980px; max-width: none; pointer-events: none;
+}
+.pv-attack-card[data-v-a22d1219] { align-self: start; padding: 14px 16px 8px;
+}
+.pv-attack[data-v-a22d1219] { width: 100%; height: auto; display: block; overflow: visible;
+}
+.pv-attack-head[data-v-a22d1219] { font: 600 21px var(--font-sans); fill: var(--fg); dominant-baseline: hanging;
+}
+.pv-ring[data-v-a22d1219] { fill: rgba(56, 198, 173, .06); stroke: var(--privacy); stroke-opacity: .55; stroke-width: 1.6; stroke-dasharray: 6 5;
+}
+.pv-arrow[data-v-a22d1219] { fill: none; stroke: #FF4D5E; stroke-opacity: .42; stroke-width: 1.3;
+}
+.pv-arrow.pv-on[data-v-a22d1219] { stroke: var(--privacy); stroke-opacity: .9; stroke-width: 2.6;
+}
+.pv-tip[data-v-a22d1219] { fill: #FF7180; fill-opacity: .8;
+}
+.pv-tip.pv-on[data-v-a22d1219] { fill: var(--privacy); fill-opacity: 1;
+}
+.pv-latest[data-v-a22d1219] { stroke: #FFFFFF; stroke-width: 2.2; stroke-opacity: .9;
+}
+.pv-avg-line[data-v-a22d1219] { stroke: #FFF2F3; stroke-width: 2.4; stroke-dasharray: 4 3;
+}
+.pv-avg[data-v-a22d1219] { fill: #FFF2F3; stroke: #FF4D5E; stroke-width: 3;
+}
+.pv-avg.pv-on[data-v-a22d1219] { stroke: var(--privacy);
+}
+.pv-beat[data-v-a22d1219] { fill: none; stroke: #FF8794; stroke-width: 2.5; opacity: 0; animation: pv-beat-a22d1219 .5s ease-out;
+}
+.pv-beat.pv-on[data-v-a22d1219] { stroke: var(--privacy);
+}
+@keyframes pv-beat-a22d1219 {
+from { opacity: .85; r: 10;
+}
+to { opacity: 0; r: 30;
+}
+}
+.pv-true[data-v-a22d1219] { fill: var(--data, #F5BE72); stroke: #FFE2B0; stroke-width: 2;
+}
+.pv-true-label[data-v-a22d1219] { font: 700 16px var(--font-sans); fill: var(--data, #F5BE72);
+}
+.pv-count[data-v-a22d1219] { font: 16px var(--font-mono); fill: var(--muted);
+}
+.pv-verdict[data-v-a22d1219] { font: 650 18px var(--font-sans); fill: #FF7180; opacity: 0; transition: opacity .3s ease;
+}
+.pv-verdict.pv-on[data-v-a22d1219] { fill: var(--privacy);
+}
+.pv-verdict.pv-shown[data-v-a22d1219] { opacity: 1;
+}

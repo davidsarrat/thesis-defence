@@ -1,0 +1,6 @@
+
+/* The previous screen goes completely dark before the cards come out (David, 25 Oct 2026). */
+.i09-cards[data-v-0a1f072f] { transition: opacity .45s ease;
+}
+.i09-cards.i09-wait[data-v-0a1f072f] { opacity: 0; transition: none;
+}
