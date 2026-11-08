@@ -1,0 +1,58 @@
+
+.ds-layer[data-v-10635768] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+/* Tags stay above the call card: a refusal tag must never hide under the error it explains. */
+.ds-layer-svg[data-v-10635768] { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible; z-index: 2;
+}
+.ds-tag-leader[data-v-10635768] { fill: none; stroke-width: 2; stroke-opacity: .6;
+}
+.ds-tag[data-v-10635768] { fill: #071323; fill-opacity: .95; stroke-width: 1.3;
+}
+.ds-tag-title[data-v-10635768] { font: 600 18px var(--font-mono, 'Roboto Mono', monospace);
+}
+.ds-tag-sub[data-v-10635768] { font: 500 16px var(--font-mono, 'Roboto Mono', monospace); fill: var(--muted, #B8CADE);
+}
+.ds-tone-accent[data-v-10635768] { stroke: var(--accent, #7EFAFF);
+}
+text.ds-tone-accent[data-v-10635768] { fill: var(--accent, #7EFAFF); stroke: none;
+}
+.ds-tone-data[data-v-10635768] { stroke: var(--data, #F5BE72);
+}
+text.ds-tone-data[data-v-10635768] { fill: var(--data, #F5BE72); stroke: none;
+}
+.ds-tone-link[data-v-10635768] { stroke: #6f9fe0;
+}
+text.ds-tone-link[data-v-10635768] { fill: #8fb6ec; stroke: none;
+}
+.ds-tone-privacy[data-v-10635768] { stroke: var(--privacy, #38C6AD);
+}
+text.ds-tone-privacy[data-v-10635768] { fill: var(--privacy, #38C6AD); stroke: none;
+}
+.ds-tone-refused[data-v-10635768] { stroke: var(--refused);
+}
+text.ds-tone-refused[data-v-10635768] { fill: var(--refused); stroke: none;
+}
+rect.ds-tone-data[data-v-10635768] { fill: #30291F;
+}
+rect.ds-tone-refused[data-v-10635768] { fill: #2c1218;
+}
+rect.ds-tone-privacy[data-v-10635768] { fill: #102a24;
+}
+/* Every card starts ≥ 150 px from the top, clear of the title band (David, 18 Oct 2026). */
+.ds-call[data-v-10635768] { position: absolute; left: 50%; top: 150px; transform: translateX(-50%); padding: 12px 18px; border-radius: var(--card-radius);
+  background: rgba(7, 19, 35, .95); border: 1px solid var(--border); text-align: center; color: var(--fg, #EDF5FF); max-width: 1000px;
+}
+.ds-call code[data-v-10635768] { display: block; font: 18px/1.35 var(--font-mono); background: none; padding: 0; white-space: pre;
+}
+.ds-call span[data-v-10635768] { display: block; margin-top: 6px; font: 500 16px var(--font-mono); color: var(--muted, #B8CADE);
+}
+.ds-call-refused span[data-v-10635768] { color: var(--refused);
+}
+.ds-call-privacy span[data-v-10635768] { color: var(--privacy, #38C6AD);
+}
+.ds-tag-fade-enter-active[data-v-10635768] { transition: opacity .4s ease;
+}
+.ds-tag-fade-leave-active[data-v-10635768] { transition: opacity .2s ease;
+}
+.ds-tag-fade-enter-from[data-v-10635768], .ds-tag-fade-leave-to[data-v-10635768] { opacity: 0;
+}
