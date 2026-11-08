@@ -1,9 +1,0 @@
-
-.eps-shared[data-v-20dcf1db] { fill: var(--privacy); fill-opacity: .3; stroke: none;
-}
-.eps-person path[data-v-20dcf1db] { fill: none; stroke: var(--muted); stroke-width: 1.4;
-}
-.eps-leader[data-v-20dcf1db] { stroke: var(--privacy); stroke-width: 1.4; stroke-opacity: .7;
-}
-.eps-name[data-v-20dcf1db] { paint-order: stroke; stroke: #050b18; stroke-width: 5px; stroke-linejoin: round;
-}
