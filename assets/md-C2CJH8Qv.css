@@ -1,0 +1,56 @@
+
+.hb-board[data-v-afd2c693] { position:absolute; left:73px; top:155px; width:710px; height:458px; padding:24px; box-sizing:border-box; background:rgba(10,22,43,.96); border:1px solid var(--border); border-radius:12px; color:var(--fg);
+}
+.hb-board header[data-v-afd2c693] { font:600 23px/28px var(--font-sans); margin-bottom:16px;
+}
+.hb-cards[data-v-afd2c693] { display:grid; gap:8px;
+}
+.hb-cards article[data-v-afd2c693] { position:relative; height:66px; box-sizing:border-box; border:1px solid #3d536c; border-radius:8px; padding:8px 14px; background:#102238;
+}
+.hb-cards strong[data-v-afd2c693] { display:block; color:var(--fg); font:600 20px/25px var(--font-sans);
+}
+.hb-cards span[data-v-afd2c693] { display:block; color:var(--muted); font:17px/22px var(--font-sans);
+}
+.hb-cards img[data-v-afd2c693] { position:absolute; right:17px; top:11px; width:44px; height:44px; object-fit:contain;
+}
+.hb-cards article.hb-bsc[data-v-afd2c693] { border-color:var(--accent); background:#112e39;
+}
+.hb-bsc strong[data-v-afd2c693] { color:var(--accent);
+}
+.hb-compact[data-v-afd2c693] { width:500px;
+}
+
+.hpc-layer[data-v-789eb155] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.hpc-card[data-v-789eb155] { position: absolute; top: 160px; right: var(--frame-x); padding: 12px 18px; border-radius: 12px; background: rgba(7, 19, 35, .93);
+  border: 1px solid #405873; color: var(--fg, #EDF5FF); animation: hpc-in-789eb155 .4s ease both; transition: opacity .45s ease;
+}
+.hpc-code code[data-v-789eb155] { display: block; font: 18px/1.6 var(--font-mono); white-space: pre; background: none; padding: 0; color: var(--accent, #7EFAFF);
+  transition: opacity .45s ease, color .45s ease;
+}
+/* Dimming goes on the lines: the card's entrance animation holds its own opacity at 1. */
+.hpc-quiet code[data-v-789eb155] { opacity: .55;
+}
+.hpc-code .hpc-now[data-v-789eb155] { color: var(--accent, #7EFAFF);
+}
+.hpc-code .hpc-past[data-v-789eb155] { color: #7f93a8;
+}
+/* The script grows one line per click; its width fits the longest line from the start. */
+.hpc-script[data-v-789eb155] { width: 500px;
+}
+.hpc-script code[data-v-789eb155] { animation: hpc-in-789eb155 .4s ease both;
+}
+.hpc-studio[data-v-789eb155] { width: 520px; padding: 14px 18px 18px;
+}
+.hpc-studio header[data-v-789eb155] { margin-bottom: 10px; font: 600 19px var(--font-sans, Montserrat, sans-serif); color: var(--accent, #7EFAFF);
+}
+.hpc-studio header code[data-v-789eb155] { font: 18px var(--font-mono); background: none; padding: 0; color: var(--accent, #7EFAFF);
+}
+.hpc-studio img[data-v-789eb155] { display: block; width: 100%; border-radius: 8px; border: 1px solid #405873;
+}
+@keyframes hpc-in-789eb155 {
+from { opacity: 0; translate: 0 6px;
+}
+to { opacity: 1; translate: 0 0;
+}
+}
