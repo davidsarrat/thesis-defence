@@ -1,0 +1,26 @@
+
+.hdg-layer[data-v-0d01dd89] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.hdg-surface[data-v-0d01dd89] { fill:rgba(10,22,43,.98); stroke:var(--border);
+}
+.hdg-label[data-v-0d01dd89],.hdg-path[data-v-0d01dd89] { fill:var(--fg); font:600 21px var(--font-sans);
+}.hdg-label[data-v-0d01dd89] { text-anchor:middle;
+}.hdg-input[data-v-0d01dd89] { fill:var(--muted); font:18px var(--font-sans); text-anchor:middle;
+}
+.hdg-path[data-v-0d01dd89] { paint-order:stroke; stroke:#0a162b; stroke-width:7; stroke-linejoin:round;
+}
+.hdg-edge[data-v-0d01dd89] { fill:none; stroke:#83a2c2; stroke-width:2.4;
+}
+.hdg-once[data-v-0d01dd89] { fill:var(--privacy); font:600 22px var(--font-sans); text-anchor:middle;
+}.hdg-reused[data-v-0d01dd89] { fill:var(--accent); font:600 20px var(--font-sans); text-anchor:middle;
+}
+.hdg-table[data-v-0d01dd89] { fill:#342e22; stroke:var(--data); stroke-width:1.5;
+}.hdg-grid[data-v-0d01dd89] { fill:none; stroke:var(--data); stroke-opacity:.5;
+}
+.hdg-table-label[data-v-0d01dd89] { fill:var(--fg); font:18px var(--font-sans); text-anchor:middle;
+}
+.hdg-orchestrator[data-v-0d01dd89] { fill:var(--fg); font:600 24px var(--font-sans); text-anchor:middle;
+}.hdg-rule[data-v-0d01dd89] { fill:var(--muted); font:18px var(--font-sans); text-anchor:middle;
+}
+.hdg-packet[data-v-0d01dd89] { fill:var(--data); stroke:#ffe0af; stroke-width:1.5;
+}

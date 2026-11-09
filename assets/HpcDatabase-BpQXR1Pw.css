@@ -1,0 +1,17 @@
+
+.hd-slot[data-v-0383c1b3] { transition:opacity .3s ease;
+}
+.hd-body[data-v-0383c1b3] { fill:#29271f; stroke:var(--data); stroke-width:1.8;
+}
+.hd-top[data-v-0383c1b3] { fill:#3b3325; stroke:var(--data); stroke-width:1.8;
+}
+.hd-ring[data-v-0383c1b3] { fill:none; stroke:var(--data); stroke-opacity:.5; stroke-width:1.3;
+}
+.hd-title[data-v-0383c1b3] { fill:var(--fg); font:600 22px var(--font-sans); text-anchor:middle;
+}
+.hd-empty[data-v-0383c1b3] { fill:var(--muted); font:18px var(--font-sans); text-anchor:middle;
+}
+.hd-result[data-v-0383c1b3] { fill:#12302a; stroke:var(--privacy); stroke-width:1.4;
+}
+.hd-item[data-v-0383c1b3] { fill:var(--fg); font:16px var(--font-mono); text-anchor:middle;
+}

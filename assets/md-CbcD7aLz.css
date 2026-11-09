@@ -1,0 +1,21 @@
+
+.hso-layer[data-v-fc283f57] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.hso-surface[data-v-fc283f57] { fill:rgba(10,22,43,.98); stroke:var(--border);
+}.hso-boundary[data-v-fc283f57] { fill:#0b192b; stroke:var(--privacy); stroke-width:1.8;
+}
+.hso-server[data-v-fc283f57] { fill:var(--privacy); font:600 25px var(--font-sans);
+}.hso-route[data-v-fc283f57] { stroke:var(--data); stroke-width:2.5;
+}
+.hso-package[data-v-fc283f57] { fill:var(--fg); font:600 19px var(--font-sans); text-anchor:middle;
+}.hso-helper[data-v-fc283f57] { fill:var(--muted); font:17px var(--font-sans); text-anchor:middle;
+}
+.hso-api[data-v-fc283f57] { fill:var(--fg); font:17px var(--font-mono); text-anchor:middle;
+}.hso-return[data-v-fc283f57] { fill:none; stroke:var(--privacy); stroke-width:2;
+}
+.hso-result[data-v-fc283f57] { fill:var(--data); stroke:#ffe0af; stroke-width:1.5;
+}.hso-aggregate[data-v-fc283f57] { fill:#12342d; stroke:var(--privacy); stroke-width:1.5;
+}
+.hso-aggregate-label[data-v-fc283f57] { fill:var(--privacy); font:600 17px var(--font-sans); text-anchor:middle;
+}.hso-tick[data-v-fc283f57] { fill:none; stroke:var(--privacy); stroke-width:2.5;
+}

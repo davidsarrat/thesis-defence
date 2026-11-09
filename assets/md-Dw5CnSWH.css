@@ -1,0 +1,32 @@
+
+.hf-layer[data-v-a43816d3] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.hf-surface[data-v-a43816d3] { fill:rgba(10,22,43,.97); stroke:var(--border);
+}
+.hf-package[data-v-a43816d3] { fill:#122639; stroke:var(--accent); stroke-width:1.5;
+}.hf-example[data-v-a43816d3] { fill:#101e31; stroke:#71879f; stroke-dasharray:6 5;
+}
+.hf-package-icon[data-v-a43816d3] { fill:none; stroke:var(--accent); stroke-width:1.8; stroke-linejoin:round;
+}
+.hf-name[data-v-a43816d3] { fill:var(--fg); font:600 27px var(--font-sans);
+}.hf-sub[data-v-a43816d3] { fill:var(--muted); font:18px var(--font-sans);
+}
+.hf-connector[data-v-a43816d3] { stroke:var(--accent); stroke-width:2;
+}
+.hf-base[data-v-a43816d3] { fill:#153348; stroke:var(--accent); stroke-width:2;
+}
+.hf-core[data-v-a43816d3] { fill:var(--accent); font:700 40px var(--font-sans);
+}.hf-core-sub[data-v-a43816d3] { fill:var(--fg); font:27px var(--font-sans);
+}
+.hf-divide[data-v-a43816d3] { stroke:var(--border); stroke-width:1;
+}
+.hf-job[data-v-a43816d3] { fill:#162c3e; stroke:var(--accent); stroke-width:1.5;
+}.hf-job-lines[data-v-a43816d3] { stroke:var(--accent); stroke-width:2;
+}
+.hf-service[data-v-a43816d3] { fill:var(--fg); font:600 23px var(--font-sans);
+}.hf-detail[data-v-a43816d3] { fill:var(--muted); font:18px var(--font-sans);
+}.hf-center[data-v-a43816d3] { text-anchor:middle;
+}
+.hf-r-token[data-v-a43816d3] { fill:#173a55; stroke:#9db5c9; stroke-width:4;
+}.hf-r[data-v-a43816d3] { fill:#7bb1eb; font:700 40px var(--font-sans); text-anchor:middle;
+}

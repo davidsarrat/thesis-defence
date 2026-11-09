@@ -1,0 +1,17 @@
+
+.ihf-layer[data-v-47bccf17] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.ihf-surface[data-v-47bccf17] { fill:rgba(10,22,43,.98); stroke:var(--border);
+}.ihf-server[data-v-47bccf17] { fill:var(--privacy); font:600 22px var(--font-sans);
+}
+.ihf-label[data-v-47bccf17] { fill:var(--fg); font:600 23px var(--font-sans); text-anchor:middle;
+}.ihf-edge[data-v-47bccf17] { fill:none; stroke:#7090ad; stroke-width:2;
+}
+.ihf-badge[data-v-47bccf17] { fill:#153348; stroke:var(--accent); stroke-width:1.5;
+}.ihf-badge-text[data-v-47bccf17] { fill:var(--accent); font:600 20px var(--font-sans); text-anchor:middle;
+}
+.ihf-detail[data-v-47bccf17],.ihf-table[data-v-47bccf17] { fill:var(--fg); font:20px var(--font-sans); text-anchor:middle;
+}.ihf-demand[data-v-47bccf17] { fill:var(--accent); font:600 22px var(--font-sans); text-anchor:middle;
+}
+.ihf-packet[data-v-47bccf17] { fill:var(--data); stroke:#ffe0af; stroke-width:1.5;
+}
