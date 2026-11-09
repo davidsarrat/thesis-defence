@@ -1,0 +1,105 @@
+
+.fl-intro-layer[data-v-a1ada786] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none;
+}
+.fl-intro-layer svg[data-v-a1ada786] { width: 100%; height: 100%;
+}
+.fl-intro-layer text[data-v-a1ada786] { font-family: var(--font-sans); fill: var(--fg);
+}
+.fl-intro-card[data-v-a1ada786] { fill: #071323; stroke: #385267; stroke-width: 1;
+}
+.fl-intro-boundary[data-v-a1ada786] { fill: #0a192a; stroke: #385267; stroke-width: 1;
+}
+.fl-intro-model[data-v-a1ada786], .fl-intro-update[data-v-a1ada786] { fill: #071323; stroke: var(--accent); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round;
+}
+.fl-intro-records[data-v-a1ada786] { fill: #0a192a; stroke: var(--data); stroke-width: 1.8; stroke-linecap: round;
+}
+.fl-intro-hospital[data-v-a1ada786] { fill: none; stroke: #b8cade; stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round;
+}
+.fl-intro-model-disc[data-v-a1ada786] { fill: #0a192a; stroke: #537d8b; stroke-width: 1.4;
+}
+.fl-intro-route[data-v-a1ada786] { fill: none; stroke: #456477; stroke-width: 1.5;
+}
+.fl-intro-label[data-v-a1ada786] { font-size: 23px; font-weight: 550;
+}
+.fl-intro-global-label[data-v-a1ada786] { font-size: 26px; font-weight: 600;
+}
+.fl-intro-site-name[data-v-a1ada786] { font-size: 18px; font-weight: 500;
+}
+.fl-intro-stays[data-v-a1ada786] { font-size: 20px; fill: var(--data) !important;
+}
+.fl-intro-accent[data-v-a1ada786] { fill: var(--accent) !important;
+}
+.fl-intro-data[data-v-a1ada786] { fill: var(--data) !important;
+}
+.fl-intro-direction[data-v-a1ada786] { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.fl-intro-weights rect[data-v-a1ada786] { fill: #071323; stroke: #385267; stroke-width: 1; transition: stroke .3s ease;
+}
+.fl-intro-weights text[data-v-a1ada786] { font: 500 17px var(--font-mono); fill: var(--fg) !important; transition: fill .3s ease;
+}
+.fl-intro-global-weights text[data-v-a1ada786] { font-size: 20px;
+}
+.fl-intro-global-weights .fl-intro-weights-label[data-v-a1ada786] { font: 500 17px var(--font-sans); fill: var(--muted) !important;
+}
+.fl-intro-counting rect[data-v-a1ada786] { stroke: var(--training);
+}
+.fl-intro-counting text[data-v-a1ada786] { fill: var(--training) !important;
+}
+.fl-intro-averaging rect[data-v-a1ada786] { stroke: var(--accent);
+}
+.fl-intro-averaging text[data-v-a1ada786]:not(.fl-intro-weights-label) { fill: var(--accent) !important;
+}
+.fl-intro-reveal[data-v-a1ada786] { animation: fl-intro-appear-a1ada786 .4s ease-out both;
+}
+.fl-intro-training[data-v-a1ada786] { fill: none; stroke: var(--training); stroke-width: 2; stroke-dasharray: 25 182; transform: rotate(-90deg); animation: fl-intro-train-a1ada786 2.4s cubic-bezier(.4, 0, .2, 1) both;
+}
+.fl-intro-packet[data-v-a1ada786] { offset-rotate: 0deg;
+}
+.fl-intro-send[data-v-a1ada786] { animation: fl-intro-send-a1ada786 2.6s cubic-bezier(.4, 0, .2, 1) both;
+}
+.fl-intro-return[data-v-a1ada786] { animation: fl-intro-return-a1ada786 2.6s cubic-bezier(.4, 0, .2, 1) both;
+}
+.fl-intro-combined[data-v-a1ada786] { fill: none; stroke: var(--accent); stroke-width: 2; animation: fl-intro-combine-a1ada786 1.8s ease-out both;
+}
+/* Backward entry and static contexts mount only the complete diagram, without replaying reveals. */
+.fl-intro-layer[data-phase="done"] .fl-intro-reveal[data-v-a1ada786] { animation: none;
+}
+@keyframes fl-intro-appear-a1ada786 {
+from { opacity: 0;
+}
+to { opacity: 1;
+}
+}
+@keyframes fl-intro-send-a1ada786 {
+0% { offset-distance: 0%; opacity: 0;
+}
+8% { opacity: 1;
+}
+100% { offset-distance: 100%; opacity: 1;
+}
+}
+@keyframes fl-intro-return-a1ada786 {
+0% { offset-distance: 100%; opacity: 1;
+}
+85% { opacity: 1;
+}
+100% { offset-distance: 0%; opacity: 0;
+}
+}
+@keyframes fl-intro-train-a1ada786 {
+from { stroke-dashoffset: 0;
+}
+to { stroke-dashoffset: -414;
+}
+}
+@keyframes fl-intro-combine-a1ada786 {
+0% { opacity: 0;
+}
+40% { opacity: 1;
+}
+100% { opacity: 0;
+}
+}
+
+.flower-intro-slide[data-v-83227413] { background: var(--bg);
+}

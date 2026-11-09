@@ -1,0 +1,99 @@
+
+.opening-local[data-v-8c18c585] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none; z-index:2;
+}
+/* The caption keeps its usual band over the meeting (David, 25 Oct 2026); it hides during the foreground exit. */
+.ds-slide > .opening-local.meeting-leaving ~ .ds-caption { opacity:0!important; transition:none!important;
+}
+.opening-leaders[data-v-8c18c585] { position:absolute; inset:0; width:1280px; height:720px;
+}
+.opening-leaders path[data-v-8c18c585] { fill:none; stroke:var(--data); stroke-width:1.5; opacity:.55;
+}
+.opening-site-name[data-v-8c18c585] { position:absolute; top:576px; transform:translateX(-50%); font:600 23px var(--font-sans); color:var(--fg); padding:6px 14px; border-radius:7px; background:rgba(5,9,22,.9); white-space:nowrap;
+}
+.opening-table[data-v-8c18c585] { position:absolute; width:382px; box-sizing:border-box; padding:10px; border:1px solid var(--border); border-radius:12px; background:#0a162b;
+}
+.opening-table header[data-v-8c18c585], .opening-combined header[data-v-8c18c585] { font:500 16px var(--font-mono); color:var(--muted); margin-bottom:10px;
+}
+.opening-table table[data-v-8c18c585], .opening-combined table[data-v-8c18c585] { width:100%; border-collapse:collapse; font:500 16px/1.2 var(--font-mono); color:var(--fg);
+}
+.opening-table table[data-v-8c18c585] { table-layout:auto;
+}
+.opening-etl table[data-v-8c18c585] { table-layout:fixed;
+}
+.opening-table th[data-v-8c18c585], .opening-combined th[data-v-8c18c585] { text-align:left; color:var(--data)!important; padding:6px 5px 9px 0; font-size:16px; font-weight:500; text-transform:none; letter-spacing:0; border-bottom:1px solid var(--border); overflow-wrap:normal; word-break:normal;
+}
+.opening-table td[data-v-8c18c585], .opening-combined td[data-v-8c18c585] { padding:4px 5px 4px 0; white-space:nowrap;
+}
+.opening-table th[data-v-8c18c585], .opening-table td[data-v-8c18c585] { white-space:nowrap; padding-right:8px;
+}
+.opening-etl th[data-v-8c18c585], .opening-etl td[data-v-8c18c585] { padding-right:12px;
+}
+.opening-table th[data-v-8c18c585]:last-child, .opening-table td[data-v-8c18c585]:last-child { padding-right:0;
+}
+.opening-replacement[data-v-8c18c585] { display:inline-grid;
+}
+.opening-replacement > span[data-v-8c18c585] { grid-area:1 / 1;
+}
+.opening-table header[data-v-8c18c585] { overflow:hidden; white-space:nowrap;
+}
+.opening-table .opening-change[data-v-8c18c585] { color:var(--accent)!important; background:rgba(126,250,255,.1);
+}
+.opening-clash[data-v-8c18c585] { border-color:color-mix(in srgb, var(--refused) calc(var(--clash)*100%), var(--border)); box-shadow:0 0 22px rgba(255,107,125,calc(.35*var(--clash)));
+}
+.opening-clash th[data-v-8c18c585] { color:var(--refused)!important;
+}
+.opening-clash td[data-v-8c18c585] { color:var(--refused);
+}
+.opening-standard[data-v-8c18c585] { border-color:var(--privacy);
+}.opening-standard th[data-v-8c18c585] { color:var(--accent)!important;
+}
+.opening-status[data-v-8c18c585] { position:absolute; top:365px; left:50%; transform:translateX(-50%); padding:6px 16px; border-radius:7px; background:#0a162b; border:1px solid var(--accent); color:var(--accent); font:500 18px var(--font-sans);
+}
+.opening-refused[data-v-8c18c585] { border-color:var(--refused); color:var(--refused);
+}
+/* The agreement footer (9 Nov 2026) keeps the card taller than its first single row: it starts 32 px further right,
+   clear of the seated doctor's head at the table's end, and tighter spacing (rules 1.8 high, 1.9 before) keeps its foot
+   above IGTP's penthouse. */
+.opening-rules[data-v-8c18c585] { position:absolute; left:748px; top:148px; width:478px; padding:13px 22px; background:rgba(10,22,43,.96); border:1px solid var(--border); border-radius:12px;
+}
+.opening-rules h3[data-v-8c18c585] { margin:0 0 6px!important; font:600 22px var(--font-sans)!important; color:var(--fg);
+}
+.opening-rules div[data-v-8c18c585] { display:flex; align-items:center; gap:12px; font:500 19px/1.8 var(--font-sans); color:var(--fg);
+}
+.opening-rules code[data-v-8c18c585] { width:144px; font:500 19px var(--font-mono); color:var(--accent); background:none; padding:0;
+}
+.opening-rules div > span[data-v-8c18c585] { color:var(--muted);
+}
+.opening-rules svg[data-v-8c18c585] { width:20px; height:20px; fill:none; stroke:var(--privacy); stroke-width:2;
+}
+/* The agreement in a quiet line, then «ETL process» as an amber badge, the data's colour, apart from the rules' cyan codes
+   and green checks; even spacing above and below (David, 9 Nov 2026: «más estético… etl process de otro color… los
+   espacios… más armónico»). */
+.opening-agree[data-v-8c18c585] { display:flex; flex-direction:column; align-items:center; gap:11px; margin-top:12px; padding:13px 0 4px; border-top:1px solid var(--border); text-align:center;
+}
+.opening-agree span[data-v-8c18c585] { color:var(--fg); opacity:.86; font:500 17px var(--font-sans); letter-spacing:.005em;
+}
+.opening-rules .opening-agree .opening-etl-badge[data-v-8c18c585] { display:inline-block; padding:5px 22px 6px; border:1.5px solid var(--data); border-radius:10px;
+  background:rgba(245,190,114,.10); color:var(--data); font:700 26px/1.15 var(--font-sans); letter-spacing:.02em;
+}
+.opening-combined[data-v-8c18c585] { position:absolute; top:151px; left:300px; width:780px; height:339px; box-sizing:border-box; padding:14px 20px; background:#0a162bf5; border:1px solid var(--global); border-radius:12px;
+}
+.opening-combined header[data-v-8c18c585] { color:var(--global); font:600 20px var(--font-sans); margin-bottom:17px;
+}
+.opening-common-columns[data-v-8c18c585] { display:grid; grid-template-columns:26% 15% 35% 24%; font:500 16px var(--font-mono); color:var(--accent); border-bottom:1px solid var(--border); padding-bottom:9px;
+}
+.opening-joining table[data-v-8c18c585] { table-layout:fixed;
+}
+.opening-joining td[data-v-8c18c585] { height:27px; box-sizing:border-box;
+}
+.opening-joining th[data-v-8c18c585] { overflow:hidden;
+}
+/* A full name takes two balanced lines, centred on its centre's three rows (David, 8 Nov 2026). */
+.opening-source[data-v-8c18c585] { position:absolute; left:-232px; top:18px; width:200px; text-align:right; font:600 19px var(--font-sans); color:var(--data); text-wrap:balance;
+}
+.opening-joining td[data-v-8c18c585]:first-child { color:var(--data);
+}
+.opening-term[data-v-8c18c585] { position:absolute; top:210px; transform:translateX(-50%); width:280px; text-align:center; padding:20px; background:#0a162bf5; border:1px solid var(--data); border-radius:12px; color:var(--fg); font:600 38px var(--font-mono);
+}
+.opening-term small[data-v-8c18c585] { display:block; font:400 16px var(--font-sans); color:var(--muted); margin-top:12px;
+}

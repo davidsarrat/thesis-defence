@@ -1,0 +1,91 @@
+
+.ol-layer[data-v-64d0af8c] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2; color: var(--fg);
+}
+
+/* The OHDSI emblem (white ground, as on O02) and its name, above the three cards. */
+.ol-brand[data-v-64d0af8c] { position: absolute; left: 0; right: 0; top: 146px; display: flex; justify-content: center; align-items: center; gap: 14px;
+}
+.ol-emblem[data-v-64d0af8c] { display: block; width: 44px; height: 44px; box-sizing: border-box; padding: 5px; border-radius: 8px; background: #fff;
+}
+.ol-emblem img[data-v-64d0af8c] { display: block; width: 100%; height: 100%; object-fit: contain;
+}
+.ol-brand strong[data-v-64d0af8c] { font: 650 31px/1 var(--font-sans); letter-spacing: -.04em; color: var(--fg);
+}
+.ol-cards[data-v-64d0af8c] { position: absolute; left: var(--frame-x); right: var(--frame-x); top: 202px; height: 100px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.ol-card[data-v-64d0af8c] { box-sizing: border-box; display: flex; align-items: center; gap: 18px; padding: 0 24px; background: rgba(10, 22, 43, .96); border: 1px solid var(--border); border-radius: var(--card-radius);
+}
+.ol-icon[data-v-64d0af8c] { flex: none; width: 40px; height: 40px; fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+}
+.ol-card-copy[data-v-64d0af8c] { display: flex; flex-direction: column; gap: 6px;
+}
+.ol-card-copy b[data-v-64d0af8c] { font: 600 26px/1.15 var(--font-sans); letter-spacing: -.015em; color: var(--fg);
+}
+.ol-card-copy span[data-v-64d0af8c] { font: 500 19px/1.3 var(--font-sans); color: var(--muted);
+}
+.ol-arrive[data-v-64d0af8c] { opacity: 0; animation: ol-arrive-64d0af8c .46s cubic-bezier(.16, 1, .3, 1) var(--ol-delay) both;
+}
+@keyframes ol-arrive-64d0af8c {
+from { opacity: 0; transform: translateY(12px);
+}
+to { opacity: 1; transform: none;
+}
+}
+
+/* Click 1: the panel, then the bars rise from the axis, then the draw leaves the server as the released count. */
+.ol-noise[data-v-64d0af8c] { position: absolute; left: var(--frame-x); top: 318px; width: 1134px; height: 288px; overflow: visible; transition: opacity .3s ease;
+}
+.ol-noise.ol-off[data-v-64d0af8c] { opacity: 0; transition-duration: .2s;
+}
+.ol-panel[data-v-64d0af8c] { fill: rgba(10, 22, 43, .96); stroke: var(--border); stroke-width: 1.2;
+}
+.ol-server[data-v-64d0af8c] { fill: #0b252b; fill-opacity: .7; stroke: var(--privacy); stroke-width: 1.6; stroke-dasharray: 6 5;
+}
+.ol-server-label[data-v-64d0af8c] { font: 600 18px var(--font-sans); fill: var(--privacy);
+}
+.ol-label[data-v-64d0af8c] { font: 500 18px var(--font-sans); fill: var(--muted);
+}
+.ol-true[data-v-64d0af8c] { font: 600 46px var(--font-mono); fill: var(--data);
+}
+.ol-chart-title[data-v-64d0af8c] { font: 600 20px var(--font-sans); fill: var(--fg);
+}
+.ol-chart-note[data-v-64d0af8c] { font: 500 16px var(--font-sans); fill: var(--muted);
+}
+.ol-formula[data-v-64d0af8c] { font: 500 18px var(--font-mono); fill: var(--fg);
+}
+.ol-sup[data-v-64d0af8c] { font-size: 15px;
+}
+.ol-eps[data-v-64d0af8c] { fill: var(--privacy, #38C6AD); font-weight: 600;
+}
+.ol-centre[data-v-64d0af8c] { stroke: var(--data); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 3 4;
+}
+.ol-axis[data-v-64d0af8c] { fill: none; stroke: var(--muted); stroke-opacity: .45; stroke-width: 1.4;
+}
+.ol-bar[data-v-64d0af8c] { fill: var(--accent); fill-opacity: .62; transform-box: fill-box; transform-origin: 50% 100%; transition: transform .4s cubic-bezier(.16, 1, .3, 1) var(--ol-bar-delay);
+}
+.ol-bar-drawn[data-v-64d0af8c] { fill: var(--privacy); fill-opacity: 1;
+}
+.ol-off .ol-bar[data-v-64d0af8c] { transform: scaleY(0); transition: none;
+}
+.ol-tick[data-v-64d0af8c] { font: 500 17px var(--font-mono); fill: var(--muted);
+}
+.ol-tick-true[data-v-64d0af8c] { fill: var(--data); font-weight: 600;
+}
+.ol-tick-drawn[data-v-64d0af8c] { fill: var(--privacy); font-weight: 600;
+}
+.ol-draw[data-v-64d0af8c], .ol-release[data-v-64d0af8c] { transition: opacity .3s ease .55s;
+}
+.ol-off .ol-draw[data-v-64d0af8c], .ol-off .ol-release[data-v-64d0af8c] { opacity: 0; transition: none;
+}
+.ol-draw-line[data-v-64d0af8c] { fill: none; stroke: var(--privacy); stroke-width: 2.2; stroke-dasharray: 5 4;
+}
+.ol-draw-head[data-v-64d0af8c] { fill: none; stroke: var(--privacy); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+}
+.ol-draw-label[data-v-64d0af8c] { font: 600 18px var(--font-sans); fill: var(--privacy);
+}
+.ol-chip[data-v-64d0af8c] { fill: #0d2036; stroke: var(--privacy); stroke-width: 1.6;
+}
+.ol-released[data-v-64d0af8c] { font: 600 46px var(--font-mono); fill: var(--privacy);
+}
+.ol-static[data-v-64d0af8c], .ol-static[data-v-64d0af8c] * { transition: none !important;
+}

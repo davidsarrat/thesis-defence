@@ -1,0 +1,11 @@
+
+.eps-shared[data-v-e01c11fc] { fill: var(--privacy); fill-opacity: .3; stroke: none;
+}
+.eps-person path[data-v-e01c11fc] { fill: none; stroke: var(--muted); stroke-width: 1.4;
+}
+.eps-leader[data-v-e01c11fc] { stroke: var(--privacy); stroke-width: 1.4; stroke-opacity: .7;
+}
+.eps-name[data-v-e01c11fc] { paint-order: stroke; stroke: #050b18; stroke-width: 5px; stroke-linejoin: round;
+}
+.eps-sup[data-v-e01c11fc] { font-size: 17px; font-weight: 600;
+}
