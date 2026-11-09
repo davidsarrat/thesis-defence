@@ -11,6 +11,8 @@
 `resolute.png`: Ubuntu 26.04 LTS Resolute Raccoon, © Canonical Ltd. Unmodified original
 `usr/share/backgrounds/warty-final-ubuntu.png` from the [official ubuntu-wallpapers 26.04.2 package](https://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-wallpapers/ubuntu-wallpapers_26.04.2_all.deb)
 (behind Athena on O08, 25 Oct 2026). Licence CC BY-SA 4.0, as the package's copyright file states (`resolute-copyright.txt`).
+`resolute-2560.jpg` is the same picture resized to 2560 × 1440 and saved as a JPEG (quality 92, no chroma subsampling) for
+the data manager's desktop, which draws it at most at that size (9 Nov 2026); same licence.
 
 Wallpapers: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Full upstream copyright/licence
 text (trailing whitespace normalized): `noble-copyright.txt`, `plucky-copyright.txt`. Displayed scaled to the desktop; original pixels unchanged.
@@ -83,3 +85,7 @@ CC BY-SA 4.0 (same bundled Yaru licence). I06's Files window follows the
 [Nautilus 50 toolbar and window source](https://github.com/GNOME/nautilus/tree/gnome-50/src/resources/ui),
 with Ubuntu's window controls, Yaru folder icons and real CT thumbnails. The folder's item count remains
 visible without selecting the images; the sidebar stays visible at this window width.
+
+## Lung-region teaching outline
+
+`lung1-outline.svg` is derived from the displayed `lung1-ct.png` (the same LUNG1-001, Aerts/TCIA source and CC BY-NC 3.0 licence above). Grayscale pixels below 140/255 were grouped with 4-connectivity; components larger than 1,000 pixels wholly inside x=140…620 and y=60…430 were kept. A 13×13 square closing and enclosed-hole fill preceded tracing the two external boundaries. The cyan strokes are a schematic threshold-derived lung-region outline, not Hounsfield-unit processing, expert annotation or validated clinical segmentation. The supplied `lung1-mask.png` remains the distinct tumour/GTV input. No measured feature values are drawn.

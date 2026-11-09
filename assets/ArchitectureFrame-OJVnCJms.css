@@ -1,0 +1,38 @@
+
+.arch-keys[data-v-ca943582] {position:absolute;inset:0;width:100%;height:100%}.arch-key-card[data-v-ca943582]{fill:#0a162bf5;stroke:var(--border);stroke-width:1.3}.arch-key-received[data-v-ca943582]{fill:#0a162b;stroke:currentColor;stroke-width:1.5}.arch-key-title[data-v-ca943582]{font:600 22px var(--font-sans);fill:var(--fg)}.arch-key-text[data-v-ca943582]{font:500 20px var(--font-sans);fill:var(--fg)}.arch-key-small[data-v-ca943582]{font:500 18px var(--font-sans);fill:var(--fg)}.arch-key-icon[data-v-ca943582],.arch-private-key[data-v-ca943582]{fill:none;stroke:currentColor;stroke-width:2.4}.arch-private-key[data-v-ca943582]{color:#7b8794}.arch-grey[data-v-ca943582]{fill:#a2aeba}.arch-a[data-v-ca943582]{fill:var(--party-a)}.arch-b[data-v-ca943582]{fill:var(--party-b)}
+.arch-tick[data-v-ca943582]{fill:var(--privacy);font-weight:700}.arch-key-flying[data-v-ca943582]{stroke-width:2.8}
+
+.arch-join[data-v-f88d6a06]{position:absolute;inset:0;width:1280px;height:720px;overflow:visible;pointer-events:none}
+.arch-join-key[data-v-f88d6a06]{fill:#0a162b;stroke:currentColor;stroke-width:2.8;stroke-linecap:round}
+.arch-join-tick[data-v-f88d6a06]{fill:var(--privacy);font:700 20px var(--font-sans);text-anchor:middle;paint-order:stroke;stroke:#071324;stroke-width:5px;stroke-linejoin:round}
+/* The SVG counterpart of the world's compact message lights: a crisp mark with a restrained coloured halo. */
+.message-glow {
+  filter: drop-shadow(0 0 2px var(--message-colour, currentColor))
+    drop-shadow(0 0 5px color-mix(in srgb, var(--message-colour, currentColor) 55%, transparent));
+}
+.message-glow-surface {
+  filter: drop-shadow(0 2px 4px #0009)
+    drop-shadow(0 0 3px color-mix(in srgb, var(--message-colour, currentColor) 70%, transparent));
+}
+
+/* The letters move every frame: a transform on their own layer only recomposites (sub-pixel, no layout, the glow
+   rasterised once), where left/top re-laid out and re-filtered them each frame and stepped visibly. */
+.core-letter-badges[data-v-6dccb841] { position: absolute; inset: 0; pointer-events: none; container-type: size;
+}
+.core-letter-badge[data-v-6dccb841] { position: absolute; left: 0; top: 0; width: 48px; height: 48px; overflow: visible; will-change: transform, opacity;
+}
+.badge-disc[data-v-6dccb841] { fill: #0A162B; stroke: currentColor; stroke-width: 2;
+}
+.badge-envelope[data-v-6dccb841] { fill: #14253A; stroke: currentColor; stroke-width: 2.2;
+}
+.badge-crease[data-v-6dccb841] { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round;
+}
+
+.arch-legend[data-v-4409beea]{position:absolute;right:74px;top:126px;display:flex;flex-direction:column;gap:6px;padding:10px 16px 10px 12px;background:#071324ed;border:1px solid var(--border);border-radius:var(--card-radius);opacity:0;transition:opacity .35s ease}.arch-legend.arch-legend-on[data-v-4409beea]{opacity:1}
+.arch-legend-row[data-v-4409beea]{display:flex;align-items:center;gap:10px;font:600 19px var(--font-sans);white-space:nowrap}.arch-legend-ring[data-v-4409beea]{width:34px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:3.2}
+.arch-legend-ok[data-v-4409beea]{color:var(--privacy)}.arch-legend-no[data-v-4409beea]{color:var(--refused)}
+/* The static attack: with the full names (David, 8 Nov 2026) the rogue servers wrap to a row of their own; the rows keep
+   to the middle, so the first one stays clear of the legend. */
+.arch-static.arch-static-attack[data-v-4409beea]{align-content:center}
+.arch-static .arch-peer-ok[data-v-4409beea]{border-color:var(--privacy)}.arch-static .arch-peer-no[data-v-4409beea]{border-color:var(--refused)}.arch-static .arch-peer-no span[data-v-4409beea]{color:var(--refused)}.arch-static .arch-peer-ok span[data-v-4409beea]{color:var(--privacy)}
+.arch-overlay[data-v-4409beea]{position:absolute;inset:0;width:1280px;height:720px;transform-origin:0 0;pointer-events:none}.arch-label-key[data-v-4409beea]{display:inline-block;width:30px;height:14px;margin-right:8px;vertical-align:-1px;fill:none;stroke:var(--fg);stroke-width:2.6;stroke-linecap:round;animation:arch-pin-4409beea .35s ease both}.arch-label-tick[data-v-4409beea]{margin-left:8px;color:var(--privacy);font-weight:700;animation:arch-pin-4409beea .35s ease both}@keyframes arch-pin-4409beea{from{opacity:0}to{opacity:1}}.arch-label[data-v-4409beea]{position:absolute;transform:translateX(-50%);padding:5px 9px;background:#071324ed;border-radius:7px;white-space:nowrap;color:var(--fg);font:500 18px var(--font-sans)}.arch-static[data-v-4409beea]{position:absolute;inset:180px 80px 150px;display:flex;align-items:center;justify-content:space-around;gap:16px;flex-wrap:wrap}.arch-static>div[data-v-4409beea]{padding:20px;border:1px solid var(--border);background:var(--surface);border-radius:12px;font:500 23px var(--font-sans)}.arch-static span[data-v-4409beea]{display:block;color:var(--muted);font-size:19px;margin-top:12px}.arch-static .authority[data-v-4409beea]{border-color:var(--accent)}.arch-static .arch-static-relay[data-v-4409beea]{width:100%;text-align:center}.arch-static .arch-keys[data-v-4409beea]{position:fixed}

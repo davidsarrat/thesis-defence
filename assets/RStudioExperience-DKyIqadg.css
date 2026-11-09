@@ -1,0 +1,41 @@
+
+.replay-pointer[data-v-e91888a9] { position:absolute; left:0; top:0; z-index:30; pointer-events:none; overflow:visible; filter:drop-shadow(0 1px 1px #0005); transform-origin:2px 1.5px;
+}
+
+.rstudio-demo[data-v-40109dc4] { position:relative; width:1280px; height:720px; overflow:hidden;
+}
+.rstudio-demo[data-v-40109dc4] svg { display:block;
+}
+/* RStudio's editor cursor blinks about once a second, hard on and off. */
+.rstudio-demo[data-v-40109dc4] .rstudio-caret { animation:rstudio-caret-40109dc4 1.06s steps(1, end) infinite;
+}
+@keyframes rstudio-caret-40109dc4 {
+0% { opacity:1
+}
+50% { opacity:0
+}
+}
+
+.rstudio-experience[data-v-ea23a307] { position:absolute; inset:0;
+}
+.rstudio-intro[data-v-ea23a307] { position:absolute; inset:0; z-index:11;
+}
+.rstudio-intro-leave-active[data-v-ea23a307] { transition:opacity .35s ease;
+}
+.rstudio-intro-leave-to[data-v-ea23a307] { opacity:0;
+}
+/* The band ends with the Source pane's toolbar, so the first line of code stays clear. */
+.rstudio-intro-screen[data-v-ea23a307]::before { content:''; position:absolute; left:0; right:0; top:0; height:16%;
+  background:linear-gradient(180deg, rgba(var(--bg-rgb), .97) 0%, rgba(var(--bg-rgb), .97) 91%, rgba(var(--bg-rgb), 0) 100%);
+}
+.rstudio-intro[data-v-ea23a307] .slide-title { position:absolute; left:5.7%; right:5.7%; top:7.2%;
+}
+.rstudio-intro .caption[data-v-ea23a307] { position:absolute; left:5.7%; bottom:6%; padding:.3em .6em; background:rgba(var(--bg-rgb),.92); border:1px solid rgba(var(--fg-rgb),.12); border-radius:8px;
+}
+.rstudio-plane[data-v-ea23a307], .rstudio-projected[data-v-ea23a307] { position:absolute; left:0; top:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none;
+}
+.rstudio-plane[data-v-ea23a307] { z-index:10;
+}
+
+.slidev-layout:has(.rstudio-experience)::after { opacity:0 !important;
+}
