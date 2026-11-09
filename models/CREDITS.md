@@ -53,3 +53,10 @@ long-hair far silhouette; fitted analyst wardrobe; existing `typing`, `listening
 `standing`, `browsing`, `selecting` clips and shoulder corrections. Tools remain
 Blender 4.2.3, MPFB 2.0.17 and glTF Transform 4.2.1 with Meshopt/WebP compression.
 All source clothing/shoe textures are replaced; no logo or external motion ships.
+
+### Optional A01 cohort arm motion
+
+`cohort-arms-manifest.json` records source-derived rest joints, skin weights and elbow surfaces for participants 03, 10,
+11 and 19. They come from the same CC0 MakeHuman hm08 bodies, rigs and clothing already credited for those identities.
+The relaxed poses, greeting schedule and prepared elbow corrective are original work in the people pipeline. All original
+participant GLBs, faces, clothes and colours are unchanged; the new runtime behavior is an explicit cohort option.

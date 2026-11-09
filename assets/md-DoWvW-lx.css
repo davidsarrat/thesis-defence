@@ -1,0 +1,173 @@
+
+.opening-join[data-v-ab7bfa8d] { position:absolute; inset:0; z-index:1; font:500 16px/1.2 var(--font-mono); color:var(--fg);
+}
+.join-panel[data-v-ab7bfa8d] { position:absolute; left:300px; top:151px; width:780px; height:355px; box-sizing:border-box;
+  background:#0a162b; border:1px solid var(--global); border-radius:12px;
+}
+.join-heading[data-v-ab7bfa8d] { position:absolute; left:321px; top:165px; width:738px;
+}
+.join-heading header[data-v-ab7bfa8d] { color:var(--global); font:600 20px/24px var(--font-sans);
+}
+.join-columns[data-v-ab7bfa8d] { position:absolute; top:38px; width:738px; height:20px; color:var(--accent);
+}
+.join-columns span[data-v-ab7bfa8d] { position:absolute; white-space:nowrap;
+}
+.join-group[data-v-ab7bfa8d] { position:absolute; left:321px; width:738px; height:81px;
+}
+.join-group + .join-group[data-v-ab7bfa8d]::before { content:''; position:absolute; inset:-2px 0 auto; z-index:1; height:1px; background:var(--border);
+}
+.join-row[data-v-ab7bfa8d] { position:absolute; width:738px; height:27px;
+}
+.join-body[data-v-ab7bfa8d] { position:absolute; left:-4px; top:-4px; width:746px; height:82px;
+}
+.join-backing[data-v-ab7bfa8d] { width:100%; height:100%; background:#0a162b; border-radius:4px; transform-origin:0 0;
+}
+.join-cell[data-v-ab7bfa8d] { position:absolute; white-space:nowrap;
+}
+.join-cell[data-column="0"][data-v-ab7bfa8d] { color:var(--data);
+}
+.join-drop[data-v-ab7bfa8d], .join-align[data-v-ab7bfa8d] { display:inline-block;
+}
+.join-source[data-v-ab7bfa8d] { position:absolute; left:-232px; top:18px; width:200px; text-align:right;
+  font:600 19px/23px var(--font-sans); color:var(--data); text-wrap:balance;
+}
+/* Vertical lanes stay separate until every row occupies its own final band. Only then do columns align. */
+.join-animated .join-drop[data-v-ab7bfa8d] { animation:join-drop-ab7bfa8d .3s ease-in-out both;
+}
+.join-animated .join-align[data-v-ab7bfa8d] { animation:join-align-ab7bfa8d .4s var(--align-delay) ease-in-out both;
+}
+.join-animated .join-backing[data-v-ab7bfa8d] { animation:join-backing-ab7bfa8d .4s var(--align-delay) ease-in-out both;
+}
+.join-animated .join-panel[data-v-ab7bfa8d] { animation:join-appear-ab7bfa8d .12s .3s ease-out both;
+}
+.join-animated .join-heading[data-v-ab7bfa8d], .join-animated .join-group[data-v-ab7bfa8d]::before { animation:join-appear-ab7bfa8d .16s .3s ease-out both;
+}
+.join-animated .join-source[data-v-ab7bfa8d] { animation:join-appear-ab7bfa8d .12s var(--label-delay) ease-out both;
+}
+.join-animated:not(.join-settled) .join-drop[data-v-ab7bfa8d], .join-animated:not(.join-settled) .join-align[data-v-ab7bfa8d],
+.join-animated:not(.join-settled) .join-backing[data-v-ab7bfa8d] { will-change:transform;
+}
+.join-settled .join-drop[data-v-ab7bfa8d], .join-settled .join-align[data-v-ab7bfa8d], .join-settled .join-backing[data-v-ab7bfa8d] { animation:none; transform:none;
+}
+.join-paused[data-v-ab7bfa8d] *, .join-paused[data-v-ab7bfa8d] *::before { animation-play-state:paused!important;
+}
+html.world-gliding .opening-join *,html.world-gliding .opening-join *::before { animation-play-state:paused!important;
+}
+@keyframes join-drop-ab7bfa8d {
+from { transform:translate3d(0,var(--from-y),0);
+}
+to { transform:translate3d(0,0,0);
+}
+}
+@keyframes join-align-ab7bfa8d {
+from { transform:translate3d(var(--from-x),0,0);
+}
+to { transform:translate3d(0,0,0);
+}
+}
+@keyframes join-backing-ab7bfa8d {
+from { transform:translate3d(var(--from-x),0,0) scaleX(var(--from-scale));
+}
+to { transform:translate3d(0,0,0) scaleX(1);
+}
+}
+@keyframes join-appear-ab7bfa8d {
+from { opacity:0;
+}
+to { opacity:1;
+}
+}
+
+.opening-local[data-v-94ca32f7] { position:absolute; inset:0; width:1280px; height:720px; transform-origin:0 0; pointer-events:none; z-index:2;
+}
+/* The caption keeps its usual band over the meeting (David, 25 Oct 2026); it hides during the foreground exit. */
+.ds-slide > .opening-local.meeting-leaving ~ .ds-caption { opacity:0!important; transition:none!important;
+}
+.opening-leaders[data-v-94ca32f7] { position:absolute; inset:0; width:1280px; height:720px;
+}
+.opening-leaders path[data-v-94ca32f7] { fill:none; stroke:var(--data); stroke-width:1.5; opacity:.55;
+}
+.opening-site-name[data-v-94ca32f7] { position:absolute; top:576px; transform:translateX(-50%); font:600 23px var(--font-sans); color:var(--fg); padding:6px 14px; border-radius:7px; background:rgba(5,9,22,.9); white-space:nowrap;
+}
+.opening-table[data-v-94ca32f7] { position:absolute; width:382px; box-sizing:border-box; padding:10px; border:1px solid var(--border); border-radius:12px; background:#0a162b;
+}
+.opening-table header[data-v-94ca32f7] { font:500 16px var(--font-mono); color:var(--muted); margin-bottom:10px;
+}
+.opening-table table[data-v-94ca32f7] { width:100%; border-collapse:collapse; font:500 16px/1.2 var(--font-mono); color:var(--fg);
+}
+.opening-table table[data-v-94ca32f7] { table-layout:auto;
+}
+.opening-etl table[data-v-94ca32f7] { table-layout:fixed;
+}
+.opening-table th[data-v-94ca32f7] { text-align:left; color:var(--data)!important; padding:6px 5px 9px 0; font-size:16px; font-weight:500; text-transform:none; letter-spacing:0; border-bottom:1px solid var(--border); overflow-wrap:normal; word-break:normal;
+}
+.opening-table td[data-v-94ca32f7] { padding:4px 5px 4px 0; white-space:nowrap;
+}
+.opening-table th[data-v-94ca32f7], .opening-table td[data-v-94ca32f7] { white-space:nowrap; padding-right:8px;
+}
+.opening-etl th[data-v-94ca32f7], .opening-etl td[data-v-94ca32f7] { padding-right:12px;
+}
+.opening-table th[data-v-94ca32f7]:last-child, .opening-table td[data-v-94ca32f7]:last-child { padding-right:0;
+}
+.opening-replacement[data-v-94ca32f7] { display:inline-grid;
+}
+.opening-replacement > span[data-v-94ca32f7] { grid-area:1 / 1;
+}
+.opening-table header[data-v-94ca32f7] { overflow:hidden; white-space:nowrap;
+}
+.opening-table .opening-change[data-v-94ca32f7] { color:var(--accent)!important; background:rgba(126,250,255,.1);
+}
+.opening-clash[data-v-94ca32f7] { border-color:color-mix(in srgb, var(--refused) calc(var(--clash)*100%), var(--border)); box-shadow:0 0 22px rgba(255,107,125,calc(.35*var(--clash)));
+}
+.opening-clash th[data-v-94ca32f7] { color:var(--refused)!important;
+}
+.opening-clash td[data-v-94ca32f7] { color:var(--refused);
+}
+.opening-standard[data-v-94ca32f7] { border-color:var(--privacy);
+}.opening-standard th[data-v-94ca32f7] { color:var(--accent)!important;
+}
+.opening-status[data-v-94ca32f7] { position:absolute; top:365px; left:50%; transform:translateX(-50%); padding:6px 16px; border-radius:7px; background:#0a162b; border:1px solid var(--accent); color:var(--accent); font:500 18px var(--font-sans);
+}
+.opening-refused[data-v-94ca32f7] { border-color:var(--refused); color:var(--refused);
+}
+/* The agreement footer (9 Nov 2026) keeps the card taller than its first single row: it starts 32 px further right,
+   clear of the seated doctor's head at the table's end, and tighter spacing (rules 1.8 high, 1.9 before) keeps its foot
+   above IGTP's penthouse. */
+.opening-rules[data-v-94ca32f7] { position:absolute; left:748px; top:148px; width:478px; padding:13px 22px; background:rgba(10,22,43,.96); border:1px solid var(--border); border-radius:12px;
+}
+.opening-rules h3[data-v-94ca32f7] { margin:0 0 6px!important; font:600 22px var(--font-sans)!important; color:var(--fg);
+}
+.opening-rules div[data-v-94ca32f7] { display:flex; align-items:center; gap:12px; font:500 19px/1.8 var(--font-sans); color:var(--fg);
+}
+.opening-rules code[data-v-94ca32f7] { width:144px; font:500 19px var(--font-mono); color:var(--accent); background:none; padding:0;
+}
+.opening-rules div > span[data-v-94ca32f7] { color:var(--muted);
+}
+.opening-rules svg[data-v-94ca32f7] { width:20px; height:20px; fill:none; stroke:var(--privacy); stroke-width:2;
+}
+/* The agreement in a quiet line, then «ETL process» as an amber badge, the data's colour, apart from the rules' cyan codes
+   and green checks; even spacing above and below (David, 9 Nov 2026: «más estético… etl process de otro color… los
+   espacios… más armónico»). */
+.opening-agree[data-v-94ca32f7] { display:flex; flex-direction:column; align-items:center; gap:11px; margin-top:12px; padding:13px 0 4px; border-top:1px solid var(--border); text-align:center;
+}
+.opening-agree span[data-v-94ca32f7] { color:var(--fg); opacity:.86; font:500 17px var(--font-sans); letter-spacing:.005em;
+}
+.opening-rules .opening-agree .opening-etl-badge[data-v-94ca32f7] { display:inline-block; padding:5px 22px 6px; border:1.5px solid var(--data); border-radius:10px;
+  background:rgba(245,190,114,.10); color:var(--data); font:700 26px/1.15 var(--font-sans); letter-spacing:.02em;
+}
+.opening-join-active .opening-table[data-v-94ca32f7] { animation:opening-source-away-94ca32f7 .3s ease-in both;
+}
+.opening-join-active .opening-table tbody[data-v-94ca32f7] { opacity:0;
+}
+.opening-join-paused .opening-table[data-v-94ca32f7],html.world-gliding .opening-join-active .opening-table { animation-play-state:paused!important;
+}
+@keyframes opening-source-away-94ca32f7 {
+from { opacity:1;
+}
+to { opacity:0;
+}
+}
+.opening-term[data-v-94ca32f7] { position:absolute; top:210px; transform:translateX(-50%); width:280px; text-align:center; padding:20px; background:#0a162bf5; border:1px solid var(--data); border-radius:12px; color:var(--fg); font:600 38px var(--font-mono);
+}
+.opening-term small[data-v-94ca32f7] { display:block; font:400 16px var(--font-sans); color:var(--muted); margin-top:12px;
+}

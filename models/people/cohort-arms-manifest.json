@@ -1,0 +1,75 @@
+{
+  "license": "CC0-1.0",
+  "source": "Existing MakeHuman participant recipes and source lock; original relaxed pose",
+  "verifiedSourceFiles": 15,
+  "assets": [
+    {
+      "id": "participant-03",
+      "file": "participant-03-middle.glb",
+      "sha256": "68a7dc83c328bac5adcdad9b774f585009e910c2f76be98259dbb9b124d9f1f0",
+      "vertices": 4925,
+      "weightedVertices": 909,
+      "transfer": {
+        "maxDistance": 0.0017823439557105303,
+        "meanDistance": 0.00012228115460926638
+      }
+    },
+    {
+      "id": "participant-10",
+      "file": "participant-10-middle.glb",
+      "sha256": "225ae621456d7430b76169fa1cd8ed5bba763e0708a4b0c4f5653bab85ca589b",
+      "vertices": 4884,
+      "weightedVertices": 891,
+      "transfer": {
+        "maxDistance": 0.0018783261766657233,
+        "meanDistance": 0.000157298937237122
+      }
+    },
+    {
+      "id": "participant-11",
+      "file": "participant-11-middle.glb",
+      "sha256": "09d8e7359547eecf840ea47e5dba3c81c28f1d3a36f0be43a9e83276c188b3de",
+      "vertices": 5116,
+      "weightedVertices": 996,
+      "transfer": {
+        "maxDistance": 0.0021857726387679577,
+        "meanDistance": 0.0001427646773919003
+      }
+    },
+    {
+      "id": "participant-19",
+      "file": "participant-19-middle.glb",
+      "sha256": "f694c17398c5313327cdc0abc79de045530ddb956fe1c1d1f154995b11fd1584",
+      "vertices": 4884,
+      "weightedVertices": 898,
+      "transfer": {
+        "maxDistance": 0.0015235570026561618,
+        "meanDistance": 0.0001502149187489678
+      }
+    }
+  ],
+  "authoring": {
+    "cohort_arms.py": "d1362973c0e94936fea8a944bcbc6ad34597f06f0b4b0f627847621e06b860ae",
+    "cohort-arms.mjs": "b891d38327b8b422104b0a2a44ca39f1414e49da7eecbbfa7af13813354b0a92",
+    "participants_build.py": "e2b2edece029976611fa19245ea64d23c50c1ae95e84ec03a19ca7a733565eb6",
+    "participants-specs.json": "121248b239402a6e5fa771e0a39afb123fa8ad5134a1f03c2bcabf3066eab5b1",
+    "participants-source-lock.json": "2facea6ffd520eadd95f901240766f2e79d01ca711a7c388ea639bcf6bb50003",
+    "crowd_build.py": "19ff98a9aba3e8e0f2f7da41a6e201724285c7f06366b1606c92efcb66ea0dde",
+    "relaxed_pose.py": "12242ed8c69b41cbc3a615bcb0b285219ecfaf65c44537c679fc291637ec4047"
+  },
+  "module": {
+    "file": "lib/world/models/cohort-arms-layout.js",
+    "bytes": 335236,
+    "sha256": "b3b4dce5aab7249ee3ea110a262600dd6261dfbd128cc5c1bbf589ef11e6d679"
+  },
+  "runtime": {
+    "file": "lib/world/models/cohort-greeting.js",
+    "bytes": 6443,
+    "sha256": "ddb03079fd6ab551401b80ad61baefcb4edce9a30f742ebf6aec63741dd1510d"
+  },
+  "corrective": {
+    "file": "lib/world/models/cohort-arm-corrective.js",
+    "bytes": 2509,
+    "sha256": "4441c46588fe2bf3adf774f8a145731cf5645841a1dbcd13f75e853f2cd57043"
+  }
+}

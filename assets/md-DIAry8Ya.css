@@ -1,0 +1,8 @@
+
+/* A plain dark stage for the 2D results: nothing of the 3D world shows behind them. */
+.om-validation-backdrop[data-v-0cede83a] { position: absolute; inset: 0; background: #050b16; z-index: 0;
+}
+.ds-slide[data-v-0cede83a] { z-index: 1;
+}
+.om-paper[data-v-0cede83a] { z-index: 2;
+}

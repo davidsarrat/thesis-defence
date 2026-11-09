@@ -1,0 +1,86 @@
+
+.ff-window[data-v-3f80425e] { --fg: #283142; --fg-rgb: 40, 49, 66; --muted: #566478; --accent: #20688d; --accent-rgb: 32, 104, 141;
+  position: absolute; display: flex; flex-direction: column; overflow: hidden; border-radius: 10px; background: #fff; color: #15141a; color-scheme: light; box-shadow: 0 15px 40px #0007, 0 0 0 1px #0005; font: 16px/1.4 'Ubuntu Sans', sans-serif;
+}
+.ff-clock[data-v-3f80425e] { position: absolute; width: 1px; height: 1px; pointer-events: none;
+}
+.ff-tabs[data-v-3f80425e] { height: 40px; flex: none; display: flex; align-items: center; background: #f0f0f4; padding: 4px 10px; gap: 6px;
+}
+.ff-tab[data-v-3f80425e] { width: 260px; height: 32px; padding: 4px 10px; background: #fff; box-shadow: 0 1px 3px #0003; border-radius: 5px; display: flex; align-items: center; gap: 9px;
+}
+.ff-tab-title[data-v-3f80425e] { overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+.ff-window svg[data-v-3f80425e] { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: none;
+}
+.ff-tab .ff-page-icon[data-v-3f80425e], .ff-tab .ff-close-tab[data-v-3f80425e] { width: 16px; height: 16px; flex: none;
+}.ff-close-tab[data-v-3f80425e] { margin-left: auto;
+}
+.ff-inactive[data-v-3f80425e] { background: transparent; box-shadow: none;
+}
+.ff-new[data-v-3f80425e] { margin-left: 8px;
+}.ff-controls[data-v-3f80425e] { margin-left: auto; display: flex; align-items: center; gap: 14px;
+}.ff-controls i[data-v-3f80425e] { display: grid; place-items: center; border-radius: 50%; background: #dddde2; width: 25px; height: 25px;
+}
+.ff-toolbar[data-v-3f80425e] { display: flex; height: 42px; flex: none; align-items: center; gap: 22px; padding: 0 18px; background: #f9f9fb; border-bottom: 1px solid #d7d7db;
+}
+.ff-toolbar > img[data-v-3f80425e] { width: 20px; height: 20px;
+}.ff-disabled[data-v-3f80425e] { opacity: .4;
+}
+.ff-address[data-v-3f80425e] { display: flex; align-items: center; gap: 12px; height: 30px; background: #f0f0f4; border: 1px solid transparent; border-radius: 4px; flex: 1; padding: 0 10px; min-width: 0; font-size: 16px;
+}
+.ff-focused[data-v-3f80425e] { background: #fff; border-color: #0060df; box-shadow: 0 0 0 1px #0060df;
+}
+.ff-url[data-v-3f80425e] { display: block; flex: 1; height: 20px; line-height: 20px; white-space: pre; overflow: hidden;
+}
+.ff-zoom[data-v-3f80425e] { padding: 1px 5px; border-radius: 3px; background: #e0e0e6; font-size: 12px; line-height: 18px;
+}
+.ff-address > img[data-v-3f80425e], .ff-address svg[data-v-3f80425e] { width: 16px; height: 16px; flex: none;
+}
+.ff-char[data-v-3f80425e] { display: inline-block; vertical-align: top; line-height: 20px; max-width: 0; overflow: hidden; white-space: pre; animation: ff-char-3f80425e .01s steps(1,start) both;
+}
+.ff-content[data-v-3f80425e] { position: relative; flex: 1; overflow: hidden; background: #fff;
+}
+@keyframes ff-char-3f80425e {
+to { max-width: 1em;
+}
+}
+
+.ubuntu-desktop[data-v-060bc6c3] { position: absolute; inset: 0; overflow: hidden; background-size: cover; background-position: center; color: #fff; font: 16px/1.4 'Ubuntu Sans', sans-serif;
+}
+.ubuntu-bar[data-v-060bc6c3] { position: absolute; inset: 0 0 auto; height: 32px; display: flex; align-items: center; justify-content: center; background: #171717; font-size: 16px;
+}
+.ubuntu-bar b[data-v-060bc6c3] { font-weight: 600;
+}
+.ubuntu-workspaces[data-v-060bc6c3] { position: absolute; left: 18px; display: flex; gap: 5px;
+}
+.ubuntu-workspaces i[data-v-060bc6c3] { width: 6px; height: 6px; background: #aaa; border-radius: 9px;
+}.ubuntu-workspaces i[data-v-060bc6c3]:first-child { width: 20px; background: #fff;
+}
+.ubuntu-status[data-v-060bc6c3] { position: absolute; right: 18px; display: flex; align-items: center; gap: 10px;
+}
+.ubuntu-status img[data-v-060bc6c3] { width: 17px; height: 17px; filter: brightness(0) invert(1);
+}
+.ubuntu-dock[data-v-060bc6c3] { position: absolute; left: 0; top: 32px; bottom: 0; width: 64px; display: flex; align-items: center; flex-direction: column; gap: 18px; padding: 22px 5px 14px; background: #18131cba;
+}
+.ubuntu-app[data-v-060bc6c3] { width: 48px; height: 48px; position: relative; border-radius: 8px; padding: 3px;
+}.ubuntu-app img[data-v-060bc6c3] { position: relative; width: 100%; height: 100%;
+}
+.ubuntu-app-focus[data-v-060bc6c3] { position: absolute; inset: 0; border-radius: 8px; background: #ffffff26;
+}
+.ubuntu-running[data-v-060bc6c3] { position: absolute; left: -5px; top: 21px; width: 5px; height: 5px; border-radius: 50%; background: #e95420;
+}
+.ubuntu-grid[data-v-060bc6c3] { margin-top: auto;
+}
+
+@keyframes ubuntu-dock-on {
+from { opacity: 0;
+}
+to { opacity: 1;
+}
+}
+@keyframes ubuntu-dock-off {
+from { opacity: 1;
+}
+to { opacity: 0;
+}
+}
