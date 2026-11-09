@@ -2,7 +2,7 @@
   "version": 2,
   "license": "CC0-1.0",
   "budgetPolicy": "Size limits suspended by speaker; measure all LODs.",
-  "glbBytes": 7090964,
+  "glbBytes": 11568708,
   "files": [
     {
       "id": "analyst-hero",
@@ -49,6 +49,193 @@
         }
       ],
       "sha256": "f7a127d9ef392c1a59751e443769cd1dbdac4e2ecab224c0f0be578bd62ea021"
+    },
+    {
+      "id": "analyst-woman-crowd",
+      "file": "analyst-woman-crowd.glb",
+      "lod": "crowd",
+      "bytes": 1128304,
+      "triangles": 24521,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_female_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "browsing",
+          "channels": 489,
+          "duration": 4
+        },
+        {
+          "name": "selecting",
+          "channels": 489,
+          "duration": 4
+        }
+      ],
+      "sha256": "de25d19f86389217f72cea8d1d59b44ad131ff30319d2260c121e7c368f0360d"
+    },
+    {
+      "id": "analyst-woman-far",
+      "file": "analyst-woman-far.glb",
+      "lod": "far",
+      "bytes": 968120,
+      "triangles": 3936,
+      "primitives": 32,
+      "textures": [],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "browsing",
+          "channels": 489,
+          "duration": 4
+        },
+        {
+          "name": "selecting",
+          "channels": 489,
+          "duration": 4
+        }
+      ],
+      "sha256": "056c200375a1aa451d0ce6208123b7f56c06cb6a19dcad6d818f4ae99eacc5fd"
+    },
+    {
+      "id": "analyst-woman-hero",
+      "file": "analyst-woman-hero.glb",
+      "lod": "hero",
+      "bytes": 1223704,
+      "triangles": 35018,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_female_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "browsing",
+          "channels": 489,
+          "duration": 4
+        },
+        {
+          "name": "selecting",
+          "channels": 489,
+          "duration": 4
+        }
+      ],
+      "sha256": "d05551bfa24957a00c991fc5e5b7ee647709eee0738824c27662b3f684e3073f"
+    },
+    {
+      "id": "analyst-woman-middle",
+      "file": "analyst-woman-middle.glb",
+      "lod": "middle",
+      "bytes": 1157616,
+      "triangles": 27241,
+      "primitives": 25,
+      "textures": [
+        {
+          "name": "brown_eye",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        },
+        {
+          "name": "middleage_lightskinned_female_diffuse",
+          "width": 1024,
+          "height": 1024,
+          "format": "webp"
+        }
+      ],
+      "clips": [
+        {
+          "name": "typing",
+          "channels": 489,
+          "duration": 2
+        },
+        {
+          "name": "listening",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "standing",
+          "channels": 489,
+          "duration": 0.03333333507180214
+        },
+        {
+          "name": "browsing",
+          "channels": 489,
+          "duration": 4
+        },
+        {
+          "name": "selecting",
+          "channels": 489,
+          "duration": 4
+        }
+      ],
+      "sha256": "118305008130439f0314fa7155ef88889ce1fdb386d127d36ff55d3e863ff7a8"
     },
     {
       "id": "crowd-01-crowd",

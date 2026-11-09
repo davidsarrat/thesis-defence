@@ -128,6 +128,508 @@
     }
   },
   {
+    "id": "analyst-woman-crowd",
+    "file": "analyst-woman-crowd.glb",
+    "role": "analyst",
+    "archetype": "analyst-woman",
+    "lod": "crowd",
+    "triangles": 24521,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "browsing",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "selecting",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ],
+        "tap": 1.65
+      }
+    ],
+    "wardrobe": "Open white cotton lab coat, stone shirt, charcoal trousers and brown shoes fitted to an adult woman; opaque long blonde system hair",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_female",
+      "clothes": "male_casualsuit01",
+      "hair": "long01",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "open lab coat, curved inner shirt, collar, curved lapels, surface-fitted pockets/buttons, weighted shoulder seams and full-length sleeves/shirt cuffs"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ],
+      "fingertip": {
+        "node": "fingertip",
+        "parent": "finger2-3.R",
+        "local": [
+          0,
+          0.0205,
+          0
+        ]
+      },
+      "head": {
+        "node": "head"
+      }
+    },
+    "bytes": 1128304,
+    "draws": 25,
+    "textures": 2,
+    "sha256": "de25d19f86389217f72cea8d1d59b44ad131ff30319d2260c121e7c368f0360d",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "browsing",
+      "selecting"
+    ],
+    "catalogueRecipe": {
+      "file": "tools/model-lab/people/production/analyst_catalogue.mjs",
+      "basePayloadHash": "0867f56e5e498c3e95b745b51434660df6821d727c4c7042d3b79b81fdc4adaf",
+      "license": "own work",
+      "tapSeconds": 1.65,
+      "sleeveRepair": [
+        {
+          "name": "Original_continuous_sleeve_L002",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768804883807649
+        },
+        {
+          "name": "Original_continuous_sleeve_R002",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768806294287199
+        },
+        {
+          "name": "Original_open_lab_coat-lod",
+          "vertices": 231,
+          "maxDisplacementMetres": 0.03644565852987598
+        }
+      ]
+    }
+  },
+  {
+    "id": "analyst-woman-far",
+    "file": "analyst-woman-far.glb",
+    "role": "analyst",
+    "archetype": "analyst-woman",
+    "lod": "far",
+    "triangles": 3936,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "browsing",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "selecting",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ],
+        "tap": 1.65
+      }
+    ],
+    "wardrobe": "Open white cotton lab coat, stone shirt, charcoal trousers and brown shoes fitted to an adult woman; opaque long blonde system hair",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_female",
+      "clothes": "male_casualsuit01",
+      "hair": "long01",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "open lab coat, curved inner shirt, collar, curved lapels, surface-fitted pockets/buttons, weighted shoulder seams and full-length sleeves/shirt cuffs"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ],
+      "fingertip": {
+        "node": "fingertip",
+        "parent": "finger2-3.R",
+        "local": [
+          0,
+          0.0205,
+          0
+        ]
+      },
+      "head": {
+        "node": "head"
+      }
+    },
+    "bytes": 968120,
+    "draws": 32,
+    "textures": 0,
+    "sha256": "056c200375a1aa451d0ce6208123b7f56c06cb6a19dcad6d818f4ae99eacc5fd",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "browsing",
+      "selecting"
+    ],
+    "catalogueRecipe": {
+      "file": "tools/model-lab/people/production/analyst_catalogue.mjs",
+      "basePayloadHash": "bcc4c26bbb712a8e3fc06bbc4c3696f022ecc10319016c757b30119f81d09d8a",
+      "license": "own work",
+      "tapSeconds": 1.65,
+      "sleeveRepair": [
+        {
+          "name": "Original_open_lab_coat001",
+          "vertices": 231,
+          "maxDisplacementMetres": 0.03644565852987598
+        }
+      ]
+    }
+  },
+  {
+    "id": "analyst-woman-hero",
+    "file": "analyst-woman-hero.glb",
+    "role": "analyst",
+    "archetype": "analyst-woman",
+    "lod": "hero",
+    "triangles": 35018,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "browsing",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "selecting",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ],
+        "tap": 1.65
+      }
+    ],
+    "wardrobe": "Open white cotton lab coat, stone shirt, charcoal trousers and brown shoes fitted to an adult woman; opaque long blonde system hair",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_female",
+      "clothes": "male_casualsuit01",
+      "hair": "long01",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "open lab coat, curved inner shirt, collar, curved lapels, surface-fitted pockets/buttons, weighted shoulder seams and full-length sleeves/shirt cuffs"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ],
+      "fingertip": {
+        "node": "fingertip",
+        "parent": "finger2-3.R",
+        "local": [
+          0,
+          0.0205,
+          0
+        ]
+      },
+      "head": {
+        "node": "head"
+      }
+    },
+    "bytes": 1223704,
+    "draws": 25,
+    "textures": 2,
+    "sha256": "d05551bfa24957a00c991fc5e5b7ee647709eee0738824c27662b3f684e3073f",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "browsing",
+      "selecting"
+    ],
+    "catalogueRecipe": {
+      "file": "tools/model-lab/people/production/analyst_catalogue.mjs",
+      "basePayloadHash": "b21c33f9d2eb7e1c26ecb2c24d9f3159dee5ceafa74b65aecfa2c53e13c87bb2",
+      "license": "own work",
+      "tapSeconds": 1.65,
+      "sleeveRepair": [
+        {
+          "name": "Original_continuous_sleeve_L001",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768804883807649
+        },
+        {
+          "name": "Original_continuous_sleeve_R001",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768806294287199
+        },
+        {
+          "name": "Original_open_lab_coat-lod",
+          "vertices": 231,
+          "maxDisplacementMetres": 0.03644565852987598
+        }
+      ]
+    }
+  },
+  {
+    "id": "analyst-woman-middle",
+    "file": "analyst-woman-middle.glb",
+    "role": "analyst",
+    "archetype": "analyst-woman",
+    "lod": "middle",
+    "triangles": 27241,
+    "animation": [
+      {
+        "name": "typing",
+        "duration": 2,
+        "samples": [
+          0,
+          0.5,
+          1,
+          1.5
+        ]
+      },
+      {
+        "name": "listening",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "standing",
+        "duration": 0.03333333333333333,
+        "samples": [
+          0
+        ]
+      },
+      {
+        "name": "browsing",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ]
+      },
+      {
+        "name": "selecting",
+        "duration": 4,
+        "samples": [
+          0,
+          1,
+          1.65,
+          2,
+          3
+        ],
+        "tap": 1.65
+      }
+    ],
+    "wardrobe": "Open white cotton lab coat, stone shirt, charcoal trousers and brown shoes fitted to an adult woman; opaque long blonde system hair",
+    "document": null,
+    "sourceAssets": {
+      "base": "MakeHuman hm08",
+      "skin": "middleage_caucasian_female",
+      "clothes": "male_casualsuit01",
+      "hair": "long01",
+      "shoes": "shoes04",
+      "eyes": "low-poly"
+    },
+    "originalWork": [
+      "garment pigments",
+      "poses and clips",
+      "open lab coat, curved inner shirt, collar, curved lapels, surface-fitted pockets/buttons, weighted shoulder seams and full-length sleeves/shirt cuffs"
+    ],
+    "anchors": {
+      "up": "+Y",
+      "front": "+Z",
+      "metres": true,
+      "seat": [
+        0,
+        0.49,
+        0
+      ],
+      "fingertip": {
+        "node": "fingertip",
+        "parent": "finger2-3.R",
+        "local": [
+          0,
+          0.0205,
+          0
+        ]
+      },
+      "head": {
+        "node": "head"
+      }
+    },
+    "bytes": 1157616,
+    "draws": 25,
+    "textures": 2,
+    "sha256": "118305008130439f0314fa7155ef88889ce1fdb386d127d36ff55d3e863ff7a8",
+    "clips": [
+      "typing",
+      "listening",
+      "standing",
+      "browsing",
+      "selecting"
+    ],
+    "catalogueRecipe": {
+      "file": "tools/model-lab/people/production/analyst_catalogue.mjs",
+      "basePayloadHash": "121c40e2ed9049819556b78094bb967537a876d5be33fe9e3583c5083298ac25",
+      "license": "own work",
+      "tapSeconds": 1.65,
+      "sleeveRepair": [
+        {
+          "name": "Original_continuous_sleeve_L001",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768804883807649
+        },
+        {
+          "name": "Original_continuous_sleeve_R001",
+          "vertices": 48,
+          "maxDisplacementMetres": 0.0768806294287199
+        },
+        {
+          "name": "Original_open_lab_coat-lod",
+          "vertices": 231,
+          "maxDisplacementMetres": 0.03644565852987598
+        }
+      ]
+    }
+  },
+  {
     "id": "malicious-hero",
     "file": "malicious-hero.glb",
     "role": "malicious",

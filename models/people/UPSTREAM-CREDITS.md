@@ -171,3 +171,22 @@ The following meshes, pigments, poses and clips were made for this project and a
 Fine garment details simplify by LOD: far analysts omit coat pockets; far malicious figures omit drawcords/pouch; far runners use proxy shirts; far operators omit small seam details. Every LOD retains its role silhouette and arms/hands.
 
 All new people are fictional creator morphs. No real person was used as a likeness reference, and no logo, flag or unit insignia was added. The existing workstation, screens and hospital models keep their separate library credits; they are not claimed as new CC0 MakeHuman assets.
+
+## Woman analyst — CC0 system assets
+
+`analyst-woman-{hero,middle,crowd,far}.glb` adds a fictional adult female identity
+from the same MPFB 2.0.17 hm08 base and default rig as the analyst. Source author:
+MakeHuman Community / `makehuman_system`; source headers credit Data Collection AB,
+Joel Palmius and Jonas Hauquier. [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+requires no attribution; the local licence text is `CC0-1.0.md`.
+
+The pinned [MakeHuman CC0 system archive](https://files2.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip)
+provides `skins/middleage_caucasian_female`, `hair/long01`,
+`clothes/male_casualsuit01`, `clothes/shoes04`, `eyes/low-poly` and `eyes/materials`.
+[`hero-source-lock.json`](hero-source-lock.json) records exact files, hashes and identity associations.
+
+Original CC0 modifications: female creator morphs, fitted analyst coat and shirt,
+plain trouser/shoe pigments, opaque blonde hair (no alpha texture), long-hair far
+silhouette, and original typing/listening/standing/browsing/selecting clips.
+Blender 4.2.3 and glTF Transform 4.2.1 produce the Meshopt/WebP assets, totalling
+4,477,744 bytes. No real likeness, logo, external animation or runtime download is used.

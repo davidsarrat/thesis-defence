@@ -34,10 +34,14 @@
     "crowd-09-far",
     "crowd-10-far",
     "judge-hero",
-    "judge-middle"
+    "judge-middle",
+    "analyst-woman-crowd",
+    "analyst-woman-far",
+    "analyst-woman-hero",
+    "analyst-woman-middle"
   ],
-  "startupBytes": 907604,
-  "deferredBytes": 7386928,
-  "totalGlbBytes": 8294532,
-  "note": "Only analyst-hero is requested by the current scenes. Optional assets load when an explicitly prepared scene uses them. The judge (template 39420fb, full-bottomed wig) serves the dsFlower app-policy tableau (F06). No unused LODs."
+  "startupBytes": 1238672,
+  "deferredBytes": 11862144,
+  "totalGlbBytes": 13100816,
+  "note": "Declared local pack subset; optional assets load only when explicitly prepared. H05 uses analyst-woman-hero alongside the unchanged analyst-hero; the woman's other three LODs are included for the same identity at other presentation distances. The judge serves the dsFlower app-policy tableau (F06)."
 }
