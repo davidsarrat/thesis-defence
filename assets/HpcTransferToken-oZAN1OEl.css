@@ -1,0 +1,10 @@
+
+.hj-card[data-v-b80cab93]{--job-tone:#a6bbce}.hj-running[data-v-b80cab93]{--job-tone:var(--data)}.hj-finished[data-v-b80cab93]{--job-tone:var(--privacy)}
+.hj-shell[data-v-b80cab93]{fill:#102033;stroke:var(--job-tone);stroke-width:1.4;transition:stroke .3s ease}.hj-kind[data-v-b80cab93]{fill:var(--muted);font:16px var(--font-sans)}.hj-name[data-v-b80cab93]{fill:var(--fg);font:600 19px var(--font-sans)}
+.hj-pill[data-v-b80cab93]{fill:var(--job-tone);fill-opacity:.12;stroke:var(--job-tone);stroke-opacity:.45}.hj-state[data-v-b80cab93]{fill:var(--job-tone);font:500 16px var(--font-mono)}.hj-dot[data-v-b80cab93],.hj-progress[data-v-b80cab93]{fill:var(--job-tone)}.hj-track[data-v-b80cab93]{fill:#405873}.hj-tick[data-v-b80cab93]{fill:none;stroke:var(--job-tone);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+
+.htt-token[data-v-f7ddaeca]{stroke-linecap:round;stroke-linejoin:round;stroke-width:1.7}
+.htt-document[data-v-f7ddaeca]{fill:#102337;stroke:var(--updates)}.htt-direction[data-v-f7ddaeca],.htt-request .htt-detail[data-v-f7ddaeca]{fill:none;stroke:#a9ccff}
+.htt-layer-back[data-v-f7ddaeca]{fill:#62492b;stroke:var(--data)}.htt-layer-front[data-v-f7ddaeca]{fill:#392c1e;stroke:var(--data)}.htt-result .htt-detail[data-v-f7ddaeca]{fill:none;stroke:#ffdaa6;stroke-width:1.2}
+.htt-shield[data-v-f7ddaeca]{fill:#12342f;stroke:var(--privacy)}.htt-check[data-v-f7ddaeca]{fill:none;stroke:#8ce8d2;stroke-width:2.3}
+.htt-label[data-v-f7ddaeca]{fill:var(--fg);font:600 16px var(--font-sans);paint-order:stroke;stroke:#071323;stroke-width:5}
