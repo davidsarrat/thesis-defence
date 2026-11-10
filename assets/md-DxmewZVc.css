@@ -1,0 +1,16 @@
+
+.dse-layer[data-v-81f9ed07]{position:absolute;inset:0;width:1280px;height:720px;transform-origin:0 0;pointer-events:none}
+.dse-card[data-v-81f9ed07]{position:absolute;left:850px;top:172px;width:357px;padding:22px 25px 24px;background:rgba(10,22,43,.94);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:var(--card-radius);box-shadow:0 12px 36px #0003;box-sizing:border-box}
+/* The legend comes in once R01's CADSET card, in the same place, has faded out: the two never mix. */
+.dse-card[data-v-81f9ed07]{animation:dse-card-in-81f9ed07 .3s ease .32s both}
+@keyframes dse-card-in-81f9ed07{from{opacity:0}to{opacity:1}}
+.dse-label[data-v-81f9ed07]{display:block;font:600 13px/1.2 var(--font-sans);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dse-legend[data-v-81f9ed07]{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.dse-legend li[data-v-81f9ed07]{display:flex;align-items:flex-start;gap:12px;margin:0;padding:0;font:500 21px/1.28 var(--font-sans);color:var(--fg)}
+.dse-legend svg[data-v-81f9ed07]{width:16px;height:16px;flex:none;margin-top:5px}
+.dse-legend div[data-v-81f9ed07]{display:flex;flex-direction:column;gap:5px;min-width:0}
+.dse-legend span[data-v-81f9ed07]{text-wrap:balance}
+/* The meetings David need not read out share one colour, a step smaller. */
+.dse-legend .dse-minor[data-v-81f9ed07]{font-size:18px;line-height:1.35}
+.dse-legend .dse-minor svg[data-v-81f9ed07]{margin-top:4px}
+.dse-training[data-v-81f9ed07]{border-top:1px solid #405873a0;margin-top:16px;padding-top:13px}

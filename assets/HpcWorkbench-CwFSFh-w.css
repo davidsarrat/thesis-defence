@@ -1,0 +1,20 @@
+
+/* The deck's mask colour (--data), filled, with a crisp edge and a dark rim against bright tissue. */
+.hpc-ct[data-v-cca76aa4]{--region-tone:var(--data);overflow:hidden}
+.hpc-ct-rim[data-v-cca76aa4]{fill:none;stroke:#071323;stroke-opacity:.75;stroke-linejoin:round}
+.hpc-ct-region[data-v-cca76aa4]{fill:var(--region-tone);fill-opacity:.72;stroke:var(--region-tone);stroke-linejoin:round}
+.hpc-ct-scan[data-v-cca76aa4]{stroke:var(--region-tone)}.hpc-ct-scan-glow[data-v-cca76aa4]{stroke:var(--region-tone);stroke-opacity:.28}
+
+.hwb-layer[data-v-4cabe731]{position:absolute;inset:0;width:1280px;height:720px;transform-origin:0 0;pointer-events:none;color:var(--fg)}
+.hwb-card[data-v-4cabe731]{fill:#102337;fill-opacity:.8;stroke:#516a82;stroke-width:1.3}.hwb-window[data-v-4cabe731]{fill:url(#hwb-glass);stroke:#405873;stroke-width:1.2}.hwb-boundary[data-v-4cabe731]{fill:#12332d;fill-opacity:.06;stroke:#38c6ad;stroke-opacity:.6;stroke-width:1.3}
+.hwb-foundation[data-v-4cabe731]{fill:#153448;stroke:#7efaff;stroke-opacity:.65;stroke-width:1.5}.hwb-package[data-v-4cabe731]{fill:none;stroke:#7efaff;stroke-width:1.7;stroke-linejoin:round}
+.hwb-brand[data-v-4cabe731]{fill:var(--accent);font:700 36px var(--font-sans)}.hwb-heading[data-v-4cabe731]{fill:var(--fg);font:600 23px var(--font-sans)}.hwb-label[data-v-4cabe731]{fill:var(--fg);font:600 22px var(--font-sans);text-anchor:middle}.hwb-server[data-v-4cabe731]{fill:#88ddcc;font:600 22px var(--font-sans)}
+.hwb-small[data-v-4cabe731]{fill:var(--muted);font:17px var(--font-sans)}.hwb-center[data-v-4cabe731]{text-anchor:middle}.hwb-emphasis[data-v-4cabe731]{fill:var(--accent);font:500 23px var(--font-sans);text-anchor:middle}.hwb-code[data-v-4cabe731]{fill:var(--fg);font:16px var(--font-mono);text-anchor:middle}
+.hwb-link[data-v-4cabe731],.hwb-route[data-v-4cabe731]{fill:none;stroke:#92aabb;stroke-width:1.7;stroke-linecap:round}.hwb-route[data-v-4cabe731]{stroke:var(--data);stroke-opacity:.55}.hwb-blue[data-v-4cabe731]{stroke:var(--updates)}.hwb-green[data-v-4cabe731]{stroke:var(--privacy);fill:var(--privacy)}.hwb-hidden-path[data-v-4cabe731]{fill:none;stroke:none}
+.hwb-route.hwb-green[data-v-4cabe731]{fill:none}
+.hwb-lane[data-v-4cabe731]{transition:stroke-opacity .3s ease,stroke-width .3s ease}.hwb-lane-live[data-v-4cabe731]{stroke-opacity:1;stroke-width:2.4}
+.hwb-archive-port[data-v-4cabe731]{fill:#102337;stroke:var(--data);stroke-width:1.5}
+.hwb-packet[data-v-4cabe731]{fill:var(--data);stroke:#ffe0af;stroke-width:1.5}.hwb-request[data-v-4cabe731]{fill:var(--updates);stroke:#b8d7ff}.hwb-aggregate[data-v-4cabe731],.hwb-check[data-v-4cabe731]{fill:#102c29;stroke:var(--privacy);stroke-width:1.5}.hwb-tick[data-v-4cabe731]{fill:none;stroke:var(--privacy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hwb-table[data-v-4cabe731]{fill:#162c36;stroke:#bba782;stroke-width:1.3}.hwb-grid[data-v-4cabe731]{fill:none;stroke:#bba782;stroke-opacity:.4}.hwb-table-cell[data-v-4cabe731]{fill:var(--data);font:17px var(--font-mono);text-anchor:middle;paint-order:stroke;stroke:#162c36;stroke-width:8;stroke-linejoin:round}.hwb-flat[data-v-4cabe731]{fill:#132d3a;stroke:#668a99}
+.hwb-clock[data-v-4cabe731]{--clock-tone:var(--data)}.hwb-clock-reuse[data-v-4cabe731]{--clock-tone:var(--privacy)}.hwb-clock-face[data-v-4cabe731]{fill:#0c1d30;stroke:#415b73;stroke-width:8}.hwb-clock-fill[data-v-4cabe731]{fill:none;stroke:var(--clock-tone);stroke-width:8;stroke-linecap:round}.hwb-clock-marks[data-v-4cabe731]{stroke:#6e879e;stroke-width:1.4}.hwb-clock-time[data-v-4cabe731]{fill:var(--fg);font:600 30px var(--font-mono);text-anchor:middle}.hwb-clock-unit[data-v-4cabe731]{fill:var(--muted);font:500 16px var(--font-mono);text-anchor:middle}
+.hwb-port[data-v-4cabe731]{fill:var(--updates);stroke:#b8d7ff;stroke-width:1.5}.hwb-dag-edge[data-v-4cabe731]{fill:none;stroke:#a5c4d7;stroke-width:1.8}.hwb-image-frame[data-v-4cabe731]{fill:#081322;stroke:#45617c;stroke-width:1.2}
