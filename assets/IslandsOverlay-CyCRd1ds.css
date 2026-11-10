@@ -1,0 +1,23 @@
+
+.ds-overlay[data-v-0355077f] { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 2;
+}
+.ds-panel[data-v-0355077f] { rx:var(--card-radius); fill: #071323; fill-opacity: .94; stroke: var(--border); stroke-width: 1;
+}
+.ds-leader[data-v-0355077f] { fill: none; stroke: #B8CADE; stroke-width: 2.6; stroke-opacity: .55;
+}
+.ds-name[data-v-0355077f] { font-family: var(--font-sans, Inter, sans-serif); fill: var(--fg, #EDF5FF); font-size: 22px; font-weight: 600;
+}
+.ds-city[data-v-0355077f] { fill: var(--muted, #B8CADE); font-weight: 500;
+}
+.ds-city-line[data-v-0355077f] { font: 500 16px var(--font-sans);
+}
+.ds-small[data-v-0355077f] { font-family: var(--font-mono, 'Roboto Mono', monospace); font-size: 19px; font-weight: 500;
+}
+.ds-product[data-v-0355077f] { stroke: var(--accent, #7EFAFF);
+}
+.ds-product-text[data-v-0355077f] { fill: var(--accent, #7EFAFF);
+}
+.ds-data[data-v-0355077f] { fill: #30291F; stroke: var(--data, #F5BE72);
+}
+.ds-data-text[data-v-0355077f] { fill: var(--data, #F5BE72);
+}
