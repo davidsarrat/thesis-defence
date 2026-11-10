@@ -1,1 +1,0 @@
-import{g as e}from"./modules/shiki-DItJl1Vm.js";import{dt as t}from"./index-ChHPoT65.js";import"./client-Dy9JlSAZ.js";import{o as n}from"./state-CzlVRFk-.js";function r(){let{$renderContext:r}=t();return e(()=>r.value!==`slide`||n.value)}export{r as t};
