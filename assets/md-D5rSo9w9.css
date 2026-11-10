@@ -1,0 +1,54 @@
+
+.vd-board[data-v-1b202674] { width: 100%; height: auto; display: block; overflow: visible;
+}
+.vd-label[data-v-1b202674] { font: 500 20px var(--font-mono); fill: #b8cade; text-anchor: middle;
+}
+.vd-slot[data-v-1b202674] { fill: #0a162b; stroke: #7efaff; stroke-width: 2; stroke-opacity: .75;
+  filter: drop-shadow(0 0 calc(12px * var(--vd-glow, 0)) rgba(126, 250, 255, .8));
+}
+.vd-slot-next[data-v-1b202674] { stroke: #edf5ff; stroke-opacity: .6;
+}
+.vd-num[data-v-1b202674] { font: 700 32px var(--font-mono); fill: #7efaff; text-anchor: middle;
+}
+.vd-num-next[data-v-1b202674] { fill: #edf5ff;
+}
+.vd-text[data-v-1b202674] { font: 500 32px var(--font-mono); text-anchor: middle;
+}
+.vd-op[data-v-1b202674] { font-weight: 700; filter: drop-shadow(0 0 calc(5px * var(--vd-lit, 0)) rgba(var(--vd-rgb), calc(.95 * var(--vd-lit, 0))))
+  drop-shadow(0 0 calc(12px * var(--vd-lit, 0)) rgba(var(--vd-rgb), calc(.55 * var(--vd-lit, 0))));
+}
+.vd-trail[data-v-1b202674] { font: 500 24px var(--font-mono); fill: #b8cade; white-space: pre;
+}
+.vd-trail-name[data-v-1b202674] { fill: #7efaff;
+}
+.vd-trail-arrow[data-v-1b202674] { fill: rgba(184, 202, 222, .6);
+}
+.vd-trail-target[data-v-1b202674] { fill: #edf5ff; font-weight: 700;
+}
+/* The number line: a quiet axis, the target dashed white, x a bright dot ringed with the background. */
+.vd-line-axis[data-v-1b202674] { fill: none; stroke: #b8cade; stroke-opacity: .5; stroke-width: 2; stroke-linecap: round;
+}
+.vd-line-target[data-v-1b202674] { fill: none; stroke: #edf5ff; stroke-opacity: .8; stroke-width: 2; stroke-dasharray: 5 4;
+}
+.vd-line-label[data-v-1b202674] { font: 500 20px var(--font-mono); fill: #b8cade;
+}
+.vd-line-goal[data-v-1b202674] { fill: #edf5ff; font-weight: 700;
+}
+.vd-line-hop[data-v-1b202674] { fill: none; stroke: rgba(126, 250, 255, .45); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1;
+}
+.vd-line-mark[data-v-1b202674] { fill: rgba(126, 250, 255, .45);
+}
+.vd-line-ring[data-v-1b202674] { fill: none; stroke: #7efaff; stroke-width: 2;
+}
+.vd-line-dot[data-v-1b202674] { fill: #7efaff; stroke: #050916; stroke-width: 3; filter: drop-shadow(0 0 7px rgba(126, 250, 255, .55));
+}
+.vd-meaning[data-v-1b202674] { font: 500 25px var(--font-sans); fill: #edf5ff; text-anchor: middle;
+}
+.vd-conclusion[data-v-1b202674] { font: 500 30px var(--font-mono); fill: #edf5ff; text-anchor: middle;
+}
+.vd-prod[data-v-1b202674] { fill: #f5be72; font-weight: 700;
+}
+.vd-sum[data-v-1b202674] { fill: #38c6ad; font-weight: 700;
+}
+.vd-div[data-v-1b202674] { fill: #4d8ddf; font-weight: 700;
+}
