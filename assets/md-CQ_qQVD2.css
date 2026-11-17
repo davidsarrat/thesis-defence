@@ -1,0 +1,46 @@
+
+.lim-layer[data-v-fb608f5c] { position: absolute; inset: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.lim-column[data-v-fb608f5c] { position: absolute; top: 116px; width: 444px; --lim-ink: #9cdce2;
+}
+.lim-then[data-v-fb608f5c] { left: 72px;
+}
+/* The deck's pink, clear of the Earth behind (David, 27 Oct 2026; it was amber). */
+.lim-now[data-v-fb608f5c] { right: 72px; --lim-ink: var(--global, #FF8AF0);
+}
+/* A contour in the page's colour: the heading crosses the Earth's limb (David, 17 Nov 2026: «se le puede poner un poco de
+   contorno? del color del fondo … se solapa con la tierra que tiene detrás»). */
+.lim-now .lim-heading[data-v-fb608f5c] { text-shadow: 1.5px 0 0 var(--bg), -1.5px 0 0 var(--bg), 0 1.5px 0 var(--bg), 0 -1.5px 0 var(--bg),
+  1px 1px 0 var(--bg), -1px 1px 0 var(--bg), 1px -1px 0 var(--bg), -1px -1px 0 var(--bg), 0 0 8px rgba(var(--bg-rgb), .85);
+}
+.lim-heading[data-v-fb608f5c] { margin: 0 0 12px 2px; color: var(--lim-ink); font: 600 22px/1.25 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-stack[data-v-fb608f5c] { display: grid; gap: 8px;
+}
+.lim-card[data-v-fb608f5c] { display: flex; align-items: center; gap: 13px; height: 88px; box-sizing: border-box; padding: 10px 14px; border: 1px solid #385267; border-radius: var(--card-radius); background: rgba(7, 19, 35, .95); box-shadow: 0 5px 18px #02071124; opacity: 0; animation: lim-arrive-fb608f5c .46s cubic-bezier(.16, 1, .3, 1) var(--lim-delay) both;
+}
+.lim-now .lim-card[data-v-fb608f5c] { border-color: #7a4f74;
+}
+.lim-copy[data-v-fb608f5c] { min-width: 0;
+}
+.lim-title[data-v-fb608f5c] { display: block; margin: 0 0 5px; color: #edf5ff; font: 650 19px/1.15 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-copy p[data-v-fb608f5c] { margin: 0; color: #d0dce8; font: 450 16px/1.3 var(--font-sans, Montserrat, sans-serif);
+}
+.lim-card[data-v-fb608f5c] svg { width: 34px; height: 38px; flex: 0 0 34px; color: var(--lim-ink);
+}
+.lim-static .lim-card[data-v-fb608f5c] { animation: none; opacity: 1;
+}
+@keyframes lim-arrive-fb608f5c {
+from { opacity: 0; transform: translateY(12px);
+}
+to { opacity: 1; transform: translateY(0);
+}
+}
+
+/* Start the stagger only once the spatial arrival has cleared the reading area. */
+html.world-gliding .lim-layer:not(.lim-static) .lim-card { animation: none; opacity: 0;
+}
+/* «What science needs now» waits too, so it comes in its turn after the left column (David, 27 Oct 2026). */
+html.world-gliding .lim-layer:not(.lim-static) .lim-now .lim-heading { animation: none !important; opacity: 0;
+}
