@@ -1,0 +1,62 @@
+
+/* SectionTitle owns the vignette and camera-gated entrance; the first click fades the whole chapter away. */
+.plane-africa-chapter-leave-active { transition: opacity .45s ease;
+}
+.plane-africa-chapter-leave-to { opacity: 0;
+}
+
+.africa-flight-poster[data-v-32a83074] { position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
+
+/* The closing composition deliberately has no slide counter. */
+html:has(.world-layer[data-world-shot="planeAfrica"]) .slide-counter { display:none;
+}
+
+/* Painted from the slide's arrival at an invisible opacity, on its own layer: at 0 the ten logos were decoded and
+   rastered only as the fade began, a 60 ms frame after «Thank you.» (GPU pod, 9 Nov 2026). */
+/* They leave in .4 s: back from «Thank you.» the conclusion band sits over their row (17 Nov 2026). */
+.cak-layer[data-v-0f1a909e]{position:absolute;left:0;top:0;width:1280px;height:720px;transform-origin:0 0;pointer-events:none;opacity:.002;will-change:opacity;transition:opacity .4s ease}
+.cak-layer.cak-shown[data-v-0f1a909e]{opacity:1;transition:opacity 1.4s ease}
+.cak-haze[data-v-0f1a909e]{position:absolute;left:0;right:0;bottom:0;height:150px;background:linear-gradient(to top,rgba(236,201,180,.97) 0%,rgba(236,201,180,.9) 46%,rgba(236,201,180,0) 100%)}
+.cak-logos[data-v-0f1a909e]{position:absolute;left:44px;right:44px;bottom:58px;height:22px;display:flex;justify-content:space-between;align-items:center}
+.cak-logos img[data-v-0f1a909e]{height:22px;width:auto;display:block}
+.cak-line[data-v-0f1a909e]{position:absolute;left:44px;right:44px;margin:0;text-align:center;font:400 10.5px/1.3 var(--font-sans);color:#3a231d;letter-spacing:.005em;white-space:nowrap}
+.cak-line[data-v-0f1a909e]:nth-of-type(1){bottom:30px}.cak-line[data-v-0f1a909e]:nth-of-type(2){bottom:15px}
+
+.ccx-layer[data-v-472d4a08] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.ccx-grid[data-v-472d4a08] { position: absolute; left: 73px; right: 73px; top: 40px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px 12px;
+}
+.ccx-card[data-v-472d4a08] { display: flex; align-items: center; gap: 13px; height: 110px; box-sizing: border-box; padding: 10px 14px;
+  border: 1px solid #385267; border-radius: var(--card-radius); background: rgba(7, 19, 35, .93); box-shadow: 0 6px 20px rgba(47, 24, 18, .22);
+  animation: ccx-arrive-472d4a08 .46s cubic-bezier(.16, 1, .3, 1) .35s both;
+}
+.ccx-card[data-v-472d4a08] svg { width: 34px; height: 38px; flex: 0 0 34px; color: var(--accent, #7EFAFF);
+}
+.ccx-copy[data-v-472d4a08] { min-width: 0;
+}
+.ccx-pkg[data-v-472d4a08] { display: block; margin: 0 0 3px; color: var(--accent, #7EFAFF); font: 500 13px/1.2 var(--font-mono, 'Roboto Mono', monospace);
+}
+.ccx-title[data-v-472d4a08] { display: block; margin: 0 0 4px; color: #edf5ff; font: 650 19px/1.15 var(--font-sans, Montserrat, sans-serif);
+}
+.ccx-copy p[data-v-472d4a08] { margin: 0; color: #d0dce8; font: 450 16px/1.3 var(--font-sans, Montserrat, sans-serif);
+}
+/* Centred by its own width: the arrival's transform would undo a translate. */
+.ccx-band[data-v-472d4a08] { position: absolute; left: 0; right: 0; bottom: 34px; width: fit-content; margin: 0 auto; padding: 9px 22px; white-space: nowrap;
+  border: 1px solid #385267; border-radius: 999px; background: rgba(7, 19, 35, .93); box-shadow: 0 6px 20px rgba(47, 24, 18, .22);
+  color: #edf5ff; font: 600 17px/1.3 var(--font-sans, Montserrat, sans-serif); animation: ccx-arrive-472d4a08 .46s cubic-bezier(.16, 1, .3, 1) .35s both;
+}
+.ccx-dot[data-v-472d4a08] { color: var(--accent, #7EFAFF);
+}
+.ccx-leave-active[data-v-472d4a08] { transition: opacity .45s ease;
+}
+.ccx-leave-to[data-v-472d4a08] { opacity: 0;
+}
+/* The chapter title fades on the same click (.45 s); the cards and band arrive together once it has mostly gone (at
+   .2 s they crossed its fading name on the GPU walk). */
+@keyframes ccx-arrive-472d4a08 {
+from { opacity: 0; transform: translateY(12px);
+}
+to { opacity: 1; transform: translateY(0);
+}
+}
