@@ -102,6 +102,7 @@ again (new runtime password, loopback only) and Administration › DataSHIELD wa
 (Playwright Chromium, 1172 × 456 CSS pixels, device scale 2; helper outside Git:
 `/workspace/opal-real/addendum/capture-e04.cjs`):
 
+- (`omics-profile`, `omics-scroll-up`, `profiles` and `datashield` were retired later that day, see below.)
 - `omics-profile`, `omics-top`, `omics-cluster` (new: omics selected, its heading, the notice and the controls) and
   `omics` (the same page scrolled to the end of the omics table). The cluster list, notice and controls keep their
   native places in every frame. `profiles` and `datashield` are unchanged: their recaptures were pixel-identical.
@@ -115,4 +116,20 @@ again (new runtime password, loopback only) and Administration › DataSHIELD wa
   dsBase 6.3.0, dsOmics 1.0.18-2, resourcer 1.4.0, all in `/var/lib/rock/R/library`. The pagination count follows
   the rows. Built and Server columns are omitted as before; nothing else on the page is changed. The drawer's
   footer is hidden as before.
+- After the capture the servers were stopped by PID and the runtime credentials removed again.
+
+## 20 November 2026, later: E04 on Packages only
+
+David: E04 should not go down to the Profiles section and come back up to the packages; it shows the top of
+Administration › DataSHIELD, the first thing Opal shows there (Packages: the R server clusters, the notice and the
+controls). The same local Opal 6.1.0 was started again (new runtime password, loopback only) and one frame was added
+(helper outside Git: `/workspace/opal-real/addendum/capture-e04-top.cjs`):
+
+- `datashield-top`: the page as it opens, before the omics Rock registers (its Rock server stopped by PID until Opal
+  dropped the cluster), so the list holds `default` only. Compared pixel by pixel with `omics-top`: the only
+  differing pixels are the `omics` list item (CSS x 332–398, y 265–279). Same data-only retouch as the frames above
+  (the default rows, below the fold; the drawer's footer hidden).
+- E04 now plays `dashboard` → `admin` → `datashield-top`; the refresh shows `omics-top`; the last click selects
+  omics (`omics-cluster`) and scrolls down to its table (`omics-scroll-down`, `omics`).
+- Retired with their files: `profiles`, `datashield`, `omics-profile` and `omics-scroll-up`.
 - After the capture the servers were stopped by PID and the runtime credentials removed again.
