@@ -79,11 +79,9 @@ The addenda use these retouches of the real Opal DOM before Playwright capture:
   library path. Resourcer is an installed dependency, included in this selected inventory. Sandbox package rows,
   library paths and server identifiers are absent. The Built column is omitted because dsOmics' installed Built
   value was not independently extracted; the Server column is omitted because it identifies the capture host.
-- The real Packages heading, cluster buttons and selected `omics` heading remain visible. The selector is moved
-  above the full-width native table; explanatory/management notices and controls are hidden for this reading view.
-  Native type, cells and colours are retained. This is a documented presentation of the image inventory, not a
-  claim that dsOmics installed on the capture host. The intermediate package-selection frame is unchanged except
-  for footer removal.
+- (Superseded on 20 November 2026, see below.) The real Packages heading, cluster buttons and selected `omics`
+  heading remained visible, but the selector was moved above a full-width table and the notices and controls were
+  hidden, so the page changed layout when omics was clicked.
 - The `Powered by OBiBa Opal 6.1.0` footer is removed from every captured global drawer: dashboard, admin,
   profiles, datashield, omics-profile, omics-top, omics and imaging-projects. This removes its collision with
   Administration. The project-specific imaging drawer and sign-in page have no such footer.
@@ -95,3 +93,26 @@ All 25 captures were visually audited for sandbox paths, usernames and host deta
 view contained these; it has been replaced. The generic `administrator`, intended localhost addresses and
 IMAGING/resource identifiers remain. Field/button DOM measurements are refreshed after each retouch.
 Capture helper: `/workspace/opal-real/addendum/retouch-captures.cjs`.
+
+## 20 November 2026: E04's packages in Opal's own layout
+
+David noticed the jump between the omics profile and its packages: the page changed section without scrolling,
+and the cluster list moved when omics was clicked. The same local Opal 6.1.0 and Rock 2.3.0 servers were started
+again (new runtime password, loopback only) and Administration › DataSHIELD was recaptured in one session
+(Playwright Chromium, 1172 × 456 CSS pixels, device scale 2; helper outside Git:
+`/workspace/opal-real/addendum/capture-e04.cjs`):
+
+- `omics-profile`, `omics-top`, `omics-cluster` (new: omics selected, its heading, the notice and the controls) and
+  `omics` (the same page scrolled to the end of the omics table). The cluster list, notice and controls keep their
+  native places in every frame. `profiles` and `datashield` are unchanged: their recaptures were pixel-identical.
+- `omics-scroll-up` and `omics-scroll-down`: the content column (x ≥ 300, below the 51 px top bar) from the top of
+  the page down to the last scroll position, shot once in a taller window. The replay slides it under the fixed top
+  bar and drawer. Checked pixel by pixel against the frames at both ends of each scroll: no differing pixel.
+- Retouch, data only: each cluster's rows are its image's DataSHIELD packages, from a scan of every layer of both
+  pinned images on 20 November 2026 (packages with a `DATASHIELD` file or DataSHIELD fields; record and script in
+  `/workspace/opal-real/image-evidence/datashield-packages-inventory-2026-11-20.json` and `ds-inventory.py`):
+  `rock-base:latest` (default) dsBase 6.3.5, dsTidyverse 1.2.1, resourcer 1.5.1; `rock-omics:latest` (omics)
+  dsBase 6.3.0, dsOmics 1.0.18-2, resourcer 1.4.0, all in `/var/lib/rock/R/library`. The pagination count follows
+  the rows. Built and Server columns are omitted as before; nothing else on the page is changed. The drawer's
+  footer is hidden as before.
+- After the capture the servers were stopped by PID and the runtime credentials removed again.
