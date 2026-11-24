@@ -1,0 +1,19 @@
+
+.eps-shared[data-v-a89fa6da] { fill: var(--privacy); fill-opacity: .3; stroke: none;
+}
+.eps-person path[data-v-a89fa6da] { fill: none; stroke: var(--muted); stroke-width: 1.4;
+}
+.eps-leader[data-v-a89fa6da] { stroke: var(--privacy); stroke-width: 1.4; stroke-opacity: .7;
+}
+.eps-name[data-v-a89fa6da] { paint-order: stroke; stroke: #050b18; stroke-width: 5px; stroke-linejoin: round;
+}
+.eps-sup[data-v-a89fa6da] { font-size: 17px; font-weight: 600;
+}
+.eps-track[data-v-a89fa6da] { stroke: var(--border); stroke-width: 10; stroke-linecap: round;
+}
+.eps-bar[data-v-a89fa6da] { stroke-width: 10; stroke-linecap: round;
+}
+.eps-bar-privacy[data-v-a89fa6da] { stroke: var(--privacy);
+}
+.eps-bar-accuracy[data-v-a89fa6da] { stroke: var(--accent);
+}
