@@ -1,0 +1,45 @@
+
+.pl-layer[data-v-ace604b7] { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; pointer-events: none; z-index: 2;
+}
+.pl-svg[data-v-ace604b7] { position: absolute; inset: 0; width: 1280px; height: 720px; overflow: visible;
+}
+.pl-card[data-v-ace604b7] { fill: rgba(7, 19, 35, .95); stroke: var(--border, #405873); stroke-width: 1;
+}
+.pl-head[data-v-ace604b7] { font: 500 15px var(--font-sans, Inter, sans-serif); fill: var(--muted, #B8CADE);
+}
+.pl-name[data-v-ace604b7] { font: 600 17px var(--font-mono, 'Roboto Mono', monospace); fill: var(--fg, #EDF5FF);
+}
+.pl-leader[data-v-ace604b7] { fill: none; stroke: #DCE6F2; stroke-width: 2.2; stroke-opacity: .8;
+}
+.pl-dot[data-v-ace604b7] { fill: #DCE6F2; stroke: #071323; stroke-width: 1.5;
+}
+.pl-flow[data-v-ace604b7] { fill: none; stroke-width: 2.4; stroke-dasharray: 7 9; stroke-linecap: round; animation: pl-flow-ace604b7 1.1s linear infinite;
+}
+.pl-call[data-v-ace604b7] { stroke: var(--updates, #4D8DDF);
+}
+.pl-aggregate[data-v-ace604b7] { stroke: var(--privacy, #38C6AD); animation-delay: -.55s;
+}
+@keyframes pl-flow-ace604b7 {
+to { stroke-dashoffset: -32;
+}
+}
+.pl-key[data-v-ace604b7] { fill: none; stroke-width: 2;
+}
+.pl-call-key[data-v-ace604b7] { stroke: var(--updates, #4D8DDF);
+}
+.pl-aggregate-key[data-v-ace604b7] { stroke: var(--privacy, #38C6AD);
+}
+.pl-key-text[data-v-ace604b7] { font: 500 15px var(--font-mono, 'Roboto Mono', monospace);
+}
+.pl-call-text[data-v-ace604b7] { fill: var(--updates, #4D8DDF);
+}
+.pl-aggregate-text[data-v-ace604b7] { fill: var(--privacy, #38C6AD);
+}
+.pl-manager-leader[data-v-ace604b7] { fill: none; stroke: #F5BE72; stroke-width: 2.2; stroke-linecap: round;
+}
+.pl-person-dot[data-v-ace604b7] { fill: #F5BE72; stroke: #071323; stroke-width: 1.5;
+}
+.pl-manager-chip[data-v-ace604b7] { fill: #071323; fill-opacity: .95; stroke: #F5BE72; stroke-width: 1.3;
+}
+.pl-manager-text[data-v-ace604b7] { font: 600 20px var(--font-sans, Inter, sans-serif); fill: var(--fg, #EDF5FF);
+}
